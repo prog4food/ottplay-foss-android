@@ -1,0 +1,64 @@
+# Keep this filename and job ID: existing code-scanning analyses use this identity.
+name: Scorecard supply-chain security
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '20 7 * * 2'
+  branch_protection_rule: {}
+  workflow_dispatch: {}
+permissions:
+  contents: read
+concurrency:
+  group: scorecard-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  analysis:
+    name: Scorecard analysis
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      actions: read
+      checks: read
+      issues: read
+      pull-requests: read
+      security-events: write
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Checkout the reviewed fail-closed scanner
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: victron-venus/venus-os-ci-toolkit
+          ref: 6b6cc553a797a885f6942c2d04afc4ef8f8b110c
+          path: .scorecard-toolkit
+          persist-credentials: false
+      - name: Set up the scanner build toolchain
+        uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7
+        with:
+          go-version: '1.27.2'
+          cache-dependency-path: .scorecard-toolkit/tools/scorecard-scan/go.sum
+      - name: Build the scanner from checksum-pinned dependencies
+        working-directory: .scorecard-toolkit/tools/scorecard-scan
+        env:
+          GOTOOLCHAIN: local
+        run: go build -mod=readonly -trimpath -o "$RUNNER_TEMP/scorecard-scan" .
+      - name: Require a complete Scorecard analysis
+        env:
+          GITHUB_AUTH_TOKEN: ${{ secrets.SCORECARD_TOKEN || github.token }}
+        run: >-
+          "$RUNNER_TEMP/scorecard-scan"
+          -repo "$GITHUB_REPOSITORY"
+          -commit "$GITHUB_SHA"
+          -output "$GITHUB_WORKSPACE/results.sarif"
+      - name: Refresh the existing code-scanning analyses
+        uses: github/codeql-action/upload-sarif@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0
+        with:
+          sarif_file: results.sarif

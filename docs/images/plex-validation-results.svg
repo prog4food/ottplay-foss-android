@@ -1,0 +1,230 @@
+<svg
+    aria-labelledby="title description"
+    height="1056"
+    role="img"
+    viewBox="0 0 1280 1056"
+    width="1280"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">
+        Plex local validation results at code freeze bc81e98e
+    </title>
+    <desc id="description">
+        Local validation evidence for OTTPlay FOSS, source commit bc81e98e.
+        Chromium passed 13 applicable checks; one native HLS check is WebKit
+        only and is not applicable to Chromium. WebKit passed all 14 checks.
+        Trusted touch passed in all three browser engines. Separate suites
+        passed 41 Plex client scenarios, 20 Plex authentication scenarios using
+        real jQuery 1.11.1 and 4.0, 39 remote Plex groups, and 134 media library
+        groups. Scenario and group counts are different units, not comparable
+        coverage measures. Typecheck, lint, unified tests, build, ES5, bundle,
+        and size gates passed locally. Complete player size is 964842 bytes
+        against a limit of 964900 bytes, leaving 58 bytes. This snapshot does
+        not assert CI status or publication of a beta release.
+    </desc>
+    <defs>
+        <linearGradient id="background" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#101f35" />
+            <stop offset="1" stop-color="#091321" />
+        </linearGradient>
+        <linearGradient id="passed" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#3cc9b3" />
+            <stop offset="1" stop-color="#83e3cc" />
+        </linearGradient>
+        <style>
+        text {
+            font-family:
+                -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        }
+        .ink {
+            fill: #edf4fc;
+        }
+        .muted {
+            fill: #b5c4d8;
+        }
+        .teal {
+            fill: #83e3cc;
+        }
+        .blue {
+            fill: #9ebeff;
+        }
+        .amber {
+            fill: #f0ce8e;
+        }
+        .panel {
+            fill: #14243a;
+            stroke: #30435b;
+            stroke-width: 1;
+        }
+        .chip {
+            fill: #143b3c;
+            stroke: #28665e;
+            stroke-width: 1;
+        }
+        .check {
+            fill: none;
+            stroke: #83e3cc;
+            stroke-width: 2.4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        </style>
+    </defs>
+
+    <rect fill="url(#background)" height="1056" rx="24" width="1280" />
+    <rect fill="#83e3cc" height="39" rx="3.5" width="7" x="64" y="58" />
+    <text
+        class="blue"
+        font-size="17"
+        font-weight="700"
+        letter-spacing="2"
+        x="89"
+        y="81"
+    >
+        OTTPLAY FOSS / VALIDATION
+    </text>
+    <text class="ink" font-size="43" font-weight="700" x="64" y="138">
+        Plex: results at code freeze
+    </text>
+    <text class="muted" font-size="21" x="65" y="174">
+        Source
+        <tspan class="ink" font-family="monospace" font-weight="700">
+            bc81e98e
+        </tspan>
+        <tspan>· Local evidence before publication</tspan>
+    </text>
+    <rect class="chip" height="40" rx="20" width="255" x="961" y="58" />
+    <circle cx="984" cy="78" fill="#83e3cc" r="5" />
+    <text
+        class="teal"
+        font-size="15"
+        font-weight="700"
+        letter-spacing="0.8"
+        x="1001"
+        y="84"
+    >
+        LOCAL GATES PASSED
+    </text>
+
+    <rect class="panel" height="290" rx="18" width="1152" x="64" y="210" />
+    <text class="ink" font-size="23" font-weight="700" x="92" y="250">
+        Browser checks
+    </text>
+    <text class="muted" font-size="16" text-anchor="end" x="1188" y="249">
+        Passed / applicable
+    </text>
+
+    <text class="ink" font-size="22" font-weight="600" x="92" y="298">
+        Chromium
+    </text>
+    <rect fill="url(#passed)" height="16" rx="8" width="563" x="349" y="281" />
+    <text class="teal" font-size="25" font-weight="700" x="948" y="299">
+        13 / 13
+    </text>
+    <text class="amber" font-size="16" x="349" y="328">
+        1 native-HLS check is WebKit only; not applicable here.
+    </text>
+
+    <text class="ink" font-size="22" font-weight="600" x="92" y="374">
+        WebKit
+    </text>
+    <rect fill="url(#passed)" height="16" rx="8" width="563" x="349" y="357" />
+    <text class="teal" font-size="25" font-weight="700" x="948" y="375">
+        14 / 14
+    </text>
+
+    <text class="ink" font-size="22" font-weight="600" x="92" y="435">
+        Trusted touch
+    </text>
+    <rect fill="url(#passed)" height="16" rx="8" width="563" x="349" y="418" />
+    <text class="teal" font-size="25" font-weight="700" x="948" y="436">
+        3 / 3
+        <tspan font-size="17" font-weight="400">engines</tspan>
+    </text>
+    <text class="muted" font-size="16" x="92" y="476">
+        Bars show successful applicable checks, not code coverage.
+    </text>
+
+    <text class="ink" font-size="23" font-weight="700" x="64" y="547">
+        Separate regression suites
+    </text>
+    <text class="muted" font-size="16" text-anchor="end" x="1216" y="546">
+        Counts use different units; do not sum or compare as coverage.
+    </text>
+
+    <rect class="panel" height="155" rx="16" width="273" x="64" y="570" />
+    <text class="muted" font-size="18" x="88" y="606">Plex client</text>
+    <text class="ink" font-size="48" font-weight="700" x="88" y="663">41</text>
+    <text class="teal" font-size="17" x="88" y="697">scenarios passed</text>
+
+    <rect class="panel" height="155" rx="16" width="273" x="357" y="570" />
+    <text class="muted" font-size="18" x="381" y="606">
+        Plex authentication
+    </text>
+    <text class="ink" font-size="44" font-weight="700" x="381" y="654">20</text>
+    <text class="teal" font-size="16" x="445" y="652">scenarios passed</text>
+    <text class="muted" font-size="16" x="381" y="684">Real jQuery</text>
+    <text class="blue" font-size="16" x="381" y="706">1.11.1 + 4.0</text>
+
+    <rect class="panel" height="155" rx="16" width="273" x="650" y="570" />
+    <text class="muted" font-size="18" x="674" y="606">Remote Plex</text>
+    <text class="ink" font-size="48" font-weight="700" x="674" y="663">39</text>
+    <text class="teal" font-size="17" x="674" y="697">groups passed</text>
+
+    <rect class="panel" height="155" rx="16" width="273" x="943" y="570" />
+    <text class="muted" font-size="18" x="967" y="606">Media library</text>
+    <text class="ink" font-size="48" font-weight="700" x="967" y="663">
+        134
+    </text>
+    <text class="teal" font-size="17" x="967" y="697">groups passed</text>
+
+    <rect class="panel" height="174" rx="18" width="1152" x="64" y="753" />
+    <text class="ink" font-size="23" font-weight="700" x="92" y="794">
+        Local build and quality gates
+    </text>
+
+    <rect class="chip" height="40" rx="10" width="142" x="92" y="814" />
+    <path class="check" d="M107 834l5 5 9-10" />
+    <text class="teal" font-size="16" x="131" y="840">Typecheck</text>
+    <rect class="chip" height="40" rx="10" width="142" x="249" y="814" />
+    <path class="check" d="M264 834l5 5 9-10" />
+    <text class="teal" font-size="16" x="288" y="840">Lint</text>
+    <rect class="chip" height="40" rx="10" width="154" x="406" y="814" />
+    <path class="check" d="M421 834l5 5 9-10" />
+    <text class="teal" font-size="16" x="445" y="840">Unified tests</text>
+    <rect class="chip" height="40" rx="10" width="142" x="575" y="814" />
+    <path class="check" d="M590 834l5 5 9-10" />
+    <text class="teal" font-size="16" x="614" y="840">Build</text>
+    <rect class="chip" height="40" rx="10" width="142" x="732" y="814" />
+    <path class="check" d="M747 834l5 5 9-10" />
+    <text class="teal" font-size="16" x="771" y="840">ES5</text>
+    <rect class="chip" height="40" rx="10" width="142" x="889" y="814" />
+    <path class="check" d="M904 834l5 5 9-10" />
+    <text class="teal" font-size="16" x="928" y="840">Bundle</text>
+    <rect class="chip" height="40" rx="10" width="142" x="1046" y="814" />
+    <path class="check" d="M1061 834l5 5 9-10" />
+    <text class="teal" font-size="16" x="1085" y="840">Size</text>
+
+    <text class="muted" font-size="18" x="92" y="893">
+        Complete player:
+        <tspan class="ink" font-weight="600">964,842 bytes</tspan>
+        <tspan>/ 964,900-byte limit</tspan>
+    </text>
+    <text class="amber" font-size="17" text-anchor="end" x="1188" y="893">
+        58 bytes headroom
+    </text>
+
+    <text
+        class="amber"
+        font-size="16"
+        font-weight="700"
+        letter-spacing="1.5"
+        x="64"
+        y="975"
+    >
+        LOCAL EVIDENCE ONLY
+    </text>
+    <text class="muted" font-size="20" x="64" y="1010">
+        This snapshot does not assert CI status or a published beta release.
+    </text>
+</svg>

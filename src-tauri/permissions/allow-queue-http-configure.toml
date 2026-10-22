@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-queue-http-configure"
+description = "Enables explicit settings control of the authenticated loopback HTTP remote."
+commands.allow = ["queue_http_configure"]

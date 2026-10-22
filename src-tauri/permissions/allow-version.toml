@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-version"
+description = "Enables the get_version command (serve file metadata with MD5 hash)."
+commands.allow = ["get_version"]

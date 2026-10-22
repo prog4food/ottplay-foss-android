@@ -1,0 +1,21 @@
+{
+  "package": "sjcl",
+  "version": "1.0.9",
+  "tarball": "https://registry.npmjs.org/sjcl/-/sjcl-1.0.9.tgz",
+  "integrity": "sha512-dWM71tkSHxe7zEZj0/COjtJdmErIxp7UMp8a6D4xx8dTTtJLc4lFL+HAX8s6lvASyQQ2iYMHwa7rhhQq7MT5MA==",
+  "files": {
+    "core/sjcl.js": "3f80ffc66c2e53376910812f10eb1c89f3454c4865f1a9e900a83a6f6edc2d46",
+    "core/bitArray.js": "52c5acc24193c8d976908c0a446fbbd53c654563d7feabce8c5f34d345c5a65a",
+    "core/codecString.js": "f8d5682882ab66bb320d21270975f94d5c3c9c522890720eda88d3f7a44d4293",
+    "core/codecHex.js": "6666a825e61a10ed38b7a47fe35ee6af7cb47aea98a54fc9d6835b0e1e50a9b8",
+    "core/sha256.js": "c13e26432895c74f8ae197f4e181121f85363b93a8a0b3a9e1a098969790c442",
+    "core/hmac.js": "f12858d7f9db5c72225d17fdc9a3e7c8f22b2e8ddbdf246fbea3d3660a5a50ce",
+    "core/pbkdf2.js": "22ce7542834782f47ea38cbb822d0323c38b296f57c3661a14d879f6ecc51d7e"
+  },
+  "bundle_sha256": "e75b340cb505abbdee68dda5ab48a0c2429c83739b1eb9c8a44cb8c24ef0c8b3",
+  "upstream_bundle_sha256": "b169b8b56384fd678199ffd321ca90467dccc10cd5ba0a268ecd60674205fa74",
+  "local_patch": {
+    "path": "sjcl-pin-word-arrays.patch.json",
+    "sha256": "ff4ae332e9cbcbc1edeb7eaa1bf534fcd6b80e58acfb724ad05c308cda0244ee"
+  }
+}

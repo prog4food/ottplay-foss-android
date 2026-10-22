@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-exit-app"
+description = "Enables the exit_app command."
+commands.allow = ["exit_app"]

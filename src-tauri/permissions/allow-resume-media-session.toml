@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-resume-media-session"
+description = "Enables the resume_media_session command."
+commands.allow = ["resume_media_session"]

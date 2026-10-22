@@ -1,0 +1,551 @@
+{
+    "source": "https://www.loc.gov/standards/iso639-2/php/code_list-txt.php",
+    "description": "Independent ISO 639-1 and ISO 639-2/B,T identifiers from the Library of Congress list. Keys bind shipped catalogs to languages, not inferred media tags. Filipino has no ISO 639-1 code; Norwegian catalog is Bokmal. Nonstandard legacy media tags are tested separately.",
+    "languages": {
+        "_afr": {
+            "iso6391": "af",
+            "iso6392": [
+                "afr"
+            ]
+        },
+        "_alb": {
+            "iso6391": "sq",
+            "iso6392": [
+                "alb",
+                "sqi"
+            ]
+        },
+        "_amh": {
+            "iso6391": "am",
+            "iso6392": [
+                "amh"
+            ]
+        },
+        "_ara": {
+            "iso6391": "ar",
+            "iso6392": [
+                "ara"
+            ]
+        },
+        "_arm": {
+            "iso6391": "hy",
+            "iso6392": [
+                "arm",
+                "hye"
+            ]
+        },
+        "_asm": {
+            "iso6391": "as",
+            "iso6392": [
+                "asm"
+            ]
+        },
+        "_aze": {
+            "iso6391": "az",
+            "iso6392": [
+                "aze"
+            ]
+        },
+        "_baq": {
+            "iso6391": "eu",
+            "iso6392": [
+                "baq",
+                "eus"
+            ]
+        },
+        "_bel": {
+            "iso6391": "be",
+            "iso6392": [
+                "bel"
+            ]
+        },
+        "_ben": {
+            "iso6391": "bn",
+            "iso6392": [
+                "ben"
+            ]
+        },
+        "_bos": {
+            "iso6391": "bs",
+            "iso6392": [
+                "bos"
+            ]
+        },
+        "_bul": {
+            "iso6391": "bg",
+            "iso6392": [
+                "bul"
+            ]
+        },
+        "_bur": {
+            "iso6391": "my",
+            "iso6392": [
+                "bur",
+                "mya"
+            ]
+        },
+        "_cat": {
+            "iso6391": "ca",
+            "iso6392": [
+                "cat"
+            ]
+        },
+        "_chi": {
+            "iso6391": "zh",
+            "iso6392": [
+                "chi",
+                "zho"
+            ]
+        },
+        "_cze": {
+            "iso6391": "cs",
+            "iso6392": [
+                "cze",
+                "ces"
+            ]
+        },
+        "_dan": {
+            "iso6391": "da",
+            "iso6392": [
+                "dan"
+            ]
+        },
+        "_dut": {
+            "iso6391": "nl",
+            "iso6392": [
+                "dut",
+                "nld"
+            ]
+        },
+        "_eng": {
+            "iso6391": "en",
+            "iso6392": [
+                "eng"
+            ]
+        },
+        "_est": {
+            "iso6391": "et",
+            "iso6392": [
+                "est"
+            ]
+        },
+        "_fil": {
+            "iso6391": null,
+            "iso6392": [
+                "fil"
+            ]
+        },
+        "_fin": {
+            "iso6391": "fi",
+            "iso6392": [
+                "fin"
+            ]
+        },
+        "_fra": {
+            "iso6391": "fr",
+            "iso6392": [
+                "fre",
+                "fra"
+            ]
+        },
+        "_geo": {
+            "iso6391": "ka",
+            "iso6392": [
+                "geo",
+                "kat"
+            ]
+        },
+        "_ger": {
+            "iso6391": "de",
+            "iso6392": [
+                "ger",
+                "deu"
+            ]
+        },
+        "_gle": {
+            "iso6391": "ga",
+            "iso6392": [
+                "gle"
+            ]
+        },
+        "_glg": {
+            "iso6391": "gl",
+            "iso6392": [
+                "glg"
+            ]
+        },
+        "_gre": {
+            "iso6391": "el",
+            "iso6392": [
+                "gre",
+                "ell"
+            ]
+        },
+        "_guj": {
+            "iso6391": "gu",
+            "iso6392": [
+                "guj"
+            ]
+        },
+        "_hau": {
+            "iso6391": "ha",
+            "iso6392": [
+                "hau"
+            ]
+        },
+        "_heb": {
+            "iso6391": "he",
+            "iso6392": [
+                "heb"
+            ]
+        },
+        "_hin": {
+            "iso6391": "hi",
+            "iso6392": [
+                "hin"
+            ]
+        },
+        "_hrv": {
+            "iso6391": "hr",
+            "iso6392": [
+                "hrv"
+            ]
+        },
+        "_hun": {
+            "iso6391": "hu",
+            "iso6392": [
+                "hun"
+            ]
+        },
+        "_ibo": {
+            "iso6391": "ig",
+            "iso6392": [
+                "ibo"
+            ]
+        },
+        "_ice": {
+            "iso6391": "is",
+            "iso6392": [
+                "ice",
+                "isl"
+            ]
+        },
+        "_ind": {
+            "iso6391": "id",
+            "iso6392": [
+                "ind"
+            ]
+        },
+        "_ita": {
+            "iso6391": "it",
+            "iso6392": [
+                "ita"
+            ]
+        },
+        "_jpn": {
+            "iso6391": "ja",
+            "iso6392": [
+                "jpn"
+            ]
+        },
+        "_kan": {
+            "iso6391": "kn",
+            "iso6392": [
+                "kan"
+            ]
+        },
+        "_kaz": {
+            "iso6391": "kk",
+            "iso6392": [
+                "kaz"
+            ]
+        },
+        "_khm": {
+            "iso6391": "km",
+            "iso6392": [
+                "khm"
+            ]
+        },
+        "_kin": {
+            "iso6391": "rw",
+            "iso6392": [
+                "kin"
+            ]
+        },
+        "_kir": {
+            "iso6391": "ky",
+            "iso6392": [
+                "kir"
+            ]
+        },
+        "_kor": {
+            "iso6391": "ko",
+            "iso6392": [
+                "kor"
+            ]
+        },
+        "_kur": {
+            "iso6391": "ku",
+            "iso6392": [
+                "kur"
+            ]
+        },
+        "_lao": {
+            "iso6391": "lo",
+            "iso6392": [
+                "lao"
+            ]
+        },
+        "_lat": {
+            "iso6391": "lv",
+            "iso6392": [
+                "lav"
+            ]
+        },
+        "_lit": {
+            "iso6391": "lt",
+            "iso6392": [
+                "lit"
+            ]
+        },
+        "_mac": {
+            "iso6391": "mk",
+            "iso6392": [
+                "mac",
+                "mkd"
+            ]
+        },
+        "_mal": {
+            "iso6391": "ml",
+            "iso6392": [
+                "mal"
+            ]
+        },
+        "_mar": {
+            "iso6391": "mr",
+            "iso6392": [
+                "mar"
+            ]
+        },
+        "_may": {
+            "iso6391": "ms",
+            "iso6392": [
+                "may",
+                "msa"
+            ]
+        },
+        "_mlg": {
+            "iso6391": "mg",
+            "iso6392": [
+                "mlg"
+            ]
+        },
+        "_mlt": {
+            "iso6391": "mt",
+            "iso6392": [
+                "mlt"
+            ]
+        },
+        "_mon": {
+            "iso6391": "mn",
+            "iso6392": [
+                "mon"
+            ]
+        },
+        "_nep": {
+            "iso6391": "ne",
+            "iso6392": [
+                "nep"
+            ]
+        },
+        "_nor": {
+            "iso6391": "nb",
+            "iso6392": [
+                "nob"
+            ]
+        },
+        "_ori": {
+            "iso6391": "or",
+            "iso6392": [
+                "ori"
+            ]
+        },
+        "_pan": {
+            "iso6391": "pa",
+            "iso6392": [
+                "pan"
+            ]
+        },
+        "_per": {
+            "iso6391": "fa",
+            "iso6392": [
+                "per",
+                "fas"
+            ]
+        },
+        "_pol": {
+            "iso6391": "pl",
+            "iso6392": [
+                "pol"
+            ]
+        },
+        "_por": {
+            "iso6391": "pt",
+            "iso6392": [
+                "por"
+            ]
+        },
+        "_pus": {
+            "iso6391": "ps",
+            "iso6392": [
+                "pus"
+            ]
+        },
+        "_rou": {
+            "iso6391": "ro",
+            "iso6392": [
+                "rum",
+                "ron"
+            ]
+        },
+        "_rus": {
+            "iso6391": "ru",
+            "iso6392": [
+                "rus"
+            ]
+        },
+        "_sin": {
+            "iso6391": "si",
+            "iso6392": [
+                "sin"
+            ]
+        },
+        "_slo": {
+            "iso6391": "sk",
+            "iso6392": [
+                "slo",
+                "slk"
+            ]
+        },
+        "_slv": {
+            "iso6391": "sl",
+            "iso6392": [
+                "slv"
+            ]
+        },
+        "_snd": {
+            "iso6391": "sd",
+            "iso6392": [
+                "snd"
+            ]
+        },
+        "_som": {
+            "iso6391": "so",
+            "iso6392": [
+                "som"
+            ]
+        },
+        "_spa": {
+            "iso6391": "es",
+            "iso6392": [
+                "spa"
+            ]
+        },
+        "_srp": {
+            "iso6391": "sr",
+            "iso6392": [
+                "srp"
+            ]
+        },
+        "_swa": {
+            "iso6391": "sw",
+            "iso6392": [
+                "swa"
+            ]
+        },
+        "_swe": {
+            "iso6391": "sv",
+            "iso6392": [
+                "swe"
+            ]
+        },
+        "_tam": {
+            "iso6391": "ta",
+            "iso6392": [
+                "tam"
+            ]
+        },
+        "_tel": {
+            "iso6391": "te",
+            "iso6392": [
+                "tel"
+            ]
+        },
+        "_tgk": {
+            "iso6391": "tg",
+            "iso6392": [
+                "tgk"
+            ]
+        },
+        "_tha": {
+            "iso6391": "th",
+            "iso6392": [
+                "tha"
+            ]
+        },
+        "_tuk": {
+            "iso6391": "tk",
+            "iso6392": [
+                "tuk"
+            ]
+        },
+        "_tur": {
+            "iso6391": "tr",
+            "iso6392": [
+                "tur"
+            ]
+        },
+        "_ukr": {
+            "iso6391": "uk",
+            "iso6392": [
+                "ukr"
+            ]
+        },
+        "_urd": {
+            "iso6391": "ur",
+            "iso6392": [
+                "urd"
+            ]
+        },
+        "_uzb": {
+            "iso6391": "uz",
+            "iso6392": [
+                "uzb"
+            ]
+        },
+        "_vie": {
+            "iso6391": "vi",
+            "iso6392": [
+                "vie"
+            ]
+        },
+        "_xho": {
+            "iso6391": "xh",
+            "iso6392": [
+                "xho"
+            ]
+        },
+        "_yor": {
+            "iso6391": "yo",
+            "iso6392": [
+                "yor"
+            ]
+        },
+        "_zul": {
+            "iso6391": "zu",
+            "iso6392": [
+                "zul"
+            ]
+        }
+    }
+}

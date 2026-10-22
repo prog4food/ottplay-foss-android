@@ -1,0 +1,58 @@
+# Tauri normalizes these release inputs while packaging on Windows. Keep their
+# checkout bytes stable so the post-build receipt still matches version sync.
+/Cargo.lock text eol=lf
+/src-tauri/Cargo.toml text eol=lf
+/android/gradlew.bat text eol=crlf
+
+# MPEG-TS test fixtures are media, not TypeScript source.
+/tests/fixtures/media-runtime/*.ts binary
+
+# Receipt-pinned inputs must have identical bytes on every host.
+/vendor/ottplay-core.* -text
+/licenses/native/* -text
+/vendor/hosted-epg/** -text
+
+# Preserve the published bytes used by native dependency provenance checks.
+/vendor/wry-0.55.1/** -text
+/vendor/tao-0.35.3/** -text
+/vendor/wry-0.55.1.provenance.json -text
+/vendor/tao-0.35.3.provenance.json -text
+/vendor/block-0.1.6/** -text
+/vendor/block-0.1.6.provenance.json -text
+/vendor/block-0.1.6-LICENSE.txt -text
+/vendor/block-0.1.6-opaque-class.patch -text whitespace=-blank-at-eol
+# Unified diff context deliberately contains single-space empty lines.
+/vendor/*-macos-drag-pasteboard.patch -text whitespace=-blank-at-eol
+# Preserve this upstream document verbatim, including its trailing space.
+/vendor/wry-0.55.1/SECURITY.md whitespace=-blank-at-eol
+
+# Fuzz seeds are exact protocol bytes, including deliberate CRLF.
+/fuzz/corpus/** -text whitespace=-blank-at-eol
+/fuzz/Cargo.lock text eol=lf
+
+# Media runtime identity hashes these source bytes; Windows checkout conversion
+# must not create a different runtime and invalidate the frozen release overlay.
+/scripts/media-runtime.cjs text eol=lf
+/src/polyfills/runtime.ts text eol=lf
+
+# Preserve generated/upstream media and license bytes checked by the auditor.
+/js/runtime-polyfills.js -text
+/js/hls.min.js -text
+/js/hls.worker.js -text
+/js/video.min.js -text
+/js/media-runtime.json -text
+/js/licenses/** -text
+# The selected upstream SJCL sources are verified by their exact bundle digest.
+/js/vendor/sjcl-pin.js -text
+/LICENSE -text
+/licenses/android/Apache-2.0.txt -text
+
+# These pinned upstream license, source and patch bytes are part of the rebuild
+# receipt. Preserve their original whitespace, including unified-diff context.
+/packaging/linux-playback-compat/** -text
+/packaging/linux-playback-compat/*.patch whitespace=-blank-at-eol
+/packaging/linux-playback-compat/COPYING whitespace=-blank-at-eol,-blank-at-eof
+/packaging/linux-playback-compat/debian-copyright whitespace=-blank-at-eof
+
+# Reversible SJCL patch bytes are pinned by source provenance.
+js/vendor/sjcl-pin-word-arrays.patch.json -text

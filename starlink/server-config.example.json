@@ -1,0 +1,10 @@
+{
+  "appName": "STARLINK IPTV",
+  "provider": "xtream",
+  "baseUrl": "https://panel.taila5c5c2.ts.net",
+  "apiPath": "/player_api.php",
+  "epgPath": "/xmltv.php",
+  "playlistPath": "/get.php",
+  "credentials": "entered_by_user",
+  "note": "Endpoint reported by Perplexity on 2026-10-22; connectivity and current publication require independent validation. Do not hardcode passwords."
+}

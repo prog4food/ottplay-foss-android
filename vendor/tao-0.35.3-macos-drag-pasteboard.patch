@@ -1,0 +1,74 @@
+--- a/src/platform_impl/macos/window_delegate.rs
++++ b/src/platform_impl/macos/window_delegate.rs
+@@ -1,6 +1,7 @@
+ // Copyright 2014-2021 The winit contributors
+ // Copyright 2021-2023 Tauri Programme within The Commons Conservancy
+ // SPDX-License-Identifier: Apache-2.0
++// Modified by OttPlay FOSS: guard absent/malformed macOS drag pasteboard data.
+ 
+ use std::{
+   f64,
+@@ -420,14 +421,26 @@
+   use std::path::PathBuf;
+ 
+   let pb: Retained<NSPasteboard> = unsafe { msg_send![sender, draggingPasteboard] };
+-  let filenames =
+-    unsafe { NSPasteboard::propertyListForType(&pb, appkit::NSFilenamesPboardType) }.unwrap();
+-
+-  for file in unsafe { Retained::cast_unchecked::<NSArray>(filenames) } {
+-    let file = unsafe { Retained::cast_unchecked::<NSString>(file) };
++  // An advertised file type does not guarantee readable data from its owner.
++  let Some(filenames) =
++    (unsafe { NSPasteboard::propertyListForType(&pb, appkit::NSFilenamesPboardType) })
++  else {
++    return NO;
++  };
++  let Ok(filenames) = filenames.downcast::<NSArray>() else {
++    return NO;
++  };
++
++  for file in filenames {
++    let Ok(file) = file.downcast::<NSString>() else {
++      continue;
++    };
+ 
+     unsafe {
+       let f = NSString::UTF8String(&file);
++      if f.is_null() {
++        continue;
++      }
+       let path = CStr::from_ptr(f).to_string_lossy().into_owned();
+ 
+       with_state(this, |state| {
+@@ -454,14 +467,26 @@
+   use std::path::PathBuf;
+ 
+   let pb: Retained<NSPasteboard> = unsafe { msg_send![sender, draggingPasteboard] };
+-  let filenames =
+-    unsafe { NSPasteboard::propertyListForType(&pb, appkit::NSFilenamesPboardType) }.unwrap();
+-
+-  for file in unsafe { Retained::cast_unchecked::<NSArray>(filenames) } {
+-    let file = unsafe { Retained::cast_unchecked::<NSString>(file) };
++  // The pasteboard can change between hover and drop; validate it again.
++  let Some(filenames) =
++    (unsafe { NSPasteboard::propertyListForType(&pb, appkit::NSFilenamesPboardType) })
++  else {
++    return NO;
++  };
++  let Ok(filenames) = filenames.downcast::<NSArray>() else {
++    return NO;
++  };
++
++  for file in filenames {
++    let Ok(file) = file.downcast::<NSString>() else {
++      continue;
++    };
+ 
+     unsafe {
+       let f = NSString::UTF8String(&file);
++      if f.is_null() {
++        continue;
++      }
+       let path = CStr::from_ptr(f).to_string_lossy().into_owned();
+ 
+       with_state(this, |state| {

@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-pause-media-session"
+description = "Enables the pause_media_session command."
+commands.allow = ["pause_media_session"]

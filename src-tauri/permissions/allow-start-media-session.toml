@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-start-media-session"
+description = "Enables the start_media_session command."
+commands.allow = ["start_media_session"]

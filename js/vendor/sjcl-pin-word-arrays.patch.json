@@ -1,0 +1,75 @@
+{
+  "description": "Avoid V8 Array species deoptimization in numeric word copies; cryptographic rounds and PBKDF2 work factor are unchanged. Negative/NaN clamp and general bitSlice behavior stay upstream.",
+  "operations": [
+    {
+      "before": "selected modules, unchanged.",
+      "after": "selected modules with word-array copy patch; see sjcl-pin-word-arrays.patch.json.",
+      "count": 1
+    },
+    {
+      "before": "var sjcl = {",
+      "after": "// Internal numeric word arrays only: no species/subclass dispatch. Keep words\n// verbatim (including SJCL partial-word metadata), holes, and copy ownership.\n// core-js probes can deoptimize native slice/concat/splice on V8 with TV UAs.\nfunction pinCopyWords(words, end) {\n  var result = [], i;\n  end = end === undefined ? words.length : end;\n  for (i = 0; i < end; i++) if (i in words) result[i] = words[i];\n  result.length = end;\n  return result;\n}\nfunction pinConcatWords(first, second) {\n  var result = pinCopyWords(first), offset = first.length, i;\n  for (i = 0; i < second.length; i++) if (i in second) result[offset + i] = second[i];\n  result.length = offset + second.length;\n  return result;\n}\nfunction pinShiftWords(words, count) {\n  count = Math.min(count, words.length);\n  var result = pinCopyWords(words, count), i;\n  for (i = count; i < words.length; i++) {\n    if (i in words) words[i - count] = words[i];\n    else delete words[i - count];\n  }\n  words.length -= count;\n  return result;\n}\n\nvar sjcl = {",
+      "count": 1
+    },
+    {
+      "before": "a1.concat(a2)",
+      "after": "pinConcatWords(a1, a2)",
+      "count": 2
+    },
+    {
+      "before": "a1.slice(0,a1.length-1)",
+      "after": "pinCopyWords(a1, a1.length-1)",
+      "count": 1
+    },
+    {
+      "before": "out.concat(a)",
+      "after": "pinConcatWords(out, a)",
+      "count": 1
+    },
+    {
+      "before": "hash._h.slice(0)",
+      "after": "pinCopyWords(hash._h)",
+      "count": 1
+    },
+    {
+      "before": "hash._buffer.slice(0)",
+      "after": "pinCopyWords(hash._buffer)",
+      "count": 1
+    },
+    {
+      "before": "this._init.slice(0)",
+      "after": "pinCopyWords(this._init)",
+      "count": 1
+    },
+    {
+      "before": "b.splice(0, 16 * j)",
+      "after": "pinShiftWords(b, 16 * j)",
+      "count": 1
+    },
+    {
+      "before": "b.splice(0,16)",
+      "after": "pinShiftWords(b, 16)",
+      "count": 2
+    },
+    {
+      "before": "out.concat(u)",
+      "after": "pinConcatWords(out, u)",
+      "count": 1
+    },
+    {
+      "before": "    \tpinShiftWords(b, 16 * j);",
+      "after": "        pinShiftWords(b, 16 * j);",
+      "count": 1
+    },
+    {
+      "before": "      \t    this._block(pinShiftWords(b, 16));",
+      "after": "          this._block(pinShiftWords(b, 16));",
+      "count": 1
+    },
+    {
+      "before": "a = a.slice(0, Math.ceil(len / 32));",
+      "after": "a = len >= 0 ? pinCopyWords(a, Math.ceil(len / 32)) : a.slice(0, Math.ceil(len / 32));",
+      "count": 1
+    }
+  ]
+}

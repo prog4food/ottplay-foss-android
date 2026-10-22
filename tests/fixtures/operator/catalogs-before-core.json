@@ -1,0 +1,1134 @@
+{
+  "provenance": {
+    "commit": "b3c8cc072e92f14c8e352a223157788f24ca4dce",
+    "capture": "Actual public getChanelsArray with only HTTP/storage/UI effects supplied."
+  },
+  "cases": [
+    {
+      "provider": "itv",
+      "name": "first ID owns metadata and category membership",
+      "input": {
+        "data": {
+          "channels": [
+            {
+              "ch_id": "a",
+              "channel_name": "First",
+              "cat_name": "News",
+              "rec_time": 24,
+              "server_cdn": "cdn.test",
+              "token": "fixture"
+            },
+            {
+              "ch_id": "b",
+              "channel_name": "Second",
+              "cat_name": "Sports",
+              "rec_time": 24,
+              "server_cdn": "cdn.test",
+              "token": "fixture"
+            },
+            {
+              "ch_id": "a",
+              "channel_name": "Duplicate",
+              "cat_name": "Other",
+              "rec_time": 24,
+              "server_cdn": "cdn.test",
+              "token": "fixture"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://api.fixture/data/1234567890",
+            "dataType": "json",
+            "timeout": 30000
+          }
+        ],
+        "errors": [],
+        "failure": null,
+        "ids": [
+          "a",
+          "b"
+        ],
+        "channels": {
+          "a": {
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "First",
+            "rec": 24,
+            "server_cdn": "cdn.test",
+            "time": 0,
+            "time_to": 0,
+            "token": "fixture"
+          },
+          "b": {
+            "category": {
+              "class": 3,
+              "name": "Sports"
+            },
+            "channel_name": "Second",
+            "rec": 24,
+            "server_cdn": "cdn.test",
+            "time": 0,
+            "time_to": 0,
+            "token": "fixture"
+          }
+        },
+        "groups": {
+          "News": [
+            "a"
+          ],
+          "Sports": [
+            "b"
+          ]
+        },
+        "groupOrder": [
+          "News",
+          "Sports"
+        ],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "itv",
+      "name": "numeric string IDs differ in list but share channel key",
+      "input": {
+        "data": {
+          "channels": [
+            {
+              "ch_id": 1,
+              "channel_name": "Number",
+              "cat_name": "News",
+              "rec_time": 24,
+              "server_cdn": "cdn.test",
+              "token": "fixture"
+            },
+            {
+              "ch_id": "1",
+              "channel_name": "String",
+              "cat_name": "Sports",
+              "rec_time": 24,
+              "server_cdn": "cdn.test",
+              "token": "fixture"
+            },
+            {
+              "ch_id": 0,
+              "channel_name": "Zero",
+              "cat_name": "News",
+              "rec_time": 24,
+              "server_cdn": "cdn.test",
+              "token": "fixture"
+            },
+            {
+              "ch_id": "",
+              "channel_name": "Empty",
+              "cat_name": "News",
+              "rec_time": 24,
+              "server_cdn": "cdn.test",
+              "token": "fixture"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://api.fixture/data/1234567890",
+            "dataType": "json",
+            "timeout": 30000
+          }
+        ],
+        "errors": [],
+        "failure": null,
+        "ids": [
+          1,
+          "1",
+          0,
+          ""
+        ],
+        "channels": {
+          "0": {
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "Zero",
+            "rec": 24,
+            "server_cdn": "cdn.test",
+            "time": 0,
+            "time_to": 0,
+            "token": "fixture"
+          },
+          "1": {
+            "category": {
+              "class": 3,
+              "name": "Sports"
+            },
+            "channel_name": "String",
+            "rec": 24,
+            "server_cdn": "cdn.test",
+            "time": 0,
+            "time_to": 0,
+            "token": "fixture"
+          },
+          "": {
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "Empty",
+            "rec": 24,
+            "server_cdn": "cdn.test",
+            "time": 0,
+            "time_to": 0,
+            "token": "fixture"
+          }
+        },
+        "groups": {
+          "News": [
+            1
+          ],
+          "Sports": [
+            "1"
+          ]
+        },
+        "groupOrder": [
+          "News",
+          "Sports"
+        ],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "itv",
+      "name": "missing fields and blank categories",
+      "input": {
+        "data": {
+          "channels": [
+            {
+              "ch_id": "a"
+            },
+            {
+              "ch_id": "b",
+              "channel_name": "B",
+              "cat_name": "",
+              "rec_time": 24,
+              "server_cdn": "cdn.test",
+              "token": "fixture"
+            },
+            {
+              "ch_id": "c",
+              "channel_name": "C",
+              "cat_name": null,
+              "rec_time": 24,
+              "server_cdn": "cdn.test",
+              "token": "fixture"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://api.fixture/data/1234567890",
+            "dataType": "json",
+            "timeout": 30000
+          }
+        ],
+        "errors": [],
+        "failure": null,
+        "ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "channels": {
+          "a": {
+            "category": {
+              "class": 1
+            },
+            "time": 0,
+            "time_to": 0
+          },
+          "b": {
+            "category": {
+              "class": 1,
+              "name": ""
+            },
+            "channel_name": "B",
+            "rec": 24,
+            "server_cdn": "cdn.test",
+            "time": 0,
+            "time_to": 0,
+            "token": "fixture"
+          },
+          "c": {
+            "category": {
+              "class": 1,
+              "name": null
+            },
+            "channel_name": "C",
+            "rec": 24,
+            "server_cdn": "cdn.test",
+            "time": 0,
+            "time_to": 0,
+            "token": "fixture"
+          }
+        },
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "itv",
+      "name": "null response succeeds empty",
+      "input": {
+        "data": null
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://api.fixture/data/1234567890",
+            "dataType": "json",
+            "timeout": 30000
+          }
+        ],
+        "errors": [],
+        "failure": null,
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "itv",
+      "name": "empty channels succeeds empty",
+      "input": {
+        "data": {
+          "channels": []
+        }
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://api.fixture/data/1234567890",
+            "dataType": "json",
+            "timeout": 30000
+          }
+        ],
+        "errors": [],
+        "failure": null,
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "itv",
+      "name": "nonarray channels throws",
+      "input": {
+        "data": {
+          "channels": {}
+        }
+      },
+      "expected": {
+        "callbacks": 0,
+        "calls": [
+          {
+            "url": "http://api.fixture/data/1234567890",
+            "dataType": "json",
+            "timeout": 30000
+          }
+        ],
+        "errors": [],
+        "failure": {
+          "name": "TypeError",
+          "message": "data.channels.forEach is not a function"
+        },
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "itv",
+      "name": "null row retains partial catalog",
+      "input": {
+        "data": {
+          "channels": [
+            {
+              "ch_id": "a",
+              "channel_name": "A",
+              "cat_name": "News",
+              "rec_time": 24,
+              "server_cdn": "cdn.test",
+              "token": "fixture"
+            },
+            null
+          ]
+        }
+      },
+      "expected": {
+        "callbacks": 0,
+        "calls": [
+          {
+            "url": "http://api.fixture/data/1234567890",
+            "dataType": "json",
+            "timeout": 30000
+          }
+        ],
+        "errors": [],
+        "failure": {
+          "name": "TypeError",
+          "message": "Cannot read properties of null (reading 'ch_id')"
+        },
+        "ids": [
+          "a"
+        ],
+        "channels": {
+          "a": {
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "A",
+            "rec": 24,
+            "server_cdn": "cdn.test",
+            "time": 0,
+            "time_to": 0,
+            "token": "fixture"
+          }
+        },
+        "groups": {
+          "News": [
+            "a"
+          ]
+        },
+        "groupOrder": [
+          "News"
+        ],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "itv",
+      "name": "short key skips request",
+      "input": {
+        "settings": {
+          "key": "short"
+        },
+        "data": {
+          "channels": []
+        }
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [],
+        "errors": [
+          "Для доступа необходимо ввести ключ! (Ключ для плеера 10-12 символов)"
+        ],
+        "failure": null,
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "itv",
+      "name": "long key skips request",
+      "input": {
+        "settings": {
+          "key": "1234567890123"
+        },
+        "data": {
+          "channels": []
+        }
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [],
+        "errors": [
+          "Для доступа необходимо ввести ключ! (Ключ для плеера 10-12 символов)"
+        ],
+        "failure": null,
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "itv",
+      "name": "network failure calls callback",
+      "input": {
+        "networkFailed": true
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://api.fixture/data/1234567890",
+            "dataType": "json",
+            "timeout": 30000
+          }
+        ],
+        "errors": [
+          "Failed to load channel list!"
+        ],
+        "failure": null,
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "ottclub",
+      "name": "category variants archive hours name and EPG alias",
+      "input": {
+        "data": "{\"a\":{\"ch_id\":\"a\",\"name\":\"A\",\"category\":\"News\",\"rec\":true},\"b\":{\"ch_id\":\"b\",\"name\":\"B\",\"category\":{\"name\":\"Sports\"},\"rec\":true},\"c\":{\"ch_id\":\"c\",\"name\":\"C\",\"category\":null,\"rec\":0,\"group\":\"News\"},\"d\":{\"ch_id\":\"d\",\"name\":\"D\",\"category\":null,\"rec\":true,\"group_title\":\"Other\"}}"
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://operator.test/api/channel_now",
+            "dataType": "text"
+          }
+        ],
+        "errors": [],
+        "failure": null,
+        "ids": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ],
+        "channels": {
+          "a": {
+            "ch_id": "a",
+            "name": "A",
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "rec": 168,
+            "channel_name": "A"
+          },
+          "b": {
+            "ch_id": "b",
+            "name": "B",
+            "category": {
+              "class": 3,
+              "name": "Sports"
+            },
+            "rec": 168,
+            "channel_name": "B"
+          },
+          "c": {
+            "ch_id": "c",
+            "name": "C",
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "rec": 0,
+            "group": "News",
+            "channel_name": "C"
+          },
+          "d": {
+            "ch_id": "d",
+            "name": "D",
+            "category": {
+              "class": 4,
+              "name": "Other"
+            },
+            "rec": 168,
+            "group_title": "Other",
+            "channel_name": "D"
+          }
+        },
+        "groups": {
+          "News": [
+            "a",
+            "c"
+          ],
+          "Sports": [
+            "b"
+          ],
+          "Other": [
+            "d"
+          ]
+        },
+        "groupOrder": [
+          "News",
+          "Sports",
+          "Other"
+        ],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ],
+          "a": [
+            {
+              "ch_id": "a",
+              "name": "A",
+              "category": {
+                "class": 2,
+                "name": "News"
+              },
+              "rec": 168,
+              "channel_name": "A"
+            }
+          ],
+          "b": [
+            {
+              "ch_id": "b",
+              "name": "B",
+              "category": {
+                "class": 3,
+                "name": "Sports"
+              },
+              "rec": 168,
+              "channel_name": "B"
+            }
+          ],
+          "c": [
+            {
+              "ch_id": "c",
+              "name": "C",
+              "category": {
+                "class": 2,
+                "name": "News"
+              },
+              "rec": 0,
+              "group": "News",
+              "channel_name": "C"
+            }
+          ],
+          "d": [
+            {
+              "ch_id": "d",
+              "name": "D",
+              "category": {
+                "class": 4,
+                "name": "Other"
+              },
+              "rec": 168,
+              "group_title": "Other",
+              "channel_name": "D"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "ottclub",
+      "name": "existing channel name wins and empty category falls through",
+      "input": {
+        "data": "{\"a\":{\"ch_id\":\"a\",\"name\":\"A\",\"category\":\"\",\"rec\":true,\"channel_name\":\"Existing\",\"group\":\"Group\"},\"b\":{\"ch_id\":\"b\",\"name\":\"B\",\"category\":{},\"rec\":true,\"group\":\"Ignored\"},\"c\":{\"ch_id\":\"c\",\"name\":\"C\",\"category\":null,\"rec\":\"0\"}}"
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://operator.test/api/channel_now",
+            "dataType": "text"
+          }
+        ],
+        "errors": [],
+        "failure": null,
+        "ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "channels": {
+          "a": {
+            "ch_id": "a",
+            "name": "A",
+            "category": {
+              "class": 2,
+              "name": "Group"
+            },
+            "rec": 168,
+            "channel_name": "Existing",
+            "group": "Group"
+          },
+          "b": {
+            "ch_id": "b",
+            "name": "B",
+            "category": {},
+            "rec": 168,
+            "group": "Ignored",
+            "channel_name": "B"
+          },
+          "c": {
+            "ch_id": "c",
+            "name": "C",
+            "category": null,
+            "rec": 168,
+            "channel_name": "C"
+          }
+        },
+        "groups": {
+          "Group": [
+            "a"
+          ]
+        },
+        "groupOrder": [
+          "Group"
+        ],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ],
+          "a": [
+            {
+              "ch_id": "a",
+              "name": "A",
+              "category": {
+                "class": 2,
+                "name": "Group"
+              },
+              "rec": 168,
+              "channel_name": "Existing",
+              "group": "Group"
+            }
+          ],
+          "b": [
+            {
+              "ch_id": "b",
+              "name": "B",
+              "category": {},
+              "rec": 168,
+              "group": "Ignored",
+              "channel_name": "B"
+            }
+          ],
+          "c": [
+            {
+              "ch_id": "c",
+              "name": "C",
+              "category": null,
+              "rec": 168,
+              "channel_name": "C"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "ottclub",
+      "name": "record without ID marker is retained but unlisted",
+      "input": {
+        "data": "{\"a\":{\"name\":\"Unlisted\",\"rec\":true},\"b\":{\"ch_id\":\"b\",\"name\":\"B\",\"category\":\"News\",\"rec\":true}}"
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://operator.test/api/channel_now",
+            "dataType": "text"
+          }
+        ],
+        "errors": [],
+        "failure": null,
+        "ids": [
+          "b"
+        ],
+        "channels": {
+          "a": {
+            "name": "Unlisted",
+            "rec": true
+          },
+          "b": {
+            "ch_id": "b",
+            "name": "B",
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "rec": 168,
+            "channel_name": "B"
+          }
+        },
+        "groups": {
+          "News": [
+            "b"
+          ]
+        },
+        "groupOrder": [
+          "News"
+        ],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ],
+          "b": [
+            {
+              "ch_id": "b",
+              "name": "B",
+              "category": {
+                "class": 2,
+                "name": "News"
+              },
+              "rec": 168,
+              "channel_name": "B"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "ottclub",
+      "name": "ID marker pointing at absent key remains in list",
+      "input": {
+        "data": "{\"a\":{\"ch_id\":\"missing\",\"name\":\"A\",\"category\":\"News\",\"rec\":true}}"
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://operator.test/api/channel_now",
+            "dataType": "text"
+          }
+        ],
+        "errors": [],
+        "failure": null,
+        "ids": [
+          "missing"
+        ],
+        "channels": {
+          "a": {
+            "ch_id": "missing",
+            "name": "A",
+            "category": "News",
+            "rec": true
+          }
+        },
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "ottclub",
+      "name": "spaced JSON does not match compact ID markers",
+      "input": {
+        "data": "{\n  \"a\": {\n    \"ch_id\": \"a\",\n    \"name\": \"A\",\n    \"category\": \"News\",\n    \"rec\": true\n  }\n}"
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://operator.test/api/channel_now",
+            "dataType": "text"
+          }
+        ],
+        "errors": [],
+        "failure": null,
+        "ids": [],
+        "channels": {
+          "a": {
+            "ch_id": "a",
+            "name": "A",
+            "category": "News",
+            "rec": true
+          }
+        },
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "ottclub",
+      "name": "numeric IDs do not match quoted markers",
+      "input": {
+        "data": "{\"1\":{\"ch_id\":1,\"name\":\"A\",\"category\":\"News\",\"rec\":true}}"
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://operator.test/api/channel_now",
+            "dataType": "text"
+          }
+        ],
+        "errors": [],
+        "failure": null,
+        "ids": [],
+        "channels": {
+          "1": {
+            "ch_id": 1,
+            "name": "A",
+            "category": "News",
+            "rec": true
+          }
+        },
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "ottclub",
+      "name": "malformed JSON clears channels and alerts",
+      "input": {
+        "data": "{\"a\":{\"ch_id\":\"a\",\"name\":\"A\""
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://operator.test/api/channel_now",
+            "dataType": "text"
+          }
+        ],
+        "errors": [
+          "Не удалось обработать список каналов! Проверьте правильность адреса плейлиста!!"
+        ],
+        "failure": null,
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "ottclub",
+      "name": "empty object succeeds without channels",
+      "input": {
+        "data": "{}"
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://operator.test/api/channel_now",
+            "dataType": "text"
+          }
+        ],
+        "errors": [],
+        "failure": null,
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "ottclub",
+      "name": "null JSON without markers remains null",
+      "input": {
+        "data": "null"
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://operator.test/api/channel_now",
+            "dataType": "text"
+          }
+        ],
+        "errors": [],
+        "failure": null,
+        "ids": [],
+        "channels": null,
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "ottclub",
+      "name": "bad credentials still fetch then show settings",
+      "input": {
+        "settings": {
+          "ottkey": "",
+          "ottwww": "x"
+        },
+        "data": "{}"
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://x/api/channel_now",
+            "dataType": "text"
+          }
+        ],
+        "errors": [
+          "Для доступа необходимо ввести ключ и адрес плейлиста!"
+        ],
+        "failure": null,
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "provider": "ottclub",
+      "name": "network failure calls callback",
+      "input": {
+        "networkFailed": true
+      },
+      "expected": {
+        "callbacks": 1,
+        "calls": [
+          {
+            "url": "http://operator.test/api/channel_now",
+            "dataType": "text"
+          }
+        ],
+        "errors": [
+          "Не удалось загрузить список каналов! Проверьте правильность адреса плейлиста!!"
+        ],
+        "failure": null,
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "epg": {
+          "retained": [
+            {
+              "name": "retained"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

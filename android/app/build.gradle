@@ -1,0 +1,224 @@
+import groovy.json.JsonSlurper
+import org.gradle.api.file.DirectoryProperty
+import org.gradle.api.file.FileSystemOperations
+import org.gradle.api.provider.Property
+import org.gradle.api.tasks.Input
+import org.gradle.api.tasks.Internal
+import org.gradle.api.tasks.OutputDirectory
+import org.gradle.api.tasks.TaskAction
+import org.gradle.process.ExecOperations
+import org.gradle.work.DisableCachingByDefault
+import javax.inject.Inject
+
+apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
+
+def api22 = rootProject.ext.ottplayApi22
+
+@DisableCachingByDefault(because = 'The frontend preparer runs a nested build with its own dependency graph')
+abstract class PrepareOttplayAssets extends DefaultTask {
+    @Input
+    abstract Property<String> getDistribution()
+
+    @Input
+    abstract Property<String> getExpectedApplicationId()
+
+    @Input
+    abstract Property<String> getNodeExecutable()
+
+    @Internal
+    abstract DirectoryProperty getRepositoryDirectory()
+
+    @OutputDirectory
+    abstract DirectoryProperty getAssetsDirectory()
+
+    @Inject
+    abstract ExecOperations getExecOperations()
+
+    @Inject
+    abstract FileSystemOperations getFileSystemOperations()
+
+    @TaskAction
+    void prepare() {
+        def output = assetsDirectory.get().asFile
+        fileSystemOperations.delete { delete output }
+        execOperations.exec {
+            workingDir repositoryDirectory.get().asFile
+            commandLine nodeExecutable.get(), 'scripts/prepare-android-assets.cjs',
+                distribution.get(), output.absolutePath
+        }
+        ['public/index.html', 'capacitor.config.json', 'capacitor.plugins.json'].each { relativePath ->
+            if (!new File(output, relativePath).isFile()) {
+                throw new GradleException("Missing ${distribution.get()} asset: ${relativePath}")
+            }
+        }
+        def parser = new JsonSlurper()
+        def config = parser.parse(new File(output, 'capacitor.config.json'))
+        if (!(config instanceof Map) || config.appId != expectedApplicationId.get()) {
+            throw new GradleException("Capacitor appId does not match ${distribution.get()} applicationId")
+        }
+        def plugins = parser.parse(new File(output, 'capacitor.plugins.json'))
+        if (!(plugins instanceof List) || !plugins.every {
+            it instanceof Map && it.pkg instanceof String && it.pkg &&
+                it.classpath instanceof String && it.classpath
+        } || !plugins.any {
+            it.pkg == '@capacitor/app' && it.classpath == 'com.capacitorjs.plugins.app.AppPlugin'
+        }) {
+            throw new GradleException("Missing or invalid ${distribution.get()} Capacitor plugin metadata")
+        }
+    }
+}
+
+kotlin {
+    compilerOptions {
+        // Match Capacitor 8's generated Java compileOptions.
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21
+    }
+}
+
+def appVersion = new JsonSlurper().parse(rootProject.file('version.json'))
+def sharedCore = rootProject.file('../vendor/ottplay-core.jar')
+def coreManifest = new JsonSlurper().parse(rootProject.file('../vendor/ottplay-core.manifest.json'))
+def coreDigest = java.security.MessageDigest.getInstance('SHA-256').digest(sharedCore.bytes).encodeHex().toString()
+if (coreDigest != coreManifest.artifacts['ottplay-core.jar'].sha256) {
+    throw new GradleException('Shared Kotlin core checksum mismatch')
+}
+
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+        coreLibraryDesugaringEnabled api22
+    }
+    // A separate CI check targets runtime API compatibility without suppressing
+    // unrelated findings in the ordinary Android lint configuration.
+    if (providers.gradleProperty('ottplayApiCheck').orNull == 'true') {
+        lint {
+            checkOnly 'NewApi', 'InlinedApi', 'MissingClass'
+            abortOnError true
+        }
+    }
+    namespace = "play.ott.foss"
+    compileSdk = rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "play.ott.foss"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode appVersion.versionCode as int
+        versionName appVersion.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        aaptOptions {
+             // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
+             // Default: https://android.googlesource.com/platform/frameworks/base/+/282e181b58cf72b6ca770dc7ca5f91f135444502/tools/aapt/AaptAssets.cpp#61
+            ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
+        }
+    }
+    flavorDimensions += 'distribution'
+    buildFeatures {
+        buildConfig = true
+    }
+    productFlavors {
+        full {
+            dimension 'distribution'
+            buildConfigField 'boolean', 'BUNDLED_EPG_DEFAULTS', 'true'
+        }
+    }
+    // Each variant receives its complete assets root from the generated source below.
+    // Overlaying src/play/assets on src/main/assets would retain Full-only providers.
+    sourceSets.configureEach {
+        assets.setSrcDirs([])
+    }
+    sourceSets.main.java.srcDir '../../mobile-xmltv-epg/src/android'
+    signingConfigs {
+        release {
+            def ksFile = System.getenv('KEYSTORE_FILE')
+            if (ksFile) {
+                storeFile file(ksFile)
+                storePassword System.getenv('KEYSTORE_PASSWORD') ?: ''
+                keyAlias System.getenv('KEY_ALIAS') ?: ''
+                keyPassword System.getenv('KEY_PASSWORD') ?: ''
+            }
+        }
+    }
+    if (signingConfigs.release.storeFile) {
+        // Use the existing installation certificate for in-place upgrades.
+        // The debug build type's signing config takes precedence over this flavor.
+        productFlavors.full.signingConfig = signingConfigs.release
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+def preparedAssets = ['full'].collectEntries { distribution ->
+    def task = tasks.register("prepare${distribution.capitalize()}OttplayAssets", PrepareOttplayAssets) {
+        group = 'build'
+        description = "Build and validate isolated ${distribution} Android web assets"
+        it.distribution.set(api22 ? 'full-api22' : distribution)
+        expectedApplicationId.set('play.ott.foss')
+        nodeExecutable.set(providers.environmentVariable('NODE_BINARY').orElse('node'))
+        repositoryDirectory.set(rootProject.layout.projectDirectory.dir('..'))
+        assetsDirectory.set(layout.buildDirectory.dir("generated/ottplay/${distribution}/assets"))
+        // The preparer validates every input and rebuilds the frontend; never trust stale
+        // assets left by another invocation or a prior failed flavor build.
+        outputs.upToDateWhen { false }
+    }
+    [(distribution): task]
+}
+
+androidComponents {
+    onVariants(selector().all()) { variant ->
+        def distribution = variant.productFlavors.find { it.first == 'distribution' }?.second
+        def task = preparedAssets[distribution]
+        if (task == null) {
+            throw new GradleException("No isolated assets generator for ${variant.name}")
+        }
+        variant.sources.assets.addGeneratedSourceDirectory(task) { it.assetsDirectory }
+    }
+}
+
+repositories {
+    flatDir{
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
+    implementation "androidx.core:core-splashscreen:$coreSplashScreenVersion"
+    implementation project(':capacitor-android')
+    implementation "com.squareup.okhttp3:okhttp:${api22 ? '4.12.0' : '5.4.0'}"
+    if (api22) {
+        coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.5'
+        implementation 'androidx.startup:startup-runtime:1.1.1'
+    }
+    implementation files(rootProject.file("../vendor/ottplay-core.jar"))
+    // Local command queue uses both Dispatchers.IO and Dispatchers.Main.
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2"
+    // Explicit native player API; ordinary OTT playback uses the shared TS backend.
+    implementation "androidx.media3:media3-exoplayer:${api22 ? '1.5.1' : '1.11.1'}"
+    implementation "androidx.media3:media3-exoplayer-dash:${api22 ? '1.5.1' : '1.11.1'}"
+    implementation "androidx.media3:media3-exoplayer-hls:${api22 ? '1.5.1' : '1.11.1'}"
+    implementation "androidx.media3:media3-ui:${api22 ? '1.5.1' : '1.11.1'}"
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    if (api22) implementation project(':capacitor-app')
+    else implementation project(':capacitor-cordova-android-plugins')
+}
+
+if (!api22) apply from: 'capacitor.build.gradle'
+
+try {
+    def servicesJSON = file('google-services.json')
+    if (servicesJSON.text) {
+        apply plugin: 'com.google.gms.google-services'
+    }
+} catch(Exception e) {
+    logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+}

@@ -1,0 +1,1748 @@
+{
+  "provenance": {
+    "commit": "b3c8cc072e92f14c8e352a223157788f24ca4dce",
+    "file": "providers/edem/provider.js",
+    "sourceSha256": "c7ba87872a9806c68381bf9c5bcdb4f1251391c9e85545fa03e9ce14f49c8136",
+    "description": "Actual untouched Edem VPortal entrypoints, native transport/UI mocked; exact outcomes retained."
+  },
+  "cases": [
+    {
+      "input": {
+        "response": null
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"secret\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "secret"
+      }
+    },
+    {
+      "input": {
+        "response": {
+          "type": "error",
+          "description": "Denied"
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"secret\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "alert",
+            "Denied"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "secret"
+      }
+    },
+    {
+      "input": {
+        "response": {
+          "type": "category"
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"secret\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [],
+        "mediaName": "Media from ED",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "secret"
+      }
+    },
+    {
+      "input": {
+        "response": {
+          "type": "category",
+          "items": []
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"secret\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [],
+        "mediaName": "Media from ED",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "secret"
+      }
+    },
+    {
+      "input": {
+        "response": {
+          "type": "videoportal",
+          "title": "Parent",
+          "img": "parent.png",
+          "items": [
+            {
+              "type": "stream",
+              "title": "Movie",
+              "url": "https://movie",
+              "request": {
+                "cmd": "play"
+              }
+            },
+            {
+              "type": "category",
+              "title": "Folder",
+              "request": {
+                "cmd": "open"
+              }
+            },
+            {
+              "type": "multistream",
+              "title": "Variants"
+            }
+          ],
+          "controls": {
+            "search": true,
+            "filters": [
+              {
+                "title": "Genre",
+                "items": []
+              }
+            ]
+          }
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"secret\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [
+          {
+            "description": "<table><center><b><span style=\"font-size: 140%;\">Parent - Movie</span></b></center><p><img height=\"285\" width=\"210\" src=\"parent.png\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" onerror=\"this.width=0;this.height=0;\"></table>",
+            "logo_30x30": "parent.png",
+            "request": {
+              "cmd": "play"
+            },
+            "stream_url": "https://movie",
+            "title": "Parent - Movie"
+          },
+          {
+            "description": "<table><center><b><span style=\"font-size: 140%;\">Parent - Folder</span></b></center><p><img height=\"285\" width=\"210\" src=\"parent.png\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" onerror=\"this.width=0;this.height=0;\"></table>",
+            "logo_30x30": "parent.png",
+            "playlist_url": {
+              "mediaName": "Parent - Folder",
+              "request": {
+                "cmd": "open"
+              }
+            },
+            "title": "Parent - Folder"
+          },
+          {
+            "description": "<table><center><b><span style=\"font-size: 140%;\">Parent - Variants</span></b></center><p><img height=\"285\" width=\"210\" src=\"parent.png\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" onerror=\"this.width=0;this.height=0;\"></table>",
+            "logo_30x30": "parent.png",
+            "playlist_url": {
+              "mediaName": "Parent - Variants"
+            },
+            "title": "Parent - Variants"
+          },
+          {
+            "description": "Search",
+            "playlist_url": "search",
+            "search_on": 1,
+            "title": "Search"
+          },
+          {
+            "description": "Filters",
+            "playlist_url": {
+              "a": "filters",
+              "filters": [
+                {
+                  "title": "Genre",
+                  "items": []
+                }
+              ]
+            },
+            "title": "Filters"
+          }
+        ],
+        "mediaName": "Media from ED",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "secret"
+      }
+    },
+    {
+      "input": {
+        "response": {
+          "type": "category",
+          "count": 6,
+          "items": [
+            {
+              "type": "stream",
+              "title": "One",
+              "url": "https://one"
+            },
+            {
+              "type": "next"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"secret\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [
+          {
+            "description": "<table><center><b><span style=\"font-size: 140%;\">One</span></b></center><p></table>",
+            "stream_url": "https://one",
+            "title": "One"
+          },
+          {
+            "logo_30x30": "",
+            "stream_url": "",
+            "title": "2 Download! Wait ..."
+          },
+          {
+            "logo_30x30": "",
+            "stream_url": "",
+            "title": "3 Download! Wait ..."
+          },
+          {
+            "logo_30x30": "",
+            "stream_url": "",
+            "title": "4 Download! Wait ..."
+          },
+          {
+            "logo_30x30": "",
+            "stream_url": "",
+            "title": "5 Download! Wait ..."
+          },
+          {
+            "logo_30x30": "",
+            "stream_url": "",
+            "title": "6 Download! Wait ..."
+          }
+        ],
+        "mediaName": "Media from ED",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "secret"
+      }
+    },
+    {
+      "input": {
+        "response": {
+          "type": "category",
+          "items": [
+            {
+              "type": "unsupported",
+              "title": "X"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"secret\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [
+          null
+        ],
+        "mediaName": "Media from ED",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "secret"
+      }
+    },
+    {
+      "input": {
+        "response": {
+          "type": "category",
+          "items": [
+            {
+              "type": "stream",
+              "title": "First"
+            },
+            null
+          ]
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"secret\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "alert",
+            "TypeError: Cannot read properties of null (reading 'type')"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [
+          {
+            "description": "<table><center><b><span style=\"font-size: 140%;\">First</span></b></center><p></table>",
+            "title": "First"
+          }
+        ],
+        "mediaName": "Media from ED",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "secret"
+      }
+    },
+    {
+      "input": {
+        "response": {
+          "type": "category",
+          "items": {}
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"secret\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "alert",
+            "TypeError: data.items.forEach is not a function"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [],
+        "mediaName": "Media from ED",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "secret"
+      }
+    },
+    {
+      "input": {
+        "response": {
+          "type": "category",
+          "items": [
+            {
+              "type": "next"
+            }
+          ],
+          "count": 0
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"secret\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [],
+        "mediaName": "Media from ED",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "secret"
+      }
+    },
+    {
+      "input": {
+        "response": {
+          "type": "other",
+          "items": [
+            {
+              "type": "stream"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"secret\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "secret"
+      }
+    },
+    {
+      "input": {
+        "url": "search=hello%20world",
+        "response": {
+          "type": "category",
+          "items": []
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"existing\",\"cmd\":\"search\",\"query\":\"hello world\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [],
+        "mediaName": "[hello world]",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing"
+      }
+    },
+    {
+      "input": {
+        "url": "search=a+b%ZZ",
+        "response": {
+          "type": "category",
+          "items": []
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"existing\",\"cmd\":\"search\",\"query\":\"a+b%ZZ\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [],
+        "mediaName": "[a+b%ZZ]",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing"
+      }
+    },
+    {
+      "input": {
+        "url": {
+          "a": "filters",
+          "filters": [
+            {
+              "title": "Genre",
+              "items": [
+                {
+                  "title": "All",
+                  "request": {
+                    "genre": 1
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "response": {
+          "type": "category",
+          "items": []
+        }
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [
+          {
+            "description": "Genre",
+            "logo_30x30": "",
+            "playlist_url": {
+              "a": "filter",
+              "items": [
+                {
+                  "title": "All",
+                  "request": {
+                    "genre": 1
+                  }
+                }
+              ],
+              "mediaName": "Genre"
+            },
+            "title": "Genre"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing"
+      }
+    },
+    {
+      "input": {
+        "url": {
+          "a": "filter",
+          "items": [
+            {
+              "title": "All",
+              "request": {
+                "genre": 1
+              }
+            }
+          ]
+        },
+        "response": {
+          "type": "category",
+          "items": []
+        }
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [
+          {
+            "description": "All",
+            "logo_30x30": "",
+            "playlist_url": {
+              "mediaName": "All",
+              "request": {
+                "genre": 1
+              }
+            },
+            "title": "All"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing"
+      }
+    },
+    {
+      "input": {
+        "url": {
+          "mediaName": "Direct",
+          "request": {
+            "app": "custom",
+            "key": "override",
+            "limit": 1,
+            "cmd": "list"
+          }
+        },
+        "response": {
+          "type": "category",
+          "items": []
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"custom\",\"key\":\"override\",\"limit\":20,\"cmd\":\"list\"}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [],
+        "mediaName": "Direct",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing"
+      }
+    },
+    {
+      "input": {
+        "fail": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"secret\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "alert",
+            "medias : jqXHR:{\"status\":500}"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "secret"
+      }
+    },
+    {
+      "input": {
+        "stale": true,
+        "response": {
+          "type": "category",
+          "items": [
+            {
+              "type": "stream",
+              "title": "Late"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"secret\",\"limit\":20}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 0,
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "secret"
+      }
+    },
+    {
+      "input": {
+        "method": "media",
+        "item": {
+          "type": "stream",
+          "title": "Child",
+          "url": "https://movie",
+          "request": {
+            "cmd": "play"
+          }
+        },
+        "parent": {
+          "title": "Parent",
+          "img": "parent",
+          "year": 2001,
+          "duration": 34.6,
+          "agelimit": 18,
+          "description": "About"
+        }
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "callbacks": 0,
+        "value": {
+          "description": "<table><center><b><span style=\"font-size: 140%;\">Parent - Child</span></b></center><p><img height=\"285\" width=\"210\" src=\"parent\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" onerror=\"this.width=0;this.height=0;\"><b>Release date: </b>2001<br><b>Duration: </b>35 min<br><b>Age: </b>18<br><p><hr><b>Description: </b>About</p></table>",
+          "logo_30x30": "parent",
+          "request": {
+            "cmd": "play"
+          },
+          "stream_url": "https://movie",
+          "title": "Parent - Child"
+        },
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing",
+        "item": {
+          "type": "stream",
+          "title": "Parent - Child",
+          "url": "https://movie",
+          "request": {
+            "cmd": "play"
+          },
+          "img": "parent",
+          "year": 2001,
+          "duration": 34.6,
+          "agelimit": 18,
+          "description": "About"
+        }
+      }
+    },
+    {
+      "input": {
+        "method": "media",
+        "item": {
+          "type": "category",
+          "title": "Child"
+        },
+        "parent": {
+          "title": "Parent",
+          "img": "parent",
+          "year": 2001,
+          "duration": 34.6,
+          "agelimit": 18,
+          "description": "About"
+        }
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "callbacks": 0,
+        "value": {
+          "description": "<table><center><b><span style=\"font-size: 140%;\">Parent - Child</span></b></center><p><img height=\"285\" width=\"210\" src=\"parent\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" onerror=\"this.width=0;this.height=0;\"><b>Release date: </b>2001<br><b>Duration: </b>35 min<br><b>Age: </b>18<br><p><hr><b>Description: </b>About</p></table>",
+          "logo_30x30": "parent",
+          "playlist_url": {
+            "mediaName": "Parent - Child"
+          },
+          "title": "Parent - Child"
+        },
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing",
+        "item": {
+          "type": "category",
+          "title": "Parent - Child",
+          "img": "parent",
+          "year": 2001,
+          "duration": 34.6,
+          "agelimit": 18,
+          "description": "About"
+        }
+      }
+    },
+    {
+      "input": {
+        "method": "media",
+        "item": {
+          "type": "multistream",
+          "title": "Child",
+          "imglr": "wide.png"
+        },
+        "parent": {
+          "title": "Parent",
+          "img": "parent",
+          "year": 2001,
+          "duration": 34.6,
+          "agelimit": 18,
+          "description": "About"
+        }
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "callbacks": 0,
+        "value": {
+          "description": "<table><center><b><span style=\"font-size: 140%;\">Parent - Child</span></b></center><p><img height=\"285\" width=\"210\" src=\"wide.png\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" onerror=\"this.width=0;this.height=0;\"><b>Release date: </b>2001<br><b>Duration: </b>35 min<br><b>Age: </b>18<br><p><hr><b>Description: </b>About</p></table>",
+          "logo_30x30": "wide.png",
+          "playlist_url": {
+            "mediaName": "Parent - Child"
+          },
+          "title": "Parent - Child"
+        },
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing",
+        "item": {
+          "type": "multistream",
+          "title": "Parent - Child",
+          "imglr": "wide.png",
+          "year": 2001,
+          "duration": 34.6,
+          "agelimit": 18,
+          "description": "About"
+        }
+      }
+    },
+    {
+      "input": {
+        "method": "media",
+        "item": {
+          "type": "unsupported"
+        },
+        "parent": {
+          "title": "Parent",
+          "img": "parent",
+          "year": 2001,
+          "duration": 34.6,
+          "agelimit": 18,
+          "description": "About"
+        }
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "callbacks": 0,
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing",
+        "item": {
+          "type": "unsupported"
+        }
+      }
+    },
+    {
+      "input": {
+        "method": "media",
+        "item": {
+          "type": "stream",
+          "title": "Child",
+          "img": "own",
+          "year": 2020,
+          "duration": 42,
+          "agelimit": 16,
+          "description": "own"
+        },
+        "parent": {
+          "title": "Parent",
+          "img": "parent",
+          "year": 2001,
+          "duration": 34.6,
+          "agelimit": 18,
+          "description": "About"
+        }
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "callbacks": 0,
+        "value": {
+          "description": "<table><center><b><span style=\"font-size: 140%;\">Parent - Child</span></b></center><p><img height=\"285\" width=\"210\" src=\"own\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" onerror=\"this.width=0;this.height=0;\"><b>Release date: </b>2020<br><b>Duration: </b>42 min<br><b>Age: </b>16<br><p><hr><b>Description: </b>own</p></table>",
+          "logo_30x30": "own",
+          "title": "Parent - Child"
+        },
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing",
+        "item": {
+          "type": "stream",
+          "title": "Parent - Child",
+          "img": "own",
+          "year": 2020,
+          "duration": 42,
+          "agelimit": 16,
+          "description": "own"
+        }
+      }
+    },
+    {
+      "input": {
+        "method": "page",
+        "response": null
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"existing\",\"limit\":2,\"offset\":2}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "showPage"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 0,
+        "value": "Download! Wait ...",
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing"
+      }
+    },
+    {
+      "input": {
+        "method": "page",
+        "response": {
+          "type": "error",
+          "description": "Page denied"
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"existing\",\"limit\":2,\"offset\":2}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "alert",
+            "Page denied"
+          ],
+          [
+            "showPage"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 0,
+        "value": "Download! Wait ...",
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing"
+      }
+    },
+    {
+      "input": {
+        "method": "page",
+        "response": {
+          "items": [
+            {
+              "type": "stream",
+              "title": "Next",
+              "url": "https://next"
+            },
+            {
+              "type": "next"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"existing\",\"limit\":2,\"offset\":2}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "showPage"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 0,
+        "value": "Download! Wait ...",
+        "mediaRecords": [
+          {
+            "title": "previous"
+          },
+          null,
+          {
+            "description": "<table><center><b><span style=\"font-size: 140%;\">Next</span></b></center><p></table>",
+            "stream_url": "https://next",
+            "title": "Next"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing"
+      }
+    },
+    {
+      "input": {
+        "method": "page",
+        "response": {
+          "items": [
+            null
+          ]
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"existing\",\"limit\":2,\"offset\":2}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "showPage"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 0,
+        "value": "Download! Wait ...",
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing"
+      }
+    },
+    {
+      "input": {
+        "method": "page",
+        "response": {
+          "items": {}
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"existing\",\"limit\":2,\"offset\":2}",
+            "type": "post"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "showPage"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 0,
+        "value": "Download! Wait ...",
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing"
+      }
+    },
+    {
+      "input": {
+        "method": "play",
+        "item": {
+          "title": "Movie",
+          "request": {
+            "cmd": "play"
+          }
+        },
+        "response": null
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"existing\",\"cmd\":\"play\"}",
+            "type": "post",
+            "async": false
+          }
+        ],
+        "events": [
+          [
+            "showPage"
+          ],
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ],
+          [
+            "closeList"
+          ],
+          [
+            "play",
+            {
+              "title": "Movie",
+              "request": {
+                "cmd": "play"
+              }
+            }
+          ]
+        ],
+        "failure": null,
+        "callbacks": 0,
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing",
+        "item": {
+          "title": "Movie",
+          "request": {
+            "cmd": "play"
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "method": "play",
+        "item": {
+          "title": "Movie",
+          "request": {
+            "cmd": "play"
+          }
+        },
+        "response": {
+          "type": "error",
+          "description": "Play denied"
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"existing\",\"cmd\":\"play\"}",
+            "type": "post",
+            "async": false
+          }
+        ],
+        "events": [
+          [
+            "showPage"
+          ],
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "alert",
+            "Play denied"
+          ],
+          [
+            "hide"
+          ],
+          [
+            "closeList"
+          ],
+          [
+            "play",
+            {
+              "title": "Movie",
+              "request": {
+                "cmd": "play"
+              }
+            }
+          ]
+        ],
+        "failure": null,
+        "callbacks": 0,
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing",
+        "item": {
+          "title": "Movie",
+          "request": {
+            "cmd": "play"
+          }
+        }
+      }
+    },
+    {
+      "input": {
+        "method": "play",
+        "item": {
+          "title": "Movie",
+          "request": {
+            "cmd": "play"
+          }
+        },
+        "response": {
+          "url": "https://movie"
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"existing\",\"cmd\":\"play\"}",
+            "type": "post",
+            "async": false
+          }
+        ],
+        "events": [
+          [
+            "showPage"
+          ],
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ],
+          [
+            "closeList"
+          ],
+          [
+            "play",
+            {
+              "title": "Movie",
+              "request": {
+                "cmd": "play"
+              },
+              "stream_url": "https://movie"
+            }
+          ]
+        ],
+        "failure": null,
+        "callbacks": 0,
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing",
+        "item": {
+          "title": "Movie",
+          "request": {
+            "cmd": "play"
+          },
+          "stream_url": "https://movie"
+        }
+      }
+    },
+    {
+      "input": {
+        "method": "play",
+        "item": {
+          "title": "Movie",
+          "request": {
+            "cmd": "play"
+          }
+        },
+        "response": {
+          "url": "two",
+          "variants": {
+            "Low": "one",
+            "High": "two"
+          }
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"existing\",\"cmd\":\"play\"}",
+            "type": "post",
+            "async": false
+          }
+        ],
+        "events": [
+          [
+            "showPage"
+          ],
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ],
+          [
+            "variants",
+            1,
+            [
+              "Low",
+              "High"
+            ]
+          ],
+          [
+            "closeList"
+          ],
+          [
+            "play",
+            {
+              "title": "Movie",
+              "request": {
+                "cmd": "play"
+              },
+              "stream_url": "one"
+            }
+          ]
+        ],
+        "failure": null,
+        "callbacks": 0,
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing",
+        "item": {
+          "title": "Movie",
+          "request": {
+            "cmd": "play"
+          },
+          "stream_url": "one"
+        }
+      }
+    },
+    {
+      "input": {
+        "method": "play",
+        "item": {
+          "title": "Movie",
+          "request": {
+            "cmd": "play"
+          }
+        },
+        "response": {
+          "url": "one",
+          "variants": {
+            "Only": "one"
+          }
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"existing\",\"cmd\":\"play\"}",
+            "type": "post",
+            "async": false
+          }
+        ],
+        "events": [
+          [
+            "showPage"
+          ],
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ],
+          [
+            "closeList"
+          ],
+          [
+            "play",
+            {
+              "title": "Movie",
+              "request": {
+                "cmd": "play"
+              },
+              "stream_url": "one"
+            }
+          ]
+        ],
+        "failure": null,
+        "callbacks": 0,
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing",
+        "item": {
+          "title": "Movie",
+          "request": {
+            "cmd": "play"
+          },
+          "stream_url": "one"
+        }
+      }
+    },
+    {
+      "input": {
+        "method": "play",
+        "item": {
+          "title": "Movie",
+          "request": {
+            "cmd": "play"
+          }
+        },
+        "response": {
+          "url": "two",
+          "variants": {
+            "Low": "one",
+            "High": "two"
+          }
+        },
+        "variant": -1
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/api",
+            "data": "{\"app\":\"ott-play\",\"key\":\"existing\",\"cmd\":\"play\"}",
+            "type": "post",
+            "async": false
+          }
+        ],
+        "events": [
+          [
+            "showPage"
+          ],
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ],
+          [
+            "variants",
+            1,
+            [
+              "Low",
+              "High"
+            ]
+          ]
+        ],
+        "failure": null,
+        "callbacks": 0,
+        "mediaRecords": [
+          {
+            "title": "previous"
+          }
+        ],
+        "mediaName": "Previous",
+        "selIndex": 3,
+        "vpurl": "https://portal.test/api",
+        "vpkey": "existing",
+        "item": {
+          "title": "Movie",
+          "request": {
+            "cmd": "play"
+          },
+          "stream_url": "two"
+        }
+      }
+    }
+  ]
+}

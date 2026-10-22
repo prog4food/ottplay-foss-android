@@ -1,0 +1,7 @@
+{
+  "name": "isolated-browser-compatibility",
+  "private": true,
+  "dependencies": {
+    "playwright": "1.64.0"
+  }
+}

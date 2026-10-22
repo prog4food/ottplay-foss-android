@@ -1,0 +1,1358 @@
+/* @import url('//fonts.googleapis.com/css?family=Caveat|Roboto|Roboto+Condensed&subset=cyrillic,cyrillic-ext,latin-ext'); */
+/* @import url('https://fonts.googleapis.com/css?family=Caveat:700|Roboto|Roboto+Condensed&subset=cyrillic,latin-ext'); */
+@font-face {
+    font-family: "Liberation";
+    src: url(/fonts/LiberationSans-Regular.ttf);
+}
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: "RobotoCondensed";
+    src: url(/fonts/RobotoCondensed-Regular.ttf);
+}
+@font-face {
+    font-family: "Caveat";
+    src: url(/fonts/Caveat-Regular.ttf);
+}
+@font-face {
+    font-family: "Gabriela";
+    src: url(/fonts/Gabriela-Regular.ttf);
+}
+@font-face {
+    font-family: "PTSansNarrow";
+    src: url(/fonts/PTSansNarrow-Regular.ttf);
+}
+
+/* FONTELLO - BEGIN */
+@font-face {
+    font-family: "fontello";
+    src: url("/fonts/fontello.eot?14681539");
+    src:
+        url("/fonts/fontello.eot?14681539#iefix") format("embedded-opentype"),
+        url("/fonts/fontello.woff2?14681539") format("woff2"),
+        url("/fonts/fontello.woff?14681539") format("woff"),
+        url("/fonts/fontello.ttf?14681539") format("truetype"),
+        url("/fonts/fontello.svg?14681539#fontello") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+/* FONTELLO - END */
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    color: #f0f0f0;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Localize text flow without reversing player geometry or remote key order. */
+.localized-text[dir="rtl"] {
+    text-align: right;
+}
+.localized-text[dir="ltr"] {
+    text-align: left;
+}
+.localized-text.localized-centered {
+    text-align: center;
+}
+.localized-token {
+    direction: ltr;
+    unicode-bidi: embed;
+    unicode-bidi: isolate;
+}
+[data-ui-direction="rtl"] #listCaption,
+[data-ui-direction="rtl"] #listIn .item-label,
+[data-ui-direction="rtl"] #listDetail,
+[data-ui-direction="rtl"] .osk-cap {
+    direction: rtl;
+}
+/* Key badges retain their physical LTR order inside an RTL text label. */
+[data-ui-direction="rtl"] .btn {
+    direction: ltr;
+    unicode-bidi: embed;
+    unicode-bidi: isolate;
+}
+/* The player handles keyboard focus; WebKit's video outline must not frame the picture. */
+#video,
+#videopip {
+    outline: none;
+}
+.osd {
+    position: absolute;
+}
+#info {
+    top: 0px;
+    right: 0px;
+    display: none;
+    padding: 20px;
+    font-size: 16px;
+}
+#numprog {
+    top: 20px;
+    left: 20px;
+    padding: 8px 14px;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+#permanentTime {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+#launch {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    padding: 100px;
+    font-size: 20px;
+    background-color: black;
+}
+.logo {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    margin: 100px;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+}
+#list_osd {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: none;
+}
+#list_window {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: none;
+}
+.list_back {
+    background-color: rgba(4, 4, 8, 0.95);
+}
+#_t {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    height: 50px;
+    pointer-events: none;
+}
+#_b {
+    position: absolute;
+    top: 338px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    pointer-events: none;
+}
+#_l {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 10px;
+    pointer-events: none;
+}
+#_r {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 522px;
+    pointer-events: none;
+}
+#list {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 5;
+    margin: 10px;
+    overflow: hidden;
+    pointer-events: auto;
+}
+#listCaption {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    z-index: 6;
+    box-sizing: border-box;
+    height: 52px;
+    padding: 0 12px;
+    overflow: visible;
+    font-weight: bold;
+    line-height: 52px;
+    color: #ffffff;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.42);
+}
+#listTime {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 88px;
+    padding-right: 6px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: right;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+    opacity: 1;
+}
+#list_s {
+    font-size: 16px;
+    opacity: 0.92;
+}
+#listPodval {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 6;
+    box-sizing: border-box;
+    height: 52px;
+    padding: 0 12px;
+    overflow: visible;
+    line-height: 52px;
+    color: #f2f2f8;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    pointer-events: auto;
+    background-color: rgba(0, 0, 0, 0.42);
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    opacity: 1;
+}
+#listPodval span,
+#listPodval .btn {
+    position: relative;
+    z-index: 7;
+    pointer-events: auto;
+    cursor: pointer;
+}
+#listDetail {
+    position: absolute;
+    top: 330px;
+    bottom: 53px;
+    left: 0px;
+    box-sizing: border-box;
+    width: 514px;
+    padding: 10px 14px;
+    overflow: hidden;
+    line-height: 1.45;
+    color: #e8e8f0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+#listDetail #_name {
+    /* Title + time above descr; stay above scrolling #_prd. */
+    position: relative;
+    z-index: 2;
+    margin-bottom: 0.65em;
+}
+#mediaPlaybackControls {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px;
+    line-height: 2.2;
+}
+#listDetail #_prd {
+    font-size: smaller;
+}
+#mediaPlaybackControls > span {
+    box-sizing: border-box;
+    display: block;
+    max-width: 100%;
+    padding: 2px 8px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 6px;
+}
+#mediaPlaybackControls > span[data-state="on"],
+#mediaPlaybackControls > span[data-state="all"],
+#mediaPlaybackControls > span[data-state="one"] {
+    background: rgba(50, 150, 110, 0.32);
+    border-color: #72d7ae;
+}
+#mediaPlaybackControls > span[data-state="loading"] {
+    background: rgba(150, 110, 40, 0.32);
+    border-color: #f1cb75;
+}
+#mediaPlaybackControls > span:focus {
+    outline: 2px solid currentColor;
+    outline-offset: 1px;
+}
+#listDetail #_descr {
+    /* Scroll only inside this band — never over title/time/next (OTT). */
+    position: relative;
+    z-index: 1;
+    margin-bottom: 0;
+    overflow: hidden;
+}
+#listDetail #_nextpr {
+    /* Channel details anchor this above the list footer when descriptions show. */
+    z-index: 3;
+    box-sizing: border-box;
+    line-height: 1.35;
+}
+.ott-channel-detail-time,
+.ott-channel-description,
+.ott-channel-next {
+    font-size: smaller;
+}
+.ott-channel-next {
+    width: 100%;
+    white-space: nowrap;
+}
+.ott-channel-next-overlay {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 4px 14px;
+    background-color: rgba(8, 8, 14, 0.96);
+}
+#listDetail .ott-channel-thumbnail {
+    float: left;
+    background-size: cover;
+}
+#listPopUp {
+    position: absolute;
+    bottom: 53px;
+    left: 0px;
+    /* Keep Actions above programme-detail layers, below the list chrome. */
+    z-index: 4;
+    display: none;
+    padding: 14px 18px;
+    margin: 10px;
+    line-height: 1.45;
+    color: #f0f0f6;
+    background-color: rgba(8, 8, 14, 0.97);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65);
+}
+#listIn {
+    position: absolute;
+    top: 53px;
+    right: 0px;
+    bottom: 53px;
+    left: 522px;
+    padding: 4px 0px;
+    overflow: hidden;
+}
+.list-scroll {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    pointer-events: auto;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(240, 240, 240, 0.35);
+    border-radius: 4px;
+}
+.list-scroll-before,
+.list-scroll-thumb {
+    width: 100%;
+}
+.list-scroll-thumb {
+    background-color: rgba(180, 180, 200, 0.85);
+    border-radius: 3px;
+}
+#listAbout {
+    position: absolute;
+    top: 53px;
+    right: 0px;
+    bottom: 53px;
+    left: 522px;
+    box-sizing: border-box;
+    display: none;
+    padding: 14px 16px;
+    overflow: hidden;
+    line-height: 1.5;
+    color: #e6e6ee;
+}
+#listEdit {
+    position: absolute;
+    top: 53px;
+    right: 0px;
+    bottom: 53px;
+    left: 522px;
+    box-sizing: border-box;
+    display: none;
+    padding: 14px 16px;
+    line-height: 1.45;
+}
+/* Fit the complete remote-entry prompt between the caption and footer,
+   independently of channel-list font settings. Keep the manual code above QR. */
+.swop-panel {
+    display: table;
+    width: 100%;
+    height: 100%;
+    font-size: 3.333vh;
+    line-height: 1.35;
+    text-align: center;
+    table-layout: fixed;
+}
+.swop-msg-text {
+    display: table-cell;
+    vertical-align: middle;
+}
+.swop-url {
+    font-size: 1.15em;
+    word-break: break-all;
+}
+.swop-code {
+    display: block;
+    font-size: 1.8em;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+.swop-qr {
+    display: inline-block;
+    padding: 0.4em;
+    margin-top: 0.5em;
+    line-height: 0;
+    background: #ffffff;
+    border-radius: 4px;
+}
+.swop-qr svg {
+    display: block;
+    width: 30vh;
+    height: 30vh;
+}
+#listEdit .osk-cap {
+    max-height: 2.9em;
+    margin-bottom: 0.45em;
+    overflow: hidden;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.75);
+}
+#listEdit #ee {
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.8em;
+    padding: 0.45em 0.65em;
+    margin: 0 0 0.75em 0;
+    overflow: auto;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    background-color: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+}
+#listEdit .osk-key {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 2px 1px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+}
+#listEdit #cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1.2em;
+    vertical-align: top;
+    border-radius: 1px;
+}
+#listEdit input#editvar {
+    box-sizing: border-box;
+    width: 95%;
+    padding: 0.35em 0.5em;
+    font-size: 150%;
+    color: #f0f0f0;
+    background-color: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+}
+#listEdit #editRemoteInput {
+    padding: 0.4em 0.8em;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid currentColor;
+    border-radius: 6px;
+}
+#listEdit #editRemoteInput:focus {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+#listAbout .osk-key {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 2px 1px;
+    overflow: hidden;
+    vertical-align: middle;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+.item {
+    position: relative;
+    z-index: 1;
+    clear: both;
+    box-sizing: border-box;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    /* Horizontal inset only — vertical padding must stay 0 so pageSize rows
+       pack into live #listIn (WKWebView subpixel growth → ~21 of 25). */
+    padding: 0 10px;
+    margin: 0;
+    contain: layout style;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal; /* showPage inline px overrides */
+    white-space: nowrap;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+    pointer-events: auto;
+    border: none;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+}
+.progress_div {
+    /* Flex row child inside .item — never float (WKWebView/Tauri). */
+    float: none;
+    flex-shrink: 0;
+    overflow: hidden;
+    background-color: rgba(68, 68, 102, 0.55);
+    border-radius: 3px;
+}
+.ott-channel-number,
+.ott-channel-archive,
+.ott-channel-picon,
+.ott-channel-progress {
+    flex-grow: 0;
+    flex-shrink: 0;
+    min-height: 0;
+    max-height: 100%;
+}
+.ott-channel-number {
+    overflow: hidden;
+    line-height: inherit;
+    text-align: right;
+    white-space: nowrap;
+}
+.ott-channel-label {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    max-height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: inherit;
+    white-space: nowrap;
+}
+.ott-channel-no-epg {
+    color: #3c3c0a;
+}
+.ott-channel-progress {
+    align-self: center;
+    margin-left: auto;
+}
+.ott-channel-progress-fill {
+    font-size: 1px;
+}
+/* Settings / submenu name+value rows (replaces float:left/right).
+   Keep in sync with inline styles in window._setSetup — WKWebView needs both. */
+.item-label {
+    flex: 1 1 0;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal;
+    white-space: nowrap;
+}
+.item-value {
+    flex: 0 0 auto;
+    max-width: 42%;
+    margin-left: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: normal;
+    text-align: right;
+    white-space: nowrap;
+}
+.img {
+    /* Channel-row picon: in-flow flex child. DOM width/height from the channel
+       renderer avoid height:auto collapse under the native style policy. */
+    float: none;
+    flex-shrink: 0;
+    min-width: 0;
+    min-height: 0;
+    max-height: 100%;
+    margin-right: 8px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    border-radius: 4px;
+}
+#info1 {
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: none;
+    padding: 18px 22px 22px 22px;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
+}
+.ott-kiosk-strict #info1 {
+    pointer-events: none;
+    user-select: none;
+}
+.ott-kiosk-strict #progress_div {
+    pointer-events: auto;
+    touch-action: none;
+}
+.ott-kiosk-strict #progress,
+.ott-kiosk-strict #progress_r {
+    min-height: 24px;
+}
+.ott-kiosk-strict #audio_badge,
+.ott-kiosk-strict #dialogbox,
+.ott-kiosk-strict #listAbout,
+.ott-kiosk-strict #listEdit,
+.ott-kiosk-strict #list_window,
+.ott-kiosk-strict #list_osd,
+.ott-kiosk-strict #descr,
+.ott-kiosk-strict #progress_span,
+.ott-kiosk-strict #volume_div {
+    display: none !important;
+}
+.ott-kiosk-strict video::-webkit-media-controls {
+    display: none !important;
+}
+#picon {
+    float: left;
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.25);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+}
+#channel {
+    float: left;
+    width: 1040px;
+    padding: 0px 20px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#channel_number {
+    float: left;
+    width: 70px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+#channel_name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    letter-spacing: 0.01em;
+}
+#progress_div {
+    width: 100%;
+    margin: 6px 0px 4px 0px;
+    overflow: hidden;
+    background-color: rgba(68, 68, 102, 0.55);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+#progress {
+    height: 8px;
+    border-radius: 4px 0 0 4px;
+}
+#progress_r {
+    float: right;
+    height: 8px;
+    background-color: rgba(68, 68, 102, 0.85);
+}
+#progress_div .tooltip {
+    position: fixed;
+    display: none;
+    background-color: #600;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.35);
+}
+#progress_div .tooltip span {
+    position: relative;
+    top: -1.5em;
+    padding: 0px 0.35em;
+    text-align: center;
+    background-color: #446;
+    border-radius: 0.25em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+#begin_time {
+    display: inline-block;
+    width: 70px;
+    font-size: 22px;
+    vertical-align: bottom;
+    color: #e8e8e8;
+}
+#end_time {
+    display: inline-block;
+    width: 70px;
+    font-size: 22px;
+    vertical-align: bottom;
+    color: #e8e8e8;
+    text-align: right;
+}
+#programm_name {
+    display: inline-block;
+    width: 900px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
+#nbegin_time {
+    display: inline-block;
+    width: 70px;
+    font-size: 20px;
+    vertical-align: bottom;
+    color: #a8a8b8;
+}
+#nend_time {
+    display: inline-block;
+    width: 70px;
+    font-size: 20px;
+    vertical-align: bottom;
+    color: #a8a8b8;
+    text-align: right;
+}
+#nprogramm_name {
+    display: inline-block;
+    width: 900px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    color: #a8a8b8;
+}
+#data {
+    float: right;
+    width: 80px;
+    font-size: 22px;
+    text-align: right;
+    white-space: nowrap;
+    opacity: 0.92;
+}
+#current_s {
+    font-size: 16px;
+    opacity: 0.75;
+}
+#video_res {
+    font-size: 16px;
+    opacity: 0.75;
+}
+#descr {
+    padding: 0px 100px;
+    margin: 0px 0px 16px 0px;
+    line-height: 1.35;
+    color: #d8d8e0;
+}
+#programm_name2 {
+    margin-bottom: 4px;
+    font-weight: bold;
+    letter-spacing: 0.01em;
+}
+#programm_duration {
+    font-size: 0.95em;
+    opacity: 0.8;
+}
+#buffering,
+#pip_buffering {
+    position: absolute;
+    display: none;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+}
+.ott-spinner {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0.6em auto;
+}
+.ott-spinner.ott-spinner--inline {
+    display: inline-block;
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0 0.35em 0 0;
+    vertical-align: middle;
+}
+#mute {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    display: none;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px;
+}
+#volume_div {
+    position: absolute;
+    top: 40%;
+    left: 10px;
+    display: none;
+    width: 14px;
+    height: 20%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 4px solid rgba(0, 0, 0, 0.75);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+#volume {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #2e7d32;
+}
+#dialogbox {
+    position: absolute;
+    z-index: 8;
+    display: none;
+    min-width: 30%;
+    max-width: 80%;
+    max-height: 90%;
+    padding: 18px 22px;
+    overflow: hidden;
+    line-height: 1.5;
+    color: #f2f2f8;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+    background-color: rgba(10, 10, 16, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.65);
+}
+.btn {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1em;
+    max-height: 1.6em;
+    padding: 0.05em 0.45em;
+    margin: 0 0.05em;
+    font-size: smaller;
+    font-weight: bold;
+    line-height: 1.15;
+    vertical-align: middle;
+    color: #f8f8f8;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4a4a52;
+    border: 0.02em solid #212121;
+    border-radius: 0.3em;
+    box-shadow:
+        0 0.1em #ffffff22 inset,
+        0.02em 0.02em 0.12em 0 #00000080;
+}
+.btn:hover {
+    background: #3a3a42;
+}
+#listIn .item-label > .btn {
+    /* Raise settings action text by 0.1em without changing the button height. */
+    padding-bottom: 0.25em;
+    line-height: 0.95;
+}
+.red {
+    background-color: #d32f2f;
+}
+.green {
+    background-color: #2e7d32;
+}
+.yellow {
+    background-color: #fbc02d;
+}
+.blue {
+    background-color: #1976d2;
+}
+.w100 {
+    width: 100px;
+}
+.w50 {
+    width: 50px;
+}
+#testFont {
+    white-space: nowrap;
+}
+.fontello {
+    font-family: "fontello";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-transform: none;
+}
+.btn .fontello {
+    font-weight: normal;
+    line-height: 1;
+}
+/* Studio 2026: original OTT-play FOSS presentation; existing settings own
+   density, typography, visibility and opacity. No vertical row decoration. */
+.theme-studio #listCaption,
+.theme-studio #listPodval,
+.theme-studio #listTime {
+    font-weight: normal;
+    color: #f0f3f1;
+    letter-spacing: normal;
+    text-shadow: none;
+    background-color: #0e1114;
+}
+.theme-studio #listCaption {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.theme-studio #listTime {
+    z-index: 7;
+    padding-left: 0.4em;
+    color: #a3afa9;
+}
+.theme-studio #listDetail,
+.theme-studio #listAbout {
+    line-height: 1.3;
+    color: #f0f3f1;
+    border-top: none;
+}
+.theme-studio #listDetail #_name {
+    margin-bottom: 0.5em;
+}
+.theme-studio #_name .ott-channel-detail-accent {
+    font-weight: bold;
+    color: #f0f3f1 !important;
+}
+.theme-studio .ott-channel-programme {
+    color: #a3afa9 !important;
+}
+.theme-studio .ott-channel-detail-time,
+.theme-studio .ott-channel-description,
+.theme-studio .ott-channel-no-epg,
+.theme-studio #nprogramm_name,
+.theme-studio #nbegin_time,
+.theme-studio #nend_time {
+    color: #a3afa9;
+}
+.theme-studio #_nextpr {
+    background-color: #0e1114;
+}
+.theme-studio .ott-channel-next-overlay {
+    padding-right: 0;
+    padding-left: 0;
+}
+.theme-studio #listPopUp,
+.theme-studio #dialogbox {
+    color: #f0f3f1;
+    text-shadow: none;
+    background-color: #1a2025;
+    border-radius: 10px;
+    box-shadow: none;
+}
+.theme-studio .item {
+    text-shadow: none;
+    border-radius: 4px;
+    box-shadow: none;
+}
+/* Explicit state survives keyboard, pointer, paging and asynchronous EPG fills.
+   These rules also override the legacy inline colours inside settings rows. */
+.theme-studio .item.ott-selected {
+    background-color: #e7f1eb !important;
+}
+.theme-studio .item.ott-selected,
+.theme-studio .item.ott-selected * {
+    color: #112119 !important;
+}
+.theme-studio .item.ott-selected .ott-channel-programme,
+.theme-studio .item.ott-selected .ott-channel-no-epg {
+    color: #4a6255 !important;
+}
+.theme-studio .ott-playing::after {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 3px;
+    height: 50%;
+    content: "";
+    background-color: #8bddb8;
+}
+.theme-studio .ott-playing.ott-selected::after {
+    background-color: #112119;
+}
+.theme-studio .ott-selected .ott-channel-progress-fill {
+    background-color: #4a6255 !important;
+}
+.theme-studio .list-scroll,
+.theme-studio .progress_div,
+.theme-studio #progress_div {
+    background-color: #2b3430;
+    border: none;
+    box-shadow: none;
+}
+.theme-studio .list-scroll-thumb {
+    background-color: #a3afa9;
+}
+.theme-studio #info1 {
+    border-top-color: #2b3430;
+    box-shadow: none;
+}
+.theme-studio .btn {
+    text-shadow: none;
+    background-color: #1a2025;
+    border: 1px solid #2b3430;
+    border-radius: 4px;
+    box-shadow: none;
+}
+.theme-studio .ott-selected .btn {
+    background-color: transparent;
+}
+.theme-studio .red {
+    background-color: #d97171;
+}
+.theme-studio .green {
+    background-color: #8bddb8;
+}
+.theme-studio .yellow {
+    background-color: #dec889;
+}
+.theme-studio .blue {
+    background-color: #8ab9de;
+}
+.theme-studio #picon,
+.theme-studio .img,
+.theme-studio #numprog,
+.theme-studio #permanentTime {
+    box-shadow: none;
+}
+.theme-studio .interface-credits a {
+    color: #8bddb8;
+}
+
+/* PLi-HD visual adaptation; see docs/interface-history.md for credits.
+   PLi-HD by littlesat and contributors, based on Magic_HD_Shadow_MiniTV
+   by Vali (2009-2010), with derived work from VU+NL, Milo and others.
+   Reference: https://github.com/littlesat/skin-PLiHD */
+.theme-pli-hd #listCaption,
+.theme-pli-hd #listPodval {
+    color: #f0f0f0;
+    text-shadow: none;
+    background-color: #242424;
+}
+.theme-pli-hd #listCaption {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    letter-spacing: normal;
+}
+.theme-pli-hd #listTime {
+    z-index: 7;
+    padding-left: 0.4em;
+    font-weight: normal;
+    line-height: 2.36;
+    color: #f0f0f0;
+    text-shadow: none;
+    background-color: #242424;
+}
+.theme-pli-hd #listDetail {
+    line-height: 1.3;
+    color: #f0f0f0;
+    border-top: none;
+}
+.theme-pli-hd #listDetail #_name {
+    margin-bottom: 0.45em;
+}
+.theme-pli-hd #listPodval {
+    background-color: #000;
+}
+.theme-pli-hd .ott-channel-next-overlay {
+    padding-right: 0;
+    padding-left: 0;
+}
+.theme-pli-hd #_nextpr {
+    background-color: rgba(8, 8, 8, 0.96);
+}
+.theme-pli-hd #listPopUp,
+.theme-pli-hd #dialogbox {
+    color: #f0f0f0;
+    text-shadow: none;
+    background-color: #080808;
+    border-radius: 0;
+    box-shadow: none;
+}
+.theme-pli-hd .item {
+    text-shadow: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+.theme-pli-hd .ott-channel-no-epg {
+    color: #aaa;
+}
+.theme-pli-hd .list-scroll,
+.theme-pli-hd .list-scroll-thumb,
+.theme-pli-hd .progress_div,
+.theme-pli-hd #progress_div,
+.theme-pli-hd #progress,
+.theme-pli-hd #picon,
+.theme-pli-hd .img,
+.theme-pli-hd #volume_div {
+    border-radius: 0;
+    box-shadow: none;
+}
+.theme-pli-hd .list-scroll,
+.theme-pli-hd .progress_div {
+    background-color: #242424;
+}
+.theme-pli-hd .list-scroll-thumb {
+    background-color: #aaa;
+}
+.theme-pli-hd #info1 {
+    border-top-color: #555;
+    box-shadow: none;
+}
+.theme-pli-hd .btn {
+    padding: 0.05em 0.3em;
+    text-shadow: none;
+    background-color: #303240;
+    border: 1px solid #555;
+    border-radius: 0;
+    box-shadow: none;
+}
+.theme-pli-hd .btn:hover {
+    background-color: #555;
+}
+.interface-credits {
+    height: 100%;
+    overflow: auto;
+    font-size: 0.85em;
+    line-height: 1.45;
+    color: #f0f0f0;
+}
+.interface-credits p {
+    margin: 0 0 0.8em;
+}
+.interface-credits a {
+    color: #fcc000;
+    text-decoration: underline;
+}
+.theme-pli-hd .red {
+    background-color: #ff4a3c;
+}
+.theme-pli-hd .green {
+    background-color: #56c856;
+}
+.theme-pli-hd .yellow {
+    color: #080808;
+    background-color: #ffc000;
+}
+.theme-pli-hd .blue {
+    background-color: #879ce1;
+}
+#plogo {
+    background-position: top right;
+}
+#nprogramm_name,
+#nbegin_time,
+#nend_time {
+    color: #bdbdbd;
+}
+.epg-entry {
+    padding: 3px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.epg-time {
+    display: inline-block;
+    width: 78px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #d0d0dc;
+}
+.epg-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 0.015em;
+}
+.epg-descr {
+    padding-left: 78px;
+    font-size: smaller;
+    line-height: 1.3;
+    color: #c0c0cc;
+}
+.epg-archive-tag {
+    margin-right: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    vertical-align: middle;
+    color: lime;
+}
+.epg-footer-archive {
+    margin-left: 12px;
+    font-size: 12px;
+    vertical-align: middle;
+    color: lime;
+}
+
+/* Shared orbit indicator for playback, PiP, menus and provider dialogs.
+   Keep the 30px layout box; separated dots leave the center and edges clear.
+   Position and size both change so motion remains readable at TV distance. */
+.ott-spinner {
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    background: none;
+    border: none;
+    -webkit-animation: ott-spinner-orbit 1.6s linear infinite;
+    animation: ott-spinner-orbit 1.6s linear infinite;
+}
+.ott-spinner .blob {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background: #82e4e0;
+    border-radius: 50%;
+    /* A dark edge keeps the light dots distinct over bright video. */
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.85);
+    -webkit-animation: ott-spinner-breathe 1.6s ease-in-out infinite;
+    animation: ott-spinner-breathe 1.6s ease-in-out infinite;
+}
+.ott-spinner .blob:nth-child(1) {
+    top: 12%;
+    left: 39%;
+    width: 22%;
+    height: 22%;
+    background: #e1fff7;
+}
+.ott-spinner .blob:nth-child(2) {
+    top: 40%;
+    left: 67%;
+    -webkit-animation-delay: -1.2s;
+    animation-delay: -1.2s;
+}
+.ott-spinner .blob:nth-child(3) {
+    top: 67%;
+    left: 40%;
+    background: #9ebcff;
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+.ott-spinner .blob:nth-child(4) {
+    top: 40%;
+    left: 13%;
+    background: #c4a8f0;
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s;
+}
+@-webkit-keyframes ott-spinner-orbit {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes ott-spinner-orbit {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes ott-spinner-breathe {
+    0%,
+    100% {
+        -webkit-transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(0.8);
+    }
+}
+@keyframes ott-spinner-breathe {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .ott-spinner,
+    .ott-spinner .blob:nth-child(n) {
+        -webkit-animation: none;
+        animation: none;
+    }
+}
+
+/* digital zoom: crop scaled #video (Toggle Zoom Mode) */
+/* Flex-center letterbox inside whatever box JS sets (full-plane or list preview).
+   Do NOT pin inset:0 here — that left the plane under #_t in list mode so the
+   yellow/chrome edge clipped the picture top ("жёлтая линия отрезает шапку").
+   Fullscreen pin is stbToFullScreen(); preview box is stbSetWindow(). */
+#vdiv {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #000;
+}
+/* Default contain (OTT companion); applyAspectRatio sets geometry once metadata is known. */
+#video {
+    object-fit: contain;
+    object-position: center center;
+}
+#videopip {
+    object-position: center center;
+}
+
+.hosted-epg-diagnostics {
+    height: 80%;
+    overflow: auto;
+    font-family: inherit;
+    font-size: 0.8em;
+    white-space: pre-wrap;
+    touch-action: pan-y;
+}

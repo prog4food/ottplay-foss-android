@@ -1,0 +1,60 @@
+/**
+ * PC2 keyboard map. The shipped devices/pc2/device.js also installs the optional
+ * Video.js engine after the shared bundle and local vendor have loaded.
+ *
+ * Keycodes match PC; playback uses Video.js 7 / VHS 2.
+ * Sets window.keys.
+ */
+
+var pc2Keys = {
+    ASPECT: 65,
+    AUDIO: 83,
+    BLUE: 86,
+    CH_DOWN: 189,
+    CH_LIST: 0,
+    CH_UP: 187,
+    DOWN: 40,
+    ENTER: 13,
+    EPG: 0,
+    EXIT: 27,
+    FF: 70,
+    GREEN: 88,
+    INFO: 73,
+    LANG: 16,
+    LEFT: 37,
+    MUTE: 77,
+    N0: 48,
+    N1: 49,
+    N2: 50,
+    N3: 51,
+    N4: 52,
+    N5: 53,
+    N6: 54,
+    N7: 55,
+    N8: 56,
+    N9: 57,
+    NEXT: 190,
+    PAUSE: 80,
+    PIP: 87,
+    PLAY: 80,
+    POWER: 81,
+    PRECH: 191,
+    PREV: 188,
+    RANDOM: 82,
+    REC: 0,
+    RED: 90,
+    RETURN: 8,
+    RIGHT: 39,
+    RW: 33,
+    SETUP: 192,
+    STOP: 83,
+    TOOLS: 84,
+    UP: 38,
+    VOL_DOWN: 0,
+    VOL_UP: 0,
+    YELLOW: 67,
+    ZOOM: 69,
+};
+
+// Set globals expected by the player
+(window as any).keys = pc2Keys;

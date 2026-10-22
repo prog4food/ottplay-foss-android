@@ -1,0 +1,45 @@
+name: STARLINK IPTV Android APK
+on:
+  push:
+    branches:
+      - starlink/consolidacao-android
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout STARLINK customization
+        uses: actions/checkout@v4
+        with:
+          path: starlink
+      - name: Checkout native Android source
+        uses: actions/checkout@v4
+        with:
+          repository: sempaio/ottplay-android
+          ref: main
+          path: native
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+      - name: Install Android compile SDK
+        run: sdkmanager "platforms;android-36" "build-tools;36.0.0" "platform-tools"
+      - name: Apply STARLINK branding
+        run: |
+          cp starlink/starlink/brand_native.py native/starlink_brand_native.py
+          python3 native/starlink_brand_native.py
+      - name: Build debug APK
+        working-directory: native
+        run: ./gradlew --no-daemon :app:assembleDebug
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: STARLINK-IPTV-debug-APK
+          path: native/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error

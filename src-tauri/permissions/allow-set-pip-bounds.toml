@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-set-pip-bounds"
+description = "Enables the set_pip_bounds command."
+commands.allow = ["set_pip_bounds"]

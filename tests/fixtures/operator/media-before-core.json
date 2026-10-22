@@ -1,0 +1,1996 @@
+{
+  "provenance": {
+    "description": "Actual unchanged provider live URL and JSON/JSONP EPG public functions before final operator media migration",
+    "numericIdCases": "Four extra cases execute original git HEAD functions explicitly; original 87 pre-edit expectations retained."
+  },
+  "cases": [
+    {
+      "profile": "itv",
+      "input": {},
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://itv.test/c/index.m3u8?token=token"
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "mode": 1
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://itv.test/c/mpegts?token=token"
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "mode": 2
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://itv.test/c/video.m3u8?token=token"
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "mode": 3
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://itv.test/c/undefined?token=token"
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "mode": 4
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://itv.test/c/undefined?token=token"
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "mode": 5
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://itv.test/c/undefined?token=token"
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "mode": -1
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://itv.test/c/undefined?token=token"
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "hls": 2
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://itv.test/c/index.m3u8?token=token"
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "channel": {
+          "url": "https://other/live",
+          "token": null
+        }
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://itv.test/c/index.m3u8?token=null"
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "host": ""
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://itv.test/c/index.m3u8?token=token"
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {},
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://club.test/stream/club-key/c.m3u8"
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "mode": 1
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://club.test/stream/club-key/c.m3u8"
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "mode": 2
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://club.test/stream/club-key/c.m3u8"
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "mode": 3
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://club.test/stream/club-key/c.m3u8"
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "mode": 4
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://club.test/stream/club-key/c.m3u8"
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "mode": 5
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://club.test/stream/club-key/c.m3u8"
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "mode": -1
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://club.test/stream/club-key/c.m3u8"
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "hls": 2
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://club.test/stream/club-key/c.m3u8"
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "channel": {
+          "url": "https://other/live",
+          "token": null
+        }
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://club.test/stream/club-key/c.m3u8"
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "host": ""
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://club.test/stream/club-key/c.m3u8"
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {},
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://s2.tvshka.net/~sh-key/c/hls/pl.m3u8"
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "mode": 1
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://s2.tvshka.net/~sh-key/c/"
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "mode": 2
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://s2.tvshka.net/~sh-key/c/"
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "mode": 3
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://s2.tvshka.net/~sh-key/c/"
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "mode": 4
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://s2.tvshka.net/~sh-key/c/"
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "mode": 5
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://s2.tvshka.net/~sh-key/c/"
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "mode": -1
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://s2.tvshka.net/~sh-key/c/"
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "hls": 2
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://s2.tvshka.net/~sh-key/c/hls/pl.m3u8"
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "channel": {
+          "url": "https://other/live",
+          "token": null
+        }
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://s2.tvshka.net/~sh-key/c/hls/pl.m3u8"
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "host": ""
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://s2.tvshka.net/~sh-key/c/hls/pl.m3u8"
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {},
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://af.test:80/c/index.m3u8?token=token"
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "mode": 1
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://af.test:80/c/mpegts?token=token"
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "mode": 2
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://af.test:80/c/video.m3u8?token=token"
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "mode": 3
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://af.test:80/c/mono.m3u8?token=token"
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "mode": 4
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://af.test:80/c/index.mpd?token=token"
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "mode": 5
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://af.test:80/c/undefined?token=token"
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "mode": -1
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://af.test:80/c/undefined?token=token"
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "hls": 2
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://af.test:80/c/video.m3u8?token=token"
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "channel": {
+          "url": "https://other/live",
+          "token": null
+        }
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://af.test:80/c/index.m3u8?token=null"
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "host": ""
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "http://af.test:80/c/index.m3u8?token=token"
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {},
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://cdn.test/ed-key/index.m3u8?foo=1"
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "mode": 1
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://cdn.test/ed-key/index.m3u8?foo=1"
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "mode": 2
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://cdn.test/ed-key/index.m3u8?foo=1"
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "mode": 3
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://cdn.test/ed-key/index.m3u8?foo=1"
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "mode": 4
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://cdn.test/ed-key/index.m3u8?foo=1"
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "mode": 5
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://cdn.test/ed-key/index.m3u8?foo=1"
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "mode": -1
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://cdn.test/ed-key/index.m3u8?foo=1"
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "hls": 2
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://cdn.test/ed-key/index.m3u8?foo=1"
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "channel": {
+          "url": "https://other/live",
+          "token": null
+        }
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://other/live"
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "host": ""
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": ""
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {},
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://localhost/00000000000000/mpegts?foo=1"
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "mode": 1
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://localhost/00000000000000/video.m3u8?foo=1"
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "mode": 2
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://localhost/00000000000000/index.m3u8?foo=1"
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "mode": 3
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://localhost/00000000000000/undefined?foo=1"
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "mode": 4
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://localhost/00000000000000/undefined?foo=1"
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "mode": 5
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://localhost/00000000000000/undefined?foo=1"
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "mode": -1
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://localhost/00000000000000/undefined?foo=1"
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "hls": 2
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://localhost/00000000000000/mpegts?foo=1"
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "channel": {
+          "url": "https://other/live",
+          "token": null
+        }
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://other/livempegtsundefined"
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "host": ""
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "value": "https://localhost/00000000000000/mpegts?foo=1"
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "responses": [
+          null,
+          null
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://s2.tvshka.net/c/epg/week.jsonp",
+            "timeout": 10000,
+            "dataType": "jsonp"
+          },
+          {
+            "url": "http://s2.tvshka.net/c/epg/pf.jsonp",
+            "timeout": 10000,
+            "dataType": "jsonp"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            null
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "responses": [
+          [],
+          []
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://s2.tvshka.net/c/epg/week.jsonp",
+            "timeout": 10000,
+            "dataType": "jsonp"
+          },
+          {
+            "url": "http://s2.tvshka.net/c/epg/pf.jsonp",
+            "timeout": 10000,
+            "dataType": "jsonp"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            []
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "responses": [
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ],
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ]
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://s2.tvshka.net/c/epg/week.jsonp",
+            "timeout": 10000,
+            "dataType": "jsonp"
+          },
+          {
+            "url": "http://s2.tvshka.net/c/epg/pf.jsonp",
+            "timeout": 10000,
+            "dataType": "jsonp"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            [
+              {
+                "descr": "Text",
+                "duration": 50,
+                "name": "One",
+                "time": 100,
+                "time_to": 150
+              },
+              {
+                "descr": "Text",
+                "duration": 50,
+                "name": "One",
+                "time": 100,
+                "time_to": 150
+              },
+              {
+                "duration": 20,
+                "name": "Two",
+                "time": "200",
+                "time_to": "20020"
+              }
+            ]
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "rec": 0,
+        "responses": [
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ],
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ]
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://s2.tvshka.net/c/epg/week.jsonp",
+            "timeout": 10000,
+            "dataType": "jsonp"
+          },
+          {
+            "url": "http://s2.tvshka.net/c/epg/pf.jsonp",
+            "timeout": 10000,
+            "dataType": "jsonp"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            [
+              {
+                "descr": "Text",
+                "duration": 50,
+                "name": "One",
+                "time": 100,
+                "time_to": 150
+              },
+              {
+                "descr": "Text",
+                "duration": 50,
+                "name": "One",
+                "time": 100,
+                "time_to": 150
+              },
+              {
+                "duration": 20,
+                "name": "Two",
+                "time": "200",
+                "time_to": "20020"
+              }
+            ]
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "rec": 24,
+        "responses": [
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ],
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ]
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://s2.tvshka.net/c/epg/week.jsonp",
+            "timeout": 10000,
+            "dataType": "jsonp"
+          },
+          {
+            "url": "http://s2.tvshka.net/c/epg/archive.jsonp",
+            "timeout": 10000,
+            "dataType": "jsonp"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            [
+              {
+                "duration": 20,
+                "name": "Two",
+                "time": "200",
+                "time_to": "20020"
+              },
+              {
+                "descr": "Text",
+                "duration": 50,
+                "name": "One",
+                "time": 100,
+                "time_to": 150
+              },
+              {
+                "descr": "Text",
+                "duration": 50,
+                "name": "One",
+                "time": 100,
+                "time_to": 150
+              },
+              {
+                "duration": 20,
+                "name": "Two",
+                "time": "200",
+                "time_to": "20020"
+              }
+            ]
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "current": true,
+        "responses": [
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ]
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://s2.tvshka.net/c/epg/pf.jsonp",
+            "timeout": 10000,
+            "dataType": "jsonp"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            [
+              {
+                "descr": "Text",
+                "duration": 50,
+                "name": "One",
+                "time": 100,
+                "time_to": 150
+              },
+              {
+                "duration": 20,
+                "name": "Two",
+                "time": "200",
+                "time_to": "20020"
+              }
+            ]
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "responses": [
+          {
+            "res": [
+              {
+                "title": "One",
+                "desc": "D",
+                "startTime": 10,
+                "stopTime": 20
+              },
+              null
+            ]
+          },
+          null
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://s2.tvshka.net/c/epg/week.jsonp",
+            "timeout": 10000,
+            "dataType": "jsonp"
+          }
+        ],
+        "events": [],
+        "failure": {
+          "name": "TypeError",
+          "message": "data.forEach is not a function"
+        }
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "responses": [
+          {
+            "epg_data": [
+              {
+                "name": "One",
+                "text": "Text",
+                "start_time": 100,
+                "duration": 50
+              },
+              {
+                "name": "Two",
+                "start_time": "200",
+                "duration": 20
+              }
+            ]
+          },
+          null
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://s2.tvshka.net/c/epg/week.jsonp",
+            "timeout": 10000,
+            "dataType": "jsonp"
+          }
+        ],
+        "events": [],
+        "failure": {
+          "name": "TypeError",
+          "message": "data.forEach is not a function"
+        }
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "responses": [
+          {},
+          {}
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://s2.tvshka.net/c/epg/week.jsonp",
+            "timeout": 10000,
+            "dataType": "jsonp"
+          }
+        ],
+        "events": [],
+        "failure": {
+          "name": "TypeError",
+          "message": "data.forEach is not a function"
+        }
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "responses": [
+          null,
+          null
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://itv.test/epg/c",
+            "timeout": 10000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            []
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "responses": [
+          [],
+          []
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://itv.test/epg/c",
+            "timeout": 10000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            []
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "responses": [
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ],
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ]
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://itv.test/epg/c",
+            "timeout": 10000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            []
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "rec": 0,
+        "responses": [
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ],
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ]
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://itv.test/epg/c",
+            "timeout": 10000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            []
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "rec": 24,
+        "responses": [
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ],
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ]
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://itv.test/epg/c",
+            "timeout": 10000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            []
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "current": true,
+        "responses": [
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ]
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://itv.test/epg/c/1",
+            "timeout": 10000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            []
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "responses": [
+          {
+            "res": [
+              {
+                "title": "One",
+                "desc": "D",
+                "startTime": 10,
+                "stopTime": 20
+              },
+              null
+            ]
+          },
+          null
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://itv.test/epg/c",
+            "timeout": 10000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            [
+              {
+                "descr": "D",
+                "name": "One",
+                "time": 10,
+                "time_to": 20
+              }
+            ]
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "responses": [
+          {
+            "epg_data": [
+              {
+                "name": "One",
+                "text": "Text",
+                "start_time": 100,
+                "duration": 50
+              },
+              {
+                "name": "Two",
+                "start_time": "200",
+                "duration": 20
+              }
+            ]
+          },
+          null
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://itv.test/epg/c",
+            "timeout": 10000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            []
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "responses": [
+          {},
+          {}
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://itv.test/epg/c",
+            "timeout": 10000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            []
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "responses": [
+          null,
+          null
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://club.test/api/channel/c",
+            "timeout": 30000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            null
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "responses": [
+          [],
+          []
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://club.test/api/channel/c",
+            "timeout": 30000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            null
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "responses": [
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ],
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ]
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://club.test/api/channel/c",
+            "timeout": 30000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            null
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "rec": 0,
+        "responses": [
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ],
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ]
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://club.test/api/channel/c",
+            "timeout": 30000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            null
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "rec": 24,
+        "responses": [
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ],
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ]
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://club.test/api/channel/c",
+            "timeout": 30000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            null
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "current": true,
+        "responses": [
+          [
+            {
+              "name": "One",
+              "text": "Text",
+              "start_time": 100,
+              "duration": 50
+            },
+            {
+              "name": "Two",
+              "start_time": "200",
+              "duration": 20
+            }
+          ]
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": {
+          "name": "TypeError",
+          "message": "ctx[(intermediate value)(intermediate value)(intermediate value)] is not a function"
+        }
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "responses": [
+          {
+            "res": [
+              {
+                "title": "One",
+                "desc": "D",
+                "startTime": 10,
+                "stopTime": 20
+              },
+              null
+            ]
+          },
+          null
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://club.test/api/channel/c",
+            "timeout": 30000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            null
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "responses": [
+          {
+            "epg_data": [
+              {
+                "name": "One",
+                "text": "Text",
+                "start_time": 100,
+                "duration": 50
+              },
+              {
+                "name": "Two",
+                "start_time": "200",
+                "duration": 20
+              }
+            ]
+          },
+          null
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://club.test/api/channel/c",
+            "timeout": 30000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            [
+              {
+                "name": "One",
+                "text": "Text",
+                "start_time": 100,
+                "duration": 50
+              },
+              {
+                "name": "Two",
+                "start_time": "200",
+                "duration": 20
+              }
+            ]
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "ottclub",
+      "input": {
+        "responses": [
+          {},
+          {}
+        ],
+        "method": "epg"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://club.test/api/channel/c",
+            "timeout": 30000,
+            "dataType": "json"
+          }
+        ],
+        "events": [
+          [
+            "c",
+            null
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "id": 42,
+        "method": "epg",
+        "current": false,
+        "responses": [
+          null,
+          null
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "dataType": "jsonp",
+            "timeout": 10000,
+            "url": "http://s2.tvshka.net/42/epg/week.jsonp"
+          },
+          {
+            "dataType": "jsonp",
+            "timeout": 10000,
+            "url": "http://s2.tvshka.net/42/epg/pf.jsonp"
+          }
+        ],
+        "events": [
+          [
+            42,
+            null
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "id": 42,
+        "method": "epg",
+        "current": true,
+        "responses": [
+          null,
+          null
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "dataType": "jsonp",
+            "timeout": 10000,
+            "url": "http://s2.tvshka.net/42/epg/pf.jsonp"
+          }
+        ],
+        "events": [
+          [
+            42,
+            null
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "id": 42,
+        "method": "epg",
+        "current": false,
+        "responses": [
+          null,
+          null
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "dataType": "json",
+            "timeout": 10000,
+            "url": "https://itv.test/epg/42"
+          }
+        ],
+        "events": [
+          [
+            42,
+            []
+          ]
+        ],
+        "failure": null
+      }
+    },
+    {
+      "profile": "itv",
+      "input": {
+        "id": 42,
+        "method": "epg",
+        "current": true,
+        "responses": [
+          null,
+          null
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "dataType": "json",
+            "timeout": 10000,
+            "url": "https://itv.test/epg/42/1"
+          }
+        ],
+        "events": [
+          [
+            42,
+            []
+          ]
+        ],
+        "failure": null
+      }
+    }
+  ]
+}

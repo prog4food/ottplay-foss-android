@@ -1,0 +1,219 @@
+{
+  "schema": 1,
+  "source": {
+    "revision": "392877921f0a16f9032b06d959564ddb66a1e220",
+    "version": "1.1.55",
+    "cleanBeforeBuild": true,
+    "cleanAfterBuild": false,
+    "revisionEmbedded": false,
+    "generatedFilesChangedByBuild": [
+      "index.html",
+      "js/hls.worker.js",
+      "js/media-runtime.json",
+      "js/runtime-polyfills.js",
+      "src-tauri/pip/pip.html"
+    ],
+    "note": "Unmodified detached source checkout. Standard production build regenerates five tracked media runtime assets because the checked-in receipt uses Rollup 4.64.3 while the lockfile specifies 4.64.5; the build consequently omits its clean-source revision claim. No manual source or budget changes."
+  },
+  "build": {
+    "command": "npm run build",
+    "exitCode": 0
+  },
+  "toolchain": {
+    "node": "26.8.2",
+    "zlib": "1.2.12",
+    "typescript": "5.9.3",
+    "terser": "5.51.2",
+    "rollup": "4.64.5",
+    "vite": "8.3.4"
+  },
+  "measurement": {
+    "method": "scripts/classic-size.cjs inspectBundles + inspectBundleSets",
+    "raw": "UTF-8 bytes",
+    "gzip": "level 9, each artifact compressed separately, byte counts summed per distribution",
+    "scope": "Production emitted entry and every optional provider bundle; excludes vendor media runtimes, dictionaries, diagnostics/media assets and native binaries",
+    "performanceClaim": false
+  },
+  "budget": {
+    "bytes": 848400,
+    "gzipBytes": 263600
+  },
+  "totalBudget": {
+    "bytes": 964900,
+    "gzipBytes": 306550
+  },
+  "artifacts": [
+    {
+      "bytes": 848315,
+      "gzipBytes": 262443,
+      "path": "dist/player.js",
+      "sha256": "8a7e157a3a2f280685f49e1d34c979bad204325235b8a203de29ecfd3d4685c4"
+    },
+    {
+      "bytes": 9370,
+      "gzipBytes": 3530,
+      "path": "dist/provider-catalog.js",
+      "sha256": "25c9a2a0fd1adcc8d4036a32e8d38d18ef2bbc6c32f6a5b384a1a81c3e8b3f0c"
+    },
+    {
+      "bytes": 15628,
+      "gzipBytes": 6078,
+      "path": "dist/provider-edem.js",
+      "sha256": "836767949840113c9129ff8bb9db32e878cbaa63f7e8100bc2158ffd7507e78b"
+    },
+    {
+      "bytes": 19957,
+      "gzipBytes": 7177,
+      "path": "dist/provider-m3u.js",
+      "sha256": "ebc51b8f039d9df95764c7295773c40d5fd69f2689588dabca2b27da0a170fcb"
+    },
+    {
+      "bytes": 11485,
+      "gzipBytes": 4278,
+      "path": "dist/provider-playlist.js",
+      "sha256": "781e9031166e1adf344e0f34b1f9cce98ee00ee7bfc2f05959c94e3050777f57"
+    },
+    {
+      "bytes": 42046,
+      "gzipBytes": 14838,
+      "path": "dist/provider-plex.js",
+      "sha256": "64836600506ca1eb44a21fd07052dca881ef00004e60b41d4670b5c84fb285f4"
+    },
+    {
+      "bytes": 10818,
+      "gzipBytes": 4230,
+      "path": "dist/provider-stalker.js",
+      "sha256": "366b3a08b14ce4ab35ef8e8df6f0f23e3de74a0f05d5fd999ad52d638bf71cfd"
+    },
+    {
+      "bytes": 7257,
+      "gzipBytes": 2878,
+      "path": "dist/provider-vportal.js",
+      "sha256": "4aed5dab884d952da2c15274ef3416149e59e02fefcf8c8cadc7553fd1c722a9"
+    },
+    {
+      "bytes": 848273,
+      "gzipBytes": 262511,
+      "path": "src-tauri/frontend/dist/player.js",
+      "sha256": "16c4d26bec3e7d870d625191751545ef448628ae0a3bd4bebe3452a9e31b52c5"
+    },
+    {
+      "bytes": 9370,
+      "gzipBytes": 3530,
+      "path": "src-tauri/frontend/dist/provider-catalog.js",
+      "sha256": "25c9a2a0fd1adcc8d4036a32e8d38d18ef2bbc6c32f6a5b384a1a81c3e8b3f0c"
+    },
+    {
+      "bytes": 15628,
+      "gzipBytes": 6078,
+      "path": "src-tauri/frontend/dist/provider-edem.js",
+      "sha256": "836767949840113c9129ff8bb9db32e878cbaa63f7e8100bc2158ffd7507e78b"
+    },
+    {
+      "bytes": 19957,
+      "gzipBytes": 7177,
+      "path": "src-tauri/frontend/dist/provider-m3u.js",
+      "sha256": "ebc51b8f039d9df95764c7295773c40d5fd69f2689588dabca2b27da0a170fcb"
+    },
+    {
+      "bytes": 11485,
+      "gzipBytes": 4278,
+      "path": "src-tauri/frontend/dist/provider-playlist.js",
+      "sha256": "781e9031166e1adf344e0f34b1f9cce98ee00ee7bfc2f05959c94e3050777f57"
+    },
+    {
+      "bytes": 42046,
+      "gzipBytes": 14838,
+      "path": "src-tauri/frontend/dist/provider-plex.js",
+      "sha256": "64836600506ca1eb44a21fd07052dca881ef00004e60b41d4670b5c84fb285f4"
+    },
+    {
+      "bytes": 10818,
+      "gzipBytes": 4230,
+      "path": "src-tauri/frontend/dist/provider-stalker.js",
+      "sha256": "366b3a08b14ce4ab35ef8e8df6f0f23e3de74a0f05d5fd999ad52d638bf71cfd"
+    },
+    {
+      "bytes": 7257,
+      "gzipBytes": 2878,
+      "path": "src-tauri/frontend/dist/provider-vportal.js",
+      "sha256": "4aed5dab884d952da2c15274ef3416149e59e02fefcf8c8cadc7553fd1c722a9"
+    },
+    {
+      "bytes": 848273,
+      "gzipBytes": 262511,
+      "path": "dist-mobile/dist/player.js",
+      "sha256": "16c4d26bec3e7d870d625191751545ef448628ae0a3bd4bebe3452a9e31b52c5"
+    },
+    {
+      "bytes": 9370,
+      "gzipBytes": 3530,
+      "path": "dist-mobile/dist/provider-catalog.js",
+      "sha256": "25c9a2a0fd1adcc8d4036a32e8d38d18ef2bbc6c32f6a5b384a1a81c3e8b3f0c"
+    },
+    {
+      "bytes": 15628,
+      "gzipBytes": 6078,
+      "path": "dist-mobile/dist/provider-edem.js",
+      "sha256": "836767949840113c9129ff8bb9db32e878cbaa63f7e8100bc2158ffd7507e78b"
+    },
+    {
+      "bytes": 19957,
+      "gzipBytes": 7177,
+      "path": "dist-mobile/dist/provider-m3u.js",
+      "sha256": "ebc51b8f039d9df95764c7295773c40d5fd69f2689588dabca2b27da0a170fcb"
+    },
+    {
+      "bytes": 11485,
+      "gzipBytes": 4278,
+      "path": "dist-mobile/dist/provider-playlist.js",
+      "sha256": "781e9031166e1adf344e0f34b1f9cce98ee00ee7bfc2f05959c94e3050777f57"
+    },
+    {
+      "bytes": 42046,
+      "gzipBytes": 14838,
+      "path": "dist-mobile/dist/provider-plex.js",
+      "sha256": "64836600506ca1eb44a21fd07052dca881ef00004e60b41d4670b5c84fb285f4"
+    },
+    {
+      "bytes": 10818,
+      "gzipBytes": 4230,
+      "path": "dist-mobile/dist/provider-stalker.js",
+      "sha256": "366b3a08b14ce4ab35ef8e8df6f0f23e3de74a0f05d5fd999ad52d638bf71cfd"
+    },
+    {
+      "bytes": 7257,
+      "gzipBytes": 2878,
+      "path": "dist-mobile/dist/provider-vportal.js",
+      "sha256": "4aed5dab884d952da2c15274ef3416149e59e02fefcf8c8cadc7553fd1c722a9"
+    }
+  ],
+  "totals": [
+    {
+      "distribution": "web",
+      "entry": "dist/player.js",
+      "providerCount": 7,
+      "bytes": 964876,
+      "gzipBytes": 305452
+    },
+    {
+      "distribution": "tauri",
+      "entry": "src-tauri/frontend/dist/player.js",
+      "providerCount": 7,
+      "bytes": 964834,
+      "gzipBytes": 305520
+    },
+    {
+      "distribution": "capacitor",
+      "entry": "dist-mobile/dist/player.js",
+      "providerCount": 7,
+      "bytes": 964834,
+      "gzipBytes": 305520
+    }
+  ],
+  "cleanup": {
+    "temporaryWorktreeRemoved": true,
+    "generatedChangesVerified": true,
+    "sharedDependenciesPreserved": true
+  }
+}

@@ -1,0 +1,5248 @@
+{
+  "baseline": "7d47b0ca391e4b1d1fe282cb4bf11a2bfe17e80a",
+  "cases": [
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": -1000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 0
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3599,
+              "outdated": true
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Early",
+              "time": 0,
+              "time_to": 10,
+              "descr": "",
+              "nextpr": [
+                {
+                  "time": 5,
+                  "time_to": 15,
+                  "name": "Overlap"
+                },
+                {
+                  "time": 10,
+                  "time_to": 20,
+                  "name": "Later",
+                  "icon": "icon"
+                }
+              ],
+              "time_request": 0
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": [],
+            "now": -1000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": [],
+            "now": 0
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3599
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3600
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": null,
+            "now": -1000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": null,
+            "now": 0
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3599
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3600
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 0
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 1000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Early",
+              "time": 0,
+              "time_to": 10,
+              "descr": "",
+              "time_request": 0,
+              "nextpr": [
+                {
+                  "time": 5,
+                  "time_to": 15,
+                  "name": "Overlap"
+                },
+                {
+                  "time": 10,
+                  "time_to": 20,
+                  "name": "Later",
+                  "icon": "icon"
+                }
+              ]
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Early",
+              "time": 0,
+              "time_to": 10,
+              "descr": "",
+              "time_request": 0,
+              "nextpr": [
+                {
+                  "time": 5,
+                  "time_to": 15,
+                  "name": "Overlap"
+                },
+                {
+                  "time": 10,
+                  "time_to": 20,
+                  "name": "Later",
+                  "icon": "icon"
+                }
+              ]
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": [],
+            "now": 0
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": [],
+            "now": 1000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3600
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3601
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": null,
+            "now": 0
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": null,
+            "now": 1000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3600
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3601
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 5000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 6000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Early",
+              "time": 0,
+              "time_to": 10,
+              "descr": "",
+              "time_request": 0,
+              "nextpr": [
+                {
+                  "time": 5,
+                  "time_to": 15,
+                  "name": "Overlap"
+                },
+                {
+                  "time": 10,
+                  "time_to": 20,
+                  "name": "Later",
+                  "icon": "icon"
+                }
+              ]
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Early",
+              "time": 0,
+              "time_to": 10,
+              "descr": "",
+              "time_request": 0,
+              "nextpr": [
+                {
+                  "time": 5,
+                  "time_to": 15,
+                  "name": "Overlap"
+                },
+                {
+                  "time": 10,
+                  "time_to": 20,
+                  "name": "Later",
+                  "icon": "icon"
+                }
+              ]
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": [],
+            "now": 5000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": [],
+            "now": 6000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3605
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3606
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": null,
+            "now": 5000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": null,
+            "now": 6000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3605
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3606
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 10000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 11000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Early",
+              "time": 0,
+              "time_to": 10,
+              "descr": "",
+              "time_request": 0,
+              "nextpr": [
+                {
+                  "time": 5,
+                  "time_to": 15,
+                  "name": "Overlap"
+                },
+                {
+                  "time": 10,
+                  "time_to": 20,
+                  "name": "Later",
+                  "icon": "icon"
+                }
+              ]
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Overlap",
+              "time": 5,
+              "time_to": 15,
+              "descr": "",
+              "time_request": 0,
+              "nextpr": [
+                {
+                  "time": 10,
+                  "time_to": 20,
+                  "name": "Later",
+                  "icon": "icon"
+                }
+              ]
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": [],
+            "now": 10000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": [],
+            "now": 11000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3610
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3611
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": null,
+            "now": 10000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": null,
+            "now": 11000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3610
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3611
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 15000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 16000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Overlap",
+              "time": 5,
+              "time_to": 15,
+              "descr": "",
+              "time_request": 0,
+              "nextpr": [
+                {
+                  "time": 10,
+                  "time_to": 20,
+                  "name": "Later",
+                  "icon": "icon"
+                }
+              ]
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Later",
+              "time": 10,
+              "time_to": 20,
+              "descr": "",
+              "time_request": 0,
+              "nextpr": null,
+              "icon": "icon"
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": [],
+            "now": 15000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": [],
+            "now": 16000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3615
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3616
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": null,
+            "now": 15000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": null,
+            "now": 16000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3615
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3616
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 20000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 21000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Later",
+              "time": 10,
+              "time_to": 20,
+              "descr": "",
+              "time_request": 0,
+              "icon": "icon",
+              "nextpr": null
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "time_request": 3621,
+              "icon": "icon",
+              "nextpr": null,
+              "outdated": true
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": [],
+            "now": 20000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": [],
+            "now": 21000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3620
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3621
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": null,
+            "now": 20000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": null,
+            "now": 21000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3620
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3621
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 21000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 22000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3621,
+              "outdated": true
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3622,
+              "outdated": true
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": [],
+            "now": 21000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": [],
+            "now": 22000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3621
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3622
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "data": null,
+            "now": 21000
+          },
+          {
+            "type": "select",
+            "id": 1,
+            "data": null,
+            "now": 22000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3621
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "",
+              "time": 0,
+              "time_to": 0,
+              "descr": "",
+              "nextpr": null,
+              "time_request": 3622
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "nextCount": 0,
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "now": 5000,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Early",
+              "time": 0,
+              "time_to": 10,
+              "descr": "",
+              "time_request": 0,
+              "nextpr": [
+                {
+                  "time": 5,
+                  "time_to": 15,
+                  "name": "Overlap"
+                }
+              ]
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "nextCount": 1,
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "now": 5000,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Early",
+              "time": 0,
+              "time_to": 10,
+              "descr": "",
+              "time_request": 0,
+              "nextpr": [
+                {
+                  "time": 5,
+                  "time_to": 15,
+                  "name": "Overlap"
+                },
+                {
+                  "time": 10,
+                  "time_to": 20,
+                  "name": "Later",
+                  "icon": "icon"
+                }
+              ]
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "nextCount": 2,
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "now": 5000,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Early",
+              "time": 0,
+              "time_to": 10,
+              "descr": "",
+              "time_request": 0,
+              "nextpr": [
+                {
+                  "time": 5,
+                  "time_to": 15,
+                  "name": "Overlap"
+                },
+                {
+                  "time": 10,
+                  "time_to": 20,
+                  "name": "Later",
+                  "icon": "icon"
+                }
+              ]
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "nextCount": -1,
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "now": 5000,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Early",
+              "time": 0,
+              "time_to": 10,
+              "descr": "",
+              "time_request": 0,
+              "nextpr": null
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "nextCount": 1.5,
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "now": 5000,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Early",
+              "time": 0,
+              "time_to": 10,
+              "descr": "",
+              "time_request": 0,
+              "nextpr": [
+                {
+                  "time": 5,
+                  "time_to": 15,
+                  "name": "Overlap"
+                },
+                {
+                  "time": 10,
+                  "time_to": 20,
+                  "name": "Later",
+                  "icon": "icon"
+                }
+              ]
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "nextCount": "3",
+        "actions": [
+          {
+            "type": "select",
+            "id": 1,
+            "now": 5000,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [
+            1
+          ],
+          "channels": {
+            "1": {
+              "name": "Early",
+              "time": 0,
+              "time_to": 10,
+              "descr": "",
+              "time_request": 0,
+              "nextpr": [
+                {
+                  "time": 5,
+                  "time_to": 15,
+                  "name": "Overlap"
+                }
+              ]
+            },
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "limit": 0,
+        "actions": [
+          {
+            "type": "put",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 0
+          },
+          {
+            "type": "put",
+            "id": 2,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 20000
+          },
+          {
+            "type": "put",
+            "id": 3,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 20001
+          },
+          {
+            "type": "read",
+            "id": 2
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "limit": 1,
+        "actions": [
+          {
+            "type": "put",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 0
+          },
+          {
+            "type": "put",
+            "id": 2,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 20000
+          },
+          {
+            "type": "put",
+            "id": 3,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 20001
+          },
+          {
+            "type": "read",
+            "id": 2
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            1
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            2
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            2
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            3
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            3
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "limit": 2,
+        "actions": [
+          {
+            "type": "put",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 0
+          },
+          {
+            "type": "put",
+            "id": 2,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 20000
+          },
+          {
+            "type": "put",
+            "id": 3,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 20001
+          },
+          {
+            "type": "read",
+            "id": 2
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            1
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            2,
+            1
+          ]
+        },
+        {
+          "result": [
+            {
+              "time": 0,
+              "time_to": 10,
+              "name": "Early"
+            },
+            {
+              "time": 10,
+              "time_to": 20,
+              "name": "Later",
+              "icon": "icon"
+            },
+            {
+              "time": 5,
+              "time_to": 15,
+              "name": "Overlap"
+            }
+          ],
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            1,
+            2
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            3,
+            1
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            3
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "limit": 2.5,
+        "actions": [
+          {
+            "type": "put",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 0
+          },
+          {
+            "type": "put",
+            "id": 2,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 20000
+          },
+          {
+            "type": "put",
+            "id": 3,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 20001
+          },
+          {
+            "type": "read",
+            "id": 2
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            1
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            2,
+            1
+          ]
+        },
+        {
+          "result": [
+            {
+              "time": 0,
+              "time_to": 10,
+              "name": "Early"
+            },
+            {
+              "time": 10,
+              "time_to": 20,
+              "name": "Later",
+              "icon": "icon"
+            },
+            {
+              "time": 5,
+              "time_to": 15,
+              "name": "Overlap"
+            }
+          ],
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            1,
+            2
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            3,
+            1
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            3
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "limit": -1,
+        "actions": [
+          {
+            "type": "put",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 0
+          },
+          {
+            "type": "put",
+            "id": 2,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 20000
+          },
+          {
+            "type": "put",
+            "id": 3,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 20001
+          },
+          {
+            "type": "read",
+            "id": 2
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "limit": "2",
+        "actions": [
+          {
+            "type": "put",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 0
+          },
+          {
+            "type": "put",
+            "id": 2,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 20000
+          },
+          {
+            "type": "put",
+            "id": 3,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 20001
+          },
+          {
+            "type": "read",
+            "id": 2
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            1
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            2,
+            1
+          ]
+        },
+        {
+          "result": [
+            {
+              "time": 0,
+              "time_to": 10,
+              "name": "Early"
+            },
+            {
+              "time": 10,
+              "time_to": 20,
+              "name": "Later",
+              "icon": "icon"
+            },
+            {
+              "time": 5,
+              "time_to": 15,
+              "name": "Overlap"
+            }
+          ],
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "2": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            1,
+            2
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            3,
+            1
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            3
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "secondary": {
+            "3": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          "order": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "limit": "bad",
+        "actions": [
+          {
+            "type": "put",
+            "id": 1,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ],
+            "now": 0
+          },
+          {
+            "type": "put",
+            "id": 2,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 20000
+          },
+          {
+            "type": "put",
+            "id": 3,
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              }
+            ]
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 20001
+          },
+          {
+            "type": "read",
+            "id": 2
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "put",
+            "id": 1,
+            "data": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ],
+            "now": 0
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 0
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ]
+          },
+          "order": [
+            1
+          ]
+        },
+        {
+          "result": [
+            {
+              "time": 1,
+              "time_to": 100000,
+              "name": "Long"
+            }
+          ],
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ]
+          },
+          "order": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "put",
+            "id": 1,
+            "data": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ],
+            "now": 0
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 43199999
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ]
+          },
+          "order": [
+            1
+          ]
+        },
+        {
+          "result": [
+            {
+              "time": 1,
+              "time_to": 100000,
+              "name": "Long"
+            }
+          ],
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ]
+          },
+          "order": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "put",
+            "id": 1,
+            "data": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ],
+            "now": 0
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": 43200000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ]
+          },
+          "order": [
+            1
+          ]
+        },
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "put",
+            "id": 1,
+            "data": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ],
+            "now": 0
+          },
+          {
+            "type": "read",
+            "id": 1,
+            "now": -1000
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": null,
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ]
+          },
+          "order": [
+            1
+          ]
+        },
+        {
+          "result": [
+            {
+              "time": 1,
+              "time_to": 100000,
+              "name": "Long"
+            }
+          ],
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {
+            "1": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ]
+          },
+          "secondary": {
+            "1": [
+              {
+                "time": 1,
+                "time_to": 100000,
+                "name": "Long"
+              }
+            ]
+          },
+          "order": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "shift",
+            "channel": {
+              "ts": 0
+            },
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              },
+              {
+                "time": "10",
+                "time_to": "20"
+              },
+              null
+            ]
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": [
+            {
+              "time": 0,
+              "time_to": 10,
+              "name": "Early"
+            },
+            {
+              "time": 10,
+              "time_to": 20,
+              "name": "Later",
+              "icon": "icon"
+            },
+            {
+              "time": 5,
+              "time_to": 15,
+              "name": "Overlap"
+            },
+            {
+              "time": "10",
+              "time_to": "20"
+            },
+            null
+          ],
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "shift",
+            "channel": {
+              "ts": 1
+            },
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              },
+              {
+                "time": "10",
+                "time_to": "20"
+              },
+              null
+            ]
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": [
+            {
+              "time": 0,
+              "time_to": 10,
+              "name": "Early"
+            },
+            {
+              "time": 11,
+              "time_to": 21,
+              "name": "Later",
+              "icon": "icon"
+            },
+            {
+              "time": 6,
+              "time_to": 16,
+              "name": "Overlap"
+            },
+            {
+              "time": "101",
+              "time_to": "201"
+            },
+            null
+          ],
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "shift",
+            "channel": {
+              "ts": -3600
+            },
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              },
+              {
+                "time": "10",
+                "time_to": "20"
+              },
+              null
+            ]
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": [
+            {
+              "time": 0,
+              "time_to": 10,
+              "name": "Early"
+            },
+            {
+              "time": -3590,
+              "time_to": -3580,
+              "name": "Later",
+              "icon": "icon"
+            },
+            {
+              "time": -3595,
+              "time_to": -3585,
+              "name": "Overlap"
+            },
+            {
+              "time": "10-3600",
+              "time_to": "20-3600"
+            },
+            null
+          ],
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "shift",
+            "channel": {
+              "ts": 1.5
+            },
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              },
+              {
+                "time": "10",
+                "time_to": "20"
+              },
+              null
+            ]
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": [
+            {
+              "time": 0,
+              "time_to": 10,
+              "name": "Early"
+            },
+            {
+              "time": 11.5,
+              "time_to": 21.5,
+              "name": "Later",
+              "icon": "icon"
+            },
+            {
+              "time": 6.5,
+              "time_to": 16.5,
+              "name": "Overlap"
+            },
+            {
+              "time": "101.5",
+              "time_to": "201.5"
+            },
+            null
+          ],
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "shift",
+            "channel": {
+              "ts": "3600"
+            },
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              },
+              {
+                "time": "10",
+                "time_to": "20"
+              },
+              null
+            ]
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": [
+            {
+              "time": 0,
+              "time_to": 10,
+              "name": "Early"
+            },
+            {
+              "time": 10,
+              "time_to": 20,
+              "name": "Later",
+              "icon": "icon"
+            },
+            {
+              "time": 5,
+              "time_to": 15,
+              "name": "Overlap"
+            },
+            {
+              "time": "10",
+              "time_to": "20"
+            },
+            null
+          ],
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    },
+    {
+      "input": {
+        "actions": [
+          {
+            "type": "shift",
+            "channel": {
+              "ts": null
+            },
+            "data": [
+              {
+                "time": 0,
+                "time_to": 10,
+                "name": "Early"
+              },
+              {
+                "time": 10,
+                "time_to": 20,
+                "name": "Later",
+                "icon": "icon"
+              },
+              {
+                "time": 5,
+                "time_to": 15,
+                "name": "Overlap"
+              },
+              {
+                "time": "10",
+                "time_to": "20"
+              },
+              null
+            ]
+          }
+        ]
+      },
+      "expected": [
+        {
+          "result": [
+            {
+              "time": 0,
+              "time_to": 10,
+              "name": "Early"
+            },
+            {
+              "time": 10,
+              "time_to": 20,
+              "name": "Later",
+              "icon": "icon"
+            },
+            {
+              "time": 5,
+              "time_to": 15,
+              "name": "Overlap"
+            },
+            {
+              "time": "10",
+              "time_to": "20"
+            },
+            null
+          ],
+          "callbacks": [],
+          "channels": {
+            "1": {},
+            "2": {},
+            "3": {}
+          },
+          "cache": {},
+          "secondary": {},
+          "order": []
+        }
+      ]
+    }
+  ]
+}

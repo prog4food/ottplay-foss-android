@@ -1,0 +1,751 @@
+{
+  "description": "Reviewed identical text only: product/provider names, technical symbols and locale-specific genuine cognates. English prose fallback is not permitted.",
+  "entries": [
+    {
+      "key": " s",
+      "value": " s",
+      "locales": ["*"],
+      "reason": "International duration unit abbreviation"
+    },
+    {
+      "key": "&darr;a",
+      "value": "&darr;a",
+      "locales": ["*"],
+      "reason": "Markup or keyboard symbol"
+    },
+    {
+      "key": "&uarr;A",
+      "value": "&uarr;A",
+      "locales": ["*"],
+      "reason": "Markup or keyboard symbol"
+    },
+    {
+      "key": "<br>",
+      "value": "<br>",
+      "locales": ["*"],
+      "reason": "Markup or keyboard symbol"
+    },
+    {
+      "key": "<br><br>",
+      "value": "<br><br>",
+      "locales": ["*"],
+      "reason": "Markup or keyboard symbol"
+    },
+    {
+      "key": "<br>Menu",
+      "value": "<br>Menu",
+      "locales": [
+        "danish",
+        "dutch",
+        "filipino",
+        "french",
+        "indonesian",
+        "italian",
+        "malay",
+        "polish",
+        "portuguese",
+        "slovak"
+      ],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "<br>Pause<br>",
+      "value": "<br>Pause<br>",
+      "locales": ["danish", "french", "german", "norwegian"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "1 minute",
+      "value": "1 minute",
+      "locales": ["french", "german"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "30 minutes",
+      "value": "30 minutes",
+      "locales": ["french"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Actions",
+      "value": "Actions",
+      "locales": ["french"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Actors",
+      "value": "Actors",
+      "locales": ["catalan"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "All4you.tv",
+      "value": "All4you.tv",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "API Server",
+      "value": "API server",
+      "locales": ["bosnian", "danish", "estonian", "norwegian"],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "API server URL",
+      "value": "API server URL",
+      "locales": ["bosnian", "danish", "estonian", "norwegian"],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "Audio",
+      "value": "Audio",
+      "locales": [
+        "albanian",
+        "bosnian",
+        "croatian",
+        "dutch",
+        "french",
+        "galician",
+        "german",
+        "indonesian",
+        "italian",
+        "malay",
+        "romanian",
+        "spanish"
+      ],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "Balance, $",
+      "value": "Balance, $",
+      "locales": ["danish"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "BEST LiST IPTV [HLS Playlist]",
+      "value": "BEST LiST IPTV [HLS Playlist]",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "BEST LiST IPTV [Stalker]",
+      "value": "BEST LiST IPTV [Stalker]",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Channel ",
+      "value": "Channel ",
+      "locales": ["filipino"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Color",
+      "value": "Color",
+      "locales": ["catalan", "spanish"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Compatible HLS",
+      "value": "Compatible HLS",
+      "locales": ["french"],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "Description",
+      "value": "Description",
+      "locales": ["french"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Diamond TV",
+      "value": "Diamond TV",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Director",
+      "value": "Director",
+      "locales": ["catalan", "galician"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Dragon Media PRO",
+      "value": "Dragon Media PRO",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "DRVAO",
+      "value": "DRVAO",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Editor",
+      "value": "Editor",
+      "locales": [
+        "catalan",
+        "filipino",
+        "galician",
+        "portuguese",
+        "romanian",
+        "slovak",
+        "spanish"
+      ],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "EPG",
+      "value": "EPG",
+      "locales": ["*"],
+      "reason": "Protocol, identifier or broadcast acronym"
+    },
+    {
+      "key": "epg.one (Standard)",
+      "value": "epg.one (Standard)",
+      "locales": [
+        "albanian",
+        "danish",
+        "french",
+        "german",
+        "italian",
+        "kurdish",
+        "maltese",
+        "norwegian",
+        "romanian",
+        "swedish"
+      ],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "ERROR!",
+      "value": "Error!",
+      "locales": ["catalan"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Fabryka.TV",
+      "value": "Fabryka.TV",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Filter",
+      "value": "Filter",
+      "locales": [
+        "afrikaans",
+        "bosnian",
+        "croatian",
+        "danish",
+        "dutch",
+        "estonian",
+        "german",
+        "norwegian",
+        "slovak",
+        "slovenian",
+        "swedish"
+      ],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Filters",
+      "value": "Filters",
+      "locales": ["afrikaans", "dutch"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Fox-TV",
+      "value": "Fox-TV",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "FXML",
+      "value": "FXML",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Genre",
+      "value": "Genre",
+      "locales": [
+        "afrikaans",
+        "danish",
+        "dutch",
+        "french",
+        "german",
+        "indonesian",
+        "malay",
+        "swedish"
+      ],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "GlanzTV",
+      "value": "GlanzTV",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "GREAT IPTV",
+      "value": "GREAT IPTV",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "HTTP port",
+      "value": "HTTP port",
+      "locales": ["danish", "estonian", "filipino"],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "ID",
+      "value": "ID",
+      "locales": ["*"],
+      "reason": "Protocol, identifier or broadcast acronym"
+    },
+    {
+      "key": "Info",
+      "value": "Info",
+      "locales": [
+        "basque",
+        "danish",
+        "dutch",
+        "german",
+        "indonesian",
+        "norwegian",
+        "swedish"
+      ],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Information",
+      "value": "Information",
+      "locales": ["danish", "swedish"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "IpStream.one",
+      "value": "IpStream.one",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "IPTV token",
+      "value": "IPTV token",
+      "locales": [
+        "albanian",
+        "bosnian",
+        "croatian",
+        "danish",
+        "filipino",
+        "norwegian"
+      ],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "Joystick",
+      "value": "Joystick",
+      "locales": [
+        "czech",
+        "danish",
+        "dutch",
+        "filipino",
+        "german",
+        "indonesian",
+        "italian",
+        "kurdish",
+        "maltese",
+        "polish",
+        "portuguese",
+        "romanian"
+      ],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "KORONA TV",
+      "value": "KORONA TV",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "M3U",
+      "value": "M3U",
+      "locales": ["*"],
+      "reason": "Technical format or diagnostic acronym"
+    },
+    {
+      "key": "M3U URL",
+      "value": "M3U URL",
+      "locales": ["*"],
+      "reason": "Protocol, identifier or broadcast acronym"
+    },
+    {
+      "key": "MAC address",
+      "value": "MAC address",
+      "locales": ["filipino"],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "MaxTV",
+      "value": "MaxTV",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Media",
+      "value": "Media",
+      "locales": [
+        "afrikaans",
+        "albanian",
+        "azerbaijani",
+        "dutch",
+        "filipino",
+        "finnish",
+        "indonesian",
+        "malay",
+        "norwegian",
+        "romanian",
+        "swedish",
+        "uzbek"
+      ],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "medium",
+      "value": "medium",
+      "locales": ["afrikaans"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Menu",
+      "value": "Menu",
+      "locales": [
+        "danish",
+        "dutch",
+        "filipino",
+        "french",
+        "indonesian",
+        "kurdish",
+        "malay",
+        "polish",
+        "portuguese",
+        "slovak"
+      ],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "min",
+      "value": "min",
+      "locales": ["*"],
+      "reason": "International duration unit abbreviation"
+    },
+    {
+      "key": "New Look",
+      "value": "New Look",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "no",
+      "value": "no",
+      "locales": ["catalan", "italian", "spanish"],
+      "reason": "Same native word in the listed languages; capitalization may differ"
+    },
+    {
+      "key": "No",
+      "value": "No",
+      "locales": ["catalan", "italian", "spanish"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Ok",
+      "value": "OK",
+      "locales": ["*"],
+      "reason": "International OK acknowledgement"
+    },
+    {
+      "key": "OTT / APP host",
+      "value": "OTT / APP host",
+      "locales": ["estonian"],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "OTT Prime ONLINE",
+      "value": "OTT Prime ONLINE",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "p...",
+      "value": "p...",
+      "locales": ["*"],
+      "reason": "Compact provider activity indicator"
+    },
+    {
+      "key": "Password",
+      "value": "Password",
+      "locales": ["filipino", "italian"],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "Pause",
+      "value": "Pause",
+      "locales": ["danish", "french", "german", "norwegian"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "PIN",
+      "value": "PIN",
+      "locales": ["*"],
+      "reason": "Technical format or diagnostic acronym"
+    },
+    {
+      "key": "Playlist",
+      "value": "Playlist",
+      "locales": ["filipino", "italian"],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "Plex",
+      "value": "Plex",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Plex token",
+      "value": "Plex token",
+      "locales": [
+        "albanian",
+        "bosnian",
+        "danish",
+        "hungarian",
+        "norwegian",
+        "swedish"
+      ],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "POLMEDIA",
+      "value": "POLMEDIA",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Portal URL",
+      "value": "Portal URL",
+      "locales": ["croatian", "danish", "kurdish", "norwegian"],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "PROST",
+      "value": "PROST",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "RD",
+      "value": "RD",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "RUSSKOETV",
+      "value": "RUSSKOETV",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Saturation",
+      "value": "Saturation",
+      "locales": ["french"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Server",
+      "value": "Server",
+      "locales": [
+        "azerbaijani",
+        "bosnian",
+        "czech",
+        "danish",
+        "dutch",
+        "estonian",
+        "filipino",
+        "german",
+        "indonesian",
+        "italian",
+        "maltese",
+        "norwegian",
+        "romanian",
+        "slovak",
+        "swedish",
+        "uzbek"
+      ],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "Server URL",
+      "value": "Server URL",
+      "locales": ["danish", "estonian", "norwegian"],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "Shara.club (ClubTV.pro)",
+      "value": "Shara.club (ClubTV.pro)",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "ShockTv",
+      "value": "ShockTv",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Status",
+      "value": "Status",
+      "locales": [
+        "afrikaans",
+        "bosnian",
+        "croatian",
+        "danish",
+        "dutch",
+        "german",
+        "indonesian",
+        "malay",
+        "norwegian",
+        "swedish"
+      ],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Stop",
+      "value": "Stop",
+      "locales": ["afrikaans", "czech", "danish", "romanian"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Swop URL",
+      "value": "Swop URL",
+      "locales": ["*"],
+      "reason": "Service name followed by the URL acronym"
+    },
+    {
+      "key": "system",
+      "value": "system",
+      "locales": ["danish", "german"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Tabox",
+      "value": "Tabox",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Timer",
+      "value": "Timer",
+      "locales": [
+        "danish",
+        "dutch",
+        "filipino",
+        "german",
+        "norwegian",
+        "swedish"
+      ],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "TMDb",
+      "value": "TMDb",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "TOP-IPTV",
+      "value": "TOP-IPTV",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Top-Tv",
+      "value": "Top-Tv",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "transparent",
+      "value": "transparent",
+      "locales": ["albanian", "catalan", "french", "german", "romanian"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "TV DOSUG",
+      "value": "TV DOSUG",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "TVClub",
+      "value": "TVClub",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "ULTIFL1X",
+      "value": "ULTIFL1X",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Version",
+      "value": "Version",
+      "locales": ["danish", "french", "german", "swedish"],
+      "reason": "Same native word or phrase in the listed languages"
+    },
+    {
+      "key": "Vidok.TV",
+      "value": "Vidok.TV",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "VIP-IP.COM",
+      "value": "VIP-IP.COM",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "VPortal link",
+      "value": "VPortal link",
+      "locales": ["danish", "estonian"],
+      "reason": "Same established computing or media term in the listed languages"
+    },
+    {
+      "key": "Гомельсат (cbilling)",
+      "value": "Гомельсат (cbilling)",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "МойДом",
+      "value": "МойДом",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Радуга",
+      "value": "Радуга",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    },
+    {
+      "key": "Шаравоз",
+      "value": "Шаравоз",
+      "locales": ["*"],
+      "reason": "Provider or product name"
+    }
+  ]
+}

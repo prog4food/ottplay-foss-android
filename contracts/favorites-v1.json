@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "max_items": 100,
+  "max_name_bytes": 160,
+  "max_title_bytes": 512,
+  "max_profile_name_bytes": 256,
+  "max_result_bytes": 1048576,
+  "operations": ["list", "add", "play", "remove"],
+  "errors": [
+    "invalid_request",
+    "unsupported",
+    "no_current_item",
+    "unsupported_item",
+    "profile_unavailable",
+    "profile_changed",
+    "item_unavailable",
+    "ambiguous_favorite",
+    "favorite_not_found",
+    "too_many_favorites",
+    "storage_unavailable",
+    "policy_denied",
+    "busy",
+    "timeout",
+    "cancelled",
+    "context_changed",
+    "playback_failed"
+  ],
+  "list_request": {
+    "action": "favorites",
+    "params": {
+      "runtime": "page-123",
+      "op": "list"
+    }
+  },
+  "list_result": {
+    "version": 1,
+    "runtime": "page-123",
+    "op": "list",
+    "state": "ready",
+    "entries": [
+      {
+        "id": "fav-abc123",
+        "name": "Винни-Пух",
+        "provider": "m3u",
+        "profile_number": 3,
+        "profile_name": "Дом",
+        "kind": "vod",
+        "title": "Винни-Пух (1969)"
+      }
+    ]
+  },
+  "add_request": {
+    "action": "favorites",
+    "params": {
+      "runtime": "page-123",
+      "op": "add",
+      "name": "Винни-Пух"
+    }
+  },
+  "add_result": {
+    "version": 1,
+    "runtime": "page-123",
+    "op": "add",
+    "state": "ready",
+    "entry": {
+      "id": "fav-abc123",
+      "name": "Винни-Пух",
+      "provider": "m3u",
+      "profile_number": 3,
+      "profile_name": "Дом",
+      "kind": "vod",
+      "title": "Винни-Пух (1969)"
+    },
+    "created": true
+  },
+  "play_request": {
+    "action": "favorites",
+    "params": {
+      "runtime": "page-123",
+      "op": "play",
+      "id": "fav-abc123"
+    }
+  },
+  "play_result": {
+    "version": 1,
+    "runtime": "page-123",
+    "op": "play",
+    "state": "dispatched",
+    "entry": {
+      "id": "fav-abc123",
+      "name": "Винни-Пух",
+      "provider": "m3u",
+      "profile_number": 3,
+      "profile_name": "Дом",
+      "kind": "vod",
+      "title": "Винни-Пух (1969)"
+    },
+    "dispatched": true
+  },
+  "remove_request": {
+    "action": "favorites",
+    "params": {
+      "runtime": "page-123",
+      "op": "remove",
+      "id": "fav-abc123"
+    }
+  },
+  "remove_result": {
+    "version": 1,
+    "runtime": "page-123",
+    "op": "remove",
+    "state": "ready",
+    "entry": {
+      "id": "fav-abc123",
+      "name": "Винни-Пух",
+      "provider": "m3u",
+      "profile_number": 3,
+      "profile_name": "Дом",
+      "kind": "vod",
+      "title": "Винни-Пух (1969)"
+    },
+    "removed": true
+  },
+  "error_result": {
+    "version": 1,
+    "runtime": "page-123",
+    "op": "play",
+    "state": "error",
+    "error": "profile_changed"
+  }
+}

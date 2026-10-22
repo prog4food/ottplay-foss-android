@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-lifecycle-capabilities"
+description = "Allows read-only app lifecycle capability discovery."
+commands.allow = ["lifecycle_capabilities"]

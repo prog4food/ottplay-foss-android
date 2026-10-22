@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_setup_title">Запуск OTTPlay</string>
+    <string name="home_setup_explanation">Выберите OTTPlay домашним приложением устройства, чтобы плеер открывался при запуске. Кнопка «Домой» также будет открывать OTTPlay. Не удаляйте штатный лаунчер. Этот экран не меняет плейлисты и настройки воспроизведения.</string>
+    <string name="home_setup_enable">Включить и выбрать OTTPlay</string>
+    <string name="home_setup_disable">Отключить OTTPlay как вариант «Домой»</string>
+    <string name="home_setup_settings">Выбрать домашнее приложение</string>
+    <string name="home_setup_close">Закрыть</string>
+    <string name="home_setup_disabled">OTTPlay отключён как вариант домашнего приложения.</string>
+    <string name="home_setup_selected">OTTPlay выбран домашним приложением. Проверьте запуск после перезагрузки устройства.</string>
+    <string name="home_setup_available">OTTPlay доступен для выбора. Его назначение домашним приложением не подтверждено.</string>
+    <string name="home_setup_unavailable">Прошивка не смогла выполнить операцию. Проверьте выбор домашнего приложения в системных настройках.</string>
+    <string name="home_setup_enable_confirmation">Добавить OTTPlay в варианты домашнего приложения? Android предложит выбрать домашнее приложение. Если отменить выбор, вариант OTTPlay останется доступным, но этот экран не изменит выбранное домашнее приложение.</string>
+    <string name="home_setup_choose_other">Сначала выберите другое домашнее приложение в системных настройках. Затем вернитесь сюда и снова нажмите «Отключить». Пока другое приложение не подтверждено, вариант OTTPlay останется включённым.</string>
+    <string name="home_setup_disable_confirmation">Выбрано другое домашнее приложение. Убрать OTTPlay из вариантов «Домой»? Обычное приложение OTTPlay и сохранённые профили останутся доступны.</string>
+</resources>

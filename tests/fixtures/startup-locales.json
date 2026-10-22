@@ -1,0 +1,402 @@
+{
+  "source": "https://raw.githubusercontent.com/unicode-org/cldr/acd6d88ae493633240e19a87a721076a8a75c310/common/supplemental/likelySubtags.xml",
+  "languages": {
+    "en": {
+      "code": "_eng",
+      "script": "Latn"
+    },
+    "ru": {
+      "code": "_rus",
+      "script": "Cyrl"
+    },
+    "hy": {
+      "code": "_arm",
+      "script": "Armn"
+    },
+    "be": {
+      "code": "_bel",
+      "script": "Cyrl"
+    },
+    "bg": {
+      "code": "_bul",
+      "script": "Cyrl"
+    },
+    "fr": {
+      "code": "_fra",
+      "script": "Latn"
+    },
+    "de": {
+      "code": "_ger",
+      "script": "Latn"
+    },
+    "el": {
+      "code": "_gre",
+      "script": "Grek"
+    },
+    "he": {
+      "code": "_heb",
+      "script": "Hebr"
+    },
+    "hu": {
+      "code": "_hun",
+      "script": "Latn"
+    },
+    "it": {
+      "code": "_ita",
+      "script": "Latn"
+    },
+    "lv": {
+      "code": "_lat",
+      "script": "Latn"
+    },
+    "lt": {
+      "code": "_lit",
+      "script": "Latn"
+    },
+    "pl": {
+      "code": "_pol",
+      "script": "Latn"
+    },
+    "pt": {
+      "code": "_por",
+      "script": "Latn"
+    },
+    "ro": {
+      "code": "_rou",
+      "script": "Latn"
+    },
+    "es": {
+      "code": "_spa",
+      "script": "Latn"
+    },
+    "tr": {
+      "code": "_tur",
+      "script": "Latn"
+    },
+    "uk": {
+      "code": "_ukr",
+      "script": "Cyrl"
+    },
+    "uz": {
+      "code": "_uzb",
+      "script": "Latn"
+    },
+    "id": {
+      "code": "_ind",
+      "script": "Latn"
+    },
+    "vi": {
+      "code": "_vie",
+      "script": "Latn"
+    },
+    "ms": {
+      "code": "_may",
+      "script": "Latn"
+    },
+    "nl": {
+      "code": "_dut",
+      "script": "Latn"
+    },
+    "cs": {
+      "code": "_cze",
+      "script": "Latn"
+    },
+    "sv": {
+      "code": "_swe",
+      "script": "Latn"
+    },
+    "az": {
+      "code": "_aze",
+      "script": "Latn"
+    },
+    "kk": {
+      "code": "_kaz",
+      "script": "Cyrl"
+    },
+    "ar": {
+      "code": "_ara",
+      "script": "Arab"
+    },
+    "zh": {
+      "code": "_chi",
+      "script": "Hans"
+    },
+    "ja": {
+      "code": "_jpn",
+      "script": "Jpan"
+    },
+    "ko": {
+      "code": "_kor",
+      "script": "Kore"
+    },
+    "fa": {
+      "code": "_per",
+      "script": "Arab"
+    },
+    "hi": {
+      "code": "_hin",
+      "script": "Deva"
+    },
+    "bn": {
+      "code": "_ben",
+      "script": "Beng"
+    },
+    "ur": {
+      "code": "_urd",
+      "script": "Arab"
+    },
+    "pa": {
+      "code": "_pan",
+      "script": "Guru"
+    },
+    "mr": {
+      "code": "_mar",
+      "script": "Deva"
+    },
+    "te": {
+      "code": "_tel",
+      "script": "Telu"
+    },
+    "ta": {
+      "code": "_tam",
+      "script": "Taml"
+    },
+    "gu": {
+      "code": "_guj",
+      "script": "Gujr"
+    },
+    "kn": {
+      "code": "_kan",
+      "script": "Knda"
+    },
+    "ml": {
+      "code": "_mal",
+      "script": "Mlym"
+    },
+    "ne": {
+      "code": "_nep",
+      "script": "Deva"
+    },
+    "si": {
+      "code": "_sin",
+      "script": "Sinh"
+    },
+    "th": {
+      "code": "_tha",
+      "script": "Thai"
+    },
+    "my": {
+      "code": "_bur",
+      "script": "Mymr"
+    },
+    "km": {
+      "code": "_khm",
+      "script": "Khmr"
+    },
+    "sw": {
+      "code": "_swa",
+      "script": "Latn"
+    },
+    "fil": {
+      "code": "_fil",
+      "script": "Latn"
+    },
+    "fi": {
+      "code": "_fin",
+      "script": "Latn"
+    },
+    "da": {
+      "code": "_dan",
+      "script": "Latn"
+    },
+    "no": {
+      "code": "_nor",
+      "script": "Latn"
+    },
+    "et": {
+      "code": "_est",
+      "script": "Latn"
+    },
+    "sk": {
+      "code": "_slo",
+      "script": "Latn"
+    },
+    "sl": {
+      "code": "_slv",
+      "script": "Latn"
+    },
+    "hr": {
+      "code": "_hrv",
+      "script": "Latn"
+    },
+    "sr": {
+      "code": "_srp",
+      "script": "Cyrl"
+    },
+    "ka": {
+      "code": "_geo",
+      "script": "Geor"
+    },
+    "sq": {
+      "code": "_alb",
+      "script": "Latn"
+    },
+    "bs": {
+      "code": "_bos",
+      "script": "Latn"
+    },
+    "mk": {
+      "code": "_mac",
+      "script": "Cyrl"
+    },
+    "is": {
+      "code": "_ice",
+      "script": "Latn"
+    },
+    "ca": {
+      "code": "_cat",
+      "script": "Latn"
+    },
+    "eu": {
+      "code": "_baq",
+      "script": "Latn"
+    },
+    "gl": {
+      "code": "_glg",
+      "script": "Latn"
+    },
+    "ga": {
+      "code": "_gle",
+      "script": "Latn"
+    },
+    "mt": {
+      "code": "_mlt",
+      "script": "Latn"
+    },
+    "ps": {
+      "code": "_pus",
+      "script": "Arab"
+    },
+    "ku": {
+      "code": "_kur",
+      "script": "Latn"
+    },
+    "tg": {
+      "code": "_tgk",
+      "script": "Cyrl"
+    },
+    "ky": {
+      "code": "_kir",
+      "script": "Cyrl"
+    },
+    "tk": {
+      "code": "_tuk",
+      "script": "Latn"
+    },
+    "mn": {
+      "code": "_mon",
+      "script": "Cyrl"
+    },
+    "lo": {
+      "code": "_lao",
+      "script": "Laoo"
+    },
+    "or": {
+      "code": "_ori",
+      "script": "Orya"
+    },
+    "as": {
+      "code": "_asm",
+      "script": "Beng"
+    },
+    "sd": {
+      "code": "_snd",
+      "script": "Arab"
+    },
+    "af": {
+      "code": "_afr",
+      "script": "Latn"
+    },
+    "am": {
+      "code": "_amh",
+      "script": "Ethi"
+    },
+    "ha": {
+      "code": "_hau",
+      "script": "Latn"
+    },
+    "yo": {
+      "code": "_yor",
+      "script": "Latn"
+    },
+    "ig": {
+      "code": "_ibo",
+      "script": "Latn"
+    },
+    "so": {
+      "code": "_som",
+      "script": "Latn"
+    },
+    "zu": {
+      "code": "_zul",
+      "script": "Latn"
+    },
+    "xh": {
+      "code": "_xho",
+      "script": "Latn"
+    },
+    "mg": {
+      "code": "_mlg",
+      "script": "Latn"
+    },
+    "rw": {
+      "code": "_kin",
+      "script": "Latn"
+    }
+  },
+  "regionalScripts": {
+    "az-iq": "arab",
+    "az-ir": "arab",
+    "az-ru": "cyrl",
+    "ha-cm": "arab",
+    "ha-sd": "arab",
+    "kk-af": "arab",
+    "kk-cn": "arab",
+    "kk-ir": "arab",
+    "kk-mn": "arab",
+    "ku-am": "cyrl",
+    "ku-az": "cyrl",
+    "ku-ge": "cyrl",
+    "ku-iq": "arab",
+    "ku-ir": "arab",
+    "ku-lb": "arab",
+    "ku-tm": "cyrl",
+    "ky-cn": "arab",
+    "ky-tr": "latn",
+    "mn-cn": "mong",
+    "ms-cc": "arab",
+    "pa-pk": "arab",
+    "sd-in": "deva",
+    "sr-me": "latn",
+    "sr-ro": "latn",
+    "sr-tr": "latn",
+    "tg-pk": "arab",
+    "uz-af": "arab",
+    "uz-cn": "cyrl",
+    "zh-au": "hant",
+    "zh-bn": "hant",
+    "zh-gb": "hant",
+    "zh-gf": "hant",
+    "zh-hk": "hant",
+    "zh-id": "hant",
+    "zh-mo": "hant",
+    "zh-pa": "hant",
+    "zh-pf": "hant",
+    "zh-ph": "hant",
+    "zh-sr": "hant",
+    "zh-th": "hant",
+    "zh-tw": "hant",
+    "zh-us": "hant",
+    "zh-vn": "hant"
+  }
+}

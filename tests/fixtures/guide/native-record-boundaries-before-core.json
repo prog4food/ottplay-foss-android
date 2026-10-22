@@ -1,0 +1,38 @@
+{
+  "provenance": {
+    "repository": "open-ott-play/ottplay-foss",
+    "commit": "c02125906cad47c992c67235314018f908d4ab3d",
+    "capture": "Real private parseXmltv from unchanged git-show HEAD adapters and vendored artifacts in a temporary directory. Only platform imports, bundle lookups and serialization harness adapted. Result hashes cover complete payloads serialized with sorted keys, UTF-8, and compact JSON separators.",
+    "sources": {
+      "mobile-xmltv-epg/src/ios/MobileXmltvEpg.swift": "8966a3ceefab54cdef0900a12412dd228787e9335a36a85bdda9d4ef2efab546",
+      "mobile-xmltv-epg/src/android/play/ott/foss/plugin/MobileXmltvEpgPlugin.kt": "9154b6abee889b56064c5c16dcb5d587c260d1bb0317cd626d7eaac1abb5b6b3"
+    },
+    "coreManifestSha256": "51ec8d35574ff97f658d91a2e61fff2ca126751cb4676d9df50794bea7894a93"
+  },
+  "cases": [
+    {
+      "name": "channel ownership and aliases cross 256 tokens",
+      "xmlSha256": "5eff6d2409f8f3c696d81b3127f0d3e41068499b32c8df745c05f0553febf5b8",
+      "expectedSha256": {
+        "swift": "1a07eaa59b2b572910a0db2f11499e8a31f4e5c75cc6bf123927a57d891dffc4",
+        "android": "1a07eaa59b2b572910a0db2f11499e8a31f4e5c75cc6bf123927a57d891dffc4"
+      }
+    },
+    {
+      "name": "programme text crosses 64 KiB and retains Unicode tail",
+      "xmlSha256": "fcdf3229b4e30d2e212ee04ef272d1edb3c5ce93fe0365797e42734f29666e0b",
+      "expectedSha256": {
+        "swift": "025865da662ed92b81cd8e8a68359591f438dab1841467911ebaedec5ceaade2",
+        "android": "025865da662ed92b81cd8e8a68359591f438dab1841467911ebaedec5ceaade2"
+      }
+    },
+    {
+      "name": "malformed tail preserves completed metadata across batches",
+      "xmlSha256": "01ec629a58566d76772a461c6abd8fc404c2d47c84c5de257d52b5ee7dc975fb",
+      "expectedSha256": {
+        "swift": "acf611e9105c8f299222ca6c2acf63c46a25260a09b9de38fc6fd44652a247aa",
+        "android": "1cafefa45b212590570737dddfaac8e212469a003cf275faf5ec93edbda35739"
+      }
+    }
+  ]
+}

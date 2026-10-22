@@ -1,0 +1,4309 @@
+{
+  "baseline": "7d47b0ca391e4b1d1fe282cb4bf11a2bfe17e80a",
+  "fixtures": [
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-100.ts?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs-1769999401.ts?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769999400-100.ts?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-3600.ts?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-7300.ts?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs-1769999401.ts?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769999400-7300.ts?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-10800.ts?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/video-1769996400-100.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/video-timeshift_abs-1769999401.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/video-1769999400-100.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/video-1769996400-3600.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/video-1769996400-7300.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/video-timeshift_abs-1769999401.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/video-1769999400-7300.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/video-1769996400-10800.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/mono-1769996400-100.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/mono-timeshift_abs-1769999401.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/mono-1769999400-100.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/mono-1769996400-3600.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/mono-1769996400-7300.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/mono-timeshift_abs-1769999401.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/mono-1769999400-7300.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/mono-1769996400-10800.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-100.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs-1769999401.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769999400-100.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-3600.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-7300.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs-1769999401.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769999400-7300.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-10800.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-100.mpd?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs-1769999401.mpd?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769999400-100.mpd?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-3600.mpd?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-7300.mpd?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs-1769999401.mpd?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769999400-7300.mpd?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-10800.mpd?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769999401&lutc=1770000000"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769999400&lutc=1770000000"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769999401&lutc=1770000000"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769999400&lutc=1770000000"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "default",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "default",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1770006200&now=1770000000&offset=2000&duration=8200&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "append",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live?token=a?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "append",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live?token=a?start=1769998000&end=1770006200&now=1770000000&offset=2000&duration=8200&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "none",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "m3u",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "none",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1770006200&now=1770000000&offset=2000&duration=8200&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769996400?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769999401?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769999400?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769996400?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769996400?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769999401?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769999400?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mpegts?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769996400?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/video-1769996400-100.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs_video-1769999401.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/video-1769999400-100.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/video-1769996400-3600.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/video-1769996400-7300.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs_video-1769999401.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/video-1769999400-7300.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/video.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/video-1769996400-10800.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2&utc=1769999401&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2&utc=1769999400&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2&utc=1769999401&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2&utc=1769999400&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/mono.m3u8?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index-1769996400-100.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs-1769999401.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index-1769999400-100.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index-1769996400-3600.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index-1769996400-7300.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs-1769999401.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index-1769999400-7300.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index-1769996400-10800.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-100.mdp?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs-1769999401.mdp?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769999400-100.mdp?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-3600.mdp?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-7300.mdp?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs-1769999401.mdp?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769999400-7300.mdp?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/index.mpd?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/archive-1769996400-10800.mdp?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769999401&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769999400&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769999401&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769999400&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live/other?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/other?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "default",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "default",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1770006200&now=1770000000&offset=2000&duration=8200&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "append",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live?token=a?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "append",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live?token=a?start=1769998000&end=1770006200&now=1770000000&offset=2000&duration=8200&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "none",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "kb-team",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "none",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1770006200&now=1770000000&offset=2000&duration=8200&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "xtream",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769996400&end=1769996501&now=1770000000&offset=3600&duration=100"
+    },
+    {
+      "provider": "xtream",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769999401&end=1769999501&now=1770000000&offset=599&duration=100"
+    },
+    {
+      "provider": "xtream",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769999400&end=1769999501&now=1770000000&offset=600&duration=100"
+    },
+    {
+      "provider": "xtream",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769996400&end=1770000000&now=1770000000&offset=3600&duration=3600"
+    },
+    {
+      "provider": "xtream",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769996400&end=1769996501&now=1770000000&offset=3600&duration=100"
+    },
+    {
+      "provider": "xtream",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769999401&end=1769999501&now=1770000000&offset=599&duration=100"
+    },
+    {
+      "provider": "xtream",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769999400&end=1769999501&now=1770000000&offset=600&duration=100"
+    },
+    {
+      "provider": "xtream",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769996400&end=1770000000&now=1770000000&offset=3600&duration=3600"
+    },
+    {
+      "provider": "xtream",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "default",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "xtream",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "default",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "xtream",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "append",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "xtream",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "append",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "xtream",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "none",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "xtream",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "none",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "stalker",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769996400&end=1769996501&now=1770000000&offset=3600&duration=100"
+    },
+    {
+      "provider": "stalker",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769999401&end=1769999501&now=1770000000&offset=599&duration=100"
+    },
+    {
+      "provider": "stalker",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769999400&end=1769999501&now=1770000000&offset=600&duration=100"
+    },
+    {
+      "provider": "stalker",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769996400&end=1770000000&now=1770000000&offset=3600&duration=3600"
+    },
+    {
+      "provider": "stalker",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769996400&end=1769996501&now=1770000000&offset=3600&duration=100"
+    },
+    {
+      "provider": "stalker",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769999401&end=1769999501&now=1770000000&offset=599&duration=100"
+    },
+    {
+      "provider": "stalker",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769999400&end=1769999501&now=1770000000&offset=600&duration=100"
+    },
+    {
+      "provider": "stalker",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "https://archive.test/a?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://archive.test/a?start=1769996400&end=1770000000&now=1770000000&offset=3600&duration=3600"
+    },
+    {
+      "provider": "stalker",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "default",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "stalker",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "default",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "stalker",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "append",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "stalker",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "append",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "stalker",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "none",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "stalker",
+      "channel": {
+        "url": "https://video.test/live?token=a",
+        "ca": "none",
+        "caso": "?start=${start}&end=${end}&now=${timestamp}&offset=${offset}&duration=${duration}&untouched={utc}&unknown=${other}"
+      },
+      "start": 1769998000.15,
+      "end": 1769999000.45,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "?start=1769998000&end=1769999000&now=1770000000&offset=2000&duration=1000&untouched={utc}&unknown=${other}"
+    },
+    {
+      "provider": "1ott",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769996400"
+    },
+    {
+      "provider": "1ott",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769999401"
+    },
+    {
+      "provider": "1ott",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769999400"
+    },
+    {
+      "provider": "1ott",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769996400"
+    },
+    {
+      "provider": "1ott",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769996400"
+    },
+    {
+      "provider": "1ott",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769999401"
+    },
+    {
+      "provider": "1ott",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769999400"
+    },
+    {
+      "provider": "1ott",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769996400"
+    },
+    {
+      "provider": "shara-tv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769996400"
+    },
+    {
+      "provider": "shara-tv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769999401"
+    },
+    {
+      "provider": "shara-tv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769999400"
+    },
+    {
+      "provider": "shara-tv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769996400"
+    },
+    {
+      "provider": "shara-tv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769996400"
+    },
+    {
+      "provider": "shara-tv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769999401"
+    },
+    {
+      "provider": "shara-tv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769999400"
+    },
+    {
+      "provider": "shara-tv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769996400"
+    },
+    {
+      "provider": "edem",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "edem",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769999401&lutc=1770000000"
+    },
+    {
+      "provider": "edem",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769999400&lutc=1770000000"
+    },
+    {
+      "provider": "edem",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "edem",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "edem",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769999401&lutc=1770000000"
+    },
+    {
+      "provider": "edem",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769999400&lutc=1770000000"
+    },
+    {
+      "provider": "edem",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "shura",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?archive=1769996400"
+    },
+    {
+      "provider": "shura",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?archive=1769999401"
+    },
+    {
+      "provider": "shura",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?archive=1769999400"
+    },
+    {
+      "provider": "shura",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?archive=1769996400"
+    },
+    {
+      "provider": "shura",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?archive=1769996400"
+    },
+    {
+      "provider": "shura",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?archive=1769999401"
+    },
+    {
+      "provider": "shura",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?archive=1769999400"
+    },
+    {
+      "provider": "shura",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?archive=1769996400"
+    },
+    {
+      "provider": "tvteam",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "tvteam",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2&utc=1769999401&lutc=1770000000"
+    },
+    {
+      "provider": "tvteam",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2&utc=1769999400&lutc=1770000000"
+    },
+    {
+      "provider": "tvteam",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "tvteam",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "tvteam",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2&utc=1769999401&lutc=1770000000"
+    },
+    {
+      "provider": "tvteam",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2&utc=1769999400&lutc=1770000000"
+    },
+    {
+      "provider": "tvteam",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2&utc=1769996400&lutc=1770000000"
+    },
+    {
+      "provider": "ottclub",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?archive=1769996400.5&archive_end=1769996501.1"
+    },
+    {
+      "provider": "ottclub",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?archive=1769999401.25&archive_end=1769999501.85"
+    },
+    {
+      "provider": "ottclub",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?archive=1769999400.75&archive_end=1769999501.35"
+    },
+    {
+      "provider": "ottclub",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?archive=1769996400.5&archive_end=1769996399.5"
+    },
+    {
+      "provider": "ottclub",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?timeshift=1769996400.5&timenow=1770000000.75"
+    },
+    {
+      "provider": "ottclub",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?timeshift=1769999401.25&timenow=1770000000.75"
+    },
+    {
+      "provider": "ottclub",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?timeshift=1769999400.75&timenow=1770000000.75"
+    },
+    {
+      "provider": "ottclub",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2?timeshift=1769996400.5&timenow=1770000000.75"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769996400?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769999401?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769999400?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769996400?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769996400?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769999401?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769999400?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "https://video.test/live/timeshift_abs/1769996400?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 1,
+      "expected": "https://video.test/live/video-1769996400-100.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 1,
+      "expected": "https://video.test/live/timeshift_abs_video-1769999401.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 1,
+      "expected": "https://video.test/live/video-1769999400-100.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 1,
+      "expected": "https://video.test/live/video-1769996400-4200.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 1,
+      "expected": "https://video.test/live/video-1769996400-7300.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 1,
+      "expected": "https://video.test/live/timeshift_abs_video-1769999401.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 1,
+      "expected": "https://video.test/live/video-1769999400-7300.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 1,
+      "expected": "https://video.test/live/video-1769996400-11399.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 2,
+      "expected": "https://video.test/live/index-1769996400-100.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 2,
+      "expected": "https://video.test/live/timeshift_abs-1769999401.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 2,
+      "expected": "https://video.test/live/index-1769999400-100.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 2,
+      "expected": "https://video.test/live/index-1769996400-4200.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 2,
+      "expected": "https://video.test/live/index-1769996400-7300.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 2,
+      "expected": "https://video.test/live/timeshift_abs-1769999401.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 2,
+      "expected": "https://video.test/live/index-1769999400-7300.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "only4",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 2,
+      "expected": "https://video.test/live/index-1769996400-11399.m3u8?token=a%2Fb&x=1&x=2"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "http://cdn.test/42/index-1769996400-100.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "http://cdn.test/42/timeshift_abs-1769999401.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "http://cdn.test/42/index-1769999400-100.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "http://cdn.test/42/index-1769996400-4200.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "http://cdn.test/42/index-1769996400-7300.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "http://cdn.test/42/timeshift_abs-1769999401.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "http://cdn.test/42/index-1769999400-7300.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "http://cdn.test/42/index-1769996400-11399.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 1,
+      "expected": "http://cdn.test/42/timeshift_abs/1769996400?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 1,
+      "expected": "http://cdn.test/42/timeshift_abs/1769999401?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 1,
+      "expected": "http://cdn.test/42/timeshift_abs/1769999400?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 1,
+      "expected": "http://cdn.test/42/timeshift_abs/1769996400?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 1,
+      "expected": "http://cdn.test/42/timeshift_abs/1769996400?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 1,
+      "expected": "http://cdn.test/42/timeshift_abs/1769999401?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 1,
+      "expected": "http://cdn.test/42/timeshift_abs/1769999400?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 1,
+      "expected": "http://cdn.test/42/timeshift_abs/1769996400?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 2,
+      "expected": "http://cdn.test/42/video-1769996400-100.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 2,
+      "expected": "http://cdn.test/42/timeshift_abs_video-1769999401.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 2,
+      "expected": "http://cdn.test/42/video-1769999400-100.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 2,
+      "expected": "http://cdn.test/42/video-1769996400-4200.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 2,
+      "expected": "http://cdn.test/42/video-1769996400-7300.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 2,
+      "expected": "http://cdn.test/42/timeshift_abs_video-1769999401.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 2,
+      "expected": "http://cdn.test/42/video-1769999400-7300.m3u8?token=fixture"
+    },
+    {
+      "provider": "itv",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 2,
+      "expected": "http://cdn.test/42/video-1769996400-11399.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "http://cdn.test:80/42/index-1769996400-100.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "http://cdn.test:80/42/timeshift_abs-1769999401.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "http://cdn.test:80/42/index-1769999400-100.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 0,
+      "expected": "http://cdn.test:80/42/index-1769996400-4200.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "http://cdn.test:80/42/index-1769996400-7300.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "http://cdn.test:80/42/timeshift_abs-1769999401.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "http://cdn.test:80/42/index-1769999400-7300.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 0,
+      "expected": "http://cdn.test:80/42/index-1769996400-11399.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 1,
+      "expected": "http://cdn.test:80/42/timeshift_abs/1769996400?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 1,
+      "expected": "http://cdn.test:80/42/timeshift_abs/1769999401?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 1,
+      "expected": "http://cdn.test:80/42/timeshift_abs/1769999400?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 1,
+      "expected": "http://cdn.test:80/42/timeshift_abs/1769996400?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 1,
+      "expected": "http://cdn.test:80/42/timeshift_abs/1769996400?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 1,
+      "expected": "http://cdn.test:80/42/timeshift_abs/1769999401?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 1,
+      "expected": "http://cdn.test:80/42/timeshift_abs/1769999400?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 1,
+      "expected": "http://cdn.test:80/42/timeshift_abs/1769996400?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 2,
+      "expected": "http://cdn.test:80/42/video-1769996400-100.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 2,
+      "expected": "http://cdn.test:80/42/video-timeshift_abs-1769999401.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 2,
+      "expected": "http://cdn.test:80/42/video-1769999400-100.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 2,
+      "expected": "http://cdn.test:80/42/video-1769996400-4200.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 2,
+      "expected": "http://cdn.test:80/42/video-1769996400-7300.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 2,
+      "expected": "http://cdn.test:80/42/video-timeshift_abs-1769999401.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 2,
+      "expected": "http://cdn.test:80/42/video-1769999400-7300.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 2,
+      "expected": "http://cdn.test:80/42/video-1769996400-11399.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 3,
+      "expected": "http://cdn.test:80/42/mono-1769996400-100.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 3,
+      "expected": "http://cdn.test:80/42/mono-timeshift_abs-1769999401.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 3,
+      "expected": "http://cdn.test:80/42/mono-1769999400-100.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 3,
+      "expected": "http://cdn.test:80/42/mono-1769996400-4200.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 3,
+      "expected": "http://cdn.test:80/42/mono-1769996400-7300.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 3,
+      "expected": "http://cdn.test:80/42/mono-timeshift_abs-1769999401.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 3,
+      "expected": "http://cdn.test:80/42/mono-1769999400-7300.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 3,
+      "expected": "http://cdn.test:80/42/mono-1769996400-11399.m3u8?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 4,
+      "expected": "http://cdn.test:80/42/index-1769996400-100.mpd?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 4,
+      "expected": "http://cdn.test:80/42/timeshift_abs-1769999401.mpd?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 4,
+      "expected": "http://cdn.test:80/42/index-1769999400-100.mpd?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": false,
+      "variant": 4,
+      "expected": "http://cdn.test:80/42/index-1769996400-4200.mpd?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996501.1,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 4,
+      "expected": "http://cdn.test:80/42/index-1769996400-7300.mpd?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999401.25,
+      "end": 1769999501.85,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 4,
+      "expected": "http://cdn.test:80/42/timeshift_abs-1769999401.mpd?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769999400.75,
+      "end": 1769999501.35,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 4,
+      "expected": "http://cdn.test:80/42/index-1769999400-7300.mpd?token=fixture"
+    },
+    {
+      "provider": "antifriz",
+      "channel": {
+        "url": "https://video.test/live/index.m3u8?token=a%2Fb&x=1&x=2",
+        "ca": "flussonic",
+        "caso": "",
+        "token": "fixture",
+        "server_cdn": "cdn.test"
+      },
+      "start": 1769996400.5,
+      "end": 1769996399.5,
+      "now": 1770000000.75,
+      "dune": true,
+      "variant": 4,
+      "expected": "http://cdn.test:80/42/index-1769996400-11399.mpd?token=fixture"
+    }
+  ]
+}

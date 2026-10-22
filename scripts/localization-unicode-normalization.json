@@ -1,0 +1,53 @@
+{
+  "version": "17.0.0",
+  "baseVersion": "16.0.0",
+  "sources": {
+    "ucd": {
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/UnicodeData.txt",
+      "sha256": "2e1efc1dcb59c575eedf5ccae60f95229f706ee6d031835247d843c11d96470c"
+    },
+    "norm": {
+      "url": "https://www.unicode.org/Public/17.0.0/ucd/DerivedNormalizationProps.txt",
+      "sha256": "71fd6a206a2c0cdd41feb6b7f656aa31091db45e9cedc926985d718397f9e488"
+    }
+  },
+  "canonicalDecompositionSha256": "c90a1582e5dbbb78acea46ba285bc299c1df3b0180795834479f367628e62f2a",
+  "compositionSha256": "c381750e0e951a678788e62e2bb3470b98aa33955e4ea723acaf66b10e6fd72f",
+  "combiningClassCount": 968,
+  "combiningClassOverlay": {
+    "1acf": 230,
+    "1ad0": 230,
+    "1ad1": 230,
+    "1ad2": 230,
+    "1ad3": 230,
+    "1ad4": 230,
+    "1ad5": 230,
+    "1ad6": 230,
+    "1ad7": 230,
+    "1ad8": 230,
+    "1ad9": 230,
+    "1ada": 230,
+    "1adb": 230,
+    "1adc": 230,
+    "1add": 220,
+    "1ae0": 230,
+    "1ae1": 230,
+    "1ae2": 230,
+    "1ae3": 230,
+    "1ae4": 230,
+    "1ae5": 230,
+    "1ae6": 220,
+    "1ae7": 230,
+    "1ae8": 230,
+    "1ae9": 230,
+    "1aea": 230,
+    "1aeb": 234,
+    "10efa": 220,
+    "10efb": 220,
+    "1e6e3": 230,
+    "1e6e6": 230,
+    "1e6ee": 230,
+    "1e6ef": 230,
+    "1e6f5": 230
+  }
+}

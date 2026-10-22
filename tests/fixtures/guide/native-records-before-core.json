@@ -1,0 +1,1082 @@
+{
+  "provenance": {
+    "repository": "open-ott-play/ottplay-foss",
+    "commit": "c02125906cad47c992c67235314018f908d4ab3d",
+    "capture": "Real private parseXmltv from unmodified shipping source; only platform imports, bundle lookups and serialization harness adapted.",
+    "sources": {
+      "mobile-xmltv-epg/src/ios/MobileXmltvEpg.swift": "8966a3ceefab54cdef0900a12412dd228787e9335a36a85bdda9d4ef2efab546",
+      "mobile-xmltv-epg/src/android/play/ott/foss/plugin/MobileXmltvEpgPlugin.kt": "9154b6abee889b56064c5c16dcb5d587c260d1bb0317cd626d7eaac1abb5b6b3"
+    },
+    "coreManifestSha256": "51ec8d35574ff97f658d91a2e61fff2ca126751cb4676d9df50794bea7894a93"
+  },
+  "cases": [
+    {
+      "name": "display name first nonempty and duplicate aliases",
+      "xml": "<tv><channel id=\"a\"><display-name> </display-name><display-name>First</display-name><display-name>Second</display-name><display-name>First</display-name></channel></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "First"
+            },
+            "icons": {},
+            "names": {
+              "a": [
+                "First",
+                "Second",
+                "First"
+              ]
+            },
+            "programmes": {}
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "First"
+            },
+            "names": {
+              "a": [
+                "First",
+                "Second",
+                "First"
+              ]
+            },
+            "icons": {},
+            "programmes": {}
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "empty first channel fixes ID fallback",
+      "xml": "<tv><channel id=\"a\"/><channel id=\"a\"><display-name>Later</display-name></channel></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "a"
+            },
+            "icons": {},
+            "names": {
+              "a": [
+                "Later"
+              ]
+            },
+            "programmes": {}
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "a"
+            },
+            "names": {
+              "a": [
+                "Later"
+              ]
+            },
+            "icons": {},
+            "programmes": {}
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "duplicate channel retains first name and accumulates aliases",
+      "xml": "<tv><channel id=\"a\"><display-name>First</display-name><icon src=\"one\"/></channel><channel id=\"a\"><display-name>Second</display-name><display-name>First</display-name><icon src=\"two\"/></channel></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "First"
+            },
+            "icons": {
+              "a": "two"
+            },
+            "names": {
+              "a": [
+                "First",
+                "Second",
+                "First"
+              ]
+            },
+            "programmes": {}
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "First"
+            },
+            "names": {
+              "a": [
+                "First",
+                "Second",
+                "First"
+              ]
+            },
+            "icons": {
+              "a": "two"
+            },
+            "programmes": {}
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "last icon including absent src wins",
+      "xml": "<tv><channel id=\"a\"><icon src=\"first\"/><icon src=\"\"/></channel><channel id=\"b\"><icon src=\"first\"/><icon/></channel><channel id=\"c\"><icon src=\"first\"/><icon src=\"last\"/></channel></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "a",
+              "b": "b",
+              "c": "c"
+            },
+            "icons": {
+              "a": "",
+              "b": "",
+              "c": "last"
+            },
+            "names": {},
+            "programmes": {}
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "a",
+              "b": "b",
+              "c": "c"
+            },
+            "names": {},
+            "icons": {
+              "a": "",
+              "b": "",
+              "c": "last"
+            },
+            "programmes": {}
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "display name Unicode whitespace",
+      "xml": "<tv><channel id=\"a\"><display-name>Name</display-name><display-name> Alias </display-name><display-name>﻿BOM﻿</display-name></channel></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "Name"
+            },
+            "icons": {},
+            "names": {
+              "a": [
+                "Name",
+                "Alias",
+                "BOM﻿"
+              ]
+            },
+            "programmes": {}
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "Name"
+            },
+            "names": {
+              "a": [
+                "Name",
+                "Alias",
+                "﻿BOM﻿"
+              ]
+            },
+            "icons": {},
+            "programmes": {}
+          }
+        }
+      },
+      "platformDifference": true
+    },
+    {
+      "name": "canonical equivalent channel IDs",
+      "xml": "<tv><channel id=\"é\"><display-name>First</display-name><icon src=\"one\"/></channel><channel id=\"é\"><display-name>Second</display-name><icon src=\"two\"/></channel><programme channel=\"é\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>One</title></programme><programme channel=\"é\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Two</title></programme></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "é": "First"
+            },
+            "icons": {
+              "é": "two"
+            },
+            "names": {
+              "é": [
+                "First",
+                "Second"
+              ]
+            },
+            "programmes": {
+              "é": [
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "One"
+                },
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Two"
+                }
+              ]
+            }
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "é": "First",
+              "é": "Second"
+            },
+            "names": {
+              "é": [
+                "First"
+              ],
+              "é": [
+                "Second"
+              ]
+            },
+            "icons": {
+              "é": "one",
+              "é": "two"
+            },
+            "programmes": {
+              "é": [
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "One",
+                  "desc": ""
+                }
+              ],
+              "é": [
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Two",
+                  "desc": ""
+                }
+              ]
+            }
+          }
+        }
+      },
+      "platformDifference": true
+    },
+    {
+      "name": "repeated titles and descriptions concatenate",
+      "xml": "<tv><channel id=\"a\"/><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title lang=\"en\">First</title><title/><title lang=\"ru\">Second</title><desc>One</desc><desc/><desc>Two</desc></programme></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "a"
+            },
+            "icons": {},
+            "names": {},
+            "programmes": {
+              "a": [
+                {
+                  "desc": "OneTwo",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "FirstSecond"
+                }
+              ]
+            }
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "a"
+            },
+            "names": {},
+            "icons": {},
+            "programmes": {
+              "a": [
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "FirstSecond",
+                  "desc": "OneTwo"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "missing and empty title are omitted",
+      "xml": "<tv><channel id=\"a\"/><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><desc>No title</desc></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title/><desc>Empty title</desc></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title></title></programme></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "a"
+            },
+            "icons": {},
+            "names": {},
+            "programmes": {}
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "a"
+            },
+            "names": {},
+            "icons": {},
+            "programmes": {}
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "whitespace-only title policy",
+      "xml": "<tv><channel id=\"a\"/><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title> &#x9;&#xA; </title><desc>Kept?</desc></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title></title></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title> </title></programme></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "a"
+            },
+            "icons": {},
+            "names": {},
+            "programmes": {
+              "a": [
+                {
+                  "desc": "Kept?",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": " \t\n "
+                },
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": ""
+                },
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": " "
+                }
+              ]
+            }
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "a"
+            },
+            "names": {},
+            "icons": {},
+            "programmes": {
+              "a": [
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "",
+                  "desc": ""
+                }
+              ]
+            }
+          }
+        }
+      },
+      "platformDifference": true
+    },
+    {
+      "name": "missing and empty IDs",
+      "xml": "<tv><channel><display-name>Missing</display-name><icon src=\"missing\"/></channel><channel id=\"\"><display-name>Empty</display-name><icon src=\"empty\"/></channel><programme start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Missing</title></programme><programme channel=\"\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Empty</title></programme></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "": "Empty"
+            },
+            "icons": {
+              "": "empty"
+            },
+            "names": {
+              "": [
+                "Empty"
+              ]
+            },
+            "programmes": {
+              "": [
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Empty"
+                }
+              ]
+            }
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "": "Empty"
+            },
+            "names": {
+              "": [
+                "Empty"
+              ]
+            },
+            "icons": {
+              "": "empty"
+            },
+            "programmes": {
+              "": [
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Empty",
+                  "desc": ""
+                }
+              ]
+            }
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "raw whitespace IDs preserved",
+      "xml": "<tv><channel id=\" a \"><display-name>Spaced</display-name></channel><channel id=\"a\"><display-name>Plain</display-name></channel><programme channel=\" a \" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Spaced</title></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Plain</title></programme></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              " a ": "Spaced",
+              "a": "Plain"
+            },
+            "icons": {},
+            "names": {
+              " a ": [
+                "Spaced"
+              ],
+              "a": [
+                "Plain"
+              ]
+            },
+            "programmes": {
+              " a ": [
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Spaced"
+                }
+              ],
+              "a": [
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Plain"
+                }
+              ]
+            }
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              " a ": "Spaced",
+              "a": "Plain"
+            },
+            "names": {
+              " a ": [
+                "Spaced"
+              ],
+              "a": [
+                "Plain"
+              ]
+            },
+            "icons": {},
+            "programmes": {
+              " a ": [
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Spaced",
+                  "desc": ""
+                }
+              ],
+              "a": [
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Plain",
+                  "desc": ""
+                }
+              ]
+            }
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "programmes precede channel and orphan programme remains",
+      "xml": "<tv><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Before</title></programme><programme channel=\"orphan\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Orphan</title></programme><channel id=\"a\"><display-name>After</display-name></channel></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "After"
+            },
+            "icons": {},
+            "names": {
+              "a": [
+                "After"
+              ]
+            },
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Before"
+                }
+              ],
+              "orphan": [
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Orphan"
+                }
+              ]
+            }
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "After"
+            },
+            "names": {
+              "a": [
+                "After"
+              ]
+            },
+            "icons": {},
+            "programmes": {
+              "a": [
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Before",
+                  "desc": ""
+                }
+              ],
+              "orphan": [
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Orphan",
+                  "desc": ""
+                }
+              ]
+            }
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "duplicate intervals preserve rows and input order",
+      "xml": "<tv><channel id=\"a\"/><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>First</title></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Second</title></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>First</title></programme></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "a"
+            },
+            "icons": {},
+            "names": {},
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "First"
+                },
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Second"
+                },
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "First"
+                }
+              ]
+            }
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "a"
+            },
+            "names": {},
+            "icons": {},
+            "programmes": {
+              "a": [
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "First",
+                  "desc": ""
+                },
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Second",
+                  "desc": ""
+                },
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "First",
+                  "desc": ""
+                }
+              ]
+            }
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "unsorted programmes retain parser order",
+      "xml": "<tv><channel id=\"a\"/><programme channel=\"a\" start=\"20260914120000 +0000\" stop=\"20260914130000 +0000\"><title>Later</title></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Earlier</title></programme><programme channel=\"a\" start=\"20260914120000 +0000\" stop=\"20260914130000 +0000\"><title>Middle duplicate</title></programme></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "a"
+            },
+            "icons": {},
+            "names": {},
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "start": 1789387200,
+                  "stop": 1789390800,
+                  "title": "Later"
+                },
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Earlier"
+                },
+                {
+                  "desc": "",
+                  "start": 1789387200,
+                  "stop": 1789390800,
+                  "title": "Middle duplicate"
+                }
+              ]
+            }
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "a"
+            },
+            "names": {},
+            "icons": {},
+            "programmes": {
+              "a": [
+                {
+                  "start": 1789387200,
+                  "stop": 1789390800,
+                  "title": "Later",
+                  "desc": ""
+                },
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Earlier",
+                  "desc": ""
+                },
+                {
+                  "start": 1789387200,
+                  "stop": 1789390800,
+                  "title": "Middle duplicate",
+                  "desc": ""
+                }
+              ]
+            }
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "invalid missing and reversed programme times",
+      "xml": "<tv><channel id=\"a\"/><programme channel=\"a\"><title>Missing</title></programme><programme channel=\"a\" start=\"bad\" stop=\"bad\"><title>Invalid</title></programme><programme channel=\"a\" start=\"20260914130000 +0000\" stop=\"20260914110000 +0000\"><title>Reversed</title></programme></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "a"
+            },
+            "icons": {},
+            "names": {},
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "start": 0,
+                  "stop": 0,
+                  "title": "Missing"
+                },
+                {
+                  "desc": "",
+                  "start": 0,
+                  "stop": 0,
+                  "title": "Invalid"
+                },
+                {
+                  "desc": "",
+                  "start": 1789390800,
+                  "stop": 1789383600,
+                  "title": "Reversed"
+                }
+              ]
+            }
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "a"
+            },
+            "names": {},
+            "icons": {},
+            "programmes": {
+              "a": [
+                {
+                  "start": 0,
+                  "stop": 0,
+                  "title": "Missing",
+                  "desc": ""
+                },
+                {
+                  "start": 0,
+                  "stop": 0,
+                  "title": "Invalid",
+                  "desc": ""
+                },
+                {
+                  "start": 1789390800,
+                  "stop": 1789383600,
+                  "title": "Reversed",
+                  "desc": ""
+                }
+              ]
+            }
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "entities CDATA and adjacent text",
+      "xml": "<tv><channel id=\"a\"><display-name>A &amp; B<![CDATA[ + C]]></display-name></channel><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>A &amp; B<![CDATA[ + C]]> tail</title><desc><![CDATA[<detail>]]>&amp; end</desc></programme></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "A & B + C"
+            },
+            "icons": {},
+            "names": {
+              "a": [
+                "A & B + C"
+              ]
+            },
+            "programmes": {
+              "a": [
+                {
+                  "desc": "<detail>& end",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "A & B + C tail"
+                }
+              ]
+            }
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "A & B + C"
+            },
+            "names": {
+              "a": [
+                "A & B + C"
+              ]
+            },
+            "icons": {},
+            "programmes": {
+              "a": [
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "A & B + C tail",
+                  "desc": "<detail>& end"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "multiple channel-less or external fields ignored",
+      "xml": "<tv><display-name>Outside</display-name><icon src=\"outside\"/><title>Outside</title><desc>Outside</desc><channel id=\"a\"><display-name>Inside</display-name></channel><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Inside</title></programme><icon src=\"after\"/></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "Inside"
+            },
+            "icons": {},
+            "names": {
+              "a": [
+                "Inside"
+              ]
+            },
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Inside"
+                }
+              ]
+            }
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "Inside"
+            },
+            "names": {
+              "a": [
+                "Inside"
+              ]
+            },
+            "icons": {},
+            "programmes": {
+              "a": [
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Inside",
+                  "desc": ""
+                }
+              ]
+            }
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "unknown nested elements retain active text target",
+      "xml": "<tv><channel id=\"a\"><display-name>A<unknown>B</unknown>C</display-name></channel><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>A<unknown>B</unknown>C</title><desc>One<unknown>Two</unknown>Three</desc></programme></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "ABC"
+            },
+            "icons": {},
+            "names": {
+              "a": [
+                "ABC"
+              ]
+            },
+            "programmes": {
+              "a": [
+                {
+                  "desc": "OneTwoThree",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "ABC"
+                }
+              ]
+            }
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "ABC"
+            },
+            "names": {
+              "a": [
+                "ABC"
+              ]
+            },
+            "icons": {},
+            "programmes": {
+              "a": [
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "ABC",
+                  "desc": "OneTwoThree"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "channel metadata interleaved with programmes",
+      "xml": "<tv><channel id=\"a\"><display-name>First</display-name></channel><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>One</title></programme><channel id=\"a\"><display-name>Second</display-name><icon src=\"later\"/></channel><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Two</title></programme></tv>",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {
+              "a": "First"
+            },
+            "icons": {
+              "a": "later"
+            },
+            "names": {
+              "a": [
+                "First",
+                "Second"
+              ]
+            },
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "One"
+                },
+                {
+                  "desc": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Two"
+                }
+              ]
+            }
+          }
+        },
+        "android": {
+          "result": {
+            "channels": {
+              "a": "First"
+            },
+            "names": {
+              "a": [
+                "First",
+                "Second"
+              ]
+            },
+            "icons": {
+              "a": "later"
+            },
+            "programmes": {
+              "a": [
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "One",
+                  "desc": ""
+                },
+                {
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Two",
+                  "desc": ""
+                }
+              ]
+            }
+          }
+        }
+      },
+      "platformDifference": false
+    },
+    {
+      "name": "malformed tail after completed metadata and programme",
+      "xml": "<tv><channel id=\"a\"><display-name>Saved alias</display-name><icon src=\"saved-icon\"/></channel><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Saved programme</title></programme><channel",
+      "expected": {
+        "swift": {
+          "result": {
+            "channels": {},
+            "icons": {
+              "a": "saved-icon"
+            },
+            "names": {
+              "a": [
+                "Saved alias"
+              ]
+            },
+            "programmes": {}
+          }
+        },
+        "android": {
+          "error": {
+            "type": "org.xml.sax.SAXParseException",
+            "message": "XML document structures must start and end within the same entity."
+          }
+        }
+      },
+      "platformDifference": true
+    }
+  ]
+}

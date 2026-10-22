@@ -1,0 +1,59 @@
+<svg
+    aria-labelledby="title desc"
+    role="img"
+    viewBox="0 0 1040 600"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">Player JavaScript size / Объём JavaScript</title>
+    <desc id="desc">
+        Historical source comparison, not current package sizes: all web player
+        and provider JavaScript grows from 964459 to 995587 raw bytes and from
+        305344 to 315103 gzip bytes. About 3.2 percent growth. This is a byte
+        count, not a performance benchmark. A/V video and external runtimes are
+        excluded. The A/V source remains in the repository; current packages
+        omit it and the explicit check fetches it from here.now. Исторический
+        рост примерно 3,2 процента; скорость работы не измеряется. A/V остаётся
+        в репозитории, но не в пакетах.
+    </desc>
+    <rect fill="#f5f8fc" height="600" rx="20" width="1040" />
+    <g fill="#163047" font-family="system-ui,sans-serif">
+        <text font-size="27" font-weight="700" x="40" y="48">
+            Player + all providers / плеер и все провайдеры
+        </text>
+        <text font-size="16" x="40" y="80">
+            Historical / история: bbf9ca7b → cae971da · Node 26.8.2 · gzip 9 ·
+            v1.1.55
+        </text>
+        <text font-size="21" font-weight="700" x="40" y="133">
+            Raw bytes / без сжатия
+        </text>
+        <text font-size="17" x="40" y="177">Base</text>
+        <rect fill="#597991" height="38" rx="5" width="733" x="155" y="151" />
+        <text font-size="17" x="900" y="177">964,459</text>
+        <text font-size="17" x="40" y="231">Candidate</text>
+        <rect fill="#16846b" height="38" rx="5" width="757" x="155" y="205" />
+        <text font-size="17" x="923" y="231">995,587</text>
+        <text font-size="18" font-weight="600" x="155" y="278">
+            +31,128 bytes · +3.23%
+        </text>
+        <text font-size="21" font-weight="700" x="40" y="334">
+            Gzip bytes / сжатие
+        </text>
+        <text font-size="17" x="40" y="378">Base</text>
+        <rect fill="#597991" height="38" rx="5" width="232" x="155" y="352" />
+        <text font-size="17" x="404" y="378">305,344</text>
+        <text font-size="17" x="40" y="432">Candidate</text>
+        <rect fill="#16846b" height="38" rx="5" width="239" x="155" y="406" />
+        <text font-size="17" x="411" y="432">315,103</text>
+        <text font-size="18" font-weight="600" x="155" y="479">
+            +9,759 bytes · +3.20%
+        </text>
+        <text font-size="16" x="40" y="537">
+            Historical JavaScript only; excludes A/V media and installation
+            packages.
+        </text>
+        <text font-size="16" x="40" y="563">
+            Исторический JavaScript; без A/V и установщиков. Масштаб от нуля.
+        </text>
+    </g>
+</svg>

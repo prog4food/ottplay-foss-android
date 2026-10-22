@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-native-hls"
+description = "Allow the main player to manage its bounded native HLS transport"
+commands.allow = ["native_hls_start", "native_hls_stats", "native_hls_stop"]

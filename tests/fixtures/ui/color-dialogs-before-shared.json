@@ -1,0 +1,1391 @@
+{
+  "source": "3e138aa src/ui/index.ts: colorDialog, selColorDialog, backColorDialog",
+  "records": [
+    {
+      "name": "colorDialog",
+      "initial": null,
+      "keys": [
+        "RIGHT",
+        "UP",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": null,
+          "preview": "font-size: 150%; color: rgb(255, 219, 38);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": null,
+          "preview": "font-size: 150%; color: rgb(255, 255, 38);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": null,
+          "preview": "font-size: 150%; color: rgb(255, 255, 25);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "60,90",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "colorDialog",
+      "initial": "360,100",
+      "keys": [
+        "RIGHT",
+        "UP",
+        "DOWN",
+        "LEFT",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": "360,100",
+          "preview": "font-size: 150%; color: rgb(255, 0, 255);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,100",
+          "preview": "font-size: 150%; color: rgb(255, 0, 0);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,100",
+          "preview": "font-size: 150%; color: rgb(255, 0, 0);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,100",
+          "preview": "font-size: 150%; color: rgb(255, 13, 13);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,100",
+          "preview": "font-size: 150%; color: rgb(255, 13, 255);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,95",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "colorDialog",
+      "initial": "0,0",
+      "keys": [
+        "LEFT",
+        "DOWN",
+        "RIGHT",
+        "UP",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": "0,0",
+          "preview": "font-size: 150%; color: rgb(255, 255, 255);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,0",
+          "preview": "font-size: 150%; color: rgb(255, 255, 255);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,0",
+          "preview": "font-size: 150%; color: rgb(255, 255, 255);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,0",
+          "preview": "font-size: 150%; color: rgb(255, 255, 255);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,0",
+          "preview": "font-size: 150%; color: rgb(255, 242, 242);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,5",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "colorDialog",
+      "initial": "135,45",
+      "keys": [
+        "YELLOW",
+        "GREEN",
+        "BLUE",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": "135,45",
+          "preview": "font-size: 150%; color: rgb(140, 255, 169);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; color: rgb(255, 219, 38);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; color: rgb(147, 255, 38);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; color: rgb(38, 255, 255);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "180,85",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "colorDialog",
+      "initial": "135,45",
+      "keys": [
+        "RIGHT",
+        "UP",
+        "RETURN"
+      ],
+      "states": [
+        {
+          "value": "135,45",
+          "preview": "font-size: 150%; color: rgb(140, 255, 169);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; color: rgb(140, 255, 188);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; color: rgb(128, 255, 181);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "colorDialog",
+      "initial": "50,85",
+      "keys": [
+        "N9",
+        "EXIT",
+        "RETURN"
+      ],
+      "states": [
+        {
+          "value": "50,85",
+          "preview": "font-size: 150%; color: rgb(255, 219, 38);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": false,
+          "value": "50,85",
+          "preview": "font-size: 150%; color: rgb(255, 219, 38);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": false,
+          "value": "50,85",
+          "preview": "font-size: 150%; color: rgb(255, 219, 38);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,85",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "colorDialog",
+      "initial": "bad,data",
+      "keys": [
+        "RIGHT",
+        "UP",
+        "GREEN",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": "bad,data",
+          "preview": "font-size: 150%;",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "bad,data",
+          "preview": "font-size: 150%;",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "bad,data",
+          "preview": "font-size: 150%;",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "bad,data",
+          "preview": "font-size: 150%; color: rgb(147, 255, 38);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "90,85",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "colorDialog",
+      "initial": "50,85",
+      "keys": [
+        "UP",
+        "ENTER"
+      ],
+      "keyCodes": {
+        "UP": 13,
+        "ENTER": 38
+      },
+      "states": [
+        {
+          "value": "50,85",
+          "preview": "font-size: 150%; color: rgb(255, 219, 38);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,85",
+          "preview": "font-size: 150%; color: rgb(255, 217, 25);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,90",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "colorDialog",
+      "initial": "50,85",
+      "keys": [
+        "UP",
+        "RETURN"
+      ],
+      "keyCodes": {
+        "UP": 13,
+        "ENTER": 13
+      },
+      "states": [
+        {
+          "value": "50,85",
+          "preview": "font-size: 150%; color: rgb(255, 219, 38);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,85",
+          "preview": "font-size: 150%; color: rgb(255, 217, 25);",
+          "visible": true,
+          "caption": "Color spectrum",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,85",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "selColorDialog",
+      "initial": null,
+      "keys": [
+        "RIGHT",
+        "UP",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": null,
+          "preview": "font-size: 150%; background-color: rgb(128, 109, 19);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": null,
+          "preview": "font-size: 150%; background-color: rgb(128, 128, 19);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": null,
+          "preview": "font-size: 150%; background-color: rgb(128, 128, 13);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "60,90",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "selColorDialog",
+      "initial": "360,100",
+      "keys": [
+        "RIGHT",
+        "UP",
+        "DOWN",
+        "LEFT",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": "360,100",
+          "preview": "font-size: 150%; background-color: rgb(128, 0, 128);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,100",
+          "preview": "font-size: 150%; background-color: rgb(128, 0, 0);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,100",
+          "preview": "font-size: 150%; background-color: rgb(128, 0, 0);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,100",
+          "preview": "font-size: 150%; background-color: rgb(128, 6, 6);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,100",
+          "preview": "font-size: 150%; background-color: rgb(128, 6, 128);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,95",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "selColorDialog",
+      "initial": "0,0",
+      "keys": [
+        "LEFT",
+        "DOWN",
+        "RIGHT",
+        "UP",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": "0,0",
+          "preview": "font-size: 150%; background-color: rgb(128, 128, 128);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,0",
+          "preview": "font-size: 150%; background-color: rgb(128, 128, 128);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,0",
+          "preview": "font-size: 150%; background-color: rgb(128, 128, 128);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,0",
+          "preview": "font-size: 150%; background-color: rgb(128, 128, 128);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,0",
+          "preview": "font-size: 150%; background-color: rgb(128, 121, 121);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,5",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "selColorDialog",
+      "initial": "135,45",
+      "keys": [
+        "YELLOW",
+        "GREEN",
+        "BLUE",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": "135,45",
+          "preview": "font-size: 150%; background-color: rgb(70, 128, 84);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; background-color: rgb(128, 109, 19);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; background-color: rgb(73, 128, 19);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; background-color: rgb(19, 128, 128);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "180,85",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "selColorDialog",
+      "initial": "135,45",
+      "keys": [
+        "RIGHT",
+        "UP",
+        "RETURN"
+      ],
+      "states": [
+        {
+          "value": "135,45",
+          "preview": "font-size: 150%; background-color: rgb(70, 128, 84);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; background-color: rgb(70, 128, 94);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; background-color: rgb(64, 128, 90);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "selColorDialog",
+      "initial": "50,85",
+      "keys": [
+        "N9",
+        "EXIT",
+        "RETURN"
+      ],
+      "states": [
+        {
+          "value": "50,85",
+          "preview": "font-size: 150%; background-color: rgb(128, 109, 19);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": false,
+          "value": "50,85",
+          "preview": "font-size: 150%; background-color: rgb(128, 109, 19);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": false,
+          "value": "50,85",
+          "preview": "font-size: 150%; background-color: rgb(128, 109, 19);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,85",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "selColorDialog",
+      "initial": "bad,data",
+      "keys": [
+        "RIGHT",
+        "UP",
+        "GREEN",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": "bad,data",
+          "preview": "font-size: 150%; background-color: rgb(0, 0, 0);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "bad,data",
+          "preview": "font-size: 150%; background-color: rgb(0, 0, 0);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "bad,data",
+          "preview": "font-size: 150%; background-color: rgb(0, 0, 0);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "bad,data",
+          "preview": "font-size: 150%; background-color: rgb(73, 128, 19);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "90,85",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "selColorDialog",
+      "initial": "50,85",
+      "keys": [
+        "UP",
+        "ENTER"
+      ],
+      "keyCodes": {
+        "UP": 13,
+        "ENTER": 38
+      },
+      "states": [
+        {
+          "value": "50,85",
+          "preview": "font-size: 150%; background-color: rgb(128, 109, 19);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,85",
+          "preview": "font-size: 150%; background-color: rgb(128, 108, 13);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,90",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "selColorDialog",
+      "initial": "50,85",
+      "keys": [
+        "UP",
+        "RETURN"
+      ],
+      "keyCodes": {
+        "UP": 13,
+        "ENTER": 13
+      },
+      "states": [
+        {
+          "value": "50,85",
+          "preview": "font-size: 150%; background-color: rgb(128, 109, 19);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,85",
+          "preview": "font-size: 150%; background-color: rgb(128, 108, 13);",
+          "visible": true,
+          "caption": "Select color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,85",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "backColorDialog",
+      "initial": null,
+      "keys": [
+        "RIGHT",
+        "UP",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": null,
+          "preview": "font-size: 150%; background-color: rgb(255, 255, 255);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": null,
+          "preview": "font-size: 150%; background-color: rgb(255, 255, 255);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": null,
+          "preview": "font-size: 150%; background-color: rgb(248, 242, 255);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "265,5",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "backColorDialog",
+      "initial": "360,100",
+      "keys": [
+        "RIGHT",
+        "UP",
+        "DOWN",
+        "LEFT",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": "360,100",
+          "preview": "font-size: 150%; background-color: rgb(255, 0, 255);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,100",
+          "preview": "font-size: 150%; background-color: rgb(255, 0, 0);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,100",
+          "preview": "font-size: 150%; background-color: rgb(255, 0, 0);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,100",
+          "preview": "font-size: 150%; background-color: rgb(255, 13, 13);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,100",
+          "preview": "font-size: 150%; background-color: rgb(255, 13, 255);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "360,95",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "backColorDialog",
+      "initial": "0,0",
+      "keys": [
+        "LEFT",
+        "DOWN",
+        "RIGHT",
+        "UP",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": "0,0",
+          "preview": "font-size: 150%; background-color: rgb(255, 255, 255);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,0",
+          "preview": "font-size: 150%; background-color: rgb(255, 255, 255);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,0",
+          "preview": "font-size: 150%; background-color: rgb(255, 255, 255);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,0",
+          "preview": "font-size: 150%; background-color: rgb(255, 255, 255);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,0",
+          "preview": "font-size: 150%; background-color: rgb(255, 242, 242);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "0,5",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "backColorDialog",
+      "initial": "135,45",
+      "keys": [
+        "YELLOW",
+        "GREEN",
+        "BLUE",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": "135,45",
+          "preview": "font-size: 150%; background-color: rgb(140, 255, 169);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; background-color: rgb(255, 219, 38);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; background-color: rgb(147, 255, 38);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; background-color: rgb(38, 255, 255);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "180,85",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "backColorDialog",
+      "initial": "135,45",
+      "keys": [
+        "RIGHT",
+        "UP",
+        "RETURN"
+      ],
+      "states": [
+        {
+          "value": "135,45",
+          "preview": "font-size: 150%; background-color: rgb(140, 255, 169);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; background-color: rgb(140, 255, 188);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": "font-size: 150%; background-color: rgb(128, 255, 181);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "135,45",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "backColorDialog",
+      "initial": "50,85",
+      "keys": [
+        "N9",
+        "EXIT",
+        "RETURN"
+      ],
+      "states": [
+        {
+          "value": "50,85",
+          "preview": "font-size: 150%; background-color: rgb(255, 219, 38);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": false,
+          "value": "50,85",
+          "preview": "font-size: 150%; background-color: rgb(255, 219, 38);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": false,
+          "value": "50,85",
+          "preview": "font-size: 150%; background-color: rgb(255, 219, 38);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,85",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "backColorDialog",
+      "initial": "bad,data",
+      "keys": [
+        "RIGHT",
+        "UP",
+        "GREEN",
+        "ENTER"
+      ],
+      "states": [
+        {
+          "value": "bad,data",
+          "preview": "font-size: 150%; background-color: rgb(0, 0, 0);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "bad,data",
+          "preview": "font-size: 150%; background-color: rgb(0, 0, 0);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "bad,data",
+          "preview": "font-size: 150%; background-color: rgb(0, 0, 0);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "bad,data",
+          "preview": "font-size: 150%; background-color: rgb(147, 255, 38);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "90,85",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "backColorDialog",
+      "initial": "50,85",
+      "keys": [
+        "UP",
+        "ENTER"
+      ],
+      "keyCodes": {
+        "UP": 13,
+        "ENTER": 38
+      },
+      "states": [
+        {
+          "value": "50,85",
+          "preview": "font-size: 150%; background-color: rgb(255, 219, 38);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,85",
+          "preview": "font-size: 150%; background-color: rgb(255, 217, 25);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,90",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    },
+    {
+      "name": "backColorDialog",
+      "initial": "50,85",
+      "keys": [
+        "UP",
+        "RETURN"
+      ],
+      "keyCodes": {
+        "UP": 13,
+        "ENTER": 13
+      },
+      "states": [
+        {
+          "value": "50,85",
+          "preview": "font-size: 150%; background-color: rgb(255, 219, 38);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,85",
+          "preview": "font-size: 150%; background-color: rgb(255, 217, 25);",
+          "visible": true,
+          "caption": "Background color",
+          "detail": "",
+          "focus": 1
+        },
+        {
+          "handled": true,
+          "value": "50,85",
+          "preview": null,
+          "visible": false,
+          "caption": "Parent",
+          "detail": "Detail",
+          "focus": 1
+        }
+      ]
+    }
+  ]
+}

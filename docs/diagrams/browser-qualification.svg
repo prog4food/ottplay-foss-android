@@ -1,0 +1,211 @@
+<svg
+    aria-labelledby="title desc"
+    height="880"
+    role="img"
+    viewBox="0 0 1200 880"
+    width="1200"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">
+        Browser qualification / Требования браузерной проверки
+    </title>
+    <desc id="desc">
+        Configured requirements, not a completed release candidate: 35 targets
+        comprise 32 HLS targets with five scenarios each and three Windows
+        WebKit UI-only targets with two each, totaling 166. PR and beta use five
+        targets and 25 executions. Требования, а не пройденная RC-проверка: 35
+        целей, 166 выполнений; для PR и беты — 5 целей, 25 выполнений.
+    </desc>
+    <defs>
+        <marker
+            id="arrow"
+            markerHeight="9"
+            markerWidth="9"
+            orient="auto"
+            refX="7"
+            refY="4"
+        >
+            <path
+                d="M0 0 L8 4 L0 8"
+                fill="none"
+                stroke="#91bfff"
+                stroke-width="1.5"
+            />
+        </marker>
+    </defs>
+    <style>
+    text {
+        font-family: Arial, sans-serif;
+        fill: #edf3fc;
+    }
+    .title {
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .subtitle {
+        font-size: 19px;
+        fill: #bfcee4;
+    }
+    .heading {
+        font-size: 23px;
+        font-weight: 700;
+    }
+    .body {
+        font-size: 20px;
+    }
+    .small {
+        font-size: 17px;
+        fill: #bfcee4;
+    }
+    .eyebrow {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    .number {
+        font-size: 62px;
+        font-weight: 700;
+    }
+    .formula {
+        font-size: 38px;
+        font-weight: 700;
+    }
+    </style>
+    <rect fill="#111a2b" height="880" rx="24" width="1200" x="0" y="0" />
+    <text class="eyebrow" style="fill:#68d4b4" x="40" y="34">
+        CONFIGURED POLICY / ЗАДАННЫЕ ТРЕБОВАНИЯ
+    </text>
+    <text class="title" x="40" y="78">
+        Browser qualification / Проверка браузеров
+    </text>
+    <text class="subtitle" x="40" y="111">
+        Requirements only — not evidence of a completed RC / Требования, а не
+        результат RC
+    </text>
+    <rect
+        fill="#243046"
+        height="95"
+        rx="16"
+        stroke="#91bfff"
+        width="1120"
+        x="40"
+        y="142"
+    />
+    <text class="number" style="fill:#91bfff" x="65" y="202">35</text>
+    <text class="heading" x="160" y="183">targets / целей</text>
+    <text class="body" style="fill:#bfcee4" x="160" y="215">
+        Full RC matrix / Полная матрица RC
+    </text>
+    <text class="body" text-anchor="end" x="1140" y="182">
+        3 generations · 3 engines · 3 operating systems
+    </text>
+    <text class="small" text-anchor="end" x="1140" y="215">
+        + Chrome / Edge channels · каналы Chrome / Edge
+    </text>
+    <rect
+        fill="#1c2940"
+        height="259"
+        rx="16"
+        stroke="#91bfff"
+        width="540"
+        x="40"
+        y="266"
+    />
+    <rect
+        fill="#1c2940"
+        height="259"
+        rx="16"
+        stroke="#f2c779"
+        width="540"
+        x="620"
+        y="266"
+    />
+    <text class="heading" style="fill:#91bfff" x="65" y="306">
+        32 HLS targets / цели с HLS
+    </text>
+    <text class="formula" x="65" y="354">32 × 5 = 160</text>
+    <text class="body" x="65" y="398">
+        2 UI + 3 playback scenarios per target
+    </text>
+    <text class="small" x="65" y="429">
+        2 UI + 3 сценария воспроизведения на цель
+    </text>
+    <text class="small" style="fill:#91bfff" x="65" y="489">
+        H.264 + AAC MSE required / обязательны
+    </text>
+    <text class="heading" style="fill:#f2c779" x="645" y="306">
+        3 UI-only targets / только интерфейс
+    </text>
+    <text class="formula" x="645" y="354">3 × 2 = 6</text>
+    <text class="body" x="645" y="398">
+        Windows WebKit · 3 pinned generations
+    </text>
+    <text class="small" x="645" y="429">
+        3 закреплённых поколения Windows WebKit
+    </text>
+    <text class="small" style="fill:#f2c779" x="645" y="465">
+        No playback claim / Не проверка воспроизведения
+    </text>
+    <text class="small" x="645" y="493">
+        Declared limitation / Заданное ограничение
+    </text>
+    <path
+        d="M310 527 V551 H600 V575"
+        fill="none"
+        marker-end="url(#arrow)"
+        stroke="#91bfff"
+        stroke-width="2.5"
+    />
+    <path
+        d="M890 527 V551 H600"
+        fill="none"
+        stroke="#f2c779"
+        stroke-width="2.5"
+    />
+    <rect
+        fill="#183a3b"
+        height="86"
+        rx="16"
+        stroke="#68d4b4"
+        width="684"
+        x="258"
+        y="589"
+    />
+    <text
+        class="formula"
+        style="fill:#68d4b4"
+        text-anchor="middle"
+        x="600"
+        y="625"
+    >
+        160 + 6 = 166
+    </text>
+    <text class="body" text-anchor="middle" x="600" y="656">
+        required executions / обязательных выполнений
+    </text>
+    <rect
+        fill="#1c2940"
+        height="88"
+        rx="16"
+        stroke="#91bfff"
+        width="1120"
+        x="40"
+        y="709"
+    />
+    <text class="heading" style="fill:#91bfff" x="65" y="746">PR / beta</text>
+    <text class="small" x="65" y="776">Subset / Подмножество</text>
+    <text class="heading" text-anchor="end" x="1130" y="749">
+        5 targets × 5 scenarios = 25
+    </text>
+    <text class="small" text-anchor="end" x="1130" y="778">
+        5 целей × 5 сценариев = 25 выполнений
+    </text>
+    <text class="small" style="fill:#f2c779" x="40" y="834">
+        The subset cannot replace full RC qualification / Подмножество не
+        заменяет полную RC-проверку
+    </text>
+    <text class="small" x="40" y="862">
+        Source / Источник: .github/browser-compatibility.json ·
+        scripts/browser-compatibility-profile.cjs
+    </text>
+</svg>

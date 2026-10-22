@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-queue-poll"
+description = "Enables the queue_poll command (drain command queue via Tauri invoke)."
+commands.allow = ["queue_poll"]

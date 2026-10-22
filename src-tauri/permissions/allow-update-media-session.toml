@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-update-media-session"
+description = "Enables the update_media_session command."
+commands.allow = ["update_media_session"]

@@ -1,0 +1,3195 @@
+{
+  "provenance": {
+    "commit": "b3c8cc072e92f14c8e352a223157788f24ca4dce",
+    "capture": "Public getChanelsArray from original git snapshot; only host HTTP/storage/UI primitives replaced. Exact callbacks, URLs, state, errors and redirects observed."
+  },
+  "cases": [
+    {
+      "profile": "1ott",
+      "input": {},
+      "expected": {
+        "calls": [
+          {
+            "url": "http://list.1ott.net/PinApi/fixture-id/fixture-pin",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "http://list.1ott.net/api/fixture-token/high/ottnav.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "1ott",
+      "input": {
+        "settings": {
+          "id": "",
+          "pin": "",
+          "token": "",
+          "login": "",
+          "pass": "",
+          "www": "x",
+          "key": "",
+          "edcdn": ""
+        },
+        "mac": ""
+      },
+      "expected": {
+        "calls": [],
+        "events": [
+          [
+            "settings"
+          ],
+          [
+            "info",
+            "Для доступа необходимо ввести ID и PIN!"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "1ott",
+      "input": {
+        "intercept": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://list.1ott.net/PinApi/fixture-id/fixture-pin?url=http%3A%2F%2Flist.1ott.net%2FPinApi%2Ffixture-id%2Ffixture-pin",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "http://list.1ott.net/api/fixture-token/high/ottnav.m3u8?url=http%3A%2F%2Flist.1ott.net%2Fapi%2Ffixture-token%2Fhigh%2Fottnav.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "intercept",
+            "http://list.1ott.net/PinApi/fixture-id/fixture-pin"
+          ],
+          [
+            "intercept",
+            "http://list.1ott.net/api/fixture-token/high/ottnav.m3u8"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "1ott",
+      "input": {
+        "failFirst": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://list.1ott.net/PinApi/fixture-id/fixture-pin",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@http://list.1ott.net/PinApi/fixture-id/fixture-pin"
+            },
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "http://list.1ott.net/api/fixture-token/high/ottnav.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "append",
+            "p..."
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "1ott",
+      "input": {
+        "failAll": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://list.1ott.net/PinApi/fixture-id/fixture-pin",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@http://list.1ott.net/PinApi/fixture-id/fixture-pin"
+            },
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "append",
+            "p..."
+          ],
+          [
+            "alert",
+            "Failed to load channel list!"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "1ott",
+      "input": {
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://list.1ott.net/PinApi/fixture-id/fixture-pin",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "http://list.1ott.net/api/fixture-token/high/ottnav.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "1ott",
+      "input": {
+        "dune": true,
+        "href": "https://player.test/?token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://list.1ott.net/PinApi/fixture-id/fixture-pin",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "http://list.1ott.net/api/fixture-token/high/ottnav.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "1ott",
+      "input": {
+        "list": 2
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://list.1ott.net/PinApi/fixture-id/fixture-pin",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "http://list.1ott.net/api/fixture-token/high/ottnav.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "1ott",
+      "input": {
+        "list": 9
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://list.1ott.net/PinApi/fixture-id/fixture-pin",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "http://list.1ott.net/api/fixture-token/high/ottnav.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "1ott",
+      "input": {
+        "auth": "null"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://list.1ott.net/PinApi/fixture-id/fixture-pin",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "alert",
+            "Failed to load channel list!"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "1ott",
+      "input": {
+        "auth": "{invalid"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://list.1ott.net/PinApi/fixture-id/fixture-pin",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "alert",
+            "Failed to load channel list!"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "1ott",
+      "input": {
+        "channels": [
+          {
+            "id": "a",
+            "name": "First",
+            "archive": 4
+          },
+          {
+            "id": "a",
+            "name": "Last",
+            "archive": 8
+          },
+          {
+            "id": 0,
+            "name": "Zero",
+            "archive": 0
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://list.1ott.net/PinApi/fixture-id/fixture-pin",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "http://list.1ott.net/api/fixture-token/high/ottnav.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {},
+      "expected": {
+        "calls": [
+          {
+            "url": "http://only4.tv/pl/1234567890/102/only4tv.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "settings": {
+          "id": "",
+          "pin": "",
+          "token": "",
+          "login": "",
+          "pass": "",
+          "www": "x",
+          "key": "",
+          "edcdn": ""
+        },
+        "mac": ""
+      },
+      "expected": {
+        "calls": [],
+        "events": [
+          [
+            "settings"
+          ],
+          [
+            "info",
+            "Для доступа необходимо ввести IPTV токен! (10 символов)"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "intercept": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://only4.tv/pl/1234567890/102/only4tv.m3u8?url=http%3A%2F%2Fonly4.tv%2Fpl%2F1234567890%2F102%2Fonly4tv.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "intercept",
+            "http://only4.tv/pl/1234567890/102/only4tv.m3u8"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "failFirst": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://only4.tv/pl/1234567890/102/only4tv.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@http://only4.tv/pl/1234567890/102/only4tv.m3u8"
+            },
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "append",
+            "p..."
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "failAll": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://only4.tv/pl/1234567890/102/only4tv.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@http://only4.tv/pl/1234567890/102/only4tv.m3u8"
+            },
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "append",
+            "p..."
+          ],
+          [
+            "alert",
+            "Failed to load channel list!"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://only4.tv/pl/1234567890/102/only4tv.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "dune": true,
+        "href": "https://player.test/?token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://only4.tv/pl/1234567890/102/only4tv.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "list": 2
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://only4.tv/pl/1234567890/102/only4tv.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "list": 9
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://only4.tv/pl/1234567890/102/only4tv.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "auth": "null"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://only4.tv/pl/1234567890/102/only4tv.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "auth": "{invalid"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://only4.tv/pl/1234567890/102/only4tv.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "only4",
+      "input": {
+        "channels": [
+          {
+            "id": "a",
+            "name": "First",
+            "archive": 4
+          },
+          {
+            "id": "a",
+            "name": "Last",
+            "archive": 8
+          },
+          {
+            "id": 0,
+            "name": "Zero",
+            "archive": 0
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://only4.tv/pl/1234567890/102/only4tv.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shara-tv",
+      "input": {},
+      "expected": {
+        "calls": [
+          {
+            "url": "http://tvfor.pro/g/12345678:abcdefgh/1/playlist.m3u",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shara-tv",
+      "input": {
+        "settings": {
+          "id": "",
+          "pin": "",
+          "token": "",
+          "login": "",
+          "pass": "",
+          "www": "x",
+          "key": "",
+          "edcdn": ""
+        },
+        "mac": ""
+      },
+      "expected": {
+        "calls": [],
+        "events": [
+          [
+            "settings"
+          ],
+          [
+            "info",
+            "Логин или пароль отсутсвуют!"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shara-tv",
+      "input": {
+        "intercept": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://tvfor.pro/g/12345678:abcdefgh/1/playlist.m3u?url=http%3A%2F%2Ftvfor.pro%2Fg%2F12345678%3Aabcdefgh%2F1%2Fplaylist.m3u",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "intercept",
+            "http://tvfor.pro/g/12345678:abcdefgh/1/playlist.m3u"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shara-tv",
+      "input": {
+        "failFirst": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://tvfor.pro/g/12345678:abcdefgh/1/playlist.m3u",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@http://tvfor.pro/g/12345678:abcdefgh/1/playlist.m3u"
+            },
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "append",
+            "p..."
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shara-tv",
+      "input": {
+        "failAll": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://tvfor.pro/g/12345678:abcdefgh/1/playlist.m3u",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@http://tvfor.pro/g/12345678:abcdefgh/1/playlist.m3u"
+            },
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "append",
+            "p..."
+          ],
+          [
+            "alert",
+            "Failed to load channel list!"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shara-tv",
+      "input": {
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://tvfor.pro/g/12345678:abcdefgh/1/playlist.m3u",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shara-tv",
+      "input": {
+        "dune": true,
+        "href": "https://player.test/?token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://tvfor.pro/g/12345678:abcdefgh/1/playlist.m3u",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shara-tv",
+      "input": {
+        "list": 2
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://tvfor.pro/g/12345678:abcdefgh/1/playlist.m3u",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shara-tv",
+      "input": {
+        "list": 9
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://tvfor.pro/g/12345678:abcdefgh/1/playlist.m3u",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shara-tv",
+      "input": {
+        "auth": "null"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://tvfor.pro/g/12345678:abcdefgh/1/playlist.m3u",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shara-tv",
+      "input": {
+        "auth": "{invalid"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://tvfor.pro/g/12345678:abcdefgh/1/playlist.m3u",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shara-tv",
+      "input": {
+        "channels": [
+          {
+            "id": "a",
+            "name": "First",
+            "archive": 4
+          },
+          {
+            "id": "a",
+            "name": "Last",
+            "archive": 8
+          },
+          {
+            "id": 0,
+            "name": "Zero",
+            "archive": 0
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://tvfor.pro/g/12345678:abcdefgh/1/playlist.m3u",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "tvteam",
+      "input": {},
+      "expected": {
+        "calls": [
+          {
+            "url": "https://tv.team/pl/11/token/playlist.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "tvteam",
+      "input": {
+        "settings": {
+          "id": "",
+          "pin": "",
+          "token": "",
+          "login": "",
+          "pass": "",
+          "www": "x",
+          "key": "",
+          "edcdn": ""
+        },
+        "mac": ""
+      },
+      "expected": {
+        "calls": [],
+        "events": [
+          [
+            "settings"
+          ],
+          [
+            "info",
+            "Для доступа необходимо ввести адрес плейлиста!"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "tvteam",
+      "input": {
+        "intercept": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://tv.team/pl/11/token/playlist.m3u8?url=https%3A%2F%2Ftv.team%2Fpl%2F11%2Ftoken%2Fplaylist.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "intercept",
+            "https://tv.team/pl/11/token/playlist.m3u8"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "tvteam",
+      "input": {
+        "failFirst": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://tv.team/pl/11/token/playlist.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@https://tv.team/pl/11/token/playlist.m3u8"
+            },
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "append",
+            "p..."
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "tvteam",
+      "input": {
+        "failAll": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://tv.team/pl/11/token/playlist.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@https://tv.team/pl/11/token/playlist.m3u8"
+            },
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "append",
+            "p..."
+          ],
+          [
+            "alert",
+            "Failed to load channel list!"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "tvteam",
+      "input": {
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://tv.team/pl/11/a%2Fb/playlist.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [
+          [
+            "www",
+            "https://tv.team/pl/11/a%2Fb/playlist.m3u8"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "tvteam",
+      "input": {
+        "dune": true,
+        "href": "https://player.test/?token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://tv.team/pl/11/token/playlist.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "tvteam",
+      "input": {
+        "list": 2
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://tv.team/pl/11/token/playlist.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "tvteam",
+      "input": {
+        "list": 9
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://tv.team/pl/11/token/playlist.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "tvteam",
+      "input": {
+        "auth": "null"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://tv.team/pl/11/token/playlist.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "tvteam",
+      "input": {
+        "auth": "{invalid"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://tv.team/pl/11/token/playlist.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "tvteam",
+      "input": {
+        "channels": [
+          {
+            "id": "a",
+            "name": "First",
+            "archive": 4
+          },
+          {
+            "id": "a",
+            "name": "Last",
+            "archive": 8
+          },
+          {
+            "id": 0,
+            "name": "Zero",
+            "archive": 0
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://tv.team/pl/11/token/playlist.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {},
+      "expected": {
+        "calls": [
+          {
+            "url": "http://af-play.com/playlist/12345678.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "settings": {
+          "id": "",
+          "pin": "",
+          "token": "",
+          "login": "",
+          "pass": "",
+          "www": "x",
+          "key": "",
+          "edcdn": ""
+        },
+        "mac": ""
+      },
+      "expected": {
+        "calls": [],
+        "events": [
+          [
+            "settings"
+          ],
+          [
+            "info",
+            "Для доступа необходимо ввести ключ! (Ключ доступа для приложений - 8 символов)"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "intercept": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://af-play.com/playlist/12345678.m3u8?url=http%3A%2F%2Faf-play.com%2Fplaylist%2F12345678.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "intercept",
+            "http://af-play.com/playlist/12345678.m3u8"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "failFirst": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://af-play.com/playlist/12345678.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@http://af-play.com/playlist/12345678.m3u8"
+            },
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "append",
+            "p..."
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "failAll": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://af-play.com/playlist/12345678.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@http://af-play.com/playlist/12345678.m3u8"
+            },
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "append",
+            "p..."
+          ],
+          [
+            "alert",
+            "Failed to load channel list!"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://af-play.com/playlist/12345678.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "dune": true,
+        "href": "https://player.test/?token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://af-play.com/playlist/12345678.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "list": 2
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://af-play.com/playlist/12345678.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "list": 9
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://af-play.com/playlist/12345678.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "auth": "null"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://af-play.com/playlist/12345678.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "auth": "{invalid"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://af-play.com/playlist/12345678.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "channels": [
+          {
+            "id": "a",
+            "name": "First",
+            "archive": 4
+          },
+          {
+            "id": "a",
+            "name": "Last",
+            "archive": 8
+          },
+          {
+            "id": 0,
+            "name": "Zero",
+            "archive": 0
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://af-play.com/playlist/12345678.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {},
+      "expected": {
+        "calls": [
+          {
+            "url": "https://epg.drm-play.com/edem/edem_epg_ico1.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "settings": {
+          "id": "",
+          "pin": "",
+          "token": "",
+          "login": "",
+          "pass": "",
+          "www": "x",
+          "key": "",
+          "edcdn": ""
+        },
+        "mac": ""
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://epg.drm-play.com/edem/edem_epg_ico1.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "edit"
+          ],
+          [
+            "info",
+            "<br>Access key is required!<br><br>button"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "intercept": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://epg.drm-play.com/edem/edem_epg_ico1.m3u8?url=https%3A%2F%2Fepg.drm-play.com%2Fedem%2Fedem_epg_ico1.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "intercept",
+            "https://epg.drm-play.com/edem/edem_epg_ico1.m3u8"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "failFirst": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://epg.drm-play.com/edem/edem_epg_ico1.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@https://epg.drm-play.com/edem/edem_epg_ico1.m3u8"
+            },
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "append",
+            "p..."
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "failAll": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://epg.drm-play.com/edem/edem_epg_ico1.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@https://epg.drm-play.com/edem/edem_epg_ico1.m3u8"
+            },
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "append",
+            "p..."
+          ],
+          [
+            "alert",
+            "Failed to load channel list!"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://epg.drm-play.com/edem/edem_epg_ico1.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "dune": true,
+        "href": "https://player.test/?token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://epg.drm-play.com/edem/edem_epg_ico1.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "list": 2
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://epg.drm-play.com/edem/edem_epg_ico1.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "list": 9
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://epg.drm-play.com/edem/edem_epg_ico1.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "auth": "null"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://epg.drm-play.com/edem/edem_epg_ico1.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "auth": "{invalid"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://epg.drm-play.com/edem/edem_epg_ico1.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "edem",
+      "input": {
+        "channels": [
+          {
+            "id": "a",
+            "name": "First",
+            "archive": 4
+          },
+          {
+            "id": "a",
+            "name": "Last",
+            "archive": 8
+          },
+          {
+            "id": 0,
+            "name": "Zero",
+            "archive": 0
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://epg.drm-play.com/edem/edem_epg_ico1.m3u8",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {},
+      "expected": {
+        "calls": [
+          {
+            "url": "http://kb-team.club/?do=/plugin&id=iptvkino&m3u&box_mac=00:11:22:33:44:55",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "settings": {
+          "id": "",
+          "pin": "",
+          "token": "",
+          "login": "",
+          "pass": "",
+          "www": "x",
+          "key": "",
+          "edcdn": ""
+        },
+        "mac": ""
+      },
+      "expected": {
+        "calls": [],
+        "events": [
+          [
+            "alert",
+            "Device MAC is required for KBC (Kinoboom) playlists"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "intercept": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://kb-team.club/?do=/plugin&id=iptvkino&m3u&box_mac=00:11:22:33:44:55&url=http%3A%2F%2Fkb-team.club%2F%3Fdo%3D%2Fplugin%26id%3Diptvkino%26m3u%26box_mac%3D00%3A11%3A22%3A33%3A44%3A55",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "intercept",
+            "http://kb-team.club/?do=/plugin&id=iptvkino&m3u&box_mac=00:11:22:33:44:55"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "failFirst": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://kb-team.club/?do=/plugin&id=iptvkino&m3u&box_mac=00:11:22:33:44:55",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@http://kb-team.club/?do=/plugin&id=iptvkino&m3u&box_mac=00:11:22:33:44:55"
+            },
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "append",
+            "p..."
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "failAll": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://kb-team.club/?do=/plugin&id=iptvkino&m3u&box_mac=00:11:22:33:44:55",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@http://kb-team.club/?do=/plugin&id=iptvkino&m3u&box_mac=00:11:22:33:44:55"
+            },
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [
+          [
+            "append",
+            "p..."
+          ],
+          [
+            "alert",
+            "Failed to load channel list!"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://kb-team.club/?do=/plugin&id=iptvkino&m3u&box_mac=00:11:22:33:44:55",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "dune": true,
+        "href": "https://player.test/?token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://kb-team.club/?do=/plugin&id=iptvkino&m3u&box_mac=00:11:22:33:44:55",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "list": 2
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://kb-team.club/?do=/plugin&bid=iptvk&m3u&box_mac=00:11:22:33:44:55",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "list": 9
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "auth": "null"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://kb-team.club/?do=/plugin&id=iptvkino&m3u&box_mac=00:11:22:33:44:55",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "auth": "{invalid"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://kb-team.club/?do=/plugin&id=iptvkino&m3u&box_mac=00:11:22:33:44:55",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "channels": [
+          {
+            "id": "a",
+            "name": "First",
+            "archive": 4
+          },
+          {
+            "id": "a",
+            "name": "Last",
+            "archive": 8
+          },
+          {
+            "id": 0,
+            "name": "Zero",
+            "archive": 0
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://kb-team.club/?do=/plugin&id=iptvkino&m3u&box_mac=00:11:22:33:44:55",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 30000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {},
+      "expected": {
+        "calls": [
+          {
+            "url": "http://pl.tvshka.net",
+            "method": "GET",
+            "data": {
+              "type": "jsonp",
+              "uid": "shxxxxxxxxxxx"
+            },
+            "dataType": "jsonp",
+            "timeout": 10000
+          },
+          {
+            "url": "http://pl.tvshka.net/?uid=shxxxxxxxxxxx&srv=1&type=halva",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 10000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "settings": {
+          "id": "",
+          "pin": "",
+          "token": "",
+          "login": "",
+          "pass": "",
+          "www": "x",
+          "key": "",
+          "edcdn": ""
+        },
+        "mac": ""
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://pl.tvshka.net",
+            "method": "GET",
+            "data": {
+              "type": "jsonp",
+              "uid": "shxxxxxxxxxxx"
+            },
+            "dataType": "jsonp",
+            "timeout": 10000
+          },
+          {
+            "url": "http://pl.tvshka.net/?uid=shxxxxxxxxxxx&srv=1&type=halva",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 10000
+          }
+        ],
+        "events": [
+          [
+            "settings"
+          ],
+          [
+            "info",
+            "Для доступа необходимо ввести ключ!"
+          ]
+        ],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "intercept": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://pl.tvshka.net",
+            "method": "GET",
+            "data": {
+              "type": "jsonp",
+              "uid": "shxxxxxxxxxxx"
+            },
+            "dataType": "jsonp",
+            "timeout": 10000
+          },
+          {
+            "url": "http://pl.tvshka.net/?uid=shxxxxxxxxxxx&srv=1&type=halva",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 10000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "failFirst": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://pl.tvshka.net",
+            "method": "GET",
+            "data": {
+              "type": "jsonp",
+              "uid": "shxxxxxxxxxxx"
+            },
+            "dataType": "jsonp",
+            "timeout": 10000
+          },
+          {
+            "url": "http://pl.tvshka.net/?uid=shxxxxxxxxxxx&srv=1&type=halva",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 10000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "failAll": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://pl.tvshka.net",
+            "method": "GET",
+            "data": {
+              "type": "jsonp",
+              "uid": "shxxxxxxxxxxx"
+            },
+            "dataType": "jsonp",
+            "timeout": 10000
+          },
+          {
+            "url": "http://pl.tvshka.net/?uid=shxxxxxxxxxxx&srv=1&type=halva",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 10000
+          },
+          {
+            "url": "https://relay.test/m3u/cp.php",
+            "method": "post",
+            "data": {
+              "url": "@http://pl.tvshka.net/?uid=shxxxxxxxxxxx&srv=1&type=halva"
+            },
+            "dataType": "text",
+            "timeout": 10000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://pl.tvshka.net",
+            "method": "GET",
+            "data": {
+              "type": "jsonp",
+              "uid": "shxxxxxxxxxxx"
+            },
+            "dataType": "jsonp",
+            "timeout": 10000
+          },
+          {
+            "url": "http://pl.tvshka.net/?uid=shxxxxxxxxxxx&srv=1&type=halva",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 10000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?x=a&token=a%2Fb&token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "dune": true,
+        "href": "https://player.test/?token=ignored"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://pl.tvshka.net",
+            "method": "GET",
+            "data": {
+              "type": "jsonp",
+              "uid": "shxxxxxxxxxxx"
+            },
+            "dataType": "jsonp",
+            "timeout": 10000
+          },
+          {
+            "url": "http://pl.tvshka.net/?uid=shxxxxxxxxxxx&srv=1&type=halva",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 10000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/?token=ignored",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "list": 2
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://pl.tvshka.net",
+            "method": "GET",
+            "data": {
+              "type": "jsonp",
+              "uid": "shxxxxxxxxxxx"
+            },
+            "dataType": "jsonp",
+            "timeout": 10000
+          },
+          {
+            "url": "http://pl.tvshka.net/?uid=shxxxxxxxxxxx&srv=1&type=halva",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 10000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "list": 9
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://pl.tvshka.net",
+            "method": "GET",
+            "data": {
+              "type": "jsonp",
+              "uid": "shxxxxxxxxxxx"
+            },
+            "dataType": "jsonp",
+            "timeout": 10000
+          },
+          {
+            "url": "http://pl.tvshka.net/?uid=shxxxxxxxxxxx&srv=1&type=halva",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 10000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "auth": "null"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://pl.tvshka.net",
+            "method": "GET",
+            "data": {
+              "type": "jsonp",
+              "uid": "shxxxxxxxxxxx"
+            },
+            "dataType": "jsonp",
+            "timeout": 10000
+          },
+          {
+            "url": "http://pl.tvshka.net/?uid=shxxxxxxxxxxx&srv=1&type=halva",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 10000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "auth": "{invalid"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://pl.tvshka.net",
+            "method": "GET",
+            "data": {
+              "type": "jsonp",
+              "uid": "shxxxxxxxxxxx"
+            },
+            "dataType": "jsonp",
+            "timeout": 10000
+          },
+          {
+            "url": "http://pl.tvshka.net/?uid=shxxxxxxxxxxx&srv=1&type=halva",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 10000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": []
+      }
+    },
+    {
+      "profile": "shura",
+      "input": {
+        "channels": [
+          {
+            "id": "a",
+            "name": "First",
+            "archive": 4
+          },
+          {
+            "id": "a",
+            "name": "Last",
+            "archive": 8
+          },
+          {
+            "id": 0,
+            "name": "Zero",
+            "archive": 0
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://pl.tvshka.net",
+            "method": "GET",
+            "data": {
+              "type": "jsonp",
+              "uid": "shxxxxxxxxxxx"
+            },
+            "dataType": "jsonp",
+            "timeout": 10000
+          },
+          {
+            "url": "http://pl.tvshka.net/?uid=shxxxxxxxxxxx&srv=1&type=halva",
+            "method": "GET",
+            "data": null,
+            "dataType": "text",
+            "timeout": 10000
+          }
+        ],
+        "events": [],
+        "writes": [],
+        "failure": null,
+        "callbacks": 1,
+        "href": "https://player.test/index.html",
+        "ids": [
+          "a",
+          "a",
+          0
+        ],
+        "channels": {
+          "0": {
+            "category": {
+              "class": 0
+            },
+            "channel_name": "Zero",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0
+          },
+          "a": {
+            "category": {
+              "class": 0
+            },
+            "channel_name": "Last",
+            "rec": 8,
+            "time": 0,
+            "time_to": 0
+          }
+        },
+        "groups": {},
+        "groupOrder": []
+      }
+    }
+  ]
+}

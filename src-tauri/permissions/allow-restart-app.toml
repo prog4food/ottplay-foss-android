@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-restart-app"
+description = "Allows restarting this application, never the operating system."
+commands.allow = ["restart_app"]

@@ -1,0 +1,86 @@
+<svg
+    aria-labelledby="title desc"
+    height="570"
+    role="img"
+    viewBox="0 0 920 570"
+    width="920"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">Finite live stream recovery</title>
+    <desc id="desc">
+        One playback lease prepares source and quality limits. Fatal transient
+        errors have two retries total. Explicit live backups advance once each.
+        Access and quality errors terminate. Stop or source replacement cancels
+        pending work.
+    </desc>
+    <defs>
+        <marker
+            id="arrow"
+            markerHeight="7"
+            markerWidth="7"
+            orient="auto-start-reverse"
+            refX="9"
+            refY="5"
+            viewBox="0 0 10 10"
+        >
+            <path d="M0 0L10 5L0 10Z" fill="#475569" />
+        </marker>
+    </defs>
+    <rect fill="#fff" height="570" width="920" />
+    <g fill="#172033" font-family="system-ui,sans-serif" text-anchor="middle">
+        <text font-size="24" font-weight="600" x="460" y="38">
+            One lease. A finite recovery budget.
+        </text>
+        <g fill="#f1f5f9" stroke="#94a3b8">
+            <rect height="55" rx="8" width="350" x="285" y="62" />
+            <rect height="66" rx="8" width="350" x="285" y="152" />
+            <rect height="55" rx="8" width="350" x="285" y="250" />
+            <rect height="76" rx="8" width="240" x="32" y="350" />
+            <rect height="76" rx="8" width="270" x="325" y="350" />
+            <rect height="76" rx="8" width="240" x="648" y="350" />
+        </g>
+        <g font-size="16">
+            <text x="460" y="96">Selected channel · one playback lease</text>
+            <text x="460" y="179">Prepare source</text>
+            <text x="460" y="201">Apply HLS / Shaka quality limits</text>
+            <text x="460" y="283">Play current endpoint</text>
+            <text x="152" y="377">Transient failure</text>
+            <text x="152" y="401">≤ 2 delayed retries total</text>
+            <text x="460" y="377">Explicit live backups</text>
+            <text x="460" y="401">≤ 3 forward moves total</text>
+            <text x="768" y="377">Access / quality / exhausted</text>
+            <text x="768" y="401">Visible failure · no loop</text>
+        </g>
+        <g
+            fill="none"
+            marker-end="url(#arrow)"
+            stroke="#475569"
+            stroke-width="2"
+        >
+            <path d="M460 117V152" />
+            <path d="M460 218V250" />
+            <path d="M365 305L152 350" />
+            <path d="M460 305V350" />
+            <path d="M555 305L768 350" />
+            <path d="M32 386H14V186H285" />
+            <path d="M460 426V462H905V186H635" />
+        </g>
+        <text font-size="13" x="178" y="173">pause-aware delay</text>
+        <text font-size="13" x="773" y="450">next endpoint, once</text>
+        <rect
+            fill="#eef2ff"
+            height="54"
+            rx="8"
+            stroke="#818cf8"
+            width="776"
+            x="72"
+            y="488"
+        />
+        <text font-size="15" font-weight="600" x="460" y="512">
+            Stop · standby · source replacement · channel replacement
+        </text>
+        <text font-size="14" x="460" y="532">
+            Cancel pending work; late callbacks cannot restart the old request
+        </text>
+    </g>
+</svg>

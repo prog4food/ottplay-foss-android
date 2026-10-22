@@ -1,0 +1,30 @@
+# Read trusted base metadata only; do not check out or execute PR code.
+name: Auto Merge PRs
+'on':
+  pull_request_target:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+      - labeled
+      - unlabeled
+      - edited
+      - converted_to_draft
+permissions:
+  contents: read
+concurrency:
+  group: automerge-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  auto-merge:
+    permissions:
+      contents: read
+      pull-requests: write
+    if: contains(fromJSON('["4alvit","californiantiramisu","dependabot[bot]","renovate[bot]"]'), github.event.pull_request.user.login)
+    uses: victron-venus/venus-os-ci-toolkit/.github/workflows/auto-merge.yml@5194a48f3eb54d80e315133b17ff0fd217ed4327 # main
+    with:
+      native-auto-merge: true
+      required-status-checks: CodeQL
+    secrets:
+      BOT_PAT: ${{ secrets.BOT_PAT }}

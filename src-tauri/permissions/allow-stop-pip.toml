@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-stop-pip"
+description = "Enables the stop_pip command."
+commands.allow = ["stop_pip"]

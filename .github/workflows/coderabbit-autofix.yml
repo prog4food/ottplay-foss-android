@@ -1,0 +1,35 @@
+name: CodeRabbit Autofix Requests
+
+on:
+  status:
+  workflow_dispatch:
+    inputs:
+      pull-request-number:
+        description: Open PR number to evaluate
+        required: true
+        type: string
+      expected-head:
+        description: Exact reviewed PR head SHA
+        required: true
+        type: string
+      dry-run:
+        description: Check eligibility without posting a comment
+        type: boolean
+        default: true
+
+permissions: {}
+
+jobs:
+  request-autofix:
+    if: >-
+      github.event.repository.private == false &&
+      (github.event_name == 'workflow_dispatch' ||
+       (github.event.context == 'CodeRabbit' && github.event.state == 'success' &&
+        github.event.sender.login == 'coderabbitai[bot]' && github.event.sender.type == 'Bot'))
+    uses: victron-venus/venus-os-ci-toolkit/.github/workflows/coderabbit-autofix-reusable.yml@6b2d99519d513d2b871d2a845ddd6134dea4af2c
+    with:
+      pull-request-number: ${{ inputs.pull-request-number || '' }}
+      expected-head: ${{ inputs.expected-head || '' }}
+      dry-run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry-run || false }}
+    secrets:
+      BOT_PAT: ${{ secrets.BOT_PAT }}

@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-match-logos"
+description = "Enables the match_logos command (M3U channel logo resolution)."
+commands.allow = ["match_logos"]

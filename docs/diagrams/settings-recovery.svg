@@ -1,0 +1,179 @@
+<svg
+    aria-labelledby="title description"
+    height="840"
+    role="img"
+    viewBox="0 0 1320 840"
+    width="1320"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">
+        Settings recovery before player startup / Восстановление настроек до
+        запуска
+    </title>
+    <desc id="description">
+        A failed journal recovery blocks settings reads and writes. The recovery
+        screen offers retry or an explicitly confirmed reset. Only verified
+        success reloads the player; cancellation or failure keeps the recovery
+        screen.
+    </desc>
+    <defs>
+        <marker
+            id="arrow"
+            markerHeight="8"
+            markerWidth="8"
+            orient="auto-start-reverse"
+            refX="9"
+            refY="5"
+            viewBox="0 0 10 10"
+        >
+            <path d="M0 0L10 5L0 10Z" fill="#a7b5ce" />
+        </marker>
+        <style>
+        text {
+            font-family: Arial, sans-serif;
+            fill: #eef3fc;
+        }
+        .heading {
+            font-size: 31px;
+            font-weight: 700;
+        }
+        .sub {
+            font-size: 20px;
+            fill: #b9c5da;
+        }
+        .label {
+            font-size: 23px;
+            font-weight: 700;
+        }
+        .body {
+            font-size: 18px;
+            fill: #c7d2e5;
+        }
+        .small {
+            font-size: 17px;
+            fill: #c7d2e5;
+        }
+        .line {
+            fill: none;
+            stroke: #a7b5ce;
+            stroke-width: 2.5;
+            marker-end: url(#arrow);
+        }
+        </style>
+    </defs>
+    <rect fill="#101727" height="840" rx="28" width="1320" />
+    <text class="heading" x="48" y="62">
+        A failed recovery stays recoverable
+    </text>
+    <text class="sub" x="48" y="94">
+        Ошибка восстановления не должна блокировать доступ к восстановлению
+    </text>
+    <rect
+        fill="#3b2434"
+        height="166"
+        rx="18"
+        stroke="#e59cab"
+        width="330"
+        x="48"
+        y="144"
+    />
+    <text class="label" x="72" y="181">1. Journal cannot recover</text>
+    <text class="body" x="72" y="212">Ошибка журнала или записи</text>
+    <text class="body" x="72" y="257">No account settings loaded</text>
+    <text class="body" x="72" y="285">Аккаунт не загружается</text>
+    <path class="line" d="M378 225H424" />
+    <rect
+        fill="#24334a"
+        height="166"
+        rx="18"
+        stroke="#a2c4f3"
+        width="386"
+        x="430"
+        y="144"
+    />
+    <text class="label" x="454" y="181">2. Isolate stored data</text>
+    <text class="body" x="454" y="212">Чтение и запись настроек закрыты</text>
+    <text class="body" x="454" y="257">Keep data; show recovery controls</text>
+    <text class="body" x="454" y="285">Данные сохранены; UI доступен</text>
+    <path class="line" d="M816 225H858" />
+    <rect
+        fill="#1d3c3c"
+        height="166"
+        rx="18"
+        stroke="#8ad8c5"
+        width="408"
+        x="864"
+        y="144"
+    />
+    <text class="label" x="888" y="181">3. Explicit user action</text>
+    <text class="body" x="888" y="212">Действие выбирает пользователь</text>
+    <text class="body" x="888" y="257">Remote, keyboard or pointer</text>
+    <text class="body" x="888" y="285">Пульт, клавиатура или мышь</text>
+    <path class="line" d="M976 310V351H350V388" />
+    <path class="line" d="M1136 310V388" />
+    <rect
+        fill="#20394a"
+        height="160"
+        rx="18"
+        stroke="#82c7f0"
+        width="570"
+        x="48"
+        y="396"
+    />
+    <text class="label" x="72" y="435">RETRY / ПОВТОРИТЬ</text>
+    <text class="body" x="72" y="476">
+        Retry journal recovery with the existing data
+    </text>
+    <text class="body" x="72" y="506">
+        Повторить восстановление сохранённых данных
+    </text>
+    <text class="small" x="72" y="534">
+        Useful when storage becomes writable again / После сбоя записи
+    </text>
+    <rect
+        fill="#423726"
+        height="160"
+        rx="18"
+        stroke="#f4cc7b"
+        width="594"
+        x="678"
+        y="396"
+    />
+    <text class="label" x="702" y="435">CLEAR SETTINGS / СБРОСИТЬ</text>
+    <text class="body" x="702" y="476">
+        Second confirmation; Cancel selected by default
+    </text>
+    <text class="body" x="702" y="506">
+        Повторное подтверждение; по умолчанию «Отмена»
+    </text>
+    <text class="small" x="702" y="534">
+        Verify deletion before releasing the reset barrier / Проверить очистку
+    </text>
+    <path class="line" d="M332 556V601H515V630" />
+    <path class="line" d="M968 556V601H805V630" />
+    <rect
+        fill="#1a3c32"
+        height="106"
+        rx="18"
+        stroke="#82d7a9"
+        width="624"
+        x="348"
+        y="638"
+    />
+    <text class="label" x="374" y="678">
+        Verified success → reload the player
+    </text>
+    <text class="body" x="374" y="713">
+        Только проверенный успех → перезагрузить плеер
+    </text>
+    <text class="body" x="48" y="789">
+        Cancel or failure: keep recovery UI and stored-data isolation.
+    </text>
+    <text class="body" x="710" y="789">
+        Отмена или ошибка: остаться на экране восстановления.
+    </text>
+    <text class="small" x="48" y="819">
+        Single-writer contract; no cross-tab atomicity guarantee / Один
+        писатель; атомарность между вкладками не гарантируется
+    </text>
+</svg>

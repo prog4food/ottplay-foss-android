@@ -1,0 +1,59 @@
+<svg
+    aria-labelledby="title desc"
+    height="310"
+    role="img"
+    viewBox="0 0 960 310"
+    width="960"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">Scoped manual XMLTV binding</title>
+    <desc id="desc">
+        A playlist source fingerprint and stable channel select a local binding
+        to one XMLTV feed and exact channel ID. Without a binding, normal
+        automatic matching applies.
+    </desc>
+    <defs>
+        <marker
+            id="arrow"
+            markerHeight="7"
+            markerWidth="7"
+            orient="auto-start-reverse"
+            refX="9"
+            refY="5"
+            viewBox="0 0 10 10"
+        >
+            <path d="M0 0L10 5L0 10Z" fill="#334155" />
+        </marker>
+    </defs>
+    <rect fill="#f8fafc" height="310" rx="12" width="960" />
+    <g fill="#fff" stroke="#475569" stroke-width="2">
+        <rect height="116" rx="8" width="255" x="20" y="82" />
+        <rect height="116" rx="8" width="220" x="355" y="82" />
+        <rect height="100" rx="8" width="280" x="655" y="32" />
+        <rect height="88" rx="8" width="280" x="655" y="190" />
+    </g>
+    <g
+        fill="#0f172a"
+        font-family="Arial, sans-serif"
+        font-size="19"
+        text-anchor="middle"
+    >
+        <text x="147" y="123">Playlist source fingerprint</text>
+        <text x="147" y="158">+ stable channel key</text>
+        <text x="465" y="126">Local binding</text>
+        <text font-size="16" x="465" y="158">500 rows / 512 KiB limit</text>
+        <text x="795" y="72">One XMLTV feed</text>
+        <text x="795" y="106">+ exact channel ID</text>
+        <text x="795" y="227">Automatic mapping</text>
+        <text font-size="16" x="795" y="254">Original playlist metadata</text>
+    </g>
+    <g fill="none" marker-end="url(#arrow)" stroke="#334155" stroke-width="2.5">
+        <path d="M275 140H345" />
+        <path d="M575 110H605V82H645" />
+        <path d="M575 172H605V234H645" />
+    </g>
+    <g fill="#334155" font-family="Arial, sans-serif" font-size="15">
+        <text x="578" y="62">Set</text>
+        <text x="580" y="264">Reset / absent</text>
+    </g>
+</svg>

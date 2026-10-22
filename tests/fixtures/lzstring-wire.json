@@ -1,0 +1,47 @@
+{
+  "encoded": [
+    [
+      "compress",
+      "e584afbfb6c8d0ce774daa0860e9a93da0c63af417a95aab1d650d4116e024e2"
+    ],
+    [
+      "compressToBase64",
+      "79a7b6e1647587f229305141697f39f950d5e605f42e7cf225843a19247d2463"
+    ],
+    [
+      "compressToUTF16",
+      "26fe8e32500d5a72bea9ab10f3762620b9d1a917bead7889f7103b49edcbeff8"
+    ],
+    [
+      "compressToEncodedURIComponent",
+      "1e726c4d72da71bdf569957af415f73478dc4c59d68ab123a7371ddb9c57f0d0"
+    ],
+    [
+      "compressToUint8Array",
+      "8de51ba1449dbe3c4d15036e7faaac2a07b69d92a2984527958716e6526b6389"
+    ]
+  ],
+  "malformed": [
+    [
+      "decompress",
+      "155c081c55cdd75d75634bf7b386c51b6ecbfc047e63fcc85ce7c900a90eef62"
+    ],
+    [
+      "decompressFromBase64",
+      "027f9b1e7e06062fa9252c9be846ee478ad19988c2cf8d0123a1926a03c1103b"
+    ],
+    [
+      "decompressFromUTF16",
+      "ac3a20048df2b25ad0dd02a195dc50145e48d9cfbc45efe1d6c0875cd424a4d3"
+    ],
+    [
+      "decompressFromEncodedURIComponent",
+      "a737d7e805848edd2bb65fda325ab7d1f570605a93caf50bbabf99ca5e954aff"
+    ],
+    [
+      "decompressFromUint8Array",
+      "25e6898721d0ef7ee29b7af59e3cf89f8959fd4f5796f530908c1d22d058bf76"
+    ]
+  ],
+  "callbackTrace": "65af3e67cef4ee527179d3789dcd43004950a169d424e6c048a1cab455185fe8"
+}

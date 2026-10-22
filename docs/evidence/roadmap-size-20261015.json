@@ -1,0 +1,692 @@
+{
+  "base": {
+    "head": "bbf9ca7bac93f6a5b8972ca75279000ed255ae84",
+    "version": "1.1.55",
+    "cleanSourceIdentity": true,
+    "method": "production ES5 tsc + assembleClassic + optimizeClassic; explicit clean archived source SHA; native system-icon transform; each artifact compressed separately with gzip level 9",
+    "scope": "entry plus all optional provider JavaScript assets, excludes external vendor runtimes, locale dictionaries, media, CSS and images",
+    "toolchain": {
+      "node": "26.8.2",
+      "v8": "14.6.202.34-node.28",
+      "zlib": "1.2.12",
+      "typescript": "5.9.3",
+      "terser": "5.51.2",
+      "optimizerSha256": "16185eb595e23a4c08fee1a3df564f229269807988cf45cc54f99f2ca0a9c291",
+      "namePolicySha256": "1287a0866d904dd7794de87a110ce9e12ffb2a196cfa51df06f7b93d7c34c05f"
+    },
+    "budget": {
+      "entry": {
+        "bytes": 848400,
+        "gzipBytes": 263600
+      },
+      "total": {
+        "bytes": 964900,
+        "gzipBytes": 306550
+      }
+    },
+    "artifacts": [
+      {
+        "file": "player.js",
+        "sourceBytes": 1847711,
+        "moduleCount": 111,
+        "web": {
+          "raw": 848092,
+          "gzip": 262392,
+          "sha256": "2e624afdd1b746cacd3f3e891db0e4e5b3c668fc604f5518e16ab1f22bc7c247"
+        },
+        "native": {
+          "raw": 848050,
+          "gzip": 262460,
+          "sha256": "2ad4a53a2e9f58ca2bf4e83efc113e73dfc549b9206d0f66320159f89af40af2"
+        }
+      },
+      {
+        "file": "provider-catalog.js",
+        "sourceBytes": 22324,
+        "moduleCount": 1,
+        "web": {
+          "raw": 9370,
+          "gzip": 3530,
+          "sha256": "25c9a2a0fd1adcc8d4036a32e8d38d18ef2bbc6c32f6a5b384a1a81c3e8b3f0c"
+        },
+        "native": {
+          "raw": 9370,
+          "gzip": 3530,
+          "sha256": "25c9a2a0fd1adcc8d4036a32e8d38d18ef2bbc6c32f6a5b384a1a81c3e8b3f0c"
+        }
+      },
+      {
+        "file": "provider-edem.js",
+        "sourceBytes": 40287,
+        "moduleCount": 1,
+        "web": {
+          "raw": 15628,
+          "gzip": 6078,
+          "sha256": "836767949840113c9129ff8bb9db32e878cbaa63f7e8100bc2158ffd7507e78b"
+        },
+        "native": {
+          "raw": 15628,
+          "gzip": 6078,
+          "sha256": "836767949840113c9129ff8bb9db32e878cbaa63f7e8100bc2158ffd7507e78b"
+        }
+      },
+      {
+        "file": "provider-m3u.js",
+        "sourceBytes": 51558,
+        "moduleCount": 2,
+        "web": {
+          "raw": 19957,
+          "gzip": 7177,
+          "sha256": "ebc51b8f039d9df95764c7295773c40d5fd69f2689588dabca2b27da0a170fcb"
+        },
+        "native": {
+          "raw": 19957,
+          "gzip": 7177,
+          "sha256": "ebc51b8f039d9df95764c7295773c40d5fd69f2689588dabca2b27da0a170fcb"
+        }
+      },
+      {
+        "file": "provider-playlist.js",
+        "sourceBytes": 26966,
+        "moduleCount": 1,
+        "web": {
+          "raw": 11485,
+          "gzip": 4278,
+          "sha256": "781e9031166e1adf344e0f34b1f9cce98ee00ee7bfc2f05959c94e3050777f57"
+        },
+        "native": {
+          "raw": 11485,
+          "gzip": 4278,
+          "sha256": "781e9031166e1adf344e0f34b1f9cce98ee00ee7bfc2f05959c94e3050777f57"
+        }
+      },
+      {
+        "file": "provider-plex.js",
+        "sourceBytes": 111529,
+        "moduleCount": 4,
+        "web": {
+          "raw": 41852,
+          "gzip": 14781,
+          "sha256": "0c040b2eee79e1671a34f37f4d636fb2059643d9e19bf0d6b5240225ad78ce22"
+        },
+        "native": {
+          "raw": 41852,
+          "gzip": 14781,
+          "sha256": "0c040b2eee79e1671a34f37f4d636fb2059643d9e19bf0d6b5240225ad78ce22"
+        }
+      },
+      {
+        "file": "provider-stalker.js",
+        "sourceBytes": 26776,
+        "moduleCount": 1,
+        "web": {
+          "raw": 10818,
+          "gzip": 4230,
+          "sha256": "366b3a08b14ce4ab35ef8e8df6f0f23e3de74a0f05d5fd999ad52d638bf71cfd"
+        },
+        "native": {
+          "raw": 10818,
+          "gzip": 4230,
+          "sha256": "366b3a08b14ce4ab35ef8e8df6f0f23e3de74a0f05d5fd999ad52d638bf71cfd"
+        }
+      },
+      {
+        "file": "provider-vportal.js",
+        "sourceBytes": 16644,
+        "moduleCount": 1,
+        "web": {
+          "raw": 7257,
+          "gzip": 2878,
+          "sha256": "4aed5dab884d952da2c15274ef3416149e59e02fefcf8c8cadc7553fd1c722a9"
+        },
+        "native": {
+          "raw": 7257,
+          "gzip": 2878,
+          "sha256": "4aed5dab884d952da2c15274ef3416149e59e02fefcf8c8cadc7553fd1c722a9"
+        }
+      }
+    ],
+    "total": {
+      "web": {
+        "raw": 964459,
+        "gzip": 305344
+      },
+      "native": {
+        "raw": 964417,
+        "gzip": 305412
+      }
+    }
+  },
+  "candidate": {
+    "head": "cae971dae66efaf4a5b6244d66478263a7a6f380",
+    "version": "1.1.55",
+    "cleanSourceIdentity": true,
+    "method": "production ES5 tsc + assembleClassic + optimizeClassic; explicit clean archived source SHA; native system-icon transform; each artifact compressed separately with gzip level 9",
+    "scope": "entry plus all optional provider JavaScript assets, excludes external vendor runtimes, locale dictionaries, media, CSS and images",
+    "toolchain": {
+      "node": "26.8.2",
+      "v8": "14.6.202.34-node.28",
+      "zlib": "1.2.12",
+      "typescript": "5.9.3",
+      "terser": "5.51.2",
+      "optimizerSha256": "16185eb595e23a4c08fee1a3df564f229269807988cf45cc54f99f2ca0a9c291",
+      "namePolicySha256": "1287a0866d904dd7794de87a110ce9e12ffb2a196cfa51df06f7b93d7c34c05f"
+    },
+    "budget": {
+      "entry": {
+        "bytes": 848400,
+        "gzipBytes": 263600
+      },
+      "total": {
+        "bytes": 964900,
+        "gzipBytes": 306550
+      }
+    },
+    "artifacts": [
+      {
+        "file": "player.js",
+        "sourceBytes": 1905653,
+        "moduleCount": 115,
+        "web": {
+          "raw": 874926,
+          "gzip": 270321,
+          "sha256": "05efe7ae32a1738f25924cfbff7ceed4a5c5c25e6b42b39a84962933fb86d14e"
+        },
+        "native": {
+          "raw": 874884,
+          "gzip": 270372,
+          "sha256": "60f26b34568cf6cf65a20e5094942102b9e1905d873a3e7d180b1ab7028d3de0"
+        }
+      },
+      {
+        "file": "provider-catalog.js",
+        "sourceBytes": 22324,
+        "moduleCount": 1,
+        "web": {
+          "raw": 9370,
+          "gzip": 3530,
+          "sha256": "25c9a2a0fd1adcc8d4036a32e8d38d18ef2bbc6c32f6a5b384a1a81c3e8b3f0c"
+        },
+        "native": {
+          "raw": 9370,
+          "gzip": 3530,
+          "sha256": "25c9a2a0fd1adcc8d4036a32e8d38d18ef2bbc6c32f6a5b384a1a81c3e8b3f0c"
+        }
+      },
+      {
+        "file": "provider-edem.js",
+        "sourceBytes": 40287,
+        "moduleCount": 1,
+        "web": {
+          "raw": 15628,
+          "gzip": 6078,
+          "sha256": "836767949840113c9129ff8bb9db32e878cbaa63f7e8100bc2158ffd7507e78b"
+        },
+        "native": {
+          "raw": 15628,
+          "gzip": 6078,
+          "sha256": "836767949840113c9129ff8bb9db32e878cbaa63f7e8100bc2158ffd7507e78b"
+        }
+      },
+      {
+        "file": "provider-m3u.js",
+        "sourceBytes": 51978,
+        "moduleCount": 2,
+        "web": {
+          "raw": 20141,
+          "gzip": 7259,
+          "sha256": "c184004db3f18242b57314400fd157b45cc3f25bdb50368a85e8f17589cc5419"
+        },
+        "native": {
+          "raw": 20141,
+          "gzip": 7259,
+          "sha256": "c184004db3f18242b57314400fd157b45cc3f25bdb50368a85e8f17589cc5419"
+        }
+      },
+      {
+        "file": "provider-playlist.js",
+        "sourceBytes": 26966,
+        "moduleCount": 1,
+        "web": {
+          "raw": 11485,
+          "gzip": 4278,
+          "sha256": "781e9031166e1adf344e0f34b1f9cce98ee00ee7bfc2f05959c94e3050777f57"
+        },
+        "native": {
+          "raw": 11485,
+          "gzip": 4278,
+          "sha256": "781e9031166e1adf344e0f34b1f9cce98ee00ee7bfc2f05959c94e3050777f57"
+        }
+      },
+      {
+        "file": "provider-plex.js",
+        "sourceBytes": 111529,
+        "moduleCount": 4,
+        "web": {
+          "raw": 41852,
+          "gzip": 14781,
+          "sha256": "0c040b2eee79e1671a34f37f4d636fb2059643d9e19bf0d6b5240225ad78ce22"
+        },
+        "native": {
+          "raw": 41852,
+          "gzip": 14781,
+          "sha256": "0c040b2eee79e1671a34f37f4d636fb2059643d9e19bf0d6b5240225ad78ce22"
+        }
+      },
+      {
+        "file": "provider-stalker.js",
+        "sourceBytes": 26776,
+        "moduleCount": 1,
+        "web": {
+          "raw": 10818,
+          "gzip": 4230,
+          "sha256": "366b3a08b14ce4ab35ef8e8df6f0f23e3de74a0f05d5fd999ad52d638bf71cfd"
+        },
+        "native": {
+          "raw": 10818,
+          "gzip": 4230,
+          "sha256": "366b3a08b14ce4ab35ef8e8df6f0f23e3de74a0f05d5fd999ad52d638bf71cfd"
+        }
+      },
+      {
+        "file": "provider-vportal.js",
+        "sourceBytes": 16644,
+        "moduleCount": 1,
+        "web": {
+          "raw": 7257,
+          "gzip": 2878,
+          "sha256": "4aed5dab884d952da2c15274ef3416149e59e02fefcf8c8cadc7553fd1c722a9"
+        },
+        "native": {
+          "raw": 7257,
+          "gzip": 2878,
+          "sha256": "4aed5dab884d952da2c15274ef3416149e59e02fefcf8c8cadc7553fd1c722a9"
+        }
+      },
+      {
+        "file": "provider-xtream.js",
+        "sourceBytes": 10845,
+        "moduleCount": 1,
+        "web": {
+          "raw": 4110,
+          "gzip": 1748,
+          "sha256": "657295d8a7272fcb914af1516ce7afd3d8117af8d376964e2f3f73da280916ce"
+        },
+        "native": {
+          "raw": 4110,
+          "gzip": 1748,
+          "sha256": "657295d8a7272fcb914af1516ce7afd3d8117af8d376964e2f3f73da280916ce"
+        }
+      }
+    ],
+    "total": {
+      "web": {
+        "raw": 995587,
+        "gzip": 315103
+      },
+      "native": {
+        "raw": 995545,
+        "gzip": 315154
+      }
+    }
+  },
+  "deltas": {
+    "web": {
+      "raw": 31128,
+      "gzip": 9759,
+      "rawPercent": 3.2275088935869745,
+      "gzipPercent": 3.196067386292182
+    },
+    "native": {
+      "raw": 31128,
+      "gzip": 9742,
+      "rawPercent": 3.2276494503933466,
+      "gzipPercent": 3.1897895302083743
+    },
+    "artifacts": [
+      {
+        "file": "player.js",
+        "base": {
+          "file": "player.js",
+          "sourceBytes": 1847711,
+          "moduleCount": 111,
+          "web": {
+            "raw": 848092,
+            "gzip": 262392,
+            "sha256": "2e624afdd1b746cacd3f3e891db0e4e5b3c668fc604f5518e16ab1f22bc7c247"
+          },
+          "native": {
+            "raw": 848050,
+            "gzip": 262460,
+            "sha256": "2ad4a53a2e9f58ca2bf4e83efc113e73dfc549b9206d0f66320159f89af40af2"
+          }
+        },
+        "candidate": {
+          "file": "player.js",
+          "sourceBytes": 1905653,
+          "moduleCount": 115,
+          "web": {
+            "raw": 874926,
+            "gzip": 270321,
+            "sha256": "05efe7ae32a1738f25924cfbff7ceed4a5c5c25e6b42b39a84962933fb86d14e"
+          },
+          "native": {
+            "raw": 874884,
+            "gzip": 270372,
+            "sha256": "60f26b34568cf6cf65a20e5094942102b9e1905d873a3e7d180b1ab7028d3de0"
+          }
+        },
+        "delta": {
+          "raw": 26834,
+          "gzip": 7929,
+          "rawPercent": 3.164043523579989,
+          "gzipPercent": 3.02181468947224
+        }
+      },
+      {
+        "file": "provider-catalog.js",
+        "base": {
+          "file": "provider-catalog.js",
+          "sourceBytes": 22324,
+          "moduleCount": 1,
+          "web": {
+            "raw": 9370,
+            "gzip": 3530,
+            "sha256": "25c9a2a0fd1adcc8d4036a32e8d38d18ef2bbc6c32f6a5b384a1a81c3e8b3f0c"
+          },
+          "native": {
+            "raw": 9370,
+            "gzip": 3530,
+            "sha256": "25c9a2a0fd1adcc8d4036a32e8d38d18ef2bbc6c32f6a5b384a1a81c3e8b3f0c"
+          }
+        },
+        "candidate": {
+          "file": "provider-catalog.js",
+          "sourceBytes": 22324,
+          "moduleCount": 1,
+          "web": {
+            "raw": 9370,
+            "gzip": 3530,
+            "sha256": "25c9a2a0fd1adcc8d4036a32e8d38d18ef2bbc6c32f6a5b384a1a81c3e8b3f0c"
+          },
+          "native": {
+            "raw": 9370,
+            "gzip": 3530,
+            "sha256": "25c9a2a0fd1adcc8d4036a32e8d38d18ef2bbc6c32f6a5b384a1a81c3e8b3f0c"
+          }
+        },
+        "delta": {
+          "raw": 0,
+          "gzip": 0,
+          "rawPercent": 0,
+          "gzipPercent": 0
+        }
+      },
+      {
+        "file": "provider-edem.js",
+        "base": {
+          "file": "provider-edem.js",
+          "sourceBytes": 40287,
+          "moduleCount": 1,
+          "web": {
+            "raw": 15628,
+            "gzip": 6078,
+            "sha256": "836767949840113c9129ff8bb9db32e878cbaa63f7e8100bc2158ffd7507e78b"
+          },
+          "native": {
+            "raw": 15628,
+            "gzip": 6078,
+            "sha256": "836767949840113c9129ff8bb9db32e878cbaa63f7e8100bc2158ffd7507e78b"
+          }
+        },
+        "candidate": {
+          "file": "provider-edem.js",
+          "sourceBytes": 40287,
+          "moduleCount": 1,
+          "web": {
+            "raw": 15628,
+            "gzip": 6078,
+            "sha256": "836767949840113c9129ff8bb9db32e878cbaa63f7e8100bc2158ffd7507e78b"
+          },
+          "native": {
+            "raw": 15628,
+            "gzip": 6078,
+            "sha256": "836767949840113c9129ff8bb9db32e878cbaa63f7e8100bc2158ffd7507e78b"
+          }
+        },
+        "delta": {
+          "raw": 0,
+          "gzip": 0,
+          "rawPercent": 0,
+          "gzipPercent": 0
+        }
+      },
+      {
+        "file": "provider-m3u.js",
+        "base": {
+          "file": "provider-m3u.js",
+          "sourceBytes": 51558,
+          "moduleCount": 2,
+          "web": {
+            "raw": 19957,
+            "gzip": 7177,
+            "sha256": "ebc51b8f039d9df95764c7295773c40d5fd69f2689588dabca2b27da0a170fcb"
+          },
+          "native": {
+            "raw": 19957,
+            "gzip": 7177,
+            "sha256": "ebc51b8f039d9df95764c7295773c40d5fd69f2689588dabca2b27da0a170fcb"
+          }
+        },
+        "candidate": {
+          "file": "provider-m3u.js",
+          "sourceBytes": 51978,
+          "moduleCount": 2,
+          "web": {
+            "raw": 20141,
+            "gzip": 7259,
+            "sha256": "c184004db3f18242b57314400fd157b45cc3f25bdb50368a85e8f17589cc5419"
+          },
+          "native": {
+            "raw": 20141,
+            "gzip": 7259,
+            "sha256": "c184004db3f18242b57314400fd157b45cc3f25bdb50368a85e8f17589cc5419"
+          }
+        },
+        "delta": {
+          "raw": 184,
+          "gzip": 82,
+          "rawPercent": 0.9219822618630055,
+          "gzipPercent": 1.1425386651804375
+        }
+      },
+      {
+        "file": "provider-playlist.js",
+        "base": {
+          "file": "provider-playlist.js",
+          "sourceBytes": 26966,
+          "moduleCount": 1,
+          "web": {
+            "raw": 11485,
+            "gzip": 4278,
+            "sha256": "781e9031166e1adf344e0f34b1f9cce98ee00ee7bfc2f05959c94e3050777f57"
+          },
+          "native": {
+            "raw": 11485,
+            "gzip": 4278,
+            "sha256": "781e9031166e1adf344e0f34b1f9cce98ee00ee7bfc2f05959c94e3050777f57"
+          }
+        },
+        "candidate": {
+          "file": "provider-playlist.js",
+          "sourceBytes": 26966,
+          "moduleCount": 1,
+          "web": {
+            "raw": 11485,
+            "gzip": 4278,
+            "sha256": "781e9031166e1adf344e0f34b1f9cce98ee00ee7bfc2f05959c94e3050777f57"
+          },
+          "native": {
+            "raw": 11485,
+            "gzip": 4278,
+            "sha256": "781e9031166e1adf344e0f34b1f9cce98ee00ee7bfc2f05959c94e3050777f57"
+          }
+        },
+        "delta": {
+          "raw": 0,
+          "gzip": 0,
+          "rawPercent": 0,
+          "gzipPercent": 0
+        }
+      },
+      {
+        "file": "provider-plex.js",
+        "base": {
+          "file": "provider-plex.js",
+          "sourceBytes": 111529,
+          "moduleCount": 4,
+          "web": {
+            "raw": 41852,
+            "gzip": 14781,
+            "sha256": "0c040b2eee79e1671a34f37f4d636fb2059643d9e19bf0d6b5240225ad78ce22"
+          },
+          "native": {
+            "raw": 41852,
+            "gzip": 14781,
+            "sha256": "0c040b2eee79e1671a34f37f4d636fb2059643d9e19bf0d6b5240225ad78ce22"
+          }
+        },
+        "candidate": {
+          "file": "provider-plex.js",
+          "sourceBytes": 111529,
+          "moduleCount": 4,
+          "web": {
+            "raw": 41852,
+            "gzip": 14781,
+            "sha256": "0c040b2eee79e1671a34f37f4d636fb2059643d9e19bf0d6b5240225ad78ce22"
+          },
+          "native": {
+            "raw": 41852,
+            "gzip": 14781,
+            "sha256": "0c040b2eee79e1671a34f37f4d636fb2059643d9e19bf0d6b5240225ad78ce22"
+          }
+        },
+        "delta": {
+          "raw": 0,
+          "gzip": 0,
+          "rawPercent": 0,
+          "gzipPercent": 0
+        }
+      },
+      {
+        "file": "provider-stalker.js",
+        "base": {
+          "file": "provider-stalker.js",
+          "sourceBytes": 26776,
+          "moduleCount": 1,
+          "web": {
+            "raw": 10818,
+            "gzip": 4230,
+            "sha256": "366b3a08b14ce4ab35ef8e8df6f0f23e3de74a0f05d5fd999ad52d638bf71cfd"
+          },
+          "native": {
+            "raw": 10818,
+            "gzip": 4230,
+            "sha256": "366b3a08b14ce4ab35ef8e8df6f0f23e3de74a0f05d5fd999ad52d638bf71cfd"
+          }
+        },
+        "candidate": {
+          "file": "provider-stalker.js",
+          "sourceBytes": 26776,
+          "moduleCount": 1,
+          "web": {
+            "raw": 10818,
+            "gzip": 4230,
+            "sha256": "366b3a08b14ce4ab35ef8e8df6f0f23e3de74a0f05d5fd999ad52d638bf71cfd"
+          },
+          "native": {
+            "raw": 10818,
+            "gzip": 4230,
+            "sha256": "366b3a08b14ce4ab35ef8e8df6f0f23e3de74a0f05d5fd999ad52d638bf71cfd"
+          }
+        },
+        "delta": {
+          "raw": 0,
+          "gzip": 0,
+          "rawPercent": 0,
+          "gzipPercent": 0
+        }
+      },
+      {
+        "file": "provider-vportal.js",
+        "base": {
+          "file": "provider-vportal.js",
+          "sourceBytes": 16644,
+          "moduleCount": 1,
+          "web": {
+            "raw": 7257,
+            "gzip": 2878,
+            "sha256": "4aed5dab884d952da2c15274ef3416149e59e02fefcf8c8cadc7553fd1c722a9"
+          },
+          "native": {
+            "raw": 7257,
+            "gzip": 2878,
+            "sha256": "4aed5dab884d952da2c15274ef3416149e59e02fefcf8c8cadc7553fd1c722a9"
+          }
+        },
+        "candidate": {
+          "file": "provider-vportal.js",
+          "sourceBytes": 16644,
+          "moduleCount": 1,
+          "web": {
+            "raw": 7257,
+            "gzip": 2878,
+            "sha256": "4aed5dab884d952da2c15274ef3416149e59e02fefcf8c8cadc7553fd1c722a9"
+          },
+          "native": {
+            "raw": 7257,
+            "gzip": 2878,
+            "sha256": "4aed5dab884d952da2c15274ef3416149e59e02fefcf8c8cadc7553fd1c722a9"
+          }
+        },
+        "delta": {
+          "raw": 0,
+          "gzip": 0,
+          "rawPercent": 0,
+          "gzipPercent": 0
+        }
+      },
+      {
+        "file": "provider-xtream.js",
+        "base": null,
+        "candidate": {
+          "file": "provider-xtream.js",
+          "sourceBytes": 10845,
+          "moduleCount": 1,
+          "web": {
+            "raw": 4110,
+            "gzip": 1748,
+            "sha256": "657295d8a7272fcb914af1516ce7afd3d8117af8d376964e2f3f73da280916ce"
+          },
+          "native": {
+            "raw": 4110,
+            "gzip": 1748,
+            "sha256": "657295d8a7272fcb914af1516ce7afd3d8117af8d376964e2f3f73da280916ce"
+          }
+        },
+        "delta": {
+          "raw": 4110,
+          "gzip": 1748,
+          "rawPercent": null,
+          "gzipPercent": null
+        }
+      }
+    ]
+  },
+  "notes": [
+    "Per-file gzip level 9 totals, not gzip over concatenated scripts.",
+    "Clean release source revision injected explicitly for source archives using the normal build identity algorithm.",
+    "Parent follow-up absolute A/V asset URL adds one raw byte after frozen candidate; not included here.",
+    "No runtime performance inference. External vendor libraries/locales/CSS/images/diagnostic video are excluded."
+  ]
+}

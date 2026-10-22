@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-stalker-portal-fetch"
+description = "Enables the stalker_portal_fetch command (CORS-free Stalker portal JSON-RPC, host_ott/swop/a.php, and Mag path allowlist /load.php|/c/portal with optional Cookie/Authorization headers for Mode B)."
+commands.allow = ["stalker_portal_fetch"]

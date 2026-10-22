@@ -1,0 +1,182 @@
+<svg
+    aria-labelledby="title desc"
+    role="img"
+    viewBox="0 0 1160 620"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">A/V-проверка: исходник, хостинг и плеер</title>
+    <desc id="desc">
+        Ролик загружается только по команде «Информация → Звук → Воспроизвести».
+        Вспышки совпадают с тонами. Лимит — 15 секунд. Завершение: простой или
+        попытка вернуть актуальный эфир. Остановка просмотра или выбор другого
+        канала отменяют возврат. Отдельный режим «Демо» беззвучен.
+    </desc>
+    <defs>
+        <marker
+            id="arrow"
+            markerHeight="7"
+            markerWidth="7"
+            orient="auto-start-reverse"
+            refX="9"
+            refY="5"
+            viewBox="0 0 10 10"
+        >
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#49647c" />
+        </marker>
+    </defs>
+    <rect fill="#f3f7fc" height="620" rx="22" width="1160" />
+    <g fill="#15324d" font-family="system-ui, sans-serif">
+        <text font-size="28" font-weight="700" x="32" y="49">
+            A/V-проверка: исходник, хостинг и плеер
+        </text>
+        <text font-size="18" font-weight="400" x="32" y="83">
+            Ролик загружается только по команде «Информация → Звук →
+            Воспроизвести».
+        </text>
+        <rect
+            fill="white"
+            height="265"
+            rx="14"
+            stroke="#3e67c8"
+            stroke-width="2"
+            width="314"
+            x="32"
+            y="125"
+        />
+        <rect fill="#3e67c8" height="53" rx="14" width="314" x="32" y="125" />
+        <text fill="white" font-size="22" font-weight="700" x="50" y="159">
+            1 Репозиторий
+        </text>
+        <text font-size="16" font-weight="400" x="50" y="212">
+            diagnostics/av-v1.mp4
+        </text>
+        <text font-size="16" font-weight="400" x="50" y="243">
+            464 652 байта · MIT
+        </text>
+        <text font-size="16" font-weight="400" x="50" y="274">
+            Генератор и проверка аудио
+        </text>
+        <text font-size="16" font-weight="400" x="50" y="305">
+            Для воспроизводимости
+        </text>
+        <text font-size="14" font-weight="600" x="50" y="352">
+            В пакеты плеера не копируется
+        </text>
+        <path
+            d="M 351 267 H 414"
+            marker-end="url(#arrow)"
+            stroke="#49647c"
+            stroke-width="2"
+        />
+        <text
+            font-size="11"
+            font-weight="600"
+            text-anchor="middle"
+            x="384"
+            y="250"
+        >
+            Публикация
+        </text>
+        <rect
+            fill="white"
+            height="265"
+            rx="14"
+            stroke="#0b806d"
+            stroke-width="2"
+            width="314"
+            x="423"
+            y="125"
+        />
+        <rect fill="#0b806d" height="53" rx="14" width="314" x="423" y="125" />
+        <text fill="white" font-size="22" font-weight="700" x="441" y="159">
+            2 here.now
+        </text>
+        <text font-size="16" font-weight="400" x="441" y="212">
+            Версионированный HTTPS-файл
+        </text>
+        <text font-size="16" font-weight="400" x="441" y="243">
+            Те же байты av-v1.mp4
+        </text>
+        <text font-size="16" font-weight="400" x="441" y="274">
+            H.264 + AAC stereo · 8 секунд
+        </text>
+        <text font-size="16" font-weight="400" x="441" y="305">
+            Нужен доступ к интернету
+        </text>
+        <text font-size="14" font-weight="600" x="441" y="352">При старте</text>
+        <text font-size="14" font-weight="600" x="441" y="373">
+            приложения не запрашивается
+        </text>
+        <path
+            d="M 742 267 H 805"
+            marker-end="url(#arrow)"
+            stroke="#49647c"
+            stroke-width="2"
+        />
+        <text
+            font-size="11"
+            font-weight="600"
+            text-anchor="middle"
+            x="775"
+            y="250"
+        >
+            Запуск
+        </text>
+        <rect
+            fill="white"
+            height="265"
+            rx="14"
+            stroke="#935ab1"
+            stroke-width="2"
+            width="314"
+            x="814"
+            y="125"
+        />
+        <rect fill="#935ab1" height="53" rx="14" width="314" x="814" y="125" />
+        <text fill="white" font-size="22" font-weight="700" x="832" y="159">
+            3 Плеер
+        </text>
+        <text font-size="16" font-weight="400" x="832" y="212">
+            Web / интерфейс OTT Server
+        </text>
+        <text font-size="16" font-weight="400" x="832" y="243">
+            Интерфейс Tauri / Capacitor
+        </text>
+        <text font-size="16" font-weight="400" x="832" y="274">
+            Управляемый HTML5-путь
+        </text>
+        <text font-size="16" font-weight="400" x="832" y="305">
+            В простое или прямом эфире
+        </text>
+        <text font-size="14" font-weight="600" x="832" y="352">
+            Не VOD, архив или сменный движок
+        </text>
+        <text font-size="22" font-weight="700" x="32" y="433">
+            Что должно быть видно и слышно
+        </text>
+        <rect fill="#dde7fc" height="56" rx="9" width="263" x="32" y="452" />
+        <text font-size="17" font-weight="600" x="47" y="487">
+            0–2 с Слева · 440 Гц
+        </text>
+        <rect fill="#d5f0e9" height="56" rx="9" width="263" x="307" y="452" />
+        <text font-size="17" font-weight="600" x="322" y="487">
+            2–4 с Справа · 880 Гц
+        </text>
+        <rect fill="#eddef6" height="56" rx="9" width="263" x="582" y="452" />
+        <text font-size="17" font-weight="600" x="597" y="487">
+            4–6 с Оба канала
+        </text>
+        <rect fill="#e1e7ed" height="56" rx="9" width="263" x="857" y="452" />
+        <text font-size="17" font-weight="600" x="872" y="487">
+            6–8 с Тишина
+        </text>
+        <text font-size="16" font-weight="400" x="32" y="550">
+            Вспышки совпадают с тонами. Лимит — 15 секунд. Завершение: простой
+            или попытка вернуть актуальный эфир.
+        </text>
+        <text font-size="16" font-weight="400" x="32" y="581">
+            Остановка просмотра или выбор другого канала отменяют возврат.
+            Отдельный режим «Демо» беззвучен.
+        </text>
+    </g>
+</svg>

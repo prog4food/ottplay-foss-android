@@ -1,0 +1,23 @@
+{
+  "id": "/",
+  "name": "OTT-play FOSS",
+  "short_name": "OTT-play FOSS",
+  "description": "IPTV player for television and desktop browsers",
+  "lang": "en",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay"
+  ],
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "/js/browser-app/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

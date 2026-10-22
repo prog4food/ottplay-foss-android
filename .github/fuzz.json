@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "language": "rust",
+  "setup": [
+    ["cargo", "fetch", "--locked", "--manifest-path", "fuzz/Cargo.toml"],
+    [
+      "cargo",
+      "+nightly-2026-10-12",
+      "fuzz",
+      "build",
+      "--fuzz-dir",
+      "fuzz",
+      "--target",
+      "x86_64-unknown-linux-gnu"
+    ]
+  ],
+  "targets": [
+    {
+      "name": "xmltv",
+      "engine": "libfuzzer",
+      "command": ["fuzz/target/x86_64-unknown-linux-gnu/release/xmltv"],
+      "seconds": 60,
+      "corpus": "fuzz/corpus/xmltv"
+    },
+    {
+      "name": "portal-request",
+      "engine": "libfuzzer",
+      "command": [
+        "fuzz/target/x86_64-unknown-linux-gnu/release/portal_request"
+      ],
+      "seconds": 60,
+      "corpus": "fuzz/corpus/portal_request"
+    }
+  ]
+}

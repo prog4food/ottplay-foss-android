@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-get-epg"
+description = "Enables the get_epg command."
+commands.allow = ["get_epg"]

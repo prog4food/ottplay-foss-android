@@ -1,0 +1,31 @@
+[package]
+name = "ottplay-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+license = "MIT"
+
+[package.metadata]
+cargo-fuzz = true
+
+[workspace]
+
+[dependencies]
+libfuzzer-sys = "=0.4.13"
+ottplay-core = { path = "../src-rs/core" }
+serde_json = "1"
+url = "2"
+
+[[bin]]
+name = "xmltv"
+path = "fuzz_targets/xmltv.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "portal_request"
+path = "fuzz_targets/portal_request.rs"
+test = false
+doc = false
+bench = false

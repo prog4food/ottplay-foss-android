@@ -1,0 +1,97 @@
+<svg
+    aria-labelledby="title desc"
+    height="620"
+    role="img"
+    viewBox="0 0 1200 620"
+    width="1200"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">
+        Post-beta JavaScript size / Размер JavaScript после интеграции беты
+    </title>
+    <desc id="desc">
+        Complete web entry and all optional providers, raw and separately
+        compressed gzip bytes, compared on the same local toolchain.
+    </desc>
+    <style>
+    text {
+        font-family: Arial, sans-serif;
+        fill: #edf3fc;
+    }
+    .h {
+        font-size: 29px;
+        font-weight: bold;
+    }
+    .sub {
+        font-size: 19px;
+        fill: #bfcee4;
+    }
+    .label {
+        font-size: 19px;
+    }
+    .small {
+        font-size: 17px;
+        fill: #bfcee4;
+    }
+    .value {
+        font-size: 22px;
+        font-weight: bold;
+    }
+    </style>
+    <rect fill="#111a2b" height="620" rx="24" width="1200" />
+    <text class="h" x="40" y="53">
+        Measured JavaScript cost / Измеренный объём JavaScript
+    </text>
+    <text class="sub" x="40" y="89">
+        beta.4 source 39287792 → integration 9663b681 · same toolchain /
+        одинаковый инструментарий
+    </text>
+    <rect
+        fill="#1c2940"
+        height="360"
+        rx="16"
+        stroke="#647995"
+        width="540"
+        x="40"
+        y="125"
+    />
+    <text class="value" x="64" y="163">Raw bytes / Без сжатия</text>
+    <text class="label" x="64" y="213">beta.4 source · 7 providers</text>
+    <rect fill="#91bfff" height="38" rx="5" width="448.44" x="64" y="235" />
+    <text class="value" x="64" y="302">964,876 B</text>
+    <text class="label" x="64" y="329">integration · 8 providers</text>
+    <rect fill="#68d4b4" height="38" rx="5" width="464.94" x="64" y="351" />
+    <text class="value" x="64" y="418">1,000,388 B</text>
+    <text class="small" x="64" y="447">
+        0 → 1,050,000 B · +35,512 B (+3.68%)
+    </text>
+    <rect
+        fill="#1c2940"
+        height="360"
+        rx="16"
+        stroke="#647995"
+        width="540"
+        x="620"
+        y="125"
+    />
+    <text class="value" x="644" y="163">gzip-9 bytes / После сжатия</text>
+    <text class="label" x="644" y="213">beta.4 source · 7 providers</text>
+    <rect fill="#91bfff" height="38" rx="5" width="451.7" x="644" y="235" />
+    <text class="value" x="644" y="302">305,452 B</text>
+    <text class="label" x="644" y="329">integration · 8 providers</text>
+    <rect fill="#68d4b4" height="38" rx="5" width="468.18" x="644" y="351" />
+    <text class="value" x="644" y="418">316,600 B</text>
+    <text class="small" x="644" y="447">
+        0 → 330,000 B · +11,148 B (+3.65%)
+    </text>
+    <text class="sub" x="40" y="529">
+        Entry + every optional provider. No measured execution-speed claim.
+    </text>
+    <text class="sub" x="40" y="558">
+        Основной файл + все провайдеры. Это объём, не измерение скорости.
+    </text>
+    <text class="small" x="40" y="594">
+        Excludes media engines, locales, styles and video · Не включает
+        медиадвижки, словари, стили и видео
+    </text>
+</svg>

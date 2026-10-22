@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OTT-play FOSS (__OTTP_VERSION__)</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <script src="/js/runtime-polyfills.js?v=cd7d7699f214b57e"></script>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no"
+        >
+        <meta name="referrer" content="no-referrer">
+        <meta
+            http-equiv="Cache-Control"
+            content="no-cache, no-store, must-revalidate"
+        >
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <style type="text/css">
+        #interfaceCreditsSource { display: none; }
+        body {
+            touch-action: none;
+        }
+        #notifications {
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            pointer-events: none;
+        }
+        .notify {
+            max-width: 25em;
+            padding: 0.5em 0.8em;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: inherit;
+            font-weight: bold;
+            color: #f0f0f0;
+            word-wrap: break-word;
+            background: rgba(0, 0, 0, 0.88);
+            border-left: 0.15em solid #fbc02d;
+            border-radius: 0.2em;
+            box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.6);
+            animation: notifyIn 0.3s ease-out;
+        }
+        .notify-out {
+            animation: notifyOut 0.3s ease-in forwards;
+        }
+        @keyframes notifyIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes notifyOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        /* First paint: hide shell until CSS loads / boot ends.
+           Scoped to body.booting so !important can be lifted (jQuery .show
+           cannot override a permanent display:none !important). */
+        body.booting #info,
+        body.booting #info1,
+        body.booting #list,
+        body.booting #list_osd,
+        body.booting #list_window,
+        body.booting #volume_div,
+        body.booting #mute,
+        body.booting #buffering,
+        body.booting #pip_buffering,
+        body.booting #permanentTime,
+        body.booting #numprog,
+        body.booting #dialogbox,
+        body.booting #notifications {
+            display: none !important;
+        }
+        #launch {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 2em;
+            overflow: auto;
+            background: #111 !important;
+            background-image: none !important;
+            color: #d0d0d0;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 22px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            text-align: center;
+        }
+        #boot-row {
+            display: flex;
+            align-items: center;
+            gap: 0.6em;
+            font-size: 1.15em;
+            letter-spacing: 0.02em;
+        }
+        #boot-spin {
+            display: inline-block;
+            width: 1.25em;
+            font-family: monospace;
+            font-weight: bold;
+            color: #fbc02d;
+            text-align: center;
+        }
+        #boot-status {
+            margin-top: 0.75em;
+            color: #bbb;
+            font-size: 1em;
+        }
+        #boot-log {
+            margin-top: 1.5em;
+            max-width: 40em;
+            color: #aaa;
+            font-family: monospace;
+            font-size: 0.9em;
+            text-align: left;
+            white-space: pre-wrap;
+        }
+        </style>
+        <!-- Browser window controls: start -->
+        <script>
+        (function () {
+            "use strict";
+            // Installed desktop browser windows only. Legacy and native shells
+            // keep their original bootstrap, device profile and window layout.
+            try {
+                if (!navigator.windowControlsOverlay || window.__TAURI__ ||
+                    window.__TAURI_INTERNALS__ || window.Capacitor ||
+                    window.__ottNativeRuntime || window.Android ||
+                    !/^https?:$/.test(window.location.protocol)) return;
+                var routes = {
+                    "/": "manifest.webmanifest",
+                    "/index.html": "index.webmanifest",
+                    "/f/pc/": "pc.webmanifest",
+                    "/f/pc": "pc-plain.webmanifest"
+                };
+                var file = routes[window.location.pathname];
+                // Query parameters can select a different installation/profile.
+                // Do not replace such an app's identity with a canonical URL.
+                if (!file || window.location.search || window.location.hash) return;
+                var base = "/js/browser-app/", head = document.getElementsByTagName("head")[0];
+                var manifest = document.createElement("link"), css = document.createElement("link");
+                manifest.rel = "manifest"; manifest.href = base + file;
+                css.rel = "stylesheet"; css.href = base + "window-controls.css";
+                head.appendChild(manifest); head.appendChild(css);
+                var theme = document.createElement("meta");
+                theme.name = "theme-color"; theme.content = "#111111";
+                head.appendChild(theme);
+                var script = document.createElement("script");
+                script.src = base + "window-controls.js";
+                head.appendChild(script);
+            } catch (ignore) { /* Optional desktop decoration must not stop playback. */ }
+        }());
+        </script>
+        <!-- Browser window controls: end -->
+    </head>
+    <body class="booting" style="background: #111; color: #ccc;">
+        <div id="interfaceCreditsSource" hidden>
+          <div class="interface-credits">
+            <p><b class="credits-title">Interface credits &amp; history</b></p>
+            <p class="credits-navigation">Use Up / Down to scroll. Back to close.</p>
+            <p class="credits-language">Original text: English</p>
+            <div lang="en">
+            <p>The PLi-HD theme adapts the layout and colours of
+                <a href="https://github.com/littlesat/skin-PLiHD" target="_blank" rel="noopener noreferrer">PLi-HD</a>,
+                the Enigma2 receiver skin maintained by littlesat and contributors.</p>
+            <p><b>Original design:</b> Magic_HD_Shadow_MiniTV by Vali (2009–2010).
+                PLi-HD also credits derived work from VU+NL, Milo and others.
+                These credits belong to the original designers.</p>
+            <p><b>2011:</b> PLi-HD entered its public Git history on 17 November,
+                already crediting that earlier design.</p>
+            <p><b>2019 / 2020:</b> In his Enigma2 forum post, OTT-play author
+                alex_qr described the interface as similar to OpenPLi. The post
+                was created in 2019 and edited in 2020.</p>
+            <p><b>2026:</b> OTT-play FOSS implements this visual adaptation in
+                HTML/CSS. It retains OTT-play navigation, configurable list density
+                and video aspect handling. No upstream skin images or fonts are bundled.</p>
+            <p><b>Studio 2026:</b> the new default theme by the OTT-play FOSS
+                project uses graphite surfaces, mint accents and a light focus row.
+                Classic and PLi-HD remain selectable. Saved density, fonts and
+                display options take precedence over the theme.</p>
+            <p>Independent adaptation; no endorsement by OpenPLi or the original designers is implied.</p>
+            </div>
+            <p><a class="credits-history" href="https://github.com/open-ott-play/ottplay-foss/blob/main/docs/interface-history.md"
+                target="_blank" rel="noopener noreferrer">Full history, sources and license terms</a></p>
+          </div>
+        </div>
+        <div id="permanentTime" class="osd"></div>
+        <div id="info1" class="osd">
+            <div id="descr">
+                <div id="programm_name2"></div>
+                <span id="programm_duration"></span>
+                <div style="overflow: hidden;">
+                    <div id="programm_descr"></div>
+                </div>
+            </div>
+            <div id="picon"></div>
+            <div id="channel">
+                <div id="channel_number"></div>
+                <div id="channel_name"></div>
+                <div id="progress_div">
+                    <div id="progress_r"></div>
+                    <div id="progress"></div>
+                    <div id="progress_span" class="tooltip"><span></span></div>
+                </div>
+                <div id="begin_time"></div>
+                <div id="programm_name"></div>
+                <div id="end_time"></div>
+                <div style="clear: both;"></div>
+                <div id="nbegin_time"></div>
+                <div id="nprogramm_name"></div>
+                <div id="nend_time"></div>
+            </div>
+            <div id="data">
+                <span id="audio_badge" class="btn" style="display:none" aria-hidden="true">A</span>
+                <span id="current_t"></span><span id="current_s"></span>
+                <div id="video_res"></div>
+            </div>
+        </div>
+        <div id="list_osd" class="osd"></div>
+        <div id="list_window">
+            <div id="_t" class="list_back"></div>
+            <div id="_b" class="list_back"></div>
+            <div id="_l" class="list_back"></div>
+            <div id="_r" class="list_back"></div>
+        </div>
+        <div id="list">
+            <div id="listCaption"></div>
+            <div id="listTime">
+                <span id="list_t"></span><span id="list_s"></span>
+            </div>
+            <div id="listPodval"></div>
+            <div id="listDetail"></div>
+            <div id="listIn" role="listbox" aria-labelledby="listCaption"></div>
+            <div id="listAbout"></div>
+            <div id="listEdit"></div>
+            <div id="listPopUp"></div>
+        </div>
+        <div id="launch">
+            <div id="boot-row"><span id="boot-spin">|</span><span id="boot-title">OTT-play</span></div>
+            <div id="boot-status"></div>
+            <div id="boot-log"></div>
+        </div>
+        <div id="info" role="status" aria-live="polite" aria-atomic="true" class="osd"></div>
+        <div id="numprog" class="osd"></div>
+        <div id="volume_div"><div id="volume"></div></div>
+        <div id="mute"></div>
+        <div id="dialogbox" class="osd"></div>
+        <div id="buffering" class="ott-spinner" aria-hidden="true"><span class="blob"></span><span class="blob"></span><span class="blob"></span><span class="blob"></span></div>
+        <div id="pip_buffering" class="ott-spinner" aria-hidden="true"><span class="blob"></span><span class="blob"></span><span class="blob"></span><span class="blob"></span></div>
+        <div id="notifications"></div>
+        <span id="testFont"></span>
+
+        <script>
+        "use strict";
+        var host = window.location.origin ||
+            (window.location.host ? window.location.protocol + "//" + window.location.host : "http://localhost:8080");
+        if (!Date.now) Date.now = function () { return new Date().getTime(); };
+        var __dev = "__OTTP_VERSION__".charAt(0) === "_"; // Unstamped source keeps development cache keys.
+        // Cache-busting labels are not secrets; boot also handles a missing runtime.
+        function bootRandomHex(length) {
+            var text = "";
+            for (var i = 0; i < length; i++)
+                text += Math.floor(Math.random() * 16).toString(16);
+            return text;
+        }
+        var _rndstr = bootRandomHex(8);
+        var __cv = __dev ? "dev_" + Date.now() + "_" + _rndstr : "__OTTP_ASSET_VERSION__";
+        var __av = __dev ? "dev_" + Date.now() + "_" + _rndstr : "__OTTP_VERSION__";
+
+        // Keep in sync with src/app/device.ts, which runs again in the bundle.
+        function detectDevice() {
+            var path = window.location.pathname;
+            var m = path.match(/^\/f\/((?:lg|samsung)\/[^\/]+|[^\/]+)(?:\/|$)/);
+            if (m) return m[1].replace(/\/+$/, "");
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.indexOf("web0s") !== -1 || ua.indexOf("webos") !== -1)
+                return "lg/webos";
+            // NetCast also advertises LG; explicit webOS wins over compatibility tokens.
+            if (ua.indexOf("netcast") !== -1) return "lg/netcast";
+            if (ua.indexOf("lg") !== -1) return "lg/webos";
+            // Inspect the bridge without calling native APIs during detection.
+            try {
+                var gstb = window.gSTB;
+                if (gstb && (typeof gstb.GetDeviceModel === "function" ||
+                    typeof gstb.GetDeviceMacAddress === "function" ||
+                    typeof gstb.GetMACAddress === "function")) return "mag";
+            } catch (_error) {
+                // Continue with user-agent detection if the bridge is unavailable.
+            }
+            // MAG may omit Infomir or advertise Maple compatibility.
+            if (/(?:^|[^a-z0-9])mag[0-9]+(?:[rw][0-9]+)?(?:$|[^a-z0-9])/.test(ua) ||
+                (ua.indexOf("stb") !== -1 && ua.indexOf("infomir") !== -1)) return "mag";
+            if (ua.indexOf("tizen") !== -1) return "samsung/tizen";
+            if (ua.indexOf("maple") !== -1) return "samsung/maple";
+            if (ua.indexOf("dune") !== -1) return "dune";
+            if (ua.indexOf("android") !== -1) return "android";
+            if (ua.indexOf("hbbtv") !== -1 || ua.indexOf("oipf") !== -1)
+                return "hbbtv";
+            if (ua.indexOf("viera") !== -1) return "panasonic";
+            if (ua.indexOf("philips") !== -1) return "philips";
+            if (ua.indexOf("hisense") !== -1) return "hisense";
+            if (ua.indexOf("sony") !== -1) return "sony";
+            if (ua.indexOf("tcl") !== -1) return "tcl";
+            if (ua.indexOf("sharp") !== -1) return "sharp";
+            if (ua.indexOf("toshiba") !== -1) return "toshiba";
+            if (ua.indexOf("skyworth") !== -1) return "skyworth";
+            if (ua.indexOf("vewd") !== -1) return "vewd";
+            if (ua.indexOf("spark") !== -1) return "spark";
+            if (ua.indexOf("nodejs") !== -1 || ua.indexOf("electron") !== -1)
+                return "nodejs";
+            return "pc";
+        }
+        var ott_device = detectDevice();
+
+        // This ID is also an allowlisted swop credential, so never use weak randomness.
+        function bootSecureDeviceId() {
+            var random = window.crypto;
+            if (!random || typeof random.getRandomValues !== "function") random = window.msCrypto;
+            if (!random || typeof random.getRandomValues !== "function" ||
+                typeof window.Uint8Array !== "function") return "";
+            try {
+                var bytes = new window.Uint8Array(16);
+                random.getRandomValues(bytes);
+                var hex = "";
+                for (var i = 0; i < bytes.length; i++)
+                    hex += ("0" + bytes[i].toString(16)).slice(-2);
+                return "dev_" + hex;
+            } catch (_error) {
+                return "";
+            }
+        }
+        // Preserve provisioned/stored IDs. Old engines can boot without remote text entry.
+        var deviceUUID = "";
+        try {
+            deviceUUID = localStorage.getItem("ott_device_uuid") || localStorage.getItem("deviceId") || "";
+        } catch (_readError) {}
+        if (!deviceUUID) {
+            deviceUUID = bootSecureDeviceId();
+            try {
+                if (deviceUUID) localStorage.setItem("ott_device_uuid", deviceUUID);
+            } catch (_writeError) {}
+        }
+        window.deviceUUID = deviceUUID;
+
+        if (typeof console === "undefined") {
+            var console = { log: function () {}, error: function () {} };
+        }
+        if (!Math.imul)
+            Math.imul = function (a, b) {
+                var aHi = (a >>> 16) & 65535;
+                var aLo = a & 65535;
+                var bHi = (b >>> 16) & 65535;
+                var bLo = b & 65535;
+                return (
+                    (aLo * bLo + (((aHi * bLo + aLo * bHi) << 16) >>> 0)) | 0
+                );
+            };
+
+        var body_onUnload = function () {};
+        var errStack = [];
+        var dnt = false;
+
+        // Stubbed server functions
+        function PostFeedback(_data, _endpoint) {}
+        function ErrPOST(msg) {
+            if (msg) console.log("[ERR]", msg);
+        }
+        function FeedbPOST(msg) {}
+
+        var TSH = function (str) {
+            for (var i = 0, h = 9; i < str.length; ) {
+                h = Math.imul(h ^ str.charCodeAt(i++), 387420489);
+            }
+            return h ^ (h >>> 9);
+        };
+
+        try {
+            window.onerror = function (event, source, lineno, colno, error) {
+                var etext = [];
+                if (typeof event === "string") {
+                    etext.push(event || "<no_msg>");
+                    etext.push(
+                        (source || "<no_url>") +
+                            "__" +
+                            (lineno || "??") +
+                            ":" +
+                            (colno || "??")
+                    );
+                    etext.push(
+                        typeof error === "object" ? error.stack : "<no_stack>"
+                    );
+                } else {
+                    etext.push(event.message || "<no_msg>");
+                    etext.push(
+                        (event.filename || "<no_url>") +
+                            "__" +
+                            (event.lineno || "??") +
+                            ":" +
+                            (event.colno || "??")
+                    );
+                    etext.push(
+                        typeof event.error === "object"
+                            ? event.error.stack
+                            : "<no_stack>"
+                    );
+                }
+                console.error(etext.join("\n"));
+            };
+        } finally {
+        }
+
+        (function () {
+            var _head =
+                document.head || document.getElementsByTagName("head")[0];
+            if (!_head) {
+                document.body.innerHTML = "<h3>Bad document.head</h3>";
+                return;
+            }
+
+            // Text-mode boot animation (runs before player.js)
+            var _bootFrames = ["|", "/", "-", "\\"];
+            var _bootFi = 0;
+            var _bootTimer = setInterval(function () {
+                var spin = document.getElementById("boot-spin");
+                if (!spin) {
+                    clearInterval(_bootTimer);
+                    return;
+                }
+                var launch = document.getElementById("launch");
+                if (
+                    launch &&
+                    (launch.style.display === "none" ||
+                        launch.getAttribute("data-done") === "1")
+                ) {
+                    clearInterval(_bootTimer);
+                    return;
+                }
+                _bootFi = (_bootFi + 1) % _bootFrames.length;
+                spin.textContent = _bootFrames[_bootFi];
+            }, 120);
+            function bootStatus(msg) {
+                var el = document.getElementById("boot-status");
+                if (el) el.textContent = bootText(msg);
+            }
+            function bootText(key) {
+                var dictionary = window.keyStrings;
+                return dictionary && Object.prototype.hasOwnProperty.call(dictionary, key) ? dictionary[key] : key;
+            }
+            function bootLog(msg) {
+                var el = document.getElementById("boot-log");
+                if (el) el.textContent += (el.textContent ? "\n" : "") + msg;
+            }
+
+
+            // BCP 47 language/script matching uses the shipped CLDR 48 scripts.
+            // Keep this independent of Intl and the main bundle for older TVs.
+            function detectBootLanguage() {
+                var locales = {
+                    "af": ["_afr", "latn"],
+                    "am": ["_amh", "ethi"],
+                    "ar": ["_ara", "arab"],
+                    "as": ["_asm", "beng"],
+                    "az": ["_aze", "latn"],
+                    "be": ["_bel", "cyrl"],
+                    "bg": ["_bul", "cyrl"],
+                    "bn": ["_ben", "beng"],
+                    "bs": ["_bos", "latn"],
+                    "ca": ["_cat", "latn"],
+                    "cs": ["_cze", "latn"],
+                    "da": ["_dan", "latn"],
+                    "de": ["_ger", "latn"],
+                    "el": ["_gre", "grek"],
+                    "en": ["_eng", "latn"],
+                    "es": ["_spa", "latn"],
+                    "et": ["_est", "latn"],
+                    "eu": ["_baq", "latn"],
+                    "fa": ["_per", "arab"],
+                    "fi": ["_fin", "latn"],
+                    "fil": ["_fil", "latn"],
+                    "fr": ["_fra", "latn"],
+                    "ga": ["_gle", "latn"],
+                    "gl": ["_glg", "latn"],
+                    "gu": ["_guj", "gujr"],
+                    "ha": ["_hau", "latn"],
+                    "he": ["_heb", "hebr"],
+                    "hi": ["_hin", "deva"],
+                    "hr": ["_hrv", "latn"],
+                    "hu": ["_hun", "latn"],
+                    "hy": ["_arm", "armn"],
+                    "id": ["_ind", "latn"],
+                    "ig": ["_ibo", "latn"],
+                    "is": ["_ice", "latn"],
+                    "it": ["_ita", "latn"],
+                    "ja": ["_jpn", "jpan"],
+                    "ka": ["_geo", "geor"],
+                    "kk": ["_kaz", "cyrl"],
+                    "km": ["_khm", "khmr"],
+                    "kn": ["_kan", "knda"],
+                    "ko": ["_kor", "kore"],
+                    "ku": ["_kur", "latn"],
+                    "ky": ["_kir", "cyrl"],
+                    "lo": ["_lao", "laoo"],
+                    "lt": ["_lit", "latn"],
+                    "lv": ["_lat", "latn"],
+                    "mg": ["_mlg", "latn"],
+                    "mk": ["_mac", "cyrl"],
+                    "ml": ["_mal", "mlym"],
+                    "mn": ["_mon", "cyrl"],
+                    "mr": ["_mar", "deva"],
+                    "ms": ["_may", "latn"],
+                    "mt": ["_mlt", "latn"],
+                    "my": ["_bur", "mymr"],
+                    "ne": ["_nep", "deva"],
+                    "nl": ["_dut", "latn"],
+                    "no": ["_nor", "latn"],
+                    "or": ["_ori", "orya"],
+                    "pa": ["_pan", "guru"],
+                    "pl": ["_pol", "latn"],
+                    "ps": ["_pus", "arab"],
+                    "pt": ["_por", "latn"],
+                    "ro": ["_rou", "latn"],
+                    "ru": ["_rus", "cyrl"],
+                    "rw": ["_kin", "latn"],
+                    "sd": ["_snd", "arab"],
+                    "si": ["_sin", "sinh"],
+                    "sk": ["_slo", "latn"],
+                    "sl": ["_slv", "latn"],
+                    "so": ["_som", "latn"],
+                    "sq": ["_alb", "latn"],
+                    "sr": ["_srp", "cyrl"],
+                    "sv": ["_swe", "latn"],
+                    "sw": ["_swa", "latn"],
+                    "ta": ["_tam", "taml"],
+                    "te": ["_tel", "telu"],
+                    "tg": ["_tgk", "cyrl"],
+                    "th": ["_tha", "thai"],
+                    "tk": ["_tuk", "latn"],
+                    "tr": ["_tur", "latn"],
+                    "uk": ["_ukr", "cyrl"],
+                    "ur": ["_urd", "arab"],
+                    "uz": ["_uzb", "latn"],
+                    "vi": ["_vie", "latn"],
+                    "xh": ["_xho", "latn"],
+                    "yo": ["_yor", "latn"],
+                    "zh": ["_chi", "hans"],
+                    "zu": ["_zul", "latn"]
+                };
+                var regionalScripts = {
+                    "az-iq": "arab",
+                    "az-ir": "arab",
+                    "az-ru": "cyrl",
+                    "ha-cm": "arab",
+                    "ha-sd": "arab",
+                    "kk-af": "arab",
+                    "kk-cn": "arab",
+                    "kk-ir": "arab",
+                    "kk-mn": "arab",
+                    "ku-am": "cyrl",
+                    "ku-az": "cyrl",
+                    "ku-ge": "cyrl",
+                    "ku-iq": "arab",
+                    "ku-ir": "arab",
+                    "ku-lb": "arab",
+                    "ku-tm": "cyrl",
+                    "ky-cn": "arab",
+                    "ky-tr": "latn",
+                    "mn-cn": "mong",
+                    "ms-cc": "arab",
+                    "pa-pk": "arab",
+                    "sd-in": "deva",
+                    "sr-me": "latn",
+                    "sr-ro": "latn",
+                    "sr-tr": "latn",
+                    "tg-pk": "arab",
+                    "uz-af": "arab",
+                    "uz-cn": "cyrl",
+                    "zh-au": "hant",
+                    "zh-bn": "hant",
+                    "zh-gb": "hant",
+                    "zh-gf": "hant",
+                    "zh-hk": "hant",
+                    "zh-id": "hant",
+                    "zh-mo": "hant",
+                    "zh-pa": "hant",
+                    "zh-pf": "hant",
+                    "zh-ph": "hant",
+                    "zh-sr": "hant",
+                    "zh-th": "hant",
+                    "zh-tw": "hant",
+                    "zh-us": "hant",
+                    "zh-vn": "hant"
+                };
+                var aliases = { iw: "he", in: "id", tl: "fil", nb: "no", mo: "ro", kmr: "ku" };
+                function match(value) {
+                    if (typeof value !== "string") return "";
+                    var tag = value.replace(/_/g, "-").toLowerCase();
+                    if (!/^[a-z]{2,3}(?:-[a-z]{4})?(?:-(?:[a-z]{2}|[0-9]{3}))?(?:-(?:[a-z0-9]{5,8}|[0-9][a-z0-9]{3}))*(?:-[0-9a-wy-z](?:-[a-z0-9]{2,8})+)*(?:-x(?:-[a-z0-9]{1,8})+)?$/.test(tag)) return "";
+                    var parts = tag.split("-"), base = parts[0], script = "", region = "";
+                    if (Object.prototype.hasOwnProperty.call(aliases, base)) base = aliases[base];
+                    if (!Object.prototype.hasOwnProperty.call(locales, base)) return "";
+                    var i = 1;
+                    if (/^[a-z]{4}$/.test(parts[i] || "")) script = parts[i++];
+                    if (/^(?:[a-z]{2}|[0-9]{3})$/.test(parts[i] || "")) region = parts[i];
+                    var entry = locales[base];
+                    script = script || regionalScripts[base + "-" + region] || entry[1];
+                    return script === entry[1] ? entry[0] : "";
+                }
+                function choose(values) {
+                    for (var i = 0; i < values.length; i++) {
+                        var code = match(values[i]);
+                        if (code) return code;
+                    }
+                    return "";
+                }
+                function hasPreferences(values) {
+                    return Object.prototype.toString.call(values) === "[object Array]" && values.length > 0;
+                }
+                var values, code, i;
+                // A nonempty native/browser list is authoritative, even when none
+                // of its languages are supported. Do not guess a different script
+                // from a less precise fallback such as language="zh".
+                try {
+                    values = window.__ottPreferredLanguages;
+                    if (hasPreferences(values)) return choose(values);
+                } catch (ignore) {}
+                try {
+                    values = navigator.languages;
+                    if (hasPreferences(values)) return choose(values);
+                } catch (ignored) {}
+                var properties = ["language", "userLanguage", "browserLanguage"];
+                for (i = 0; i < properties.length; i++) {
+                    try {
+                        code = match(navigator[properties[i]]);
+                        if (code) return code;
+                    } catch (ignored) {}
+                }
+                return "";
+            }
+            window.__ottDetectLanguage = detectBootLanguage;
+            // Same unprefixed preference used by stbGetItem, including its
+            // cookie fallback when localStorage is denied. No catalog is copied.
+            function loadBootLanguage(ready) {
+                var language = "", ended = false;
+                var assets = {
+                    _arm: "armenian", _aze: "azerbaijani", _bel: "belarusian", _bul: "bulgarian",
+                    _cze: "czech", _dut: "dutch", _eng: "english", _fra: "french",
+                    _ger: "german", _gre: "greek", _heb: "hebrew", _hun: "hungarian",
+                    _ind: "indonesian", _ita: "italian", _kaz: "kazakh", _lat: "latvian",
+                    _lit: "lithuanian", _may: "malay", _pol: "polish", _por: "portuguese",
+                    _rou: "romanian", _rus: "russian", _spa: "spanish", _swe: "swedish",
+                    _tur: "turkish", _ukr: "ukrainian", _uzb: "uzbek", _vie: "vietnamese",
+                    _ara: "arabic",
+                    _chi: "chinese",
+                    _jpn: "japanese",
+                    _kor: "korean",
+                    _per: "persian",
+                    _hin: "hindi",
+                    _ben: "bengali",
+                    _urd: "urdu",
+                    _pan: "punjabi",
+                    _mar: "marathi",
+                    _tel: "telugu",
+                    _tam: "tamil",
+                    _guj: "gujarati",
+                    _kan: "kannada",
+                    _mal: "malayalam",
+                    _nep: "nepali",
+                    _sin: "sinhala",
+                    _tha: "thai",
+                    _bur: "burmese",
+                    _khm: "khmer",
+                    _swa: "swahili",
+                    _fil: "filipino",
+                    _fin: "finnish",
+                    _dan: "danish",
+                    _nor: "norwegian",
+                    _est: "estonian",
+                    _slo: "slovak",
+                    _slv: "slovenian",
+                    _hrv: "croatian",
+                    _srp: "serbian",
+                    _geo: "georgian",
+                    _alb: "albanian",
+                    _bos: "bosnian",
+                    _mac: "macedonian",
+                    _ice: "icelandic",
+                    _cat: "catalan",
+                    _baq: "basque",
+                    _glg: "galician",
+                    _gle: "irish",
+                    _mlt: "maltese",
+                    _pus: "pashto",
+                    _kur: "kurdish",
+                    _tgk: "tajik",
+                    _kir: "kyrgyz",
+                    _tuk: "turkmen",
+                    _mon: "mongolian",
+                    _lao: "lao",
+                    _ori: "odia",
+                    _asm: "assamese",
+                    _snd: "sindhi",
+                    _afr: "afrikaans",
+                    _amh: "amharic",
+                    _hau: "hausa",
+                    _yor: "yoruba",
+                    _ibo: "igbo",
+                    _som: "somali",
+                    _zul: "zulu",
+                    _xho: "xhosa",
+                    _mlg: "malagasy",
+                    _kin: "kinyarwanda"
+                };
+                function storageMarkerKey(key) {
+                    return key === "ottplayStorageFallback" || key.indexOf("ottplayStorageFallback.") === 0;
+                }
+                function cookieValues() {
+                    var result = Object.create(null);
+                    try {
+                        var entries = (document.cookie || "").split(";");
+                        for (var i = 0; i < entries.length; i++) {
+                            var entry = entries[i].replace(/^\s+/, ""), equals = entry.indexOf("="), key = "";
+                            if (equals <= 0) continue;
+                            try {
+                                key = decodeURIComponent(entry.slice(0, equals));
+                                result[key] = decodeURIComponent(entry.slice(equals + 1));
+                            } catch (ignore) {
+                                if (storageMarkerKey(key)) result[key] = "";
+                            }
+                        }
+                    } catch (ignore) {}
+                    if (Object.prototype.hasOwnProperty.call(result, "ottplayStorageFallback.reset")) {
+                        var allowed = fallbackKeys(result);
+                        Object.keys(result).forEach(function (key) {
+                            if (!storageMarkerKey(key) && (!allowed || allowed.indexOf(key) < 0)) delete result[key];
+                        });
+                    }
+                    return result;
+                }
+                function fallbackKeys(cookies) {
+                    var parts = Object.keys(cookies).filter(function (key) { return key !== "ottplayStorageFallback.reset" && key.indexOf("ottplayStorageFallback.") === 0; });
+                    var marker = cookies.ottplayStorageFallback;
+                    if (marker === undefined) return parts.length ? null : [];
+                    try {
+                        var saved = JSON.parse(marker);
+                        if (Object.prototype.toString.call(saved) !== "[object Array]") {
+                            if (!saved || saved.v !== 2 || !parts.length || saved.n !== parts.length) return null;
+                            var value = "", hash = 0;
+                            for (var i = 0; i < parts.length; i++) {
+                                var part = cookies["ottplayStorageFallback." + i];
+                                if (!part) return null;
+                                value += part;
+                            }
+                            for (var j = 0; j < value.length; j++) hash = ((hash << 5) - hash + value.charCodeAt(j)) | 0;
+                            if ((hash >>> 0).toString(36) !== saved.h) return null;
+                            saved = JSON.parse(value);
+                        } else if (parts.length) return null;
+                        if (Object.prototype.toString.call(saved) !== "[object Array]") return null;
+                        for (var k = 0; k < saved.length; k++)
+                            if (typeof saved[k] !== "string" || storageMarkerKey(saved[k])) return null;
+                        return saved;
+                    } catch (ignore) { return null; }
+                }
+                var bootCookies = cookieValues(), bootOverrides = fallbackKeys(bootCookies);
+                function preference(key) {
+                    // An interrupted/rejected marker transaction must never
+                    // revive an old native preference during early startup.
+                    if (bootOverrides === null || bootOverrides.indexOf(key) !== -1) return bootCookies[key] || "";
+                    try {
+                        if (!window.localStorage) throw new Error("storage unavailable");
+                        return window.localStorage.getItem(key) || "";
+                    } catch (ignore) { return bootCookies[key] || ""; }
+                }
+                language = preference("ottplaylang");
+                var automatic = preference("ottplaylangmode") === "system" || !language;
+                if (automatic) language = detectBootLanguage();
+                if (!Object.prototype.hasOwnProperty.call(assets, language)) { ready(); return; }
+                window.__ottBootDictionary = window.keyStrings;
+                function finish() {
+                    if (ended) return;
+                    ended = true;
+                    clearTimeout(timer);
+                    ready();
+                }
+                // A missing or stalled language asset must not stop startup.
+                // Late scripts still assign keyStrings: restore the dictionary
+                // subsequently selected by the player instead of reviving theirs.
+                var timer = setTimeout(finish, 2500);
+                loadJS(host + "/locales/" + assets[language] + ".js?" + __cv, function () {
+                    if (ended) {
+                        window.keyStrings = window.__ottBootDictionary || {};
+                        return;
+                    }
+                    if (window.keyStrings && window.keyStrings !== window.__ottBootDictionary &&
+                            typeof window.keyStrings.lang === "string") {
+                        window.__ottBootLanguage = { code: language, dictionary: window.keyStrings, automatic: automatic };
+                        window.__ottInterfaceLanguage = language;
+                    }
+                    window.__ottBootDictionary = window.keyStrings;
+                    finish();
+                }, _head, finish);
+            }
+
+            function clearBootHide() {
+                var b = document.body;
+                if (!b) return;
+                if (b.classList) b.classList.remove("booting");
+                else
+                    b.className = (" " + b.className + " ")
+                        .split(" booting ")
+                        .join(" ")
+                        .replace(/^\s+|\s+$/g, "");
+            }
+            window.clearBootHide = clearBootHide;
+
+            function loadJS(url, cb, location, errorCb) {
+                var scriptTag = document.createElement("script");
+                scriptTag.src = url;
+                scriptTag.type = "text/javascript";
+                if (typeof scriptTag.crossOrigin !== "undefined")
+                    scriptTag.crossOrigin = "anonymous";
+                scriptTag.onload = cb;
+                scriptTag.onerror = function (e) {
+                    if (typeof errorCb === "function") errorCb(e);
+                    else throw new Error("Error loading:" + url);
+                };
+                location.appendChild(scriptTag);
+            }
+
+            function getScriptDOM(url, successCb, errorCb) {
+                return loadJS(url, successCb, document.body, errorCb);
+            }
+
+            function loadCSS(url, location) {
+                var linkTag = document.createElement("link");
+                linkTag.href = url;
+                linkTag.type = "text/css";
+                linkTag.rel = "stylesheet";
+                linkTag.onload = function () {
+                    clearBootHide();
+                };
+                /* Some engines skip link onload — lift hide anyway. */
+                setTimeout(clearBootHide, 1500);
+                location.appendChild(linkTag);
+            }
+
+            function loadSTB() {
+                bootStatus("Loading player...");
+                // Load player bundle first (defines window.version), then device key mapping
+                loadJS(
+                    host + "/dist/player.js?" + __cv,
+                    function () {
+                        bootStatus("Loading device...");
+                        loadJS(
+                            host + "/devices/" + ott_device + "/device.js?" + __cv,
+                            function () {
+                                bootStatus("Starting...");
+                                if (typeof startPlayer === "function")
+                                    startPlayer();
+                                else {
+                                    bootStatus("Player could not start");
+                                    console.error("startPlayer not defined");
+                                }
+                            },
+                            _head
+                        );
+                    },
+                    _head,
+                    function () {
+                        bootStatus("Failed to load!");
+                        bootLog("dist/player.js");
+                    }
+                );
+            }
+
+            function loadLibraries() {
+                bootStatus("Loading media libraries...");
+                if (ott_device === "pc2") {
+                    loadCSS(host + "/devices/pc2/player.css?" + __av, _head);
+                    loadJS(host + "/js/video.min.js?v=" + window.__ottMediaRuntimeVersion,
+                        function () {
+                            if (typeof window.videojs === "function") loadSTB();
+                            else pc2Failed();
+                        }, _head, pc2Failed);
+                } else loadStandardLibraries();
+            }
+
+            function pc2Failed() {
+                bootLog("Video.js → HTML5");
+                loadStandardLibraries();
+            }
+
+            function loadStandardLibraries() {
+                var need = 0;
+                function checkDone() {
+                    if (++need === 2) loadSTB();
+                }
+                function hlsReady() {
+                    if (typeof Hls === "function" && Hls.DefaultConfig)
+                        Hls.DefaultConfig.workerPath = host + "/js/hls.worker.js?v=" + window.__ottMediaRuntimeVersion;
+                    else bootLog("HLS → HTML5");
+                    checkDone();
+                }
+                if (typeof Hls === "undefined") {
+                    // Every platform uses the same pinned local build and worker.
+                    loadJS(host + "/js/hls.min.js?v=" + window.__ottMediaRuntimeVersion, hlsReady, _head, hlsReady);
+                } else hlsReady();
+                // Older WebKit exposes blob URLs under webkitURL. Shaka reads
+                // createObjectURL while loading, before it can report support.
+                if (!window.URL && window.webkitURL) window.URL = window.webkitURL;
+                if (!window.URL || typeof window.URL.createObjectURL !== "function") {
+                    bootLog("Blob URL → HTML5");
+                    checkDone();
+                } else if (
+                    typeof shaka === "undefined" ||
+                    typeof shaka.Player === "undefined"
+                ) {
+                    // Local 3.3.19 has the project's ES5 compatibility fixes.
+                    // A CDN copy would bypass those fixes even at the same version.
+                    loadJS(
+                        host + "/js/shaka-player.compiled.js",
+                        checkDone,
+                        _head,
+                        function () {
+                            bootLog("Shaka → HTML5");
+                            checkDone();
+                        }
+                    );
+                } else checkDone();
+            }
+
+            function loadJQ() {
+                bootStatus("Loading interface...");
+                loadCSS(host + "/styles/player.css?" + __av, _head);
+                // Same 1.11.1 release as the old CDN URL; legacy boot works offline.
+                loadJS(
+                    host + (window.__ottNativeRuntime ? "/js/jquery.min.js" : "/js/jquery-1.11.1.min.js"),
+                    loadLibraries,
+                    _head,
+                    function () {
+                        bootStatus("Failed to load!");
+                        bootLog("jQuery");
+                    }
+                );
+            }
+
+            // Expose script loaders globally for player.js
+            window.getScriptDOM = getScriptDOM;
+
+            function bootPlayer() {
+                bootStatus("Starting...");
+                bootLog(ott_device);
+                if (window.__ottRuntimePolyfillsReady !== true ||
+                    typeof window.__ottMediaRuntimeVersion !== "string" ||
+                    !/^[0-9a-f]{16}$/.test(window.__ottMediaRuntimeVersion)) {
+                    clearInterval(_bootTimer);
+                    clearBootHide();
+                    bootStatus("Compatibility runtime could not load. Reopen the player to retry.");
+                    bootLog("js/runtime-polyfills.js");
+                    return;
+                }
+                function coreFailed() {
+                    clearInterval(_bootTimer);
+                    clearBootHide();
+                    bootStatus("Player could not start");
+                    bootLog(bootText("Restart player") + "\njs/ottplay-core.js");
+                }
+                loadJS(host + "/js/ottplay-core.js?" + __av, function () {
+                    if (!window.OttPlayCore || typeof window.OttPlayCore.NativeGuide !== "function" || typeof window.OttPlayCore.providerArchiveUrl !== "function" || typeof window.OttPlayCore.parseProviderPlaylist !== "function" || typeof window.OttPlayCore.parseOperatorPlaylist !== "function" || typeof window.OttPlayCore.parsePlaylistMedia !== "function" || typeof window.OttPlayCore.XtreamClient !== "function" || typeof window.OttPlayCore.StalkerClient !== "function" || typeof window.OttPlayCore.LegacyStalkerClient !== "function" || typeof window.OttPlayCore.legacyXtreamClient !== "function" || typeof window.OttPlayCore.legacyGuideSelection !== "function" || typeof window.OttPlayCore.legacyGuideCacheRead !== "function") {
+                        coreFailed();
+                        return;
+                    }
+                    if (typeof jQuery === "undefined") loadJQ();
+                    else {
+                        bootStatus("Loading interface...");
+                        loadCSS(host + "/styles/player.css?" + __av, _head);
+                        loadLibraries();
+                    }
+                }, _head, coreFailed);
+            }
+            loadBootLanguage(bootPlayer);
+
+            // Local HTTP command polling is owned by the consent/authentication
+            // controller in player.js. A configured URL alone never starts it.
+        })();
+        </script>
+    </body>
+</html>

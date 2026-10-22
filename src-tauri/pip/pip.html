@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script src="./js/runtime-polyfills.js?v=cd7d7699f214b57e"></script>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>OttPlay PiP</title>
+        <style>
+            html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+            body { -webkit-user-select: none; user-select: none; }
+            video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; }
+            #ottplay-pip-status { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #ddd; font: 14px sans-serif; pointer-events: none; }
+            #ottplay-pip-status[hidden] { display: none; }
+        </style>
+        <script src="./auto-playback.js" defer></script>
+        <script src="./pip-player.js" defer></script>
+    </head>
+    <body>
+        <video id="ottplay-pip-video" muted playsinline></video>
+        <div id="ottplay-pip-status" role="status"></div>
+    </body>
+</html>

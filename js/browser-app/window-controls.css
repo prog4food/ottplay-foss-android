@@ -1,0 +1,70 @@
+/* This optional browser-app layer never changes ordinary browser, TV or native
+   shell layouts. Its class is present only while native controls are overlaid. */
+#window-drag-region {
+    display: none;
+}
+
+@media (display-mode: window-controls-overlay) {
+    html.ott-window-controls:not(:fullscreen) {
+        --ott-window-controls-top: calc(env(titlebar-area-y, 0px) + env(titlebar-area-height, 0px));
+    }
+
+    /* Only the browser's free title-bar rectangle is draggable. There is no
+       painted band, focus target or drag behavior on video, menus or body. */
+    html.ott-window-controls:not(:fullscreen) #window-drag-region {
+        position: fixed;
+        z-index: 2147483647;
+        display: block;
+        top: env(titlebar-area-y, 0px);
+        left: env(titlebar-area-x, 0px);
+        width: env(titlebar-area-width, 0px);
+        height: env(titlebar-area-height, 0px);
+        -webkit-app-region: drag;
+        app-region: drag;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    /* Keep scaled list geometry and its video opening aligned. The live row
+       measurement uses the reduced list height, while bottom controls stay in
+       the viewport. Full video retains its original viewport edges. */
+    html.ott-window-controls:not(:fullscreen) #list,
+    html.ott-window-controls:not(:fullscreen) #list_window {
+        top: var(--ott-window-controls-top) !important;
+    }
+    html.ott-window-controls:not(:fullscreen) #vdiv.ott-window-controls-preview {
+        transform: translateY(var(--ott-window-controls-top));
+    }
+
+    /* Runtime styles set pixel positions on these OSD elements. The override
+       protects them from native buttons without changing their horizontal side. */
+    html.ott-window-controls:not(:fullscreen) #info,
+    html.ott-window-controls:not(:fullscreen) #numprog,
+    html.ott-window-controls:not(:fullscreen) #permanentTime,
+    html.ott-window-controls:not(:fullscreen) #buffering,
+    html.ott-window-controls:not(:fullscreen) #pip_buffering,
+    html.ott-window-controls:not(:fullscreen) #ott_viewport_size {
+        top: calc(var(--ott-window-controls-top) + 10px) !important;
+    }
+    html.ott-window-controls:not(:fullscreen) #notifications {
+        top: max(60px, calc(var(--ott-window-controls-top) + 10px));
+    }
+    html.ott-window-controls:not(:fullscreen) #launch {
+        top: var(--ott-window-controls-top) !important;
+    }
+
+    /* Center dialogs within the usable area instead of the legacy full-height
+       inline center. Tall dialogs and expanded EPG remain mouse-scrollable. */
+    html.ott-window-controls:not(:fullscreen) #dialogbox {
+        box-sizing: border-box;
+        top: calc(50% + var(--ott-window-controls-top) / 2) !important;
+        max-height: calc(100% - var(--ott-window-controls-top) - 24px);
+        overflow-y: auto;
+        transform: translateY(-50%);
+    }
+    html.ott-window-controls:not(:fullscreen) #info1 {
+        box-sizing: border-box;
+        max-height: calc(100% - var(--ott-window-controls-top));
+        overflow-y: auto;
+    }
+}

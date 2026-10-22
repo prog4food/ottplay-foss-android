@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-queue-port"
+description = "Enables the queue_port command (report bound Mode B command-queue loopback port)."
+commands.allow = ["queue_port"]

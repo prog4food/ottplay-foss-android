@@ -1,0 +1,70 @@
+[package]
+name = "ottplay-tauri"
+version = "1.1.58"
+description = "Tauri desktop shell for ottplay-foss (Mode B), reusing ottplay-core"
+edition = "2021"
+authors = ["4alvit <4alvit@users.noreply.github.com>"]
+license = "MIT"
+repository = "https://github.com/4alvit/ottplay-foss"
+
+[lib]
+name = "ottplay_tauri_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+# Keep the runtime compatible with the reviewed Wry/Tao path patches. Tauri 2.12
+# requires a native patch migration; update npm API and updater together then.
+tauri = { version = "~2.11.5", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sys-locale = "=0.3.2"
+tokio = { version = "1", features = ["rt", "rt-multi-thread", "sync", "time", "net", "macros", "io-util"] }
+tracing = "0.1"
+anyhow = "1"
+ottplay-core = { path = "../src-rs/core" }
+axum = "0.7"
+hyper = { version = "1", features = ["server", "http1"] }
+hyper-util = { version = "0.1", features = ["tokio"] }
+url = "2.5.8"
+md5 = "0.7"
+chrono = { version = "0.4", features = ["serde"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls", "cookies"] }
+# OS MediaSession / MPRIS / Now Playing / SMTC for Mode B lock-screen style controls.
+souvlaki = { version = "0.8", default-features = false, features = ["use_zbus"] }
+raw-window-handle = "0.6"
+futures-util = "0.3"
+uuid = { version = "1", features = ["v4"] }
+tauri-plugin-window-state = "2"
+tauri-plugin-dialog = "=2.7.3"
+
+# Windows releases publish raw MSI/NSIS installers, not legacy ZIP wrappers.
+# Avoid the unused archive extraction path; Unix still needs tar/gzip app updates.
+[target.'cfg(target_os = "windows")'.dependencies]
+tauri-plugin-updater = { version = "=2.12.0", default-features = false, features = ["rustls-tls", "system-proxy"] }
+
+[target.'cfg(not(target_os = "windows"))'.dependencies]
+tauri-plugin-updater = "=2.12.0"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+libc = "=0.2.189"
+sha2 = "=0.10.9"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+dispatch2 = "0.3"
+base64 = "0.22"
+block2 = "0.6"
+objc2 = "0.6"
+objc2-app-kit = { version = "0.3", default-features = false, features = ["std", "NSBitmapImageRep", "NSGraphics", "NSGraphicsContext", "NSImage", "NSImageRep", "NSView"] }
+objc2-foundation = { version = "0.3", default-features = false, features = ["std", "NSData", "NSDictionary", "NSError", "NSGeometry", "NSValue"] }
+objc2-web-kit = { version = "0.3", default-features = false, features = ["std", "block2", "WKSnapshotConfiguration", "WKWebView"] }
+
+# Required for production embed of frontendDist. Plain `cargo build`
+# without this leaves cfg(dev) on and never embeds assets (white screen).
+# `tauri build` also injects tauri/custom-protocol; keep the crate feature so
+# release cargo builds embed correctly too.
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

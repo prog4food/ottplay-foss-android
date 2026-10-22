@@ -1,0 +1,20 @@
+{
+  "packages": {
+    "pako": {
+      "version": "2.1.0",
+      "tarball": "https://registry.npmjs.org/pako/-/pako-2.1.0.tgz",
+      "verified_integrity": "sha512-w+eufiZ1WuJYgPXbV/PO3NCMEc3xqylkKHzp8bxp1uW4qaSNQUkwmLLEc3kKsfz8lpV1F8Ht3U1Cm+9Srog2ug=="
+    },
+    "sax": {
+      "version": "1.4.1",
+      "tarball": "https://registry.npmjs.org/sax/-/sax-1.4.1.tgz",
+      "verified_integrity": "sha512-+aWOz7yVScEGoKNd4PA10LZ8sk0A/z5+nXQG5giUO5rprX9jgYsTdov9qCchZiPIZezbZH+jRut8nPodFAX4Jg=="
+    }
+  },
+  "files": {
+    "pako-inflate.js": "efb8976b994144ffe643122f0b021e7999bb80736e17160f8b4417bf04b9b7fc",
+    "sax.js": "e221d28f41ed2b3d7122cf5962772cffe43ae976d8c060cc116470d5cedf54c0",
+    "pako-LICENSE": "a04665b3b2de56c66730c1f720f528175739e4104f79073614aa611da1e85539",
+    "sax-LICENSE": "e8bf477df410baa41d44132e676d16a5372cf1798599fac2823376dc95e94eee"
+  }
+}

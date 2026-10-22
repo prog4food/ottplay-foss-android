@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-feedback"
+description = "Enables the feedback_get and feedback_post commands (feedback logging)."
+commands.allow = ["feedback_get", "feedback_post"]

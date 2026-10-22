@@ -1,0 +1,276 @@
+[
+  {
+    "name": "LG NetCast 2.0 official browser example",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (DirectFB; U; Linux mips; en) AppleWebKit/531.2+ (KHTML, like Gecko, Safari/531.2+); LG Browser/4.0.9(+mouse+3D+SCREEN+TUNER; LGE; ModelName; 03.05.04; 0x00000001;); LG NetCast.TV-2011",
+    "expectedDevice": "lg/netcast",
+    "source": "https://webostv.developer.lge.com/assets/netcast/NetCast-Developing%20Web%20App.pdf#page=12"
+  },
+  {
+    "name": "LG NetCast 3.0 official browser example",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (DirectFB; Linux armv7l) AppleWebKit/534.26+ (KHTML, like Gecko) Version/5.0 Safari/534.26+ LG Browser/5.00.00(+mouse+3D+SCREEN+TUNER; LGE; ModelName; 09.00.00; 0x00000001;); LG NetCast.TV-2012",
+    "expectedDevice": "lg/netcast",
+    "source": "https://webostv.developer.lge.com/assets/netcast/NetCast-Developing%20Web%20App.pdf#page=12"
+  },
+  {
+    "name": "LG NetCast 4.0 official browser example",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Unknown; Linux armv7l) AppleWebKit/537.1+ (KHTML, like Gecko) Safari/537.1+ LG Browser/6.00.00(+mouse+3D+SCREEN+TUNER; LGE; ModelName; 03.07.01; 0x00000001;); LG NetCast.TV-2013/03.17.01 (LG, ModelName, wired)",
+    "expectedDevice": "lg/netcast",
+    "source": "https://webostv.developer.lge.com/assets/netcast/NetCast-Developing%20Web%20App.pdf#page=12"
+  },
+  {
+    "name": "LG webOS 1.x official Web0S token",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.41 (KHTML, like Gecko) Large Screen WebAppManager Safari/537.41",
+    "expectedDevice": "lg/webos",
+    "source": "https://webostv.developer.lge.com/develop/specifications/web-api-and-web-engine"
+  },
+  {
+    "name": "LG webOS 25 official Web0S token",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.270 Safari/537.36 WebAppManager",
+    "expectedDevice": "lg/webos",
+    "source": "https://webostv.developer.lge.com/develop/specifications/web-api-and-web-engine"
+  },
+  {
+    "name": "LG webOS 26 official Web0S token",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.6834.207 Safari/537.36 WebAppManager",
+    "expectedDevice": "lg/webos",
+    "source": "https://webostv.developer.lge.com/develop/specifications/web-api-and-web-engine"
+  },
+  {
+    "name": "Web0S wins over NetCast compatibility token",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Web0S; Linux/SmartTV) AppleWebKit/537.36 LG NetCast.TV-2013",
+    "expectedDevice": "lg/webos",
+    "source": "synthetic precedence regression: explicit Web0S plus legacy compatibility token"
+  },
+  {
+    "name": "Classic webOS spelling wins over NetCast token",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (webOS; Linux/SmartTV) AppleWebKit/537.36 LG NetCast.TV-2013",
+    "expectedDevice": "lg/webos",
+    "source": "synthetic precedence regression: existing webOS spelling support"
+  },
+  {
+    "name": "Legacy LG-only fallback stays compatible",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (LG SmartTV) AppleWebKit/537.36",
+    "expectedDevice": "lg/webos",
+    "source": "synthetic legacy fixture retained from tests/test_legacy_boot.cjs"
+  },
+  {
+    "name": "YASEM MAG250 and AuraHD profile without Infomir token",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (QtEmbedded; U; Linux; C) AppleWebKit/533.3 (KHTML, like Gecko) MAG200 stbapp ver: 2 rev: 234 Safari/533.3",
+    "expectedDevice": "mag",
+    "source": "https://github.com/mvasilchuk/yasem-mag-api/blob/master/magprofile.cpp"
+  },
+  {
+    "name": "MAG numeric model token at start",
+    "pathname": "/",
+    "userAgent": "MAG250",
+    "expectedDevice": "mag",
+    "source": "synthetic model-token boundary regression"
+  },
+  {
+    "name": "MAG numeric model token with punctuation",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (MAG254; Linux)",
+    "expectedDevice": "mag",
+    "source": "synthetic model-token boundary regression"
+  },
+  {
+    "name": "MAG model hardware suffix w1",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (MAG322w1; Linux)",
+    "expectedDevice": "mag",
+    "source": "synthetic model-token boundary regression"
+  },
+  {
+    "name": "MAG model hardware suffix r2 is case insensitive",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (mAg420R2; Linux)",
+    "expectedDevice": "mag",
+    "source": "synthetic model-token boundary regression"
+  },
+  {
+    "name": "MAG model before Maple compatibility token",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Linux) MAG200 stbapp Maple2012",
+    "expectedDevice": "mag",
+    "source": "synthetic mixed-platform precedence regression; not a physical-device UA"
+  },
+  {
+    "name": "Existing Infomir STB signature",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Infomir; STB; Linux)",
+    "expectedDevice": "mag",
+    "source": "synthetic regression for existing Infomir plus STB rule"
+  },
+  {
+    "name": "Infomir STB before Maple compatibility token",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Infomir; STB; Maple2012; Linux)",
+    "expectedDevice": "mag",
+    "source": "synthetic mixed-platform precedence regression; not a physical-device UA"
+  },
+  {
+    "name": "MAG capability with unknown user agent",
+    "pathname": "/",
+    "userAgent": "UnknownEmbeddedBrowser/1.0",
+    "capability": "mag",
+    "expectedDevice": "mag",
+    "source": "synthetic native API shape; no device API methods should be invoked"
+  },
+  {
+    "name": "MAG capability wins over Maple compatibility token",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Linux) Maple2012",
+    "capability": "mag",
+    "expectedDevice": "mag",
+    "source": "synthetic native API precedence regression"
+  },
+  {
+    "name": "Empty gSTB object is not a MAG capability",
+    "pathname": "/",
+    "userAgent": "UnknownEmbeddedBrowser/1.0",
+    "capability": "empty-gstb",
+    "expectedDevice": "pc",
+    "source": "synthetic native API negative control"
+  },
+  {
+    "name": "Throwing gSTB access falls back safely",
+    "pathname": "/",
+    "userAgent": "UnknownEmbeddedBrowser/1.0",
+    "capability": "throwing-gstb",
+    "expectedDevice": "pc",
+    "source": "synthetic native API failure control"
+  },
+  {
+    "name": "Throwing gSTB does not suppress MAG user agent",
+    "pathname": "/",
+    "userAgent": "MAG250",
+    "capability": "throwing-gstb",
+    "expectedDevice": "mag",
+    "source": "synthetic native API failure with user-agent fallback"
+  },
+  {
+    "name": "Explicit nested route wins over MAG API and user agent",
+    "pathname": "/f/lg/netcast/index.html",
+    "userAgent": "MAG250",
+    "capability": "mag",
+    "expectedDevice": "lg/netcast",
+    "source": "synthetic explicit route precedence regression"
+  },
+  {
+    "name": "Explicit PC route wins over MAG API and webOS user agent",
+    "pathname": "/f/pc",
+    "userAgent": "Mozilla/5.0 (Web0S; Linux/SmartTV)",
+    "capability": "mag",
+    "expectedDevice": "pc",
+    "source": "synthetic explicit route precedence regression"
+  },
+  {
+    "name": "Explicit route does not access broken native API",
+    "pathname": "/f/samsung/tizen/nested/index.html",
+    "userAgent": "UnknownEmbeddedBrowser/1.0",
+    "capability": "throwing-gstb",
+    "expectedDevice": "samsung/tizen",
+    "source": "synthetic explicit route precedence regression"
+  },
+  {
+    "name": "Ordinary words are not MAG devices",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 ImageBrowser/1.0 Magazine/2.0",
+    "expectedDevice": "pc",
+    "source": "synthetic MAG false-positive control"
+  },
+  {
+    "name": "Embedded numeric MAG token is not a device model",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 NotMAG250 ImageMAG254",
+    "expectedDevice": "pc",
+    "source": "synthetic MAG left-boundary false-positive control"
+  },
+  {
+    "name": "MAG model prefix inside unrelated token is not a device",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 MAG250NotADevice MAG322widget",
+    "expectedDevice": "pc",
+    "source": "synthetic MAG right-boundary false-positive control"
+  },
+  {
+    "name": "MAG without numeric model is not sufficient",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 MAG browser",
+    "expectedDevice": "pc",
+    "source": "synthetic MAG false-positive control"
+  },
+  {
+    "name": "Samsung Tizen official 2015 example",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (SMART-TV; Linux; Tizen 2.2) AppleWebkit/538.1 (KHTML, like Gecko) SamsungBrowser/1.0 TV Safari/538.1",
+    "expectedDevice": "samsung/tizen",
+    "source": "https://developer.samsung.com/smarttv/develop/guides/fundamentals/retrieving-platform-information.html"
+  },
+  {
+    "name": "Samsung Maple official 2014 example",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (SmartHub; SMART-TV; U; Linux/SmartTV+2014; Maple2012) AppleWebKit/537.42+ (KHTML, like Gecko) SmartTV Safari/537.42+",
+    "expectedDevice": "samsung/maple",
+    "source": "https://developer.samsung.com/smarttv/develop/guides/fundamentals/retrieving-platform-information.html"
+  },
+  {
+    "name": "Android retains precedence over Sony and HbbTV tokens",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Linux; Android; Sony TV) HbbTV/1.5.1",
+    "expectedDevice": "android",
+    "source": "synthetic existing platform precedence regression"
+  },
+  {
+    "name": "HbbTV retains precedence over Philips brand",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Philips SmartTV) HbbTV/1.5.1",
+    "expectedDevice": "hbbtv",
+    "source": "synthetic existing platform precedence regression"
+  },
+  {
+    "name": "OIPF retains precedence over Sony brand",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Sony SmartTV) OIPF/1.1",
+    "expectedDevice": "hbbtv",
+    "source": "synthetic existing platform precedence regression"
+  },
+  {
+    "name": "Dune existing signature remains supported",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Linux) DuneHD/1.0",
+    "expectedDevice": "dune",
+    "source": "synthetic existing signature regression"
+  },
+  {
+    "name": "Spark existing signature remains supported",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Linux) Spark/1.0",
+    "expectedDevice": "spark",
+    "source": "synthetic existing signature regression"
+  },
+  {
+    "name": "Electron existing signature remains supported",
+    "pathname": "/",
+    "userAgent": "Mozilla/5.0 (Linux) Electron/40.0.0",
+    "expectedDevice": "nodejs",
+    "source": "synthetic existing signature regression"
+  },
+  {
+    "name": "Unknown browser keeps PC fallback",
+    "pathname": "/",
+    "userAgent": "UnknownEmbeddedBrowser/1.0",
+    "expectedDevice": "pc",
+    "source": "synthetic unknown-platform negative control"
+  }
+]

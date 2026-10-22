@@ -1,0 +1,5 @@
+# GitHub's hosted Ubuntu 26.04 image is newer than some actionlint releases.
+# The job also verifies /etc/os-release and x64 before running WebKit.
+self-hosted-runner:
+  labels:
+    - ubuntu-26.04

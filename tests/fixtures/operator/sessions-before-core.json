@@ -1,0 +1,2989 @@
+{
+  "provenance": {
+    "commit": "b3c8cc072e92f14c8e352a223157788f24ca4dce",
+    "capture": "Public getChanelsArray from every actual generic operator, with only storage/HTTP/UI effects replaced. Actual shared playlist parser and name hash retained.",
+    "rawCaptureSha256": "1e16f122d57acd93fa6abe9cf03c7fc839b2fd0ff883a181940d4a4ea03a4f56"
+  },
+  "providers": [
+    {
+      "file": "providers/all4you/provider.js",
+      "prefix": "_all4you"
+    },
+    {
+      "file": "providers/bestlist/provider.js",
+      "prefix": "_bestlist"
+    },
+    {
+      "file": "providers/cbilling/provider.js",
+      "prefix": "_cbilling"
+    },
+    {
+      "file": "providers/d/maxtv/provider.js",
+      "prefix": "_d_maxtv"
+    },
+    {
+      "file": "providers/diamondtv/provider.js",
+      "prefix": "_diamondtv"
+    },
+    {
+      "file": "providers/dosug/provider.js",
+      "prefix": "_dosug"
+    },
+    {
+      "file": "providers/dragon/provider.js",
+      "prefix": "_dragon"
+    },
+    {
+      "file": "providers/drvao/provider.js",
+      "prefix": "_drvao"
+    },
+    {
+      "file": "providers/fabryka/provider.js",
+      "prefix": "_fabryka"
+    },
+    {
+      "file": "providers/fox/provider.js",
+      "prefix": "_fox"
+    },
+    {
+      "file": "providers/fxml/provider.js",
+      "prefix": "_fxml"
+    },
+    {
+      "file": "providers/great/provider.js",
+      "prefix": "_great"
+    },
+    {
+      "file": "providers/ipstream/provider.js",
+      "prefix": "_ipstream"
+    },
+    {
+      "file": "providers/iptv-ott.ru/provider.js",
+      "prefix": "_iptv_ott_ru"
+    },
+    {
+      "file": "providers/korona/provider.js",
+      "prefix": "_korona"
+    },
+    {
+      "file": "providers/moidom/provider.js",
+      "prefix": "_moidom"
+    },
+    {
+      "file": "providers/newlook/provider.js",
+      "prefix": "_newlook"
+    },
+    {
+      "file": "providers/ottg/provider.js",
+      "prefix": "_ottg"
+    },
+    {
+      "file": "providers/ottprime/provider.js",
+      "prefix": "_ottprime"
+    },
+    {
+      "file": "providers/polmedia/provider.js",
+      "prefix": "_polmedia"
+    },
+    {
+      "file": "providers/prost/provider.js",
+      "prefix": "_prost"
+    },
+    {
+      "file": "providers/raduga/provider.js",
+      "prefix": "_raduga"
+    },
+    {
+      "file": "providers/rd/provider.js",
+      "prefix": "_rd"
+    },
+    {
+      "file": "providers/russkoetv/provider.js",
+      "prefix": "_russkoetv"
+    },
+    {
+      "file": "providers/shara.club/provider.js",
+      "prefix": "_shara_club"
+    },
+    {
+      "file": "providers/sharavoz/provider.js",
+      "prefix": "_sharavoz"
+    },
+    {
+      "file": "providers/shocktv/provider.js",
+      "prefix": "_shocktv"
+    },
+    {
+      "file": "providers/tabox/provider.js",
+      "prefix": "_tabox"
+    },
+    {
+      "file": "providers/top/provider.js",
+      "prefix": "_top"
+    },
+    {
+      "file": "providers/topiptv/provider.js",
+      "prefix": "_topiptv"
+    },
+    {
+      "file": "providers/tvclub/provider.js",
+      "prefix": "_tvclub"
+    },
+    {
+      "file": "providers/ultifl1x/provider.js",
+      "prefix": "_ultifl1x"
+    },
+    {
+      "file": "providers/vidok/provider.js",
+      "prefix": "_vidok"
+    }
+  ],
+  "cases": [
+    {
+      "name": "combined catalog preserves first name hash and repeated groups",
+      "input": {
+        "account": {
+          "categories": [
+            {
+              "category_id": "1",
+              "category_name": "News"
+            },
+            {
+              "category_id": "2",
+              "category_name": "Films"
+            }
+          ],
+          "live_streams": [
+            {
+              "name": "A",
+              "stream_id": 11,
+              "category_id": "1",
+              "stream_icon": "https://img.test/11"
+            },
+            {
+              "name": "B",
+              "stream_id": 12,
+              "category_id": "2",
+              "stream_icon": "https://img.test/12"
+            },
+            {
+              "name": "A",
+              "stream_id": 13,
+              "category_id": "2",
+              "stream_icon": "https://img.test/13"
+            },
+            {
+              "name": "",
+              "stream_id": 14,
+              "category_id": "0",
+              "stream_icon": "https://img.test/14"
+            }
+          ]
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": null,
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/fallback.m3u"
+            },
+            "ids": [
+              1426945110,
+              2718739903,
+              0
+            ],
+            "channels": {
+              "0": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 1,
+                  "name": "Other"
+                },
+                "channel_name": "",
+                "epg": "14",
+                "logo": "https://img.test/14",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "",
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/14.m3u8"
+              },
+              "1426945110": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "News"
+                },
+                "channel_name": "A",
+                "epg": "11",
+                "logo": "https://img.test/11",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "A",
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/11.m3u8"
+              },
+              "2718739903": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 3,
+                  "name": "Films"
+                },
+                "channel_name": "B",
+                "epg": "12",
+                "logo": "https://img.test/12",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "B",
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/12.m3u8"
+              }
+            },
+            "groups": {
+              "News": [
+                1426945110
+              ],
+              "Films": [
+                2718739903,
+                1426945110
+              ]
+            },
+            "groupOrder": [
+              "News",
+              "Films"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "category last value wins, false category uses Unknown",
+      "input": {
+        "account": {
+          "categories": [
+            {
+              "category_id": "1",
+              "category_name": "Old"
+            },
+            {
+              "category_id": "1",
+              "category_name": "New"
+            },
+            {
+              "category_id": "2",
+              "category_name": ""
+            }
+          ],
+          "live_streams": [
+            {
+              "name": "A",
+              "stream_id": 1,
+              "category_id": "1",
+              "stream_icon": "https://img.test/1"
+            },
+            {
+              "name": "B",
+              "stream_id": 2,
+              "category_id": "2",
+              "stream_icon": "https://img.test/2"
+            },
+            {
+              "name": "C",
+              "stream_id": 3,
+              "category_id": "3",
+              "stream_icon": "https://img.test/3"
+            }
+          ]
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": null,
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/fallback.m3u"
+            },
+            "ids": [
+              1426945110,
+              2718739903,
+              4004515611
+            ],
+            "channels": {
+              "1426945110": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "New"
+                },
+                "channel_name": "A",
+                "epg": "1",
+                "logo": "https://img.test/1",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "A",
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/1.m3u8"
+              },
+              "2718739903": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 3,
+                  "name": "Unknown"
+                },
+                "channel_name": "B",
+                "epg": "2",
+                "logo": "https://img.test/2",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "B",
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/2.m3u8"
+              },
+              "4004515611": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 4,
+                  "name": "Other"
+                },
+                "channel_name": "C",
+                "epg": "3",
+                "logo": "https://img.test/3",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "C",
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/3.m3u8"
+              }
+            },
+            "groups": {
+              "New": [
+                1426945110
+              ],
+              "Unknown": [
+                2718739903
+              ],
+              "Other": [
+                4004515611
+              ]
+            },
+            "groupOrder": [
+              "New",
+              "Unknown",
+              "Other"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "absent category and stream properties",
+      "input": {
+        "account": {
+          "live_streams": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "B",
+              "stream_id": 0,
+              "category_id": null,
+              "stream_icon": "https://img.test/0"
+            },
+            {
+              "name": "C",
+              "stream_id": "x/y?z",
+              "category_id": "none",
+              "stream_icon": 0
+            }
+          ]
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": null,
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/fallback.m3u"
+            },
+            "ids": [
+              1426945110,
+              2718739903,
+              4004515611
+            ],
+            "channels": {
+              "1426945110": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Other"
+                },
+                "channel_name": "A",
+                "epg": "undefined",
+                "logo": "",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "A",
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/undefined.m3u8"
+              },
+              "2718739903": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Other"
+                },
+                "channel_name": "B",
+                "epg": "0",
+                "logo": "https://img.test/0",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "B",
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/0.m3u8"
+              },
+              "4004515611": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Other"
+                },
+                "channel_name": "C",
+                "epg": "x/y?z",
+                "logo": "",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "C",
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/x/y?z.m3u8"
+              }
+            },
+            "groups": {
+              "Other": [
+                1426945110,
+                2718739903,
+                4004515611
+              ]
+            },
+            "groupOrder": [
+              "Other"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "empty successful catalog completes without playlist",
+      "input": {
+        "account": {
+          "live_streams": []
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": null,
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/fallback.m3u"
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "missing catalog falls back using first literal API path replacement",
+      "input": {
+        "config": {
+          "server": "https://operator.test/player_api.php/trailing/",
+          "user": "a/b",
+          "pass": "x?&",
+          "m3u": "https://operator.test/fallback.m3u"
+        },
+        "account": {
+          "user_info": {
+            "auth": 1
+          }
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [
+              {
+                "url": "https://operator.test/player_api.php/trailing//player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              },
+              {
+                "url": "https://operator.test/get.php/trailing//player_api.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts",
+                "method": "GET",
+                "data": null,
+                "dataType": null,
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": null,
+            "config": {
+              "server": "https://operator.test/player_api.php/trailing/",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/get.php/trailing//player_api.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts"
+            },
+            "ids": [
+              3525573450
+            ],
+            "channels": {
+              "3525573450": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Playlist"
+                },
+                "channel_name": "Fallback",
+                "epg": "",
+                "logo": "",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "Fallback",
+                "url": "https://stream.test/m"
+              }
+            },
+            "groups": {
+              "Playlist": [
+                3525573450
+              ]
+            },
+            "groupOrder": [
+              "Playlist"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "null response falls back to playlist",
+      "input": {
+        "account": null
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              },
+              {
+                "url": "https://operator.test/base/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts",
+                "method": "GET",
+                "data": null,
+                "dataType": null,
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": null,
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/base/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts"
+            },
+            "ids": [
+              3525573450
+            ],
+            "channels": {
+              "3525573450": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Playlist"
+                },
+                "channel_name": "Fallback",
+                "epg": "",
+                "logo": "",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "Fallback",
+                "url": "https://stream.test/m"
+              }
+            },
+            "groups": {
+              "Playlist": [
+                3525573450
+              ]
+            },
+            "groupOrder": [
+              "Playlist"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "false streams falls back to playlist",
+      "input": {
+        "account": {
+          "live_streams": false
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              },
+              {
+                "url": "https://operator.test/base/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts",
+                "method": "GET",
+                "data": null,
+                "dataType": null,
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": null,
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/base/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts"
+            },
+            "ids": [
+              3525573450
+            ],
+            "channels": {
+              "3525573450": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Playlist"
+                },
+                "channel_name": "Fallback",
+                "epg": "",
+                "logo": "",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "Fallback",
+                "url": "https://stream.test/m"
+              }
+            },
+            "groups": {
+              "Playlist": [
+                3525573450
+              ]
+            },
+            "groupOrder": [
+              "Playlist"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "network API failure trims trailing slashes for playlist",
+      "input": {
+        "config": {
+          "server": "https://operator.test/base///",
+          "user": "a/b",
+          "pass": "x?&",
+          "m3u": "https://operator.test/fallback.m3u"
+        },
+        "apiFailed": true
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [
+              {
+                "url": "https://operator.test/base////player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              },
+              {
+                "url": "https://operator.test/base/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts",
+                "method": "GET",
+                "data": null,
+                "dataType": null,
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": null,
+            "config": {
+              "server": "https://operator.test/base///",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/base/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts"
+            },
+            "ids": [
+              3525573450
+            ],
+            "channels": {
+              "3525573450": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Playlist"
+                },
+                "channel_name": "Fallback",
+                "epg": "",
+                "logo": "",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "Fallback",
+                "url": "https://stream.test/m"
+              }
+            },
+            "groups": {
+              "Playlist": [
+                3525573450
+              ]
+            },
+            "groupOrder": [
+              "Playlist"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "direct playlist failure uses proxy",
+      "input": {
+        "account": null,
+        "playlistFailed": true
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              },
+              {
+                "url": "https://operator.test/base/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts",
+                "method": "GET",
+                "data": null,
+                "dataType": null,
+                "timeout": 15000
+              },
+              {
+                "url": "https://relay.test/m3u/cp.php",
+                "method": "post",
+                "data": {
+                  "url": "@https://operator.test/base/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts"
+                },
+                "dataType": "text",
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": null,
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/base/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts"
+            },
+            "ids": [
+              3525573450
+            ],
+            "channels": {
+              "3525573450": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Playlist"
+                },
+                "channel_name": "Fallback",
+                "epg": "",
+                "logo": "",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "Fallback",
+                "url": "https://stream.test/m"
+              }
+            },
+            "groups": {
+              "Playlist": [
+                3525573450
+              ]
+            },
+            "groupOrder": [
+              "Playlist"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "both playlist transports fail once",
+      "input": {
+        "apiFailed": true,
+        "playlistFailed": true,
+        "proxyFailed": true
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              },
+              {
+                "url": "https://operator.test/base/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts",
+                "method": "GET",
+                "data": null,
+                "dataType": null,
+                "timeout": 15000
+              },
+              {
+                "url": "https://relay.test/m3u/cp.php",
+                "method": "post",
+                "data": {
+                  "url": "@https://operator.test/base/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts"
+                },
+                "dataType": "text",
+                "timeout": 15000
+              }
+            ],
+            "errors": [
+              "Failed to load!"
+            ],
+            "failure": null,
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/base/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts"
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "playlist-only configuration",
+      "input": {
+        "config": {
+          "server": "https://operator.test/base",
+          "user": "",
+          "pass": "x?&",
+          "m3u": "https://operator.test/fallback.m3u"
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [
+              {
+                "url": "https://operator.test/fallback.m3u",
+                "method": "GET",
+                "data": null,
+                "dataType": null,
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": null,
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "",
+              "pass": "x?&",
+              "m3u": "https://operator.test/fallback.m3u"
+            },
+            "ids": [
+              3525573450
+            ],
+            "channels": {
+              "3525573450": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Playlist"
+                },
+                "channel_name": "Fallback",
+                "epg": "",
+                "logo": "",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "Fallback",
+                "url": "https://stream.test/m"
+              }
+            },
+            "groups": {
+              "Playlist": [
+                3525573450
+              ]
+            },
+            "groupOrder": [
+              "Playlist"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "missing configuration reports settings",
+      "input": {
+        "config": {
+          "server": "",
+          "m3u": ""
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure All4you.tv in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/bestlist/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure BEST LiST IPTV [HLS Playlist] in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/cbilling/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure Гомельсат (cbilling) in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/d/maxtv/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure MaxTV in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/diamondtv/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure Diamond TV in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/dosug/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure TV DOSUG in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/dragon/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure Dragon Media PRO in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/drvao/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure DRVAO in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/fabryka/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure Fabryka.TV in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/fox/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure Fox-TV in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/fxml/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure FXML in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/great/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure GREAT IPTV in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/ipstream/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure IpStream.one in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/iptv-ott.ru/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure VIP-IP.COM in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/korona/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure KORONA TV in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/moidom/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure МойДом in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/newlook/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure New Look in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/ottg/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure GlanzTV in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/ottprime/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure OTT Prime ONLINE in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/polmedia/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure POLMEDIA in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/prost/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure PROST in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/raduga/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure Радуга in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/rd/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure RD in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/russkoetv/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure RUSSKOETV in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/shara.club/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure Shara.club (ClubTV.pro) in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/sharavoz/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure Шаравоз in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/shocktv/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure ShockTv in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/tabox/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure Tabox in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/top/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure Top-Tv in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/topiptv/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure TOP-IPTV in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/tvclub/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure TVClub in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/ultifl1x/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure ULTIFL1X in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        },
+        {
+          "providers": [
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [],
+            "errors": [
+              "Configure Vidok.TV in Settings -> Provider Settings"
+            ],
+            "failure": null,
+            "config": {
+              "m3u": "",
+              "pass": "",
+              "server": "",
+              "user": ""
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "non-array streams throws after clearing previous result",
+      "input": {
+        "account": {
+          "live_streams": {}
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 0,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": {
+              "name": "TypeError",
+              "message": "r.live_streams.forEach is not a function"
+            },
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/fallback.m3u"
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "non-array categories throws before stream rows",
+      "input": {
+        "account": {
+          "categories": {},
+          "live_streams": [
+            {
+              "name": "A",
+              "stream_id": 1,
+              "category_id": "1",
+              "stream_icon": "https://img.test/1"
+            }
+          ]
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 0,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": {
+              "name": "TypeError",
+              "message": "r.categories.forEach is not a function"
+            },
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/fallback.m3u"
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "null category row throws before stream rows",
+      "input": {
+        "account": {
+          "categories": [
+            null
+          ],
+          "live_streams": [
+            {
+              "name": "A",
+              "stream_id": 1,
+              "category_id": "1",
+              "stream_icon": "https://img.test/1"
+            }
+          ]
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 0,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": {
+              "name": "TypeError",
+              "message": "Cannot read properties of null (reading 'category_id')"
+            },
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/fallback.m3u"
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        }
+      ]
+    },
+    {
+      "name": "null stream row preserves earlier partial catalog",
+      "input": {
+        "account": {
+          "live_streams": [
+            {
+              "name": "A",
+              "stream_id": 1,
+              "category_id": "1",
+              "stream_icon": "https://img.test/1"
+            },
+            null,
+            {
+              "name": "B",
+              "stream_id": 2,
+              "category_id": "1",
+              "stream_icon": "https://img.test/2"
+            }
+          ]
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 0,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": {
+              "name": "TypeError",
+              "message": "Cannot read properties of null (reading 'name')"
+            },
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/fallback.m3u"
+            },
+            "ids": [
+              1426945110
+            ],
+            "channels": {
+              "1426945110": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Other"
+                },
+                "channel_name": "A",
+                "epg": "1",
+                "logo": "https://img.test/1",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "A",
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/1.m3u8"
+              }
+            },
+            "groups": {
+              "Other": [
+                1426945110
+              ]
+            },
+            "groupOrder": [
+              "Other"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "missing name hash preserves earlier partial catalog",
+      "input": {
+        "account": {
+          "live_streams": [
+            {
+              "name": "A",
+              "stream_id": 1,
+              "category_id": "1",
+              "stream_icon": "https://img.test/1"
+            },
+            {
+              "stream_id": 2
+            }
+          ]
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": null,
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/fallback.m3u"
+            },
+            "ids": [
+              1426945110,
+              0
+            ],
+            "channels": {
+              "0": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Other"
+                },
+                "epg": "2",
+                "logo": "",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/2.m3u8"
+              },
+              "1426945110": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Other"
+                },
+                "channel_name": "A",
+                "epg": "1",
+                "logo": "https://img.test/1",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "A",
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/1.m3u8"
+              }
+            },
+            "groups": {
+              "Other": [
+                1426945110
+              ]
+            },
+            "groupOrder": [
+              "Other"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "null name hash preserves earlier partial catalog",
+      "input": {
+        "account": {
+          "live_streams": [
+            {
+              "name": "A",
+              "stream_id": 1,
+              "category_id": "1",
+              "stream_icon": "https://img.test/1"
+            },
+            {
+              "name": null,
+              "stream_id": 2
+            }
+          ]
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": null,
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/fallback.m3u"
+            },
+            "ids": [
+              1426945110,
+              0
+            ],
+            "channels": {
+              "0": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Other"
+                },
+                "channel_name": null,
+                "epg": "2",
+                "logo": "",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": null,
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/2.m3u8"
+              },
+              "1426945110": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Other"
+                },
+                "channel_name": "A",
+                "epg": "1",
+                "logo": "https://img.test/1",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "A",
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/1.m3u8"
+              }
+            },
+            "groups": {
+              "Other": [
+                1426945110
+              ]
+            },
+            "groupOrder": [
+              "Other"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "same-name hash collision retains first payload",
+      "input": {
+        "account": {
+          "live_streams": [
+            {
+              "name": "One",
+              "stream_id": 1,
+              "category_id": "1",
+              "stream_icon": "https://img.test/1"
+            },
+            {
+              "name": "One",
+              "stream_id": 2,
+              "category_id": "2",
+              "stream_icon": "https://img.test/2"
+            }
+          ]
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 1,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": null,
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/fallback.m3u"
+            },
+            "ids": [
+              2126467680
+            ],
+            "channels": {
+              "2126467680": {
+                "ca": "",
+                "caso": "",
+                "category": {
+                  "class": 2,
+                  "name": "Other"
+                },
+                "channel_name": "One",
+                "epg": "1",
+                "logo": "https://img.test/1",
+                "rec": 0,
+                "time": 0,
+                "time_to": 0,
+                "tn": "One",
+                "url": "https://operator.test/base/live/a%2Fb/x%3F%26/1.m3u8"
+              }
+            },
+            "groups": {
+              "Other": [
+                2126467680,
+                2126467680
+              ]
+            },
+            "groupOrder": [
+              "Other"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "truthy numeric names and categories use JS coercion",
+      "input": {
+        "account": {
+          "categories": [
+            {
+              "category_id": 1,
+              "category_name": 42
+            }
+          ],
+          "live_streams": [
+            {
+              "name": 12,
+              "stream_id": 1,
+              "category_id": 1,
+              "stream_icon": "https://img.test/1"
+            }
+          ]
+        }
+      },
+      "outcomes": [
+        {
+          "providers": [
+            "providers/all4you/provider.js",
+            "providers/bestlist/provider.js",
+            "providers/cbilling/provider.js",
+            "providers/d/maxtv/provider.js",
+            "providers/diamondtv/provider.js",
+            "providers/dosug/provider.js",
+            "providers/dragon/provider.js",
+            "providers/drvao/provider.js",
+            "providers/fabryka/provider.js",
+            "providers/fox/provider.js",
+            "providers/fxml/provider.js",
+            "providers/great/provider.js",
+            "providers/ipstream/provider.js",
+            "providers/iptv-ott.ru/provider.js",
+            "providers/korona/provider.js",
+            "providers/moidom/provider.js",
+            "providers/newlook/provider.js",
+            "providers/ottg/provider.js",
+            "providers/ottprime/provider.js",
+            "providers/polmedia/provider.js",
+            "providers/prost/provider.js",
+            "providers/raduga/provider.js",
+            "providers/rd/provider.js",
+            "providers/russkoetv/provider.js",
+            "providers/shara.club/provider.js",
+            "providers/sharavoz/provider.js",
+            "providers/shocktv/provider.js",
+            "providers/tabox/provider.js",
+            "providers/top/provider.js",
+            "providers/topiptv/provider.js",
+            "providers/tvclub/provider.js",
+            "providers/ultifl1x/provider.js",
+            "providers/vidok/provider.js"
+          ],
+          "expected": {
+            "callbacks": 0,
+            "calls": [
+              {
+                "url": "https://operator.test/base/player_api.php?username=a%2Fb&password=x%3F%26",
+                "method": "GET",
+                "data": null,
+                "dataType": "json",
+                "timeout": 15000
+              }
+            ],
+            "errors": [],
+            "failure": {
+              "name": "TypeError",
+              "message": "input.toLowerCase is not a function"
+            },
+            "config": {
+              "server": "https://operator.test/base",
+              "user": "a/b",
+              "pass": "x?&",
+              "m3u": "https://operator.test/fallback.m3u"
+            },
+            "ids": [],
+            "channels": {},
+            "groups": {},
+            "groupOrder": []
+          }
+        }
+      ]
+    }
+  ]
+}

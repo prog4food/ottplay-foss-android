@@ -1,0 +1,11 @@
+flowchart TD
+    A[Selected channel: one playback lease] --> B[Prepare source and apply quality limits]
+    B --> C[Play current endpoint]
+    C --> D{Fatal error}
+    D -->|401 / 403 / quality| F[Visible failure: select again to retry]
+    D -->|Transient, budget remains| E[Pause-aware delay: retry same URL]
+    E --> B
+    D -->|Decode / exhausted retry| G{Explicit live backup remains?}
+    G -->|Yes: move forward once| B
+    G -->|No| F
+    H[Stop / standby / source or channel change] --> I[Invalidate lease and cancel delayed work]
