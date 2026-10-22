@@ -1,0 +1,590 @@
+{
+  "strings": [
+    {
+      "input": "",
+      "stripped": "",
+      "murmur0": 0,
+      "murmur10": 0,
+      "xx0": 0,
+      "xx10": 0,
+      "xxInsensitive": "0",
+      "utf8Hex": "",
+      "previousMurmur10": 0,
+      "previousXx0": 0,
+      "previousInsensitive": "0"
+    },
+    {
+      "input": "a",
+      "stripped": "a",
+      "murmur0": 1009084850,
+      "murmur10": 3451434720,
+      "xx0": 1426945110,
+      "xx10": 1865201081,
+      "xxInsensitive": "1426945110",
+      "utf8Hex": "61",
+      "previousMurmur10": 2946702603,
+      "previousXx0": 3433937976,
+      "previousInsensitive": "3433937976"
+    },
+    {
+      "input": "ab",
+      "stripped": "ab",
+      "murmur0": 2613040991,
+      "murmur10": 2754115252,
+      "xx0": 1234828371,
+      "xx10": 40163072,
+      "xxInsensitive": "1234828371",
+      "utf8Hex": "6162",
+      "previousMurmur10": 397291159,
+      "previousXx0": 1582334848,
+      "previousInsensitive": "1582334848"
+    },
+    {
+      "input": "abc",
+      "stripped": "abc",
+      "murmur0": 3017643002,
+      "murmur10": 949467219,
+      "xx0": 852579327,
+      "xx10": 2794519094,
+      "xxInsensitive": "852579327",
+      "utf8Hex": "616263",
+      "previousMurmur10": 3219524224,
+      "previousXx0": 2087908362,
+      "previousInsensitive": "2087908362"
+    },
+    {
+      "input": "abcd",
+      "stripped": "abcd",
+      "murmur0": 1139631978,
+      "murmur10": 1806541393,
+      "xx0": 2741253893,
+      "xx10": 857599246,
+      "xxInsensitive": "2741253893",
+      "utf8Hex": "61626364",
+      "previousMurmur10": 2081282592,
+      "previousXx0": 4069325216,
+      "previousInsensitive": "4069325216"
+    },
+    {
+      "input": "abcde",
+      "stripped": "abcde",
+      "murmur0": 3902511862,
+      "murmur10": 4010946809,
+      "xx0": 2537091483,
+      "xx10": 1374204861,
+      "xxInsensitive": "2537091483",
+      "utf8Hex": "6162636465",
+      "previousMurmur10": 2468427503,
+      "previousXx0": 660795784,
+      "previousInsensitive": "660795784"
+    },
+    {
+      "input": "abcdef",
+      "stripped": "abcdef",
+      "murmur0": 1635893381,
+      "murmur10": 3512597608,
+      "xx0": 2340214151,
+      "xx10": 1857730055,
+      "xxInsensitive": "2340214151",
+      "utf8Hex": "616263646566",
+      "previousMurmur10": 1738540342,
+      "previousXx0": 3375374373,
+      "previousInsensitive": "3375374373"
+    },
+    {
+      "input": "abcdefg",
+      "stripped": "abcdefg",
+      "murmur0": 2285673222,
+      "murmur10": 1018501161,
+      "xx0": 2647692211,
+      "xx10": 2099441436,
+      "xxInsensitive": "2647692211",
+      "utf8Hex": "61626364656667",
+      "previousMurmur10": 3561618403,
+      "previousXx0": 2815895264,
+      "previousInsensitive": "2815895264"
+    },
+    {
+      "input": "0123456789abcdef",
+      "stripped": "0123456789abcdef",
+      "murmur0": 919068895,
+      "murmur10": 1855205999,
+      "xx0": 3267648361,
+      "xx10": 2043383008,
+      "xxInsensitive": "3267648361",
+      "utf8Hex": "30313233343536373839616263646566",
+      "previousMurmur10": 1742798461,
+      "previousXx0": 3893769817,
+      "previousInsensitive": "3893769817"
+    },
+    {
+      "input": "0123456789abcdefg",
+      "stripped": "0123456789abcdefg",
+      "murmur0": 3803014761,
+      "murmur10": 123920535,
+      "xx0": 3430527511,
+      "xx10": 3791406115,
+      "xxInsensitive": "3430527511",
+      "utf8Hex": "3031323334353637383961626364656667",
+      "previousMurmur10": 422583832,
+      "previousXx0": 1214205295,
+      "previousInsensitive": "1214205295"
+    },
+    {
+      "input": "Привет мир",
+      "stripped": "Привет мир",
+      "murmur0": 4278667295,
+      "murmur10": 2884424225,
+      "xx0": 857954145,
+      "xx10": 3942207893,
+      "xxInsensitive": "2696946182",
+      "utf8Hex": "d09fd180d0b8d0b2d0b5d18220d0bcd0b8d180",
+      "previousMurmur10": 3196262861,
+      "previousXx0": 1055391504,
+      "previousInsensitive": "3615248400"
+    },
+    {
+      "input": "😀",
+      "stripped": "😀",
+      "murmur0": 3199479546,
+      "murmur10": 1438847663,
+      "xx0": 1127825596,
+      "xx10": 2870142502,
+      "xxInsensitive": "1127825596",
+      "utf8Hex": "f09f9880",
+      "previousMurmur10": 141584275,
+      "previousXx0": 3336200495,
+      "previousInsensitive": "3336200495"
+    },
+    {
+      "input": "http://epg.test/feed.xml.gz",
+      "stripped": "epg.test/feed.xml.gz",
+      "murmur0": 1972053813,
+      "murmur10": 2011282476,
+      "xx0": 437133486,
+      "xx10": 24430444,
+      "xxInsensitive": "437133486",
+      "utf8Hex": "687474703a2f2f6570672e746573742f666565642e786d6c2e677a",
+      "previousMurmur10": 3241762850,
+      "previousXx0": 1215546697,
+      "previousInsensitive": "1215546697"
+    },
+    {
+      "input": "https://epg.test/feed.xml.gz",
+      "stripped": "epg.test/feed.xml.gz",
+      "murmur0": 1589187955,
+      "murmur10": 3139836713,
+      "xx0": 77435088,
+      "xx10": 2051496704,
+      "xxInsensitive": "77435088",
+      "utf8Hex": "68747470733a2f2f6570672e746573742f666565642e786d6c2e677a",
+      "previousMurmur10": 2866985466,
+      "previousXx0": 2760383229,
+      "previousInsensitive": "2760383229"
+    },
+    {
+      "input": "EPG.Test/Feed.xml.gz",
+      "stripped": "EPG.Test/Feed.xml.gz",
+      "murmur0": 3842293766,
+      "murmur10": 3645259908,
+      "xx0": 3442742095,
+      "xx10": 3260427885,
+      "xxInsensitive": "2776296187",
+      "utf8Hex": "4550472e546573742f466565642e786d6c2e677a",
+      "previousMurmur10": 2739652598,
+      "previousXx0": 3059377539,
+      "previousInsensitive": "42302476"
+    }
+  ],
+  "bytes": [
+    {
+      "seed": 0,
+      "murmur": 0,
+      "xx": 46947589,
+      "length": 0,
+      "previousMurmur": 0,
+      "previousXx": 98491726
+    },
+    {
+      "seed": 10,
+      "murmur": 3911517328,
+      "xx": 3613670521,
+      "length": 0,
+      "previousMurmur": 3911517328,
+      "previousXx": 1721627540
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 2180083513,
+      "xx": 2422332061,
+      "length": 0,
+      "previousMurmur": 2180083513,
+      "previousXx": 1653322431
+    },
+    {
+      "seed": 0,
+      "murmur": 3831157163,
+      "xx": 949155633,
+      "length": 1,
+      "previousMurmur": 535079858,
+      "previousXx": 3736909468
+    },
+    {
+      "seed": 10,
+      "murmur": 2420199015,
+      "xx": 3690540170,
+      "length": 1,
+      "previousMurmur": 4242195163,
+      "previousXx": 2324077016
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 2929938122,
+      "xx": 94149272,
+      "length": 1,
+      "previousMurmur": 4164550868,
+      "previousXx": 1800982004
+    },
+    {
+      "seed": 0,
+      "murmur": 253329340,
+      "xx": 78854906,
+      "length": 2,
+      "previousMurmur": 1007408320,
+      "previousXx": 2173477633
+    },
+    {
+      "seed": 10,
+      "murmur": 2771106530,
+      "xx": 3043429399,
+      "length": 2,
+      "previousMurmur": 3375299748,
+      "previousXx": 1536960549
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 2204300623,
+      "xx": 1272270564,
+      "length": 2,
+      "previousMurmur": 3600139622,
+      "previousXx": 1490670616
+    },
+    {
+      "seed": 0,
+      "murmur": 459455679,
+      "xx": 3764339700,
+      "length": 3,
+      "previousMurmur": 409121357,
+      "previousXx": 3903150846
+    },
+    {
+      "seed": 10,
+      "murmur": 3535249241,
+      "xx": 1574395315,
+      "length": 3,
+      "previousMurmur": 3213889551,
+      "previousXx": 2866473488
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 1381733934,
+      "xx": 2874841010,
+      "length": 3,
+      "previousMurmur": 3039585819,
+      "previousXx": 2747019360
+    },
+    {
+      "seed": 0,
+      "murmur": 1208533726,
+      "xx": 2834851068,
+      "length": 4,
+      "previousMurmur": 3665574755,
+      "previousXx": 1806950426
+    },
+    {
+      "seed": 10,
+      "murmur": 1973009151,
+      "xx": 3433496005,
+      "length": 4,
+      "previousMurmur": 1068894964,
+      "previousXx": 2494036661
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 3995772033,
+      "xx": 3372295280,
+      "length": 4,
+      "previousMurmur": 3393169138,
+      "previousXx": 1495335311
+    },
+    {
+      "seed": 0,
+      "murmur": 50736438,
+      "xx": 2052593010,
+      "length": 5,
+      "previousMurmur": 2928750962,
+      "previousXx": 1704488283
+    },
+    {
+      "seed": 10,
+      "murmur": 49968093,
+      "xx": 1085320142,
+      "length": 5,
+      "previousMurmur": 1637377189,
+      "previousXx": 3998165709
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 2372801548,
+      "xx": 217645076,
+      "length": 5,
+      "previousMurmur": 3120807547,
+      "previousXx": 196722879
+    },
+    {
+      "seed": 0,
+      "murmur": 266054972,
+      "xx": 2225362345,
+      "length": 15,
+      "previousMurmur": 3799305752,
+      "previousXx": 3773940358
+    },
+    {
+      "seed": 10,
+      "murmur": 898607290,
+      "xx": 2580838286,
+      "length": 15,
+      "previousMurmur": 1654319646,
+      "previousXx": 3795030538
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 2865035500,
+      "xx": 3534011247,
+      "length": 15,
+      "previousMurmur": 632745876,
+      "previousXx": 4214038439
+    },
+    {
+      "seed": 0,
+      "murmur": 2541515067,
+      "xx": 3368474112,
+      "length": 16,
+      "previousMurmur": 832815385,
+      "previousXx": 3345683112
+    },
+    {
+      "seed": 10,
+      "murmur": 2403513159,
+      "xx": 680178,
+      "length": 16,
+      "previousMurmur": 2493925595,
+      "previousXx": 3109262230
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 205904483,
+      "xx": 2680194564,
+      "length": 16,
+      "previousMurmur": 2068671486,
+      "previousXx": 4052709538
+    },
+    {
+      "seed": 0,
+      "murmur": 2127835852,
+      "xx": 1898337763,
+      "length": 17,
+      "previousMurmur": 1694565406,
+      "previousXx": 551651678
+    },
+    {
+      "seed": 10,
+      "murmur": 2926429203,
+      "xx": 3198845965,
+      "length": 17,
+      "previousMurmur": 3740507345,
+      "previousXx": 995238573
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 1740225764,
+      "xx": 2630151762,
+      "length": 17,
+      "previousMurmur": 3204859997,
+      "previousXx": 501543623
+    },
+    {
+      "seed": 0,
+      "murmur": 681621841,
+      "xx": 2941510148,
+      "length": 18,
+      "previousMurmur": 1275085033,
+      "previousXx": 3234421077
+    },
+    {
+      "seed": 10,
+      "murmur": 120849455,
+      "xx": 1785796408,
+      "length": 18,
+      "previousMurmur": 2917141169,
+      "previousXx": 3208676914
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 1493895961,
+      "xx": 2408391608,
+      "length": 18,
+      "previousMurmur": 580408334,
+      "previousXx": 1233995273
+    },
+    {
+      "seed": 0,
+      "murmur": 452337653,
+      "xx": 3535553327,
+      "length": 19,
+      "previousMurmur": 774544167,
+      "previousXx": 3309286240
+    },
+    {
+      "seed": 10,
+      "murmur": 327254723,
+      "xx": 1431714232,
+      "length": 19,
+      "previousMurmur": 3897994410,
+      "previousXx": 2007906681
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 2878705005,
+      "xx": 4199002959,
+      "length": 19,
+      "previousMurmur": 2001114370,
+      "previousXx": 2532070018
+    },
+    {
+      "seed": 0,
+      "murmur": 2751804568,
+      "xx": 3115042846,
+      "length": 20,
+      "previousMurmur": 1973957187,
+      "previousXx": 223426550
+    },
+    {
+      "seed": 10,
+      "murmur": 2427647736,
+      "xx": 3995334341,
+      "length": 20,
+      "previousMurmur": 3006923701,
+      "previousXx": 666710858
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 2035461042,
+      "xx": 4035238493,
+      "length": 20,
+      "previousMurmur": 4042098672,
+      "previousXx": 3142059506
+    },
+    {
+      "seed": 0,
+      "murmur": 1639491483,
+      "xx": 2901688306,
+      "length": 31,
+      "previousMurmur": 564621223,
+      "previousXx": 1507363249
+    },
+    {
+      "seed": 10,
+      "murmur": 2316155766,
+      "xx": 724038678,
+      "length": 31,
+      "previousMurmur": 1066493454,
+      "previousXx": 3734980660
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 1324717104,
+      "xx": 1864665752,
+      "length": 31,
+      "previousMurmur": 1646595670,
+      "previousXx": 125514664
+    },
+    {
+      "seed": 0,
+      "murmur": 3261075012,
+      "xx": 2977703134,
+      "length": 32,
+      "previousMurmur": 1664367159,
+      "previousXx": 4093388488
+    },
+    {
+      "seed": 10,
+      "murmur": 3185209835,
+      "xx": 3094638184,
+      "length": 32,
+      "previousMurmur": 4219926680,
+      "previousXx": 1087585839
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 2276878969,
+      "xx": 899516131,
+      "length": 32,
+      "previousMurmur": 1513092500,
+      "previousXx": 1873428125
+    },
+    {
+      "seed": 0,
+      "murmur": 3994664840,
+      "xx": 354658490,
+      "length": 33,
+      "previousMurmur": 1830171867,
+      "previousXx": 4282854184
+    },
+    {
+      "seed": 10,
+      "murmur": 1004652434,
+      "xx": 3386117790,
+      "length": 33,
+      "previousMurmur": 1222936014,
+      "previousXx": 4031453057
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 2309080077,
+      "xx": 3783426596,
+      "length": 33,
+      "previousMurmur": 3806909459,
+      "previousXx": 2837279500
+    },
+    {
+      "seed": 0,
+      "murmur": 1558318282,
+      "xx": 2291578653,
+      "length": 64,
+      "previousMurmur": 433697858,
+      "previousXx": 3282871014
+    },
+    {
+      "seed": 10,
+      "murmur": 2308056049,
+      "xx": 1984869558,
+      "length": 64,
+      "previousMurmur": 931764858,
+      "previousXx": 2418210901
+    },
+    {
+      "seed": 4294967295,
+      "murmur": 552672630,
+      "xx": 2324714782,
+      "length": 64,
+      "previousMurmur": 1053653452,
+      "previousXx": 1894211423
+    }
+  ],
+  "xmltv": {
+    "url": "https://EPG.test/Feed.xml.gz",
+    "hash": "2776296187"
+  },
+  "note": "Legacy JS golden results. Byte fixtures use byte[i]=(47*i+length)%256. Previous fields identify persisted IDs from the incorrect TS port only."
+}

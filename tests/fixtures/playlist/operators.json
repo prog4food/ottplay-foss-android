@@ -1,0 +1,6207 @@
+{
+  "baseline": "7d47b0ca391e4b1d1fe282cb4bf11a2bfe17e80a",
+  "operators": [
+    "1ott",
+    "only4",
+    "shara-tv",
+    "tvteam",
+    "antifriz",
+    "edem",
+    "kb-team",
+    "shura"
+  ],
+  "media": [
+    "m3u",
+    "kb-team",
+    "antifriz"
+  ],
+  "cases": [
+    {
+      "input": "",
+      "operators": {
+        "1ott": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {}
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U\n",
+      "operators": {
+        "1ott": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {}
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1,One\nhttps://v.test/one\n#EXTINF:-1,Two\nhttps://v.test/two",
+      "operators": {
+        "1ott": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "One",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/one"
+            },
+            "two": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Two",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "aurl": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "ch_id": "one",
+              "channel_name": "One",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/one"
+            },
+            "two": {
+              "aurl": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "ch_id": "two",
+              "channel_name": "Two",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            null
+          ],
+          "channels": {
+            "undefined": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "One",
+              "epg": "",
+              "logo": "",
+              "rec": "0",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/one",
+              "utvg": ""
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            4114955067,
+            3047573423
+          ],
+          "channels": {
+            "3047573423": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Two",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/two",
+              "utvg": "kbc"
+            },
+            "4114955067": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "One",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/one",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "3047573423": {
+              "n": "Two",
+              "u": "kbc"
+            },
+            "4114955067": {
+              "n": "One",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "3047573423": "Two|kbc",
+            "4114955067": "One|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>One</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/one",
+              "title": "One"
+            },
+            {
+              "description": "<table><h2><center>Two</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/two",
+              "title": "Two"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>One</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/one",
+              "title": "One"
+            },
+            {
+              "description": "<table><h2><center>Two</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/two",
+              "title": "Two"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>One</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/one",
+              "title": "One"
+            },
+            {
+              "description": "<table><h2><center>Two</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/two",
+              "title": "Two"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1 group-title=\"News\" tvg-logo=\"https://l.test/a\",One\nhttps://v.test/a\n#EXTINF:-1,Two\nhttps://v.test/b",
+      "operators": {
+        "1ott": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "a",
+            "b"
+          ],
+          "channels": {
+            "a": {
+              "category": {
+                "class": 2,
+                "name": "News"
+              },
+              "channel_name": "One",
+              "epg": "",
+              "logo": "https://l.test/a",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            },
+            "b": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Two",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/b"
+            }
+          },
+          "groups": {
+            "News": [
+              "a"
+            ]
+          },
+          "groupOrder": [
+            "News"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "a",
+            "b"
+          ],
+          "channels": {
+            "a": {
+              "aurl": "",
+              "category": {
+                "class": 2,
+                "name": "News"
+              },
+              "ch_id": "a",
+              "channel_name": "One",
+              "epg": "",
+              "logo": "https://l.test/a",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            },
+            "b": {
+              "aurl": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "ch_id": "b",
+              "channel_name": "Two",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/b"
+            }
+          },
+          "groups": {
+            "News": [
+              "a"
+            ]
+          },
+          "groupOrder": [
+            "News"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            null
+          ],
+          "channels": {
+            "undefined": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": "News"
+              },
+              "channel_name": "One",
+              "epg": "",
+              "logo": "https://l.test/a",
+              "rec": "0",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/a",
+              "utvg": ""
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            3147444714,
+            4055849353
+          ],
+          "channels": {
+            "3147444714": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 2,
+                "name": "News"
+              },
+              "channel_name": "One",
+              "drm": "",
+              "epg": "",
+              "logo": "https://l.test/a",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/a",
+              "utvg": "kbc"
+            },
+            "4055849353": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 2,
+                "name": "News"
+              },
+              "channel_name": "Two",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/b",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {
+            "News": [
+              3147444714,
+              4055849353
+            ]
+          },
+          "groupOrder": [
+            "News"
+          ],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "3147444714": {
+              "n": "One",
+              "u": "kbc"
+            },
+            "4055849353": {
+              "n": "Two",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "4055849353": "Two|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>One</center></h2><img id=\"detal\" height=\"285\" src=\"https://l.test/a\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "https://l.test/a",
+              "stream_url": "https://v.test/a",
+              "title": "One"
+            },
+            {
+              "description": "<table><h2><center>Two</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/b",
+              "title": "Two"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>One</center></h2><img id=\"detal\" height=\"285\" src=\"https://l.test/a\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "https://l.test/a",
+              "stream_url": "https://v.test/a",
+              "title": "One"
+            },
+            {
+              "description": "<table><h2><center>Two</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/b",
+              "title": "Two"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>One</center></h2><img id=\"detal\" height=\"285\" src=\"https://l.test/a\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "https://l.test/a",
+              "stream_url": "https://v.test/a",
+              "title": "One"
+            },
+            {
+              "description": "<table><h2><center>Two</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/b",
+              "title": "Two"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1 group-title=\"News\" tvg-id=\"news\",First\nhttps://v.test/a\n#EXTINF:-1 group-title=\"Other\",Copy\nhttps://v.test/a\n#EXTINF:-1,Last\nhttps://v.test/c",
+      "operators": {
+        "1ott": {
+          "ids": [
+            "news"
+          ],
+          "channels": {
+            "news": {
+              "category": {
+                "class": 2,
+                "name": "News"
+              },
+              "channel_name": "First",
+              "epg": "news",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            }
+          },
+          "groups": {
+            "News": [
+              "news"
+            ]
+          },
+          "groupOrder": [
+            "News"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "a",
+            "c"
+          ],
+          "channels": {
+            "a": {
+              "category": {
+                "class": 2,
+                "name": "News"
+              },
+              "channel_name": "First",
+              "epg": "news",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            },
+            "c": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Last",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/c"
+            }
+          },
+          "groups": {
+            "News": [
+              "a"
+            ],
+            "Other": [
+              "a"
+            ]
+          },
+          "groupOrder": [
+            "News",
+            "Other"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "a",
+            "c"
+          ],
+          "channels": {
+            "a": {
+              "aurl": "",
+              "category": {
+                "class": 2,
+                "name": "News"
+              },
+              "ch_id": "a",
+              "channel_name": "First",
+              "epg": "news",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            },
+            "c": {
+              "aurl": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "ch_id": "c",
+              "channel_name": "Last",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/c"
+            }
+          },
+          "groups": {
+            "News": [
+              "a"
+            ]
+          },
+          "groupOrder": [
+            "News"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            null
+          ],
+          "channels": {
+            "undefined": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": "News"
+              },
+              "channel_name": "First",
+              "epg": "news",
+              "logo": "",
+              "rec": "0",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/a",
+              "utvg": ""
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            3147444714,
+            4009705306
+          ],
+          "channels": {
+            "3147444714": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 2,
+                "name": "News"
+              },
+              "channel_name": "First",
+              "drm": "",
+              "epg": "news",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/a",
+              "utvg": "kbc"
+            },
+            "4009705306": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 3,
+                "name": "Other"
+              },
+              "channel_name": "Last",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/c",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {
+            "News": [
+              3147444714
+            ],
+            "Other": [
+              3147444714,
+              4009705306
+            ]
+          },
+          "groupOrder": [
+            "News",
+            "Other"
+          ],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "3147444714": {
+              "e": "news",
+              "n": "First",
+              "u": "kbc"
+            },
+            "4009705306": {
+              "n": "Last",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "3147444714": "First|kbc",
+            "4009705306": "Last|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>First</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "First"
+            },
+            {
+              "description": "<table><h2><center>Copy</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "Copy"
+            },
+            {
+              "description": "<table><h2><center>Last</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/c",
+              "title": "Last"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>First</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "First"
+            },
+            {
+              "description": "<table><h2><center>Copy</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "Copy"
+            },
+            {
+              "description": "<table><h2><center>Last</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/c",
+              "title": "Last"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>First</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "First"
+            },
+            {
+              "description": "<table><h2><center>Copy</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "Copy"
+            },
+            {
+              "description": "<table><h2><center>Last</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/c",
+              "title": "Last"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1 group-title=\"News, world\" tvg-name=\"International, news\",Name, comma\nhttps://v.test/a",
+      "operators": {
+        "1ott": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "a"
+          ],
+          "channels": {
+            "a": {
+              "category": {
+                "class": 2,
+                "name": "News, world"
+              },
+              "channel_name": "world\" tvg-name=\"International, news\",Name, comma",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            }
+          },
+          "groups": {
+            "News, world": [
+              "a"
+            ]
+          },
+          "groupOrder": [
+            "News, world"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "a"
+          ],
+          "channels": {
+            "a": {
+              "aurl": "",
+              "category": {
+                "class": 2,
+                "name": "News, world"
+              },
+              "ch_id": "a",
+              "channel_name": "world\" tvg-name=\"International",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            }
+          },
+          "groups": {
+            "News, world": [
+              "a"
+            ]
+          },
+          "groupOrder": [
+            "News, world"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [
+            "International, news"
+          ],
+          "channels": {
+            "International, news": {
+              "category": {
+                "class": 2,
+                "name": "News, world"
+              },
+              "channel_name": "world\" tvg-name=\"International",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            }
+          },
+          "groups": {
+            "News, world": [
+              "International, news"
+            ]
+          },
+          "groupOrder": [
+            "News, world"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            null
+          ],
+          "channels": {
+            "undefined": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": "News, world"
+              },
+              "channel_name": "world\" tvg-name=\"International, news\",Name, comma",
+              "epg": "",
+              "logo": "",
+              "rec": "0",
+              "time": 0,
+              "time_to": 0,
+              "tn": "International, news",
+              "url": "https://v.test/a",
+              "utvg": ""
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            3147444714
+          ],
+          "channels": {
+            "3147444714": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 2,
+                "name": "News, world"
+              },
+              "channel_name": "world\" tvg-name=\"International, news\",Name, comma",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "International, news",
+              "url": "https://v.test/a",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {
+            "News, world": [
+              3147444714
+            ]
+          },
+          "groupOrder": [
+            "News, world"
+          ],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "3147444714": {
+              "n": "world\" tvg-name=\"International, news\",Name, comma",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "3147444714": "world\" tvg-name=\"International, news\",Name, comma|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>world\" tvg-name=\"International</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "world\" tvg-name=\"International"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>world\" tvg-name=\"International</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "world\" tvg-name=\"International"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>world\" tvg-name=\"International</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "world\" tvg-name=\"International"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U\r\n#EXTINF:-1 TVG-LOGO=\"https://l.test/a\" GROUP-TITLE=\"Caps\",É🎬\r\n#comment\r\n\r\nhttps://v.test/A\r\n",
+      "operators": {
+        "1ott": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {}
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1,\n#EXTGRP:Radio\nhttps://v.test/a\n#EXTINF:-1 tvg-name=\"TVG\" tvg-id=\"id\",\nhttps://v.test/b",
+      "operators": {
+        "1ott": {
+          "ids": [
+            "id"
+          ],
+          "channels": {
+            "id": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "epg": "id",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/b"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "b"
+          ],
+          "channels": {
+            "b": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "epg": "id",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/b"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "a",
+            "b"
+          ],
+          "channels": {
+            "a": {
+              "aurl": "",
+              "category": {
+                "class": 2,
+                "name": "Radio"
+              },
+              "ch_id": "a",
+              "channel_name": "",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            },
+            "b": {
+              "aurl": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "ch_id": "b",
+              "channel_name": "",
+              "epg": "id",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/b"
+            }
+          },
+          "groups": {
+            "Radio": [
+              "a"
+            ]
+          },
+          "groupOrder": [
+            "Radio"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [
+            "TVG"
+          ],
+          "channels": {
+            "TVG": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/b"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            null
+          ],
+          "channels": {
+            "undefined": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": "Radio"
+              },
+              "channel_name": "",
+              "epg": "",
+              "logo": "",
+              "rec": "0",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/a",
+              "utvg": ""
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            3147444714,
+            4055849353
+          ],
+          "channels": {
+            "3147444714": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 2,
+                "name": "Radio"
+              },
+              "channel_name": "",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/a",
+              "utvg": "kbc"
+            },
+            "4055849353": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 2,
+                "name": "Radio"
+              },
+              "channel_name": "",
+              "drm": "",
+              "epg": "id",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "TVG",
+              "url": "https://v.test/b",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {
+            "Radio": [
+              3147444714,
+              4055849353
+            ]
+          },
+          "groupOrder": [
+            "Radio"
+          ],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "3147444714": {
+              "n": "",
+              "u": "kbc"
+            },
+            "4055849353": {
+              "e": "id",
+              "n": "TVG",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "3147444714": "|kbc",
+            "4055849353": "|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": ""
+            },
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/b",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": ""
+            },
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/b",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": ""
+            },
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/b",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U catchup-days=\"3\" catchup=\"append\" catchup-source=\"?utc=${start}\" url-tvg=\"https://epg.test/a.xml\"\n#EXTINF:-1 catchup-days=\"0\" tvg-shift=\"5.5\" tvg-id=\"news\" tvg-source=\"#1\",News\nhttps://v.test/a\n#EXTINF:-1 tvg-rec=\"1.5\" tvg-name=\"Movie\",\nhttps://v.test/b",
+      "operators": {
+        "1ott": {
+          "ids": [
+            "news"
+          ],
+          "channels": {
+            "news": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "News",
+              "epg": "news",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "a",
+            "b"
+          ],
+          "channels": {
+            "a": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "News",
+              "epg": "news",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            },
+            "b": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/b"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "a",
+            "b"
+          ],
+          "channels": {
+            "a": {
+              "aurl": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "ch_id": "a",
+              "channel_name": "News",
+              "epg": "news",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            },
+            "b": {
+              "aurl": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "ch_id": "b",
+              "channel_name": "",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/b"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [
+            "Movie"
+          ],
+          "channels": {
+            "Movie": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/b"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            null
+          ],
+          "channels": {
+            "undefined": {
+              "ca": "append",
+              "caso": "?utc=${start}",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "News",
+              "epg": "news",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/a",
+              "utvg": "https://epg.test/a.xml"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            3147444714,
+            4055849353
+          ],
+          "channels": {
+            "3147444714": {
+              "ca": "append",
+              "caso": "?utc=${start}",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "News",
+              "drm": "",
+              "epg": "news",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/a",
+              "utvg": "kbc"
+            },
+            "4055849353": {
+              "ca": "append",
+              "caso": "?utc=${start}",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": 24,
+              "time": 0,
+              "time_to": 0,
+              "tn": "Movie",
+              "url": "https://v.test/b",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "3147444714": {
+              "e": "news",
+              "n": "News",
+              "u": "kbc"
+            },
+            "4055849353": {
+              "n": "",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "3147444714": "News|kbc",
+            "4055849353": "|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>News</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "News"
+            },
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/b",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>News</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "News"
+            },
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/b",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>News</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "News"
+            },
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/b",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U foss-tvg=\"!epg-server::https://epg.test,guide::https://epg.test/g.xml\"\n#EXTINF:-1 tvg-id=\"id\" url-tvg=\"#guide\",Name\nhttps://v.test/a",
+      "operators": {
+        "1ott": {
+          "ids": [
+            "id"
+          ],
+          "channels": {
+            "id": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Name",
+              "epg": "id",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "a"
+          ],
+          "channels": {
+            "a": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Name",
+              "epg": "id",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "a"
+          ],
+          "channels": {
+            "a": {
+              "aurl": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "ch_id": "a",
+              "channel_name": "Name",
+              "epg": "id",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            null
+          ],
+          "channels": {
+            "undefined": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Name",
+              "epg": "id",
+              "logo": "",
+              "rec": "0",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/a",
+              "utvg": "#guide"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            3147444714
+          ],
+          "channels": {
+            "3147444714": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Name",
+              "drm": "",
+              "epg": "id",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/a",
+              "utvg": "#guide"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "3147444714": {
+              "e": "id",
+              "n": "Name",
+              "u": "#guide"
+            }
+          },
+          "logoBody": {
+            "3147444714": "Name|#guide"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>Name</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "Name"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>Name</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "Name"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>Name</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "Name"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1,Missing\n#EXTINF:-1,Present\nhttps://v.test/b",
+      "operators": {
+        "1ott": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "b"
+          ],
+          "channels": {
+            "b": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Present",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/b"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "b"
+          ],
+          "channels": {
+            "b": {
+              "aurl": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "ch_id": "b",
+              "channel_name": "Present",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/b"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            null
+          ],
+          "channels": {
+            "undefined": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Present",
+              "epg": "",
+              "logo": "",
+              "rec": "0",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/b",
+              "utvg": ""
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            4055849353
+          ],
+          "channels": {
+            "4055849353": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Present",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/b",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "4055849353": {
+              "n": "Present",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "4055849353": "Present|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>Present</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/b",
+              "title": "Present"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>Present</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/b",
+              "title": "Present"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>Present</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/b",
+              "title": "Present"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1 group-title=News tvg-logo=relative.png,Name\nrtsp://v.test/a\n",
+      "operators": {
+        "1ott": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "a"
+          ],
+          "channels": {
+            "a": {
+              "category": {
+                "class": 2,
+                "name": "News"
+              },
+              "channel_name": "Name",
+              "epg": "",
+              "logo": "relative.png",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "rtsp://v.test/a"
+            }
+          },
+          "groups": {
+            "News": [
+              "a"
+            ]
+          },
+          "groupOrder": [
+            "News"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "a"
+          ],
+          "channels": {
+            "a": {
+              "aurl": "",
+              "category": {
+                "class": 2,
+                "name": "News"
+              },
+              "ch_id": "a",
+              "channel_name": "Name",
+              "epg": "",
+              "logo": "relative.png",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "rtsp://v.test/a"
+            }
+          },
+          "groups": {
+            "News": [
+              "a"
+            ]
+          },
+          "groupOrder": [
+            "News"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            null
+          ],
+          "channels": {
+            "undefined": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": "News"
+              },
+              "channel_name": "Name",
+              "epg": "",
+              "logo": "",
+              "rec": "0",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "rtsp://v.test/a",
+              "utvg": ""
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            124484906
+          ],
+          "channels": {
+            "124484906": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 2,
+                "name": "News"
+              },
+              "channel_name": "Name",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "rtsp://v.test/a",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {
+            "News": [
+              124484906
+            ]
+          },
+          "groupOrder": [
+            "News"
+          ],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "124484906": {
+              "n": "Name",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "124484906": "Name|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>Name</center></h2><img id=\"detal\" height=\"285\" src=\"relative.png\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "relative.png",
+              "stream_url": "rtsp://v.test/a",
+              "title": "Name"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>Name</center></h2><img id=\"detal\" height=\"285\" src=\"relative.png\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "relative.png",
+              "stream_url": "rtsp://v.test/a",
+              "title": "Name"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>Name</center></h2><img id=\"detal\" height=\"285\" src=\"relative.png\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "relative.png",
+              "stream_url": "rtsp://v.test/a",
+              "title": "Name"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1 group-title=\"\" tvg-name=\"Fallback\" tvg-id=\"one\" tvg-logo=\"/relative\", \nhttps://v.test/one\n",
+      "operators": {
+        "1ott": {
+          "ids": [
+            "one"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "epg": "one",
+              "logo": "/relative",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/one"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "one"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "epg": "one",
+              "logo": "/relative",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/one"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "one"
+          ],
+          "channels": {
+            "one": {
+              "aurl": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "ch_id": "one",
+              "channel_name": "",
+              "epg": "one",
+              "logo": "/relative",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/one"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [
+            "Fallback"
+          ],
+          "channels": {
+            "Fallback": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "logo": "/relative",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/one"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            null
+          ],
+          "channels": {
+            "undefined": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "epg": "one",
+              "logo": "",
+              "rec": "0",
+              "time": 0,
+              "time_to": 0,
+              "tn": "Fallback",
+              "url": "https://v.test/one",
+              "utvg": ""
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            4114955067
+          ],
+          "channels": {
+            "4114955067": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "drm": "",
+              "epg": "one",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "Fallback",
+              "url": "https://v.test/one",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "4114955067": {
+              "e": "one",
+              "n": "Fallback",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "4114955067": "|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2><img id=\"detal\" height=\"285\" src=\"/relative\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "/relative",
+              "stream_url": "https://v.test/one",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2><img id=\"detal\" height=\"285\" src=\"/relative\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "/relative",
+              "stream_url": "https://v.test/one",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2><img id=\"detal\" height=\"285\" src=\"/relative\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "/relative",
+              "stream_url": "https://v.test/one",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1,One\nhttps://v.test/a\nignored trailing\n#extinf:-1,Lowercase\nhttps://v.test/b",
+      "operators": {
+        "1ott": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "a"
+          ],
+          "channels": {
+            "a": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "One",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "a"
+          ],
+          "channels": {
+            "a": {
+              "aurl": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "ch_id": "a",
+              "channel_name": "One",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "https://v.test/a"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            null
+          ],
+          "channels": {
+            "undefined": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "One",
+              "epg": "",
+              "logo": "",
+              "rec": "0",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/a",
+              "utvg": ""
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            3147444714
+          ],
+          "channels": {
+            "3147444714": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "One",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "https://v.test/a",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "3147444714": {
+              "n": "One",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "3147444714": "One|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>One</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "One"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>One</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "One"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>One</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "https://v.test/a",
+              "title": "One"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U \n#EXTINF:-1 group-title=\"A\" tvg-id=\"epg\" tvg-name=\"one\" tvg-rec=\"4\" timeshift=\"2\" drm=\"clear\" tvg-logo=\"https://i/logo\",First, comma\nhttp://v.test/token/one/file.ts?q=1\n#EXTINF:-1 group-title=\"B\" tvg-name=\"two\",Second\nhttp://v.test/token/two/file.ts\n#EXTINF:-1 group-title=\"C\",Duplicate\nhttp://v.test/token/one/file.ts?q=1",
+      "operators": {
+        "1ott": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/file.ts?q=1"
+            },
+            "two": {
+              "category": {
+                "class": 3,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/two/file.ts"
+            }
+          },
+          "groups": {
+            "A": [
+              "one"
+            ],
+            "B": [
+              "two"
+            ],
+            "C": [
+              "one"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First, comma",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/file.ts?q=1"
+            }
+          },
+          "groups": {
+            "A": [
+              "token"
+            ],
+            "B": [
+              "token"
+            ],
+            "C": [
+              "token"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "aurl": "",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "ch_id": "token",
+              "channel_name": "First",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/file.ts?q=1"
+            }
+          },
+          "groups": {
+            "A": [
+              "token"
+            ]
+          },
+          "groupOrder": [
+            "A"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First",
+              "logo": "https://i/logo",
+              "rec": 336,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/file.ts?q=1"
+            },
+            "two": {
+              "category": {
+                "class": 3,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/two/file.ts"
+            }
+          },
+          "groups": {
+            "A": [
+              "one"
+            ],
+            "B": [
+              "two"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [
+            "file"
+          ],
+          "channels": {
+            "file": {
+              "category": {
+                "class": 2,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "epg": "",
+              "epg_id": "",
+              "logo": "",
+              "rec": 0,
+              "server": "v.test",
+              "time": 0,
+              "time_to": 0,
+              "token": "two",
+              "url": "http://v.test/token/two/file.ts"
+            }
+          },
+          "groups": {
+            "B": [
+              "file"
+            ],
+            "C": [
+              "file"
+            ]
+          },
+          "groupOrder": [
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            "file.ts?q=1",
+            "file.ts"
+          ],
+          "channels": {
+            "file.ts?q=1": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First, comma",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 48,
+              "time": 0,
+              "time_to": 0,
+              "tn": "one",
+              "url": "http://v.test/token/one/file.ts?q=1",
+              "utvg": ""
+            },
+            "file.ts": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 3,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "epg": "",
+              "logo": "",
+              "rec": "0",
+              "time": 0,
+              "time_to": 0,
+              "tn": "two",
+              "url": "http://v.test/token/two/file.ts",
+              "utvg": ""
+            }
+          },
+          "groups": {
+            "A": [
+              "file.ts?q=1"
+            ],
+            "B": [
+              "file.ts"
+            ],
+            "C": [
+              "file.ts?q=1"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            3668871031,
+            2209136804
+          ],
+          "channels": {
+            "2209136804": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 3,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "two",
+              "url": "http://v.test/token/two/file.ts",
+              "utvg": "kbc"
+            },
+            "3668871031": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First, comma",
+              "drm": "clear",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 48,
+              "time": 0,
+              "time_to": 0,
+              "tn": "one",
+              "url": "http://v.test/token/one/file.ts?q=1",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {
+            "A": [
+              3668871031
+            ],
+            "B": [
+              2209136804
+            ],
+            "C": [
+              3668871031
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "2209136804": {
+              "n": "Second",
+              "u": "kbc"
+            },
+            "3668871031": {
+              "e": "epg",
+              "n": "one",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "2209136804": "Second|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One",
+              "category": {
+                "class": 4,
+                "name": "C"
+              }
+            },
+            "two": {
+              "channel_name": "Two",
+              "category": {
+                "class": 3,
+                "name": "B"
+              }
+            }
+          },
+          "groups": {
+            "A": [
+              "one"
+            ],
+            "B": [
+              "two"
+            ],
+            "C": [
+              "one"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>First</center></h2><img id=\"detal\" height=\"285\" src=\"https://i/logo\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "https://i/logo",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "First"
+            },
+            {
+              "description": "<table><h2><center>Second</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/file.ts",
+              "title": "Second"
+            },
+            {
+              "description": "<table><h2><center>Duplicate</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "Duplicate"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>First</center></h2><img id=\"detal\" height=\"285\" src=\"https://i/logo\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "https://i/logo",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "First"
+            },
+            {
+              "description": "<table><h2><center>Second</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/file.ts",
+              "title": "Second"
+            },
+            {
+              "description": "<table><h2><center>Duplicate</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "Duplicate"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>First</center></h2><img id=\"detal\" height=\"285\" src=\"https://i/logo\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "https://i/logo",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "First"
+            },
+            {
+              "description": "<table><h2><center>Second</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/file.ts",
+              "title": "Second"
+            },
+            {
+              "description": "<table><h2><center>Duplicate</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "Duplicate"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U \n#EXTINF:-1 group-title=\"A\",\n#EXTGRP:Other\nhttp://v.test/token/one/a.ts\n#EXTINF:-1 tvg-name=\"two\",\n#comment\n\nhttp://v.test/token/two/a.ts",
+      "operators": {
+        "1ott": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "aurl": "",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "ch_id": "token",
+              "channel_name": "",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            }
+          },
+          "groups": {
+            "A": [
+              "token"
+            ]
+          },
+          "groupOrder": [
+            "A"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [
+            "two"
+          ],
+          "channels": {
+            "two": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "#comment"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [
+            "a"
+          ],
+          "channels": {
+            "a": {
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "",
+              "epg": "",
+              "epg_id": "",
+              "logo": "",
+              "rec": 0,
+              "server": "v.test",
+              "time": 0,
+              "time_to": 0,
+              "token": "one",
+              "url": "http://v.test/token/one/a.ts"
+            }
+          },
+          "groups": {
+            "A": [
+              "a"
+            ]
+          },
+          "groupOrder": [
+            "A"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            null
+          ],
+          "channels": {
+            "undefined": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": "A"
+              },
+              "channel_name": "",
+              "epg": "",
+              "logo": "",
+              "rec": "0",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "http://v.test/token/one/a.ts",
+              "utvg": ""
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            1081521924
+          ],
+          "channels": {
+            "1081521924": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "http://v.test/token/one/a.ts",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {
+            "A": [
+              1081521924
+            ]
+          },
+          "groupOrder": [
+            "A"
+          ],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "1081521924": {
+              "n": "",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "1081521924": "|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U \n#EXTINF:-1 tvg-name=\"one\"\nhttp://v.test/token/one/a.ts\n#EXTINF:-1 tvg-name=\"two\",Good\nhttp://v.test/token/two/a.ts",
+      "operators": {
+        "1ott": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "??? No channel name",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            },
+            "two": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Good",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/two/a.ts"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "aurl": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "ch_id": "token",
+              "channel_name": "??? Нет названия канала",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "??? No channel name",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            },
+            "two": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Good",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/two/a.ts"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "edem": {
+          "ids": [
+            "a.ts"
+          ],
+          "channels": {
+            "a.ts": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "??? No channel name",
+              "epg": "",
+              "logo": "",
+              "rec": "0",
+              "time": 0,
+              "time_to": 0,
+              "tn": "one",
+              "url": "http://v.test/token/one/a.ts",
+              "utvg": ""
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            1081521924,
+            2592803622
+          ],
+          "channels": {
+            "1081521924": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "??? No channel name",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "one",
+              "url": "http://v.test/token/one/a.ts",
+              "utvg": "kbc"
+            },
+            "2592803622": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Good",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": "",
+              "time": 0,
+              "time_to": 0,
+              "tn": "two",
+              "url": "http://v.test/token/two/a.ts",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "1081521924": {
+              "n": "??? No channel name",
+              "u": "kbc"
+            },
+            "2592803622": {
+              "n": "Good",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "1081521924": "??? No channel name|kbc",
+            "2592803622": "Good|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One",
+              "category": {
+                "class": 1,
+                "name": ""
+              }
+            },
+            "two": {
+              "channel_name": "Two",
+              "category": {
+                "class": 1,
+                "name": ""
+              }
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>??? Нет названия</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": "??? Нет названия"
+            },
+            {
+              "description": "<table><h2><center>Good</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/a.ts",
+              "title": "Good"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>??? No channel name</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": "??? No channel name"
+            },
+            {
+              "description": "<table><h2><center>Good</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/a.ts",
+              "title": "Good"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>??? Нет названия</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": "??? Нет названия"
+            },
+            {
+              "description": "<table><h2><center>Good</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/a.ts",
+              "title": "Good"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U catchup-days=\"2\" catchup=\"append\" catchup-source=\"?s={utc}\" url-tvg=\"guide\"\n#EXTINF:-1 group-title=\"A\" tvg-id=\"epg\" tvg-name=\"one\" tvg-rec=\"4\" timeshift=\"2\" drm=\"clear\" tvg-logo=\"https://i/logo\",First, comma\nhttp://v.test/token/one/file.ts?q=1\n#EXTINF:-1 group-title=\"B\" tvg-name=\"two\",Second\nhttp://v.test/token/two/file.ts\n#EXTINF:-1 group-title=\"C\",Duplicate\nhttp://v.test/token/one/file.ts?q=1",
+      "operators": {
+        "1ott": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/file.ts?q=1"
+            },
+            "two": {
+              "category": {
+                "class": 3,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/two/file.ts"
+            }
+          },
+          "groups": {
+            "A": [
+              "one"
+            ],
+            "B": [
+              "two"
+            ],
+            "C": [
+              "one"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First, comma",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/file.ts?q=1"
+            }
+          },
+          "groups": {
+            "A": [
+              "token"
+            ],
+            "B": [
+              "token"
+            ],
+            "C": [
+              "token"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "aurl": "",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "ch_id": "token",
+              "channel_name": "First",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/file.ts?q=1"
+            }
+          },
+          "groups": {
+            "A": [
+              "token"
+            ]
+          },
+          "groupOrder": [
+            "A"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First",
+              "logo": "https://i/logo",
+              "rec": 336,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/file.ts?q=1"
+            },
+            "two": {
+              "category": {
+                "class": 3,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/two/file.ts"
+            }
+          },
+          "groups": {
+            "A": [
+              "one"
+            ],
+            "B": [
+              "two"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [
+            "file"
+          ],
+          "channels": {
+            "file": {
+              "category": {
+                "class": 2,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "epg": "",
+              "epg_id": "",
+              "logo": "",
+              "rec": 0,
+              "server": "v.test",
+              "time": 0,
+              "time_to": 0,
+              "token": "two",
+              "url": "http://v.test/token/two/file.ts"
+            }
+          },
+          "groups": {
+            "B": [
+              "file"
+            ],
+            "C": [
+              "file"
+            ]
+          },
+          "groupOrder": [
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            "file.ts?q=1",
+            "file.ts"
+          ],
+          "channels": {
+            "file.ts?q=1": {
+              "ca": "append",
+              "caso": "?s={utc}",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First, comma",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 48,
+              "time": 0,
+              "time_to": 0,
+              "tn": "one",
+              "url": "http://v.test/token/one/file.ts?q=1",
+              "utvg": "guide"
+            },
+            "file.ts": {
+              "ca": "append",
+              "caso": "?s={utc}",
+              "category": {
+                "class": 3,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "epg": "",
+              "logo": "",
+              "rec": 48,
+              "time": 0,
+              "time_to": 0,
+              "tn": "two",
+              "url": "http://v.test/token/two/file.ts",
+              "utvg": "guide"
+            }
+          },
+          "groups": {
+            "A": [
+              "file.ts?q=1"
+            ],
+            "B": [
+              "file.ts"
+            ],
+            "C": [
+              "file.ts?q=1"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            3668871031,
+            2209136804
+          ],
+          "channels": {
+            "2209136804": {
+              "ca": "append",
+              "caso": "?s={utc}",
+              "category": {
+                "class": 3,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": 48,
+              "time": 0,
+              "time_to": 0,
+              "tn": "two",
+              "url": "http://v.test/token/two/file.ts",
+              "utvg": "kbc"
+            },
+            "3668871031": {
+              "ca": "append",
+              "caso": "?s={utc}",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First, comma",
+              "drm": "clear",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 48,
+              "time": 0,
+              "time_to": 0,
+              "tn": "one",
+              "url": "http://v.test/token/one/file.ts?q=1",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {
+            "A": [
+              3668871031
+            ],
+            "B": [
+              2209136804
+            ],
+            "C": [
+              3668871031
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "2209136804": {
+              "n": "Second",
+              "u": "kbc"
+            },
+            "3668871031": {
+              "e": "epg",
+              "n": "one",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "2209136804": "Second|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One",
+              "category": {
+                "class": 4,
+                "name": "C"
+              }
+            },
+            "two": {
+              "channel_name": "Two",
+              "category": {
+                "class": 3,
+                "name": "B"
+              }
+            }
+          },
+          "groups": {
+            "A": [
+              "one"
+            ],
+            "B": [
+              "two"
+            ],
+            "C": [
+              "one"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>First</center></h2><img id=\"detal\" height=\"285\" src=\"https://i/logo\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "https://i/logo",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "First"
+            },
+            {
+              "description": "<table><h2><center>Second</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/file.ts",
+              "title": "Second"
+            },
+            {
+              "description": "<table><h2><center>Duplicate</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "Duplicate"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>First</center></h2><img id=\"detal\" height=\"285\" src=\"https://i/logo\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "https://i/logo",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "First"
+            },
+            {
+              "description": "<table><h2><center>Second</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/file.ts",
+              "title": "Second"
+            },
+            {
+              "description": "<table><h2><center>Duplicate</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "Duplicate"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>First</center></h2><img id=\"detal\" height=\"285\" src=\"https://i/logo\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "https://i/logo",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "First"
+            },
+            {
+              "description": "<table><h2><center>Second</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/file.ts",
+              "title": "Second"
+            },
+            {
+              "description": "<table><h2><center>Duplicate</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "Duplicate"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U catchup-days=\"2\" catchup=\"append\" catchup-source=\"?s={utc}\" url-tvg=\"guide\"\n#EXTINF:-1 group-title=\"A\",\n#EXTGRP:Other\nhttp://v.test/token/one/a.ts\n#EXTINF:-1 tvg-name=\"two\",\n#comment\n\nhttp://v.test/token/two/a.ts",
+      "operators": {
+        "1ott": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "aurl": "",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "ch_id": "token",
+              "channel_name": "",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            }
+          },
+          "groups": {
+            "A": [
+              "token"
+            ]
+          },
+          "groupOrder": [
+            "A"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [
+            "two"
+          ],
+          "channels": {
+            "two": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "#comment"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [
+            "a"
+          ],
+          "channels": {
+            "a": {
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "",
+              "epg": "",
+              "epg_id": "",
+              "logo": "",
+              "rec": 0,
+              "server": "v.test",
+              "time": 0,
+              "time_to": 0,
+              "token": "one",
+              "url": "http://v.test/token/one/a.ts"
+            }
+          },
+          "groups": {
+            "A": [
+              "a"
+            ]
+          },
+          "groupOrder": [
+            "A"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            null
+          ],
+          "channels": {
+            "undefined": {
+              "ca": "append",
+              "caso": "?s={utc}",
+              "category": {
+                "class": 1,
+                "name": "A"
+              },
+              "channel_name": "",
+              "epg": "",
+              "logo": "",
+              "rec": 48,
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "http://v.test/token/one/a.ts",
+              "utvg": "guide"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            1081521924
+          ],
+          "channels": {
+            "1081521924": {
+              "ca": "append",
+              "caso": "?s={utc}",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": 48,
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "http://v.test/token/one/a.ts",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {
+            "A": [
+              1081521924
+            ]
+          },
+          "groupOrder": [
+            "A"
+          ],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "1081521924": {
+              "n": "",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "1081521924": "|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U catchup-days=\"2\" catchup=\"append\" catchup-source=\"?s={utc}\" url-tvg=\"guide\"\n#EXTINF:-1 tvg-name=\"one\"\nhttp://v.test/token/one/a.ts\n#EXTINF:-1 tvg-name=\"two\",Good\nhttp://v.test/token/two/a.ts",
+      "operators": {
+        "1ott": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "??? No channel name",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            },
+            "two": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Good",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/two/a.ts"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "aurl": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "ch_id": "token",
+              "channel_name": "??? Нет названия канала",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "??? No channel name",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            },
+            "two": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Good",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/two/a.ts"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "edem": {
+          "ids": [
+            "a.ts"
+          ],
+          "channels": {
+            "a.ts": {
+              "ca": "append",
+              "caso": "?s={utc}",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "??? No channel name",
+              "epg": "",
+              "logo": "",
+              "rec": 48,
+              "time": 0,
+              "time_to": 0,
+              "tn": "one",
+              "url": "http://v.test/token/one/a.ts",
+              "utvg": "guide"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            1081521924,
+            2592803622
+          ],
+          "channels": {
+            "1081521924": {
+              "ca": "append",
+              "caso": "?s={utc}",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "??? No channel name",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": 48,
+              "time": 0,
+              "time_to": 0,
+              "tn": "one",
+              "url": "http://v.test/token/one/a.ts",
+              "utvg": "kbc"
+            },
+            "2592803622": {
+              "ca": "append",
+              "caso": "?s={utc}",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Good",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": 48,
+              "time": 0,
+              "time_to": 0,
+              "tn": "two",
+              "url": "http://v.test/token/two/a.ts",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "1081521924": {
+              "n": "??? No channel name",
+              "u": "kbc"
+            },
+            "2592803622": {
+              "n": "Good",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "1081521924": "??? No channel name|kbc",
+            "2592803622": "Good|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One",
+              "category": {
+                "class": 1,
+                "name": ""
+              }
+            },
+            "two": {
+              "channel_name": "Two",
+              "category": {
+                "class": 1,
+                "name": ""
+              }
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>??? Нет названия</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": "??? Нет названия"
+            },
+            {
+              "description": "<table><h2><center>Good</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/a.ts",
+              "title": "Good"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>??? No channel name</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": "??? No channel name"
+            },
+            {
+              "description": "<table><h2><center>Good</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/a.ts",
+              "title": "Good"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>??? Нет названия</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": "??? Нет названия"
+            },
+            {
+              "description": "<table><h2><center>Good</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/a.ts",
+              "title": "Good"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U timeshift=\"bad\"\n#EXTINF:-1 group-title=\"A\" tvg-id=\"epg\" tvg-name=\"one\" tvg-rec=\"4\" timeshift=\"2\" drm=\"clear\" tvg-logo=\"https://i/logo\",First, comma\nhttp://v.test/token/one/file.ts?q=1\n#EXTINF:-1 group-title=\"B\" tvg-name=\"two\",Second\nhttp://v.test/token/two/file.ts\n#EXTINF:-1 group-title=\"C\",Duplicate\nhttp://v.test/token/one/file.ts?q=1",
+      "operators": {
+        "1ott": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/file.ts?q=1"
+            },
+            "two": {
+              "category": {
+                "class": 3,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/two/file.ts"
+            }
+          },
+          "groups": {
+            "A": [
+              "one"
+            ],
+            "B": [
+              "two"
+            ],
+            "C": [
+              "one"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First, comma",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/file.ts?q=1"
+            }
+          },
+          "groups": {
+            "A": [
+              "token"
+            ],
+            "B": [
+              "token"
+            ],
+            "C": [
+              "token"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "aurl": "",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "ch_id": "token",
+              "channel_name": "First",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/file.ts?q=1"
+            }
+          },
+          "groups": {
+            "A": [
+              "token"
+            ]
+          },
+          "groupOrder": [
+            "A"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First",
+              "logo": "https://i/logo",
+              "rec": 336,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/file.ts?q=1"
+            },
+            "two": {
+              "category": {
+                "class": 3,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/two/file.ts"
+            }
+          },
+          "groups": {
+            "A": [
+              "one"
+            ],
+            "B": [
+              "two"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [
+            "file"
+          ],
+          "channels": {
+            "file": {
+              "category": {
+                "class": 2,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "epg": "",
+              "epg_id": "",
+              "logo": "",
+              "rec": 0,
+              "server": "v.test",
+              "time": 0,
+              "time_to": 0,
+              "token": "two",
+              "url": "http://v.test/token/two/file.ts"
+            }
+          },
+          "groups": {
+            "B": [
+              "file"
+            ],
+            "C": [
+              "file"
+            ]
+          },
+          "groupOrder": [
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            "file.ts?q=1",
+            "file.ts"
+          ],
+          "channels": {
+            "file.ts?q=1": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First, comma",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 48,
+              "time": 0,
+              "time_to": 0,
+              "tn": "one",
+              "url": "http://v.test/token/one/file.ts?q=1",
+              "utvg": ""
+            },
+            "file.ts": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 3,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "tn": "two",
+              "url": "http://v.test/token/two/file.ts",
+              "utvg": ""
+            }
+          },
+          "groups": {
+            "A": [
+              "file.ts?q=1"
+            ],
+            "B": [
+              "file.ts"
+            ],
+            "C": [
+              "file.ts?q=1"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            3668871031,
+            2209136804
+          ],
+          "channels": {
+            "2209136804": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 3,
+                "name": "B"
+              },
+              "channel_name": "Second",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "tn": "two",
+              "url": "http://v.test/token/two/file.ts",
+              "utvg": "kbc"
+            },
+            "3668871031": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "First, comma",
+              "drm": "clear",
+              "epg": "epg",
+              "logo": "https://i/logo",
+              "rec": 48,
+              "time": 0,
+              "time_to": 0,
+              "tn": "one",
+              "url": "http://v.test/token/one/file.ts?q=1",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {
+            "A": [
+              3668871031
+            ],
+            "B": [
+              2209136804
+            ],
+            "C": [
+              3668871031
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "2209136804": {
+              "n": "Second",
+              "u": "kbc"
+            },
+            "3668871031": {
+              "e": "epg",
+              "n": "one",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "2209136804": "Second|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One",
+              "category": {
+                "class": 4,
+                "name": "C"
+              }
+            },
+            "two": {
+              "channel_name": "Two",
+              "category": {
+                "class": 3,
+                "name": "B"
+              }
+            }
+          },
+          "groups": {
+            "A": [
+              "one"
+            ],
+            "B": [
+              "two"
+            ],
+            "C": [
+              "one"
+            ]
+          },
+          "groupOrder": [
+            "A",
+            "B",
+            "C"
+          ],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>First</center></h2><img id=\"detal\" height=\"285\" src=\"https://i/logo\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "https://i/logo",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "First"
+            },
+            {
+              "description": "<table><h2><center>Second</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/file.ts",
+              "title": "Second"
+            },
+            {
+              "description": "<table><h2><center>Duplicate</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "Duplicate"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>First</center></h2><img id=\"detal\" height=\"285\" src=\"https://i/logo\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "https://i/logo",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "First"
+            },
+            {
+              "description": "<table><h2><center>Second</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/file.ts",
+              "title": "Second"
+            },
+            {
+              "description": "<table><h2><center>Duplicate</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "Duplicate"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>First</center></h2><img id=\"detal\" height=\"285\" src=\"https://i/logo\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+              "logo_30x30": "https://i/logo",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "First"
+            },
+            {
+              "description": "<table><h2><center>Second</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/file.ts",
+              "title": "Second"
+            },
+            {
+              "description": "<table><h2><center>Duplicate</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/file.ts?q=1",
+              "title": "Duplicate"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U timeshift=\"bad\"\n#EXTINF:-1 group-title=\"A\",\n#EXTGRP:Other\nhttp://v.test/token/one/a.ts\n#EXTINF:-1 tvg-name=\"two\",\n#comment\n\nhttp://v.test/token/two/a.ts",
+      "operators": {
+        "1ott": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "aurl": "",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "ch_id": "token",
+              "channel_name": "",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            }
+          },
+          "groups": {
+            "A": [
+              "token"
+            ]
+          },
+          "groupOrder": [
+            "A"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [
+            "two"
+          ],
+          "channels": {
+            "two": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "#comment"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [
+            "a"
+          ],
+          "channels": {
+            "a": {
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "",
+              "epg": "",
+              "epg_id": "",
+              "logo": "",
+              "rec": 0,
+              "server": "v.test",
+              "time": 0,
+              "time_to": 0,
+              "token": "one",
+              "url": "http://v.test/token/one/a.ts"
+            }
+          },
+          "groups": {
+            "A": [
+              "a"
+            ]
+          },
+          "groupOrder": [
+            "A"
+          ],
+          "callbacks": 1,
+          "errors": []
+        },
+        "edem": {
+          "ids": [
+            null
+          ],
+          "channels": {
+            "undefined": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": "A"
+              },
+              "channel_name": "",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "http://v.test/token/one/a.ts",
+              "utvg": ""
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            1081521924
+          ],
+          "channels": {
+            "1081521924": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 2,
+                "name": "A"
+              },
+              "channel_name": "",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "tn": "",
+              "url": "http://v.test/token/one/a.ts",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {
+            "A": [
+              1081521924
+            ]
+          },
+          "groupOrder": [
+            "A"
+          ],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "1081521924": {
+              "n": "",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "1081521924": "|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One"
+            },
+            "two": {
+              "channel_name": "Two"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center></center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": ""
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    },
+    {
+      "input": "#EXTM3U timeshift=\"bad\"\n#EXTINF:-1 tvg-name=\"one\"\nhttp://v.test/token/one/a.ts\n#EXTINF:-1 tvg-name=\"two\",Good\nhttp://v.test/token/two/a.ts",
+      "operators": {
+        "1ott": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "??? No channel name",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            },
+            "two": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Good",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/two/a.ts"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "only4": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "shara-tv": {
+          "ids": [
+            "token"
+          ],
+          "channels": {
+            "token": {
+              "aurl": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "ch_id": "token",
+              "channel_name": "??? Нет названия канала",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "tvteam": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "??? No channel name",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/one/a.ts"
+            },
+            "two": {
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Good",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "url": "http://v.test/token/two/a.ts"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        },
+        "antifriz": {
+          "ids": [],
+          "channels": {},
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "edem": {
+          "ids": [
+            "a.ts"
+          ],
+          "channels": {
+            "a.ts": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "??? No channel name",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "tn": "one",
+              "url": "http://v.test/token/one/a.ts",
+              "utvg": ""
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [
+            "Failed to load channel list!"
+          ]
+        },
+        "kb-team": {
+          "ids": [
+            1081521924,
+            2592803622
+          ],
+          "channels": {
+            "1081521924": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "??? No channel name",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "tn": "one",
+              "url": "http://v.test/token/one/a.ts",
+              "utvg": "kbc"
+            },
+            "2592803622": {
+              "ca": "",
+              "caso": "",
+              "category": {
+                "class": 1,
+                "name": ""
+              },
+              "channel_name": "Good",
+              "drm": "",
+              "epg": "",
+              "logo": "",
+              "rec": 0,
+              "time": 0,
+              "time_to": 0,
+              "tn": "two",
+              "url": "http://v.test/token/two/a.ts",
+              "utvg": "kbc"
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": [],
+          "epgBody": {
+            "1081521924": {
+              "n": "??? No channel name",
+              "u": "kbc"
+            },
+            "2592803622": {
+              "n": "Good",
+              "u": "kbc"
+            }
+          },
+          "logoBody": {
+            "1081521924": "??? No channel name|kbc",
+            "2592803622": "Good|kbc"
+          }
+        },
+        "shura": {
+          "ids": [
+            "one",
+            "two"
+          ],
+          "channels": {
+            "one": {
+              "channel_name": "One",
+              "category": {
+                "class": 1,
+                "name": ""
+              }
+            },
+            "two": {
+              "channel_name": "Two",
+              "category": {
+                "class": 1,
+                "name": ""
+              }
+            }
+          },
+          "groups": {},
+          "groupOrder": [],
+          "callbacks": 1,
+          "errors": []
+        }
+      },
+      "media": {
+        "m3u": {
+          "records": [
+            {
+              "description": "<table><h2><center>??? Нет названия</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": "??? Нет названия"
+            },
+            {
+              "description": "<table><h2><center>Good</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/a.ts",
+              "title": "Good"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "kb-team": {
+          "records": [
+            {
+              "description": "<table><h2><center>??? No channel name</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": "??? No channel name"
+            },
+            {
+              "description": "<table><h2><center>Good</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/a.ts",
+              "title": "Good"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        },
+        "antifriz": {
+          "records": [
+            {
+              "description": "<table><h2><center>??? Нет названия</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/one/a.ts",
+              "title": "??? Нет названия"
+            },
+            {
+              "description": "<table><h2><center>Good</center></h2></table>",
+              "logo_30x30": "",
+              "stream_url": "http://v.test/token/two/a.ts",
+              "title": "Good"
+            }
+          ],
+          "name": "?",
+          "errors": []
+        }
+      }
+    }
+  ]
+}

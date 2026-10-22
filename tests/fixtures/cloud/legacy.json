@@ -1,0 +1,10 @@
+{
+  "provenance": "Captured by running src/settings/cloud.ts cloudSendSettings at FOSS 1f255305; only UI/transport/storage ports stubbed.",
+  "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE properties SYSTEM \"http://java.sun.com/dtd/properties.dtd\">\n<properties>\n<comment>OTT-Play Preferences</comment>\n<entry key=\"normal\">ordinary</entry>\n<entry key=\"json\">{\"url\":\"https://a/?one=1&two=2\",\"markup\":\"<b>hello</b>\"}</entry>\n<entry key=\"literal\">&amp; &lt; &#0; &unknown; \"></entry>\n<entry key=\"compressed\">\u0001LZ\u0001\ud800￿</entry>\n</properties>",
+  "expected": {
+    "normal": "ordinary",
+    "json": "{\"url\":\"https://a/?one=1&two=2\",\"markup\":\"<b>hello</b>\"}",
+    "literal": "&amp; &lt; &#0; &unknown; \">",
+    "compressed": "\u0001LZ\u0001\ud800￿"
+  }
+}

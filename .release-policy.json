@@ -1,0 +1,222 @@
+{
+  "version_file": "package.json",
+  "validation_workflows": [
+    "ci.yml",
+    "native-parity.yml",
+    "codeql.yml",
+    "dependency-review.yml",
+    "container-validation.yml"
+  ],
+  "channel_validation_workflows": {
+    "beta": ["beta-checks.yml"]
+  },
+  "artifact_pattern": "release-assets*",
+  "local_checks": [
+    "npm ci --ignore-scripts",
+    "npm run typecheck",
+    "npm run lint",
+    "npm test",
+    "npm run build",
+    "npm run check:bundle",
+    "npm run check:es5",
+    "npx playwright install chromium",
+    "npm run test:devices:browser",
+    "npm run package:modea",
+    "cargo test --locked -p ottplay-core -p ottplay-server",
+    "cargo test --locked --release --manifest-path tests/glib-variant-regression/Cargo.toml"
+  ],
+  "notes": [
+    "Retains web/server, desktop, iOS and Full Capacitor Android APK targets. The independent Kotlin Android app and Play Store publication belong to open-ott-play/ottplay-android.",
+    "Classic emitted bundle smoke and ES5 checks are required, in addition to TypeScript checks.",
+    "Physical TV/STB firmware, decoders, live IPTV streams and DRM are separate acceptance checks.",
+    "OCI container archives are promoted without rebuild; deployment remains explicit.",
+    "Tauri bundle metadata keeps the base SemVer because MSI rejects beta and RC labels. Under promote-bytes, RC and stable package/Cargo version fields use the final base version from the version plan; the full candidate tag, source and run identity remain in manifests and receipts.",
+    "Production automatic updating is not configured: updater public key is a placeholder and latest.json is not generated. Manual installers are supported; unsigned iOS packages need operator signing/sideloading.",
+    "Full Capacitor APKs are signed with the established update certificate and preserve the play.ott.foss application ID and localhost settings origin. Android installation may require on-device permission/confirmation.",
+    "The separate Capacitor 6 API 22 APK supports Android 5.1/6 devices with WebView 60+. It shares the Full application ID, profile origin and signing certificate; modern devices keep Capacitor 8. Both APKs are built for beta/RC and promoted unchanged to stable."
+  ],
+  "version_companions": [
+    "src-tauri/Cargo.toml",
+    "src-tauri/tauri.conf.json",
+    "ios/App/App.xcodeproj/project.pbxproj",
+    "android/version.json"
+  ],
+  "container_assets": {
+    "ottplay-foss-container.oci.tar": "docker.io/alvit/ottplay-foss"
+  },
+  "repository": "open-ott-play/ottplay-foss",
+  "mode": "release",
+  "default_branch": "main",
+  "visibility": "public",
+  "versioning": {
+    "schema": 1,
+    "promotion": "promote-bytes",
+    "files": [
+      {
+        "path": "package.json",
+        "format": "json",
+        "value": "package",
+        "field": "version"
+      },
+      {
+        "path": "package-lock.json",
+        "format": "npm-lock",
+        "value": "package",
+        "package": "ottplay-foss"
+      },
+      {
+        "path": "src-tauri/Cargo.toml",
+        "format": "toml",
+        "value": "package",
+        "field": "package.version"
+      },
+      {
+        "path": "src-tauri/tauri.conf.json",
+        "format": "json",
+        "value": "base",
+        "field": "version"
+      },
+      {
+        "path": "Cargo.lock",
+        "format": "cargo-lock",
+        "value": "package",
+        "package": "ottplay-tauri"
+      },
+      {
+        "path": "ios/App/App.xcodeproj/project.pbxproj",
+        "format": "pbxproj",
+        "value": "base",
+        "package": "504EC3171FED79650016851F",
+        "field": "MARKETING_VERSION"
+      },
+      {
+        "path": "ios/App/App.xcodeproj/project.pbxproj",
+        "format": "pbxproj",
+        "value": "apple-build",
+        "package": "504EC3171FED79650016851F",
+        "field": "CURRENT_PROJECT_VERSION"
+      },
+      {
+        "path": "ios/App/App.xcodeproj/project.pbxproj",
+        "format": "pbxproj",
+        "value": "base",
+        "package": "504EC3181FED79650016851F",
+        "field": "MARKETING_VERSION"
+      },
+      {
+        "path": "ios/App/App.xcodeproj/project.pbxproj",
+        "format": "pbxproj",
+        "value": "apple-build",
+        "package": "504EC3181FED79650016851F",
+        "field": "CURRENT_PROJECT_VERSION"
+      },
+      {
+        "path": "android/version.json",
+        "format": "json",
+        "value": "package",
+        "field": "versionName"
+      },
+      {
+        "path": "android/version.json",
+        "format": "json",
+        "value": "build",
+        "field": "versionCode"
+      }
+    ],
+    "build_number_floor": 10153,
+    "artifacts": [
+      {
+        "path": "ottplay-foss-modea.tar.gz",
+        "format": "tar-json",
+        "value": "package",
+        "member": "build-info.json",
+        "field": "version"
+      },
+      {
+        "path": "ottplay-foss-dist.tar.gz",
+        "format": "tar-json",
+        "value": "package",
+        "member": "build-info.json",
+        "field": "version"
+      },
+      {
+        "path": "ottplay-foss-ios-unsigned.ipa",
+        "format": "ipa",
+        "value": "base",
+        "field": "CFBundleShortVersionString"
+      },
+      {
+        "path": "ottplay-foss-ios-unsigned.ipa",
+        "format": "ipa",
+        "value": "apple-build",
+        "field": "CFBundleVersion"
+      },
+      {
+        "path": "ottplay-foss-container.oci.tar",
+        "format": "oci",
+        "field": ["config", "Labels", "org.opencontainers.image.version"],
+        "value": "package"
+      },
+      {
+        "path": "ottplay-foss-android-full.apk",
+        "format": "zip-json",
+        "value": "package",
+        "member": "assets/public/android-distribution.json",
+        "field": "version"
+      },
+      {
+        "path": "ottplay-foss-android-full.apk",
+        "format": "zip-json",
+        "value": "build",
+        "member": "assets/public/android-distribution.json",
+        "field": "versionCode"
+      },
+      {
+        "path": "ottplay-foss-android-api22.apk",
+        "format": "zip-json",
+        "value": "package",
+        "member": "assets/public/android-distribution.json",
+        "field": "version"
+      },
+      {
+        "path": "ottplay-foss-android-api22.apk",
+        "format": "zip-json",
+        "value": "build",
+        "member": "assets/public/android-distribution.json",
+        "field": "versionCode"
+      }
+    ],
+    "toolkit_revision": "5e413f80a4353d328b4529eae57992ac3987e2dd"
+  },
+  "asset_restrictions": [
+    {
+      "suffixes": [".aab"],
+      "reason": "Play Store AAB publication belongs to open-ott-play/ottplay-android"
+    }
+  ],
+  "build_secrets": [
+    "APPLE_APP_SPECIFIC_PASSWORD",
+    "APPLE_CERTIFICATE",
+    "APPLE_CERTIFICATE_PASSWORD",
+    "APPLE_ID",
+    "APPLE_SIGNING_IDENTITY",
+    "APPLE_TEAM_ID",
+    "KEYCHAIN_PASSWORD",
+    "TAURI_SIGNING_PRIVATE_KEY",
+    "TAURI_SIGNING_PRIVATE_KEY_PASSWORD",
+    "CAPACITOR_KEYSTORE_BASE64",
+    "CAPACITOR_KEY_ALIAS",
+    "CAPACITOR_KEY_PASSWORD"
+  ],
+  "single_entry_ci": true,
+  "change_scope": {
+    "documentation_paths": ["vendor/README.md"],
+    "required_paths": ["docs/privacy-policy.md"],
+    "always_validate_workflows": ["codeql.yml"]
+  },
+  "release_notes": "CHANGELOG.md",
+  "fuzzing": {
+    "toolkit_ref": "5194a48f3eb54d80e315133b17ff0fd217ed4327"
+  },
+  "toolkit_revision": "5e413f80a4353d328b4529eae57992ac3987e2dd"
+}

@@ -1,0 +1,1326 @@
+{
+  "baseline": "7d47b0ca391e4b1d1fe282cb4bf11a2bfe17e80a",
+  "cases": [
+    {
+      "input": {
+        "responses": [
+          {
+            "result": null
+          },
+          {
+            "result": null
+          },
+          {
+            "result": []
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "errors": [
+          "Failed to connect to Stalker portal"
+        ],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": false
+          },
+          {
+            "result": false
+          },
+          {
+            "result": []
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "errors": [
+          "Failed to connect to Stalker portal"
+        ],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": 0
+          },
+          {
+            "result": 0
+          },
+          {
+            "result": []
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "errors": [
+          "Failed to connect to Stalker portal"
+        ],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": ""
+          },
+          {
+            "result": ""
+          },
+          {
+            "result": []
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "errors": [
+          "Failed to connect to Stalker portal"
+        ],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": true
+          },
+          {
+            "result": true
+          },
+          {
+            "result": []
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "errors": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": {}
+          },
+          {
+            "result": {}
+          },
+          {
+            "result": []
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "errors": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": []
+          },
+          {
+            "result": []
+          },
+          {
+            "result": []
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "errors": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": true
+          },
+          {
+            "result": null
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "errors": [
+          "Failed to load channels from Stalker portal"
+        ],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": true
+          },
+          {
+            "result": []
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "errors": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": true
+          },
+          {
+            "result": {}
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "errors": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": true
+          },
+          {
+            "result": {
+              "data": []
+            }
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "errors": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": true
+          },
+          {
+            "result": {
+              "data": [
+                {
+                  "id": 1,
+                  "name": "One",
+                  "genre": [
+                    "News"
+                  ],
+                  "archive": "3 days",
+                  "logo": "//cdn.test/icon"
+                },
+                {
+                  "id": 1,
+                  "name": "Duplicate",
+                  "category": "Other"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [
+          1
+        ],
+        "channels": {
+          "1": {
+            "ca": "append",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "One",
+            "epg": "1",
+            "logo": "https://cdn.test/icon",
+            "rec": 3,
+            "time": 0,
+            "time_to": 0,
+            "tn": "One",
+            "url": "https://portal.test/stalker_portal/stream/1.m3u8?mac=00:1a:79:01:02:03"
+          }
+        },
+        "groups": {
+          "News": [
+            1
+          ],
+          "Other": [
+            1
+          ]
+        },
+        "groupOrder": [
+          "News",
+          "Other"
+        ],
+        "errors": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": true
+          },
+          {
+            "result": {
+              "one": {
+                "id": 1,
+                "name": "One"
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "errors": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": true
+          },
+          {
+            "result": {
+              "data": true,
+              "one": {
+                "id": 1,
+                "name": "One"
+              },
+              "two": {
+                "id": 2,
+                "name": "Two"
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [
+          1,
+          2
+        ],
+        "channels": {
+          "1": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "One",
+            "epg": "1",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "One",
+            "url": "https://portal.test/stalker_portal/stream/1.m3u8?mac=00:1a:79:01:02:03"
+          },
+          "2": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "Two",
+            "epg": "2",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Two",
+            "url": "https://portal.test/stalker_portal/stream/2.m3u8?mac=00:1a:79:01:02:03"
+          }
+        },
+        "groups": {
+          "Other": [
+            1,
+            2
+          ]
+        },
+        "groupOrder": [
+          "Other"
+        ],
+        "errors": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": true
+          },
+          {
+            "result": [
+              {
+                "name": "Hash",
+                "ch_id": "42",
+                "archive_duration": "2.5"
+              },
+              {
+                "id": 0,
+                "name": "Zero"
+              },
+              {
+                "id": "bad",
+                "name": "NaN"
+              },
+              {
+                "id": "bad",
+                "name": "NaN2"
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [
+          3777252001,
+          1115700658,
+          null,
+          null
+        ],
+        "channels": {
+          "1115700658": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "Zero",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Zero",
+            "url": "https://portal.test/stalker_portal/stream/0.m3u8?mac=00:1a:79:01:02:03"
+          },
+          "3777252001": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "Hash",
+            "epg": "42",
+            "logo": "",
+            "rec": 2,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Hash",
+            "url": "https://portal.test/stalker_portal/stream/undefined.m3u8?mac=00:1a:79:01:02:03"
+          },
+          "NaN": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "NaN2",
+            "epg": "bad",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "NaN2",
+            "url": "https://portal.test/stalker_portal/stream/bad.m3u8?mac=00:1a:79:01:02:03"
+          }
+        },
+        "groups": {
+          "Other": [
+            3777252001,
+            1115700658
+          ]
+        },
+        "groupOrder": [
+          "Other"
+        ],
+        "errors": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": true
+          },
+          {
+            "result": [
+              null,
+              {},
+              {
+                "id": 2,
+                "name": ""
+              },
+              {
+                "id": 3,
+                "name": "Three",
+                "genre": 4,
+                "url": "opaque",
+                "tv_icon": "/icon"
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [
+          3
+        ],
+        "channels": {
+          "3": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "Three",
+            "epg": "3",
+            "logo": "https://portal.test/icon",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Three",
+            "url": "opaque"
+          }
+        },
+        "groups": {
+          "Other": [
+            3
+          ]
+        },
+        "groupOrder": [
+          "Other"
+        ],
+        "errors": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "responses": [
+          {
+            "result": true
+          },
+          {
+            "result": [
+              {
+                "id": 1,
+                "name": "One"
+              }
+            ]
+          },
+          {
+            "result": [
+              {
+                "start_timestamp": "10s",
+                "end_timestamp": "20.5",
+                "name": "Title"
+              },
+              {
+                "start_timestamp": "0",
+                "start": "30",
+                "end": "40",
+                "description": "Text"
+              },
+              {
+                "start": "0x10",
+                "end": "0x20"
+              },
+              {
+                "start": "bad",
+                "end": "40"
+              }
+            ]
+          }
+        ],
+        "guide": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1a:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_epg",
+              "params": {
+                "ch_id": "1",
+                "from": 1767139200,
+                "mac": "00:1a:79:01:02:03",
+                "to": 1767312000
+              }
+            },
+            "method": "POST",
+            "timeout": 10000
+          }
+        ],
+        "ids": [
+          1
+        ],
+        "channels": {
+          "1": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "One",
+            "epg": "1",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "One",
+            "url": "https://portal.test/stalker_portal/stream/1.m3u8?mac=00:1a:79:01:02:03"
+          }
+        },
+        "groups": {
+          "Other": [
+            1
+          ]
+        },
+        "groupOrder": [
+          "Other"
+        ],
+        "errors": [],
+        "callbacks": 1,
+        "epg": {
+          "id": 1,
+          "data": [
+            {
+              "descr": "",
+              "icon": "",
+              "name": "Title",
+              "time": 10,
+              "time_to": 20
+            },
+            {
+              "descr": "Text",
+              "icon": "",
+              "name": "No title",
+              "time": 30,
+              "time_to": 40
+            },
+            {
+              "descr": "",
+              "icon": "",
+              "name": "No title",
+              "time": 16,
+              "time_to": 32
+            }
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "config": {
+          "portal": "https://portal.test/path///",
+          "mac": "00:1A:79:01:02:03"
+        },
+        "responses": [
+          {
+            "result": 1
+          },
+          {
+            "result": [
+              {
+                "id": "a/b",
+                "name": "Name",
+                "icon": "/icon.png"
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://portal.test/path/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1A:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "https://portal.test/path/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1A:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [
+          null
+        ],
+        "channels": {
+          "NaN": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 1,
+              "name": "Other"
+            },
+            "channel_name": "Name",
+            "epg": "a/b",
+            "logo": "https://portal.test/path/icon.png",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Name",
+            "url": "https://portal.test/path/stalker_portal/stream/a/b.m3u8?mac=00:1A:79:01:02:03"
+          }
+        },
+        "groups": {},
+        "groupOrder": [],
+        "errors": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "config": {
+          "portal": "http://portal.test/stalker_portal/api/",
+          "mac": "00:1A:79:01:02:03"
+        },
+        "responses": [
+          {
+            "result": 1
+          },
+          {
+            "result": [
+              {
+                "id": "a/b",
+                "name": "Name",
+                "icon": "/icon.png"
+              }
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "http://portal.test/stalker_portal/api/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "handshake",
+              "params": {
+                "mac": "00:1A:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          },
+          {
+            "url": "http://portal.test/stalker_portal/api/stalker_portal/api/",
+            "data": {
+              "id": 1,
+              "jsonrpc": "2.0",
+              "method": "get_channels",
+              "params": {
+                "mac": "00:1A:79:01:02:03"
+              }
+            },
+            "method": "POST",
+            "timeout": 15000
+          }
+        ],
+        "ids": [
+          null
+        ],
+        "channels": {
+          "NaN": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 1,
+              "name": "Other"
+            },
+            "channel_name": "Name",
+            "epg": "a/b",
+            "logo": "http://portal.test/stalker_portal/api/icon.png",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Name",
+            "url": "http://portal.test/stalker_portal/api/stalker_portal/stream/a/b.m3u8?mac=00:1A:79:01:02:03"
+          }
+        },
+        "groups": {},
+        "groupOrder": [],
+        "errors": [],
+        "callbacks": 1
+      }
+    }
+  ]
+}

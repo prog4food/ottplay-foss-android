@@ -1,0 +1,19 @@
+[workspace]
+resolver = "2"
+members = ["src-rs/core", "src-rs/server", "src-tauri"]
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+
+# GTK3's dependency graph requires glib 0.18. Backport the upstream iterator
+# safety fix without advertising a different upstream version (see vendor/README.md).
+[patch.crates-io]
+glib = { path = "vendor/glib-0.18.5" }
+# Keep macOS drag callbacks safe when a pasteboard advertises unreadable data.
+wry = { path = "vendor/wry-0.55.1" }
+tao = { path = "vendor/tao-0.35.3" }
+
+# Keep the legacy Blocks API while fixing its uninhabited foreign static type.
+block = { path = "vendor/block-0.1.6" }

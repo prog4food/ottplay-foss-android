@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-offline-media"
+description = "Allow the player to use its local media sources"
+commands.allow = ["offline_media_endpoint", "offline_media_import_files", "offline_media_import_folder", "offline_media_remove_source"]

@@ -1,0 +1,29 @@
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+ignore = ["E741", "F541"]
+
+# server.py / local_proxy.py are standalone utility scripts (server.py is
+# bundled into the Docker image); exempt from app-level lint strictness
+# until they get a dedicated pass.
+[tool.ruff.lint.per-file-ignores]
+"server.py" = [
+    "BLE001", # broad excepts are intentional: proxy/EPG must never crash the server
+    "DTZ007",
+    "EXE001",
+    "FURB188",
+    "I001",
+    "PIE810",
+    "RUF012",
+    "RUF059",
+    "S110",
+    "SIM114",
+    "UP031",
+]
+"local_proxy.py" = [
+    "EXE001",
+    "I001",
+    "RUF012",
+    "UP031",
+]

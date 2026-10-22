@@ -1,0 +1,10 @@
+include ':app'
+if (providers.gradleProperty('ottplayApi22').orNull == 'true') {
+    include ':capacitor-android', ':capacitor-app'
+    project(':capacitor-android').projectDir = new File('compat/node_modules/@capacitor/android/capacitor')
+    project(':capacitor-app').projectDir = new File('compat/node_modules/@capacitor/app/android')
+} else {
+    include ':capacitor-cordova-android-plugins'
+    project(':capacitor-cordova-android-plugins').projectDir = new File('./capacitor-cordova-android-plugins/')
+    apply from: 'capacitor.settings.gradle'
+}

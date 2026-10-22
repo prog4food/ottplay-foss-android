@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-tmdb-proxy"
+description = "Enables the tmdb_proxy command (TMDB API/image proxy for Mode B)."
+commands.allow = ["tmdb_proxy"]

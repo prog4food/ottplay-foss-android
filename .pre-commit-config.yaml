@@ -1,0 +1,48 @@
+# Pre-push hooks: biome lint/format, secrets scan, shell lint, hygiene.
+# Install:  pre-commit install -t pre-push
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: 83d9cd684c87d95d656c1458ef04895a7f1cbd8e # v8.16.3
+    hooks:
+      - id: gitleaks
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c # v5.0.0
+    hooks:
+      - id: end-of-file-fixer
+        # vendored / generated trees stay untouched
+        # Preserve published crate bytes; the GLib/macOS backport checks verify them.
+        # MPEG-TS fixtures are binary transport streams despite their .ts suffix.
+        # Fuzz corpus bytes include intentional missing newlines and truncation.
+        exclude: '^(js|devices|providers|styles|images|locales|fonts)/|^fuzz/corpus/|^tests/fixtures/media-runtime/.*\.ts$|^vendor/glib-0\.18\.5/(LICENSE|\.cargo_vcs_info\.json)$|^vendor/(tao-0\.35\.3|wry-0\.55\.1)/'
+      - id: trailing-whitespace
+        # A unified patch uses a single space for an empty context line.
+        exclude: '^(js|devices|providers|styles|images|locales|fonts)/|^fuzz/corpus/|^tests/fixtures/media-runtime/.*\.ts$|^vendor/(tao-0\.35\.3|wry-0\.55\.1)/|^vendor/(glib-0\.18\.5-RUSTSEC-2024-0429|tao-0\.35\.3-macos-drag-pasteboard|wry-0\.55\.1-macos-drag-pasteboard)\.patch$'
+      - id: check-yaml
+
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 38980559e3a605691d6579f96222c30778e5a69e # 3.0.0
+    hooks:
+      - id: shellcheck
+        args: [--exclude=SC2154, --exclude=SC2164, --exclude=SC2181, --exclude=SC2029, --exclude=SC1091]
+
+  # Biome lint + format + organize imports check over the scoped tree.
+  # No --write: hook fails on issues but never mutates the working tree,
+  # so a clean push never spuriously fails. Run "npm run lint:fix" locally
+  # before committing, or "npx biome check --write" to apply fixes.
+  - repo: local
+    hooks:
+      - id: glib-backport
+        name: verify published GLib source and safety patch
+        entry: node scripts/check-glib-backport.cjs
+        language: system
+        pass_filenames: false
+      - id: biome
+        name: biome check
+        entry: npx --no-install @biomejs/biome check src biome.json package.json tsconfig.json
+        language: system
+        pass_filenames: false
+  # NOTE: no eslint hook — the repo standardized on Biome (biome.json);
+  # mirrors-eslint@v10 requires a flat eslint.config.js which this repo
+  # intentionally does not carry, so the hook failed every push that
+  # touched a .js file.

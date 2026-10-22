@@ -1,0 +1,321 @@
+<svg
+    aria-labelledby="title desc"
+    height="860"
+    role="img"
+    viewBox="0 0 1200 860"
+    width="1200"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">Candidate verification flow / Проверка кандидата</title>
+    <desc id="desc">
+        Build, package with archive hash and source identity, verify and unpack,
+        check the declared capabilities, pass the exact scenario set once, save
+        a receipt, then require the separate CI and release gate. No dynamic
+        fallback, skipped required scenarios or retries masking a failure.
+        Сборка, упаковка, проверка, возможности, точный набор сценариев, отчёт,
+        допуск CI и релиза. Диаграмма процесса, не заявление об успешном релизе.
+    </desc>
+    <defs>
+        <marker
+            id="arrow"
+            markerHeight="9"
+            markerWidth="9"
+            orient="auto"
+            refX="7"
+            refY="4"
+        >
+            <path
+                d="M0 0 L8 4 L0 8"
+                fill="none"
+                stroke="#91bfff"
+                stroke-width="1.5"
+            />
+        </marker>
+    </defs>
+    <style>
+    text {
+        font-family: Arial, sans-serif;
+        fill: #edf3fc;
+    }
+    .title {
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .subtitle {
+        font-size: 19px;
+        fill: #bfcee4;
+    }
+    .heading {
+        font-size: 23px;
+        font-weight: 700;
+    }
+    .body {
+        font-size: 20px;
+    }
+    .small {
+        font-size: 17px;
+        fill: #bfcee4;
+    }
+    .eyebrow {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    .number {
+        font-size: 62px;
+        font-weight: 700;
+    }
+    .formula {
+        font-size: 38px;
+        font-weight: 700;
+    }
+    </style>
+    <rect fill="#111a2b" height="860" rx="24" width="1200" x="0" y="0" />
+    <text class="eyebrow" style="fill:#68d4b4" x="40" y="34">
+        PROCESS / ПРОЦЕСС
+    </text>
+    <text class="title" x="40" y="78">
+        Candidate verification / Проверка кандидата
+    </text>
+    <text class="subtitle" x="40" y="111">
+        Exact bytes, declared coverage, explicit evidence / Точные байты,
+        заданный охват, явные доказательства
+    </text>
+    <rect
+        fill="#1c2940"
+        height="213"
+        rx="16"
+        stroke="#91bfff"
+        width="265"
+        x="40"
+        y="158"
+    />
+    <circle cx="70" cy="189" fill="#91bfff" r="16" />
+    <text class="body" style="fill:#111a2b" text-anchor="middle" x="70" y="196">
+        1
+    </text>
+    <text class="heading" style="fill:#91bfff" x="60" y="235">Build</text>
+    <text class="body" x="60" y="263">Сборка</text>
+    <text class="small" x="60" y="312">Production output</text>
+    <text class="small" x="60" y="339">Production-артефакты</text>
+    <path
+        d="M307 264 H318"
+        fill="none"
+        marker-end="url(#arrow)"
+        stroke="#91bfff"
+        stroke-width="2.5"
+    />
+    <rect
+        fill="#1c2940"
+        height="213"
+        rx="16"
+        stroke="#91bfff"
+        width="265"
+        x="325"
+        y="158"
+    />
+    <circle cx="355" cy="189" fill="#91bfff" r="16" />
+    <text
+        class="body"
+        style="fill:#111a2b"
+        text-anchor="middle"
+        x="355"
+        y="196"
+    >
+        2
+    </text>
+    <text class="heading" style="fill:#91bfff" x="345" y="235">
+        Package + identity
+    </text>
+    <text class="body" x="345" y="263">Архив + идентичность</text>
+    <text class="small" x="345" y="312">Archive hash + source SHA</text>
+    <text class="small" x="345" y="339">Хеш архива + SHA</text>
+    <path
+        d="M592 264 H603"
+        fill="none"
+        marker-end="url(#arrow)"
+        stroke="#91bfff"
+        stroke-width="2.5"
+    />
+    <rect
+        fill="#1c2940"
+        height="213"
+        rx="16"
+        stroke="#68d4b4"
+        width="265"
+        x="610"
+        y="158"
+    />
+    <circle cx="640" cy="189" fill="#68d4b4" r="16" />
+    <text
+        class="body"
+        style="fill:#111a2b"
+        text-anchor="middle"
+        x="640"
+        y="196"
+    >
+        3
+    </text>
+    <text class="heading" style="fill:#68d4b4" x="630" y="235">
+        Verify + unpack
+    </text>
+    <text class="body" x="630" y="263">Проверка + распаковка</text>
+    <text class="small" x="630" y="303">Every provider · fresh directory</text>
+    <text class="small" x="630" y="326">Все провайдеры;</text>
+    <text class="small" x="630" y="349">новый каталог</text>
+    <path
+        d="M877 264 H888"
+        fill="none"
+        marker-end="url(#arrow)"
+        stroke="#91bfff"
+        stroke-width="2.5"
+    />
+    <rect
+        fill="#1c2940"
+        height="213"
+        rx="16"
+        stroke="#f2c779"
+        width="265"
+        x="895"
+        y="158"
+    />
+    <circle cx="925" cy="189" fill="#f2c779" r="16" />
+    <text
+        class="body"
+        style="fill:#111a2b"
+        text-anchor="middle"
+        x="925"
+        y="196"
+    >
+        4
+    </text>
+    <text class="heading" style="fill:#f2c779" x="915" y="235">
+        Capability guard
+    </text>
+    <text class="body" x="915" y="263">Проверка возможностей</text>
+    <text class="small" x="915" y="312">Match the declared profile</text>
+    <text class="small" x="915" y="339">Соответствие профилю</text>
+    <path
+        d="M1027 374 V404 H214 V431"
+        fill="none"
+        marker-end="url(#arrow)"
+        stroke="#91bfff"
+        stroke-width="2.5"
+    />
+    <rect
+        fill="#1c2940"
+        height="209"
+        rx="16"
+        stroke="#68d4b4"
+        width="350"
+        x="40"
+        y="448"
+    />
+    <circle cx="70" cy="479" fill="#68d4b4" r="16" />
+    <text class="body" style="fill:#111a2b" text-anchor="middle" x="70" y="486">
+        5
+    </text>
+    <text class="heading" style="fill:#68d4b4" x="60" y="526">
+        Exact scenario set
+    </text>
+    <text class="body" x="60" y="555">Точный набор сценариев</text>
+    <text class="small" x="60" y="607">Each required case passes once</text>
+    <text class="small" x="60" y="634">Каждый нужный сценарий — один раз</text>
+    <path
+        d="M392 550 H416"
+        fill="none"
+        marker-end="url(#arrow)"
+        stroke="#91bfff"
+        stroke-width="2.5"
+    />
+    <rect
+        fill="#1c2940"
+        height="209"
+        rx="16"
+        stroke="#68d4b4"
+        width="350"
+        x="425"
+        y="448"
+    />
+    <circle cx="455" cy="479" fill="#68d4b4" r="16" />
+    <text
+        class="body"
+        style="fill:#111a2b"
+        text-anchor="middle"
+        x="455"
+        y="486"
+    >
+        6
+    </text>
+    <text class="heading" style="fill:#68d4b4" x="445" y="526">
+        Save receipt
+    </text>
+    <text class="body" x="445" y="555">Сохранить отчёт</text>
+    <text class="small" x="445" y="607">
+        Browser + host + source + outcomes
+    </text>
+    <text class="small" x="445" y="634">
+        Браузер + ОС + исходники + результат
+    </text>
+    <path
+        d="M777 550 H801"
+        fill="none"
+        marker-end="url(#arrow)"
+        stroke="#91bfff"
+        stroke-width="2.5"
+    />
+    <rect
+        fill="#1c2940"
+        height="209"
+        rx="16"
+        stroke="#91bfff"
+        width="350"
+        x="810"
+        y="448"
+    />
+    <circle cx="840" cy="479" fill="#91bfff" r="16" />
+    <text
+        class="body"
+        style="fill:#111a2b"
+        text-anchor="middle"
+        x="840"
+        y="486"
+    >
+        7
+    </text>
+    <text class="heading" style="fill:#91bfff" x="830" y="526">
+        CI / release gate
+    </text>
+    <text class="body" x="830" y="555">Допуск CI и релиза</text>
+    <text class="small" x="830" y="607">Require separate hosted evidence</text>
+    <text class="small" x="830" y="634">Отдельные доказательства от CI</text>
+    <rect
+        fill="#3b3024"
+        height="104"
+        rx="16"
+        stroke="#f2c779"
+        width="1120"
+        x="40"
+        y="691"
+    />
+    <text
+        class="heading"
+        style="fill:#f2c779"
+        text-anchor="middle"
+        x="600"
+        y="727"
+    >
+        Any failed check stops acceptance / Любой сбой останавливает приёмку
+    </text>
+    <text class="body" text-anchor="middle" x="600" y="761">
+        No dynamic downgrade, required-test skip or retries masking a failure
+    </text>
+    <text class="small" text-anchor="middle" x="600" y="785">
+        Без урезания профиля, пропуска нужных проверок и маскировки сбоев
+        повторами
+    </text>
+    <text class="small" x="40" y="833">
+        Process only — no CI or release success claim / Только процесс: успех CI
+        или релиза не заявлен
+    </text>
+</svg>

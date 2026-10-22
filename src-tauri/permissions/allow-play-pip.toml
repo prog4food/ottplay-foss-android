@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-play-pip"
+description = "Enables the play_pip command."
+commands.allow = ["play_pip"]

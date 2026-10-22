@@ -1,0 +1,1021 @@
+{
+  "provenance": {
+    "repository": "open-ott-play/ottplay-foss",
+    "commit": "c02125906cad47c992c67235314018f908d4ab3d",
+    "capture": "Actual public parse_xmltv and parse_xmltv_native from the shipping ottplay-core Rust crate; no parser or reducer substitution.",
+    "sources": {
+      "src-rs/core/src/xmltv.rs": "8bf98c1e9d0ecd27efd5aad2474ef77e2cb28b9b27e67f3c2ac0c165e9a479a0",
+      "src-rs/core/src/shared_guide.rs": "ec30d5fd097ccecebdc130964834e21c1a12b6d51f56002a88e24b613a8b0e7b",
+      "src-rs/core/build.rs": "53c471d882d8418a6ad44c4fdaf5392223ef87f0d0c9f20476153d965063104f",
+      "src-rs/core/Cargo.toml": "b72f65d4ddba8aec91a6fdb56be5297b0f1ac1ea99fbdb590e169357a887d2ec",
+      "Cargo.lock": "9fdc339970ce640fd69f8612cb10fea267300917d6adc4a49f88a06d0e4cd90f",
+      "vendor/ottplay-core.manifest.json": "51ec8d35574ff97f658d91a2e61fff2ca126751cb4676d9df50794bea7894a93"
+    },
+    "inputFile": "native-records-before-core.json",
+    "inputSha256": "154be03eb290be437c22af176fb7073aaa34993a955e9472192584610eaad90b",
+    "compiler": "rustc 1.96.1 (31fca3adb 2026-06-26)",
+    "compiledArtifactSha256": "7a64be2ef0932939dac7354b9ec4e36e26294bae38ec923614d5c08411647d04"
+  },
+  "cases": [
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "First",
+                "names": ["", "First", "Second", "First"]
+              }
+            },
+            "programmes": {}
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "First",
+                "names": ["", "First", "Second", "First"]
+              }
+            },
+            "programmes": {}
+          }
+        }
+      },
+      "name": "display name first nonempty and duplicate aliases",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"a\"><display-name> </display-name><display-name>First</display-name><display-name>Second</display-name><display-name>First</display-name></channel></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "Later",
+                "names": ["Later"]
+              }
+            },
+            "programmes": {}
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "Later",
+                "names": ["Later"]
+              }
+            },
+            "programmes": {}
+          }
+        }
+      },
+      "name": "empty first channel fixes ID fallback",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"a\"/><channel id=\"a\"><display-name>Later</display-name></channel></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "two",
+                "id": "a",
+                "name": "First",
+                "names": ["Second", "First"]
+              }
+            },
+            "programmes": {}
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "two",
+                "id": "a",
+                "name": "First",
+                "names": ["Second", "First"]
+              }
+            },
+            "programmes": {}
+          }
+        }
+      },
+      "name": "duplicate channel retains first name and accumulates aliases",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"a\"><display-name>First</display-name><icon src=\"one\"/></channel><channel id=\"a\"><display-name>Second</display-name><display-name>First</display-name><icon src=\"two\"/></channel></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "a",
+                "names": []
+              },
+              "b": {
+                "icon": "first",
+                "id": "b",
+                "name": "b",
+                "names": []
+              },
+              "c": {
+                "icon": "last",
+                "id": "c",
+                "name": "c",
+                "names": []
+              }
+            },
+            "programmes": {}
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "a",
+                "names": []
+              },
+              "b": {
+                "icon": "first",
+                "id": "b",
+                "name": "b",
+                "names": []
+              },
+              "c": {
+                "icon": "last",
+                "id": "c",
+                "name": "c",
+                "names": []
+              }
+            },
+            "programmes": {}
+          }
+        }
+      },
+      "name": "last icon including absent src wins",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"a\"><icon src=\"first\"/><icon src=\"\"/></channel><channel id=\"b\"><icon src=\"first\"/><icon/></channel><channel id=\"c\"><icon src=\"first\"/><icon src=\"last\"/></channel></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "﻿BOM﻿",
+                "names": ["Name", "Alias", "﻿BOM﻿"]
+              }
+            },
+            "programmes": {}
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "﻿BOM﻿",
+                "names": ["Name", "Alias", "﻿BOM﻿"]
+              }
+            },
+            "programmes": {}
+          }
+        }
+      },
+      "name": "display name Unicode whitespace",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"a\"><display-name>Name</display-name><display-name> Alias </display-name><display-name>﻿BOM﻿</display-name></channel></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {
+              "é": {
+                "icon": "two",
+                "id": "é",
+                "name": "Second",
+                "names": ["Second"]
+              },
+              "é": {
+                "icon": "one",
+                "id": "é",
+                "name": "First",
+                "names": ["First"]
+              }
+            },
+            "programmes": {
+              "é": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Two"
+                }
+              ],
+              "é": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "One"
+                }
+              ]
+            }
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {
+              "é": {
+                "icon": "two",
+                "id": "é",
+                "name": "Second",
+                "names": ["Second"]
+              },
+              "é": {
+                "icon": "one",
+                "id": "é",
+                "name": "First",
+                "names": ["First"]
+              }
+            },
+            "programmes": {
+              "é": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Two"
+                }
+              ],
+              "é": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "One"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "name": "canonical equivalent channel IDs",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"é\"><display-name>First</display-name><icon src=\"one\"/></channel><channel id=\"é\"><display-name>Second</display-name><icon src=\"two\"/></channel><programme channel=\"é\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>One</title></programme><programme channel=\"é\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Two</title></programme></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {},
+            "programmes": {
+              "a": [
+                {
+                  "desc": "Two",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Second"
+                }
+              ]
+            }
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {},
+            "programmes": {
+              "a": [
+                {
+                  "desc": "Two",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Second"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "name": "repeated titles and descriptions concatenate",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"a\"/><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title lang=\"en\">First</title><title/><title lang=\"ru\">Second</title><desc>One</desc><desc/><desc>Two</desc></programme></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {},
+            "programmes": {}
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {},
+            "programmes": {}
+          }
+        }
+      },
+      "name": "missing and empty title are omitted",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"a\"/><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><desc>No title</desc></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title/><desc>Empty title</desc></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title></title></programme></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {},
+            "programmes": {}
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {},
+            "programmes": {}
+          }
+        }
+      },
+      "name": "whitespace-only title policy",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"a\"/><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title> &#x9;&#xA; </title><desc>Kept?</desc></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title></title></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title> </title></programme></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {
+              "": {
+                "icon": "empty",
+                "id": "",
+                "name": "Empty",
+                "names": ["Empty"]
+              }
+            },
+            "programmes": {
+              "": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Missing"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Empty"
+                }
+              ]
+            }
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {
+              "": {
+                "icon": "empty",
+                "id": "",
+                "name": "Empty",
+                "names": ["Empty"]
+              }
+            },
+            "programmes": {
+              "": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Missing"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Empty"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "name": "missing and empty IDs",
+      "profileDifference": false,
+      "xml": "<tv><channel><display-name>Missing</display-name><icon src=\"missing\"/></channel><channel id=\"\"><display-name>Empty</display-name><icon src=\"empty\"/></channel><programme start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Missing</title></programme><programme channel=\"\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Empty</title></programme></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {
+              " a ": {
+                "icon": "",
+                "id": " a ",
+                "name": "Spaced",
+                "names": ["Spaced"]
+              },
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "Plain",
+                "names": ["Plain"]
+              }
+            },
+            "programmes": {
+              " a ": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Spaced"
+                }
+              ],
+              "a": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Plain"
+                }
+              ]
+            }
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {
+              " a ": {
+                "icon": "",
+                "id": " a ",
+                "name": "Spaced",
+                "names": ["Spaced"]
+              },
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "Plain",
+                "names": ["Plain"]
+              }
+            },
+            "programmes": {
+              " a ": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Spaced"
+                }
+              ],
+              "a": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Plain"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "name": "raw whitespace IDs preserved",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\" a \"><display-name>Spaced</display-name></channel><channel id=\"a\"><display-name>Plain</display-name></channel><programme channel=\" a \" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Spaced</title></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Plain</title></programme></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "After",
+                "names": ["After"]
+              }
+            },
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Before"
+                }
+              ],
+              "orphan": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Orphan"
+                }
+              ]
+            }
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "After",
+                "names": ["After"]
+              }
+            },
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Before"
+                }
+              ],
+              "orphan": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Orphan"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "name": "programmes precede channel and orphan programme remains",
+      "profileDifference": false,
+      "xml": "<tv><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Before</title></programme><programme channel=\"orphan\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Orphan</title></programme><channel id=\"a\"><display-name>After</display-name></channel></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {},
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "First"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Second"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "First"
+                }
+              ]
+            }
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {},
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "First"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Second"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "First"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "name": "duplicate intervals preserve rows and input order",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"a\"/><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>First</title></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Second</title></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>First</title></programme></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {},
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789387200,
+                  "stop": 1789390800,
+                  "title": "Later"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Earlier"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789387200,
+                  "stop": 1789390800,
+                  "title": "Middle duplicate"
+                }
+              ]
+            }
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {},
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Earlier"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789387200,
+                  "stop": 1789390800,
+                  "title": "Later"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789387200,
+                  "stop": 1789390800,
+                  "title": "Middle duplicate"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "name": "unsorted programmes retain parser order",
+      "profileDifference": true,
+      "xml": "<tv><channel id=\"a\"/><programme channel=\"a\" start=\"20260914120000 +0000\" stop=\"20260914130000 +0000\"><title>Later</title></programme><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Earlier</title></programme><programme channel=\"a\" start=\"20260914120000 +0000\" stop=\"20260914130000 +0000\"><title>Middle duplicate</title></programme></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {},
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 0,
+                  "stop": 0,
+                  "title": "Missing"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 0,
+                  "stop": 0,
+                  "title": "Invalid"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789390800,
+                  "stop": 1789383600,
+                  "title": "Reversed"
+                }
+              ]
+            }
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {},
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 0,
+                  "stop": 0,
+                  "title": "Missing"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 0,
+                  "stop": 0,
+                  "title": "Invalid"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789390800,
+                  "stop": 1789383600,
+                  "title": "Reversed"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "name": "invalid missing and reversed programme times",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"a\"/><programme channel=\"a\"><title>Missing</title></programme><programme channel=\"a\" start=\"bad\" stop=\"bad\"><title>Invalid</title></programme><programme channel=\"a\" start=\"20260914130000 +0000\" stop=\"20260914110000 +0000\"><title>Reversed</title></programme></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "A & B + C",
+                "names": ["A & B + C"]
+              }
+            },
+            "programmes": {
+              "a": [
+                {
+                  "desc": "<detail>& end",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "A & B + C tail"
+                }
+              ]
+            }
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "A & B + C",
+                "names": ["A & B + C"]
+              }
+            },
+            "programmes": {
+              "a": [
+                {
+                  "desc": "<detail>& end",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "A & B + C tail"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "name": "entities CDATA and adjacent text",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"a\"><display-name>A &amp; B<![CDATA[ + C]]></display-name></channel><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>A &amp; B<![CDATA[ + C]]> tail</title><desc><![CDATA[<detail>]]>&amp; end</desc></programme></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "Inside",
+                "names": ["Inside"]
+              }
+            },
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Inside"
+                }
+              ]
+            }
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "Inside",
+                "names": ["Inside"]
+              }
+            },
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Inside"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "name": "multiple channel-less or external fields ignored",
+      "profileDifference": false,
+      "xml": "<tv><display-name>Outside</display-name><icon src=\"outside\"/><title>Outside</title><desc>Outside</desc><channel id=\"a\"><display-name>Inside</display-name></channel><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Inside</title></programme><icon src=\"after\"/></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "a",
+                "names": []
+              }
+            },
+            "programmes": {}
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "",
+                "id": "a",
+                "name": "a",
+                "names": []
+              }
+            },
+            "programmes": {}
+          }
+        }
+      },
+      "name": "unknown nested elements retain active text target",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"a\"><display-name>A<unknown>B</unknown>C</display-name></channel><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>A<unknown>B</unknown>C</title><desc>One<unknown>Two</unknown>Three</desc></programme></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "later",
+                "id": "a",
+                "name": "Second",
+                "names": ["Second"]
+              }
+            },
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "One"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Two"
+                }
+              ]
+            }
+          }
+        },
+        "native": {
+          "result": {
+            "channels": {
+              "a": {
+                "icon": "later",
+                "id": "a",
+                "name": "Second",
+                "names": ["Second"]
+              }
+            },
+            "programmes": {
+              "a": [
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "One"
+                },
+                {
+                  "desc": "",
+                  "icon": "",
+                  "start": 1789383600,
+                  "stop": 1789387200,
+                  "title": "Two"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "name": "channel metadata interleaved with programmes",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"a\"><display-name>First</display-name></channel><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>One</title></programme><channel id=\"a\"><display-name>Second</display-name><icon src=\"later\"/></channel><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Two</title></programme></tv>"
+    },
+    {
+      "expected": {
+        "browser": {
+          "error": {
+            "chain": [
+              "XML parse error at 224: syntax error: tag not closed: `>` not found before end of input"
+            ],
+            "message": "XML parse error at 224: syntax error: tag not closed: `>` not found before end of input"
+          }
+        },
+        "native": {
+          "error": {
+            "chain": [
+              "XML parse error at 224: syntax error: tag not closed: `>` not found before end of input"
+            ],
+            "message": "XML parse error at 224: syntax error: tag not closed: `>` not found before end of input"
+          }
+        }
+      },
+      "name": "malformed tail after completed metadata and programme",
+      "profileDifference": false,
+      "xml": "<tv><channel id=\"a\"><display-name>Saved alias</display-name><icon src=\"saved-icon\"/></channel><programme channel=\"a\" start=\"20260914110000 +0000\" stop=\"20260914120000 +0000\"><title>Saved programme</title></programme><channel"
+    }
+  ]
+}

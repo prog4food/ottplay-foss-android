@@ -1,0 +1,38 @@
+Copyright headers transcribed from the actual bundled JavaScript files.
+Recorded 2026-09-12. Full upstream licenses accompany these headers.
+
+js/jquery-1.11.1.min.js
+/*! jQuery v1.11.1 | (c) 2005, 2014 jQuery Foundation, Inc. | jquery.org/license */
+
+js/shaka-player.compiled.js
+/*
+ @license
+ Shaka Player
+ Copyright 2016 Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/
+
+/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+
+/*
+ @license
+ Copyright 2008 The Closure Library Authors
+ SPDX-License-Identifier: Apache-2.0
+*/
+
+/*
+ @license
+ Copyright 2006 The Closure Library Authors
+ SPDX-License-Identifier: Apache-2.0
+*/
+
+/*
+ @license
+ EME Encryption Scheme Polyfill
+ Copyright 2019 Google LLC
+ SPDX-License-Identifier: Apache-2.0
+*/

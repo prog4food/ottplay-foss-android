@@ -1,0 +1,325 @@
+[
+  {
+    "id": "ubuntu-latest-chromium-1-64-0",
+    "os": "ubuntu-latest",
+    "engine": "chromium",
+    "playwright": "1.64.0",
+    "browser_version": "156.0.8078.4",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "required"
+  },
+  {
+    "id": "ubuntu-latest-firefox-1-64-0",
+    "os": "ubuntu-latest",
+    "engine": "firefox",
+    "playwright": "1.64.0",
+    "browser_version": "157.0",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "required"
+  },
+  {
+    "id": "ubuntu-26-04-webkit-1-64-0",
+    "os": "ubuntu-26.04",
+    "engine": "webkit",
+    "playwright": "1.64.0",
+    "browser_version": "27.2",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "required"
+  },
+  {
+    "id": "windows-2022-chromium-1-64-0",
+    "os": "windows-2022",
+    "engine": "chromium",
+    "playwright": "1.64.0",
+    "browser_version": "156.0.8078.4",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "required"
+  },
+  {
+    "id": "windows-2022-firefox-1-64-0",
+    "os": "windows-2022",
+    "engine": "firefox",
+    "playwright": "1.64.0",
+    "browser_version": "157.0",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "extended"
+  },
+  {
+    "id": "windows-2022-webkit-1-64-0",
+    "os": "windows-2022",
+    "engine": "webkit",
+    "playwright": "1.64.0",
+    "browser_version": "27.2",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "extended"
+  },
+  {
+    "id": "macos-15-chromium-1-64-0",
+    "os": "macos-15",
+    "engine": "chromium",
+    "playwright": "1.64.0",
+    "browser_version": "156.0.8078.4",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "extended"
+  },
+  {
+    "id": "macos-15-firefox-1-64-0",
+    "os": "macos-15",
+    "engine": "firefox",
+    "playwright": "1.64.0",
+    "browser_version": "157.0",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "extended"
+  },
+  {
+    "id": "macos-15-webkit-1-64-0",
+    "os": "macos-15",
+    "engine": "webkit",
+    "playwright": "1.64.0",
+    "browser_version": "27.2",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "required"
+  },
+  {
+    "id": "ubuntu-latest-chrome",
+    "os": "ubuntu-latest",
+    "engine": "chromium",
+    "channel": "chrome",
+    "playwright": "1.64.0",
+    "browser_version": "installed",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "extended"
+  },
+  {
+    "id": "ubuntu-latest-msedge",
+    "os": "ubuntu-latest",
+    "engine": "chromium",
+    "channel": "msedge",
+    "playwright": "1.64.0",
+    "browser_version": "installed",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "extended"
+  },
+  {
+    "id": "ubuntu-latest-chrome-beta",
+    "os": "ubuntu-latest",
+    "engine": "chromium",
+    "channel": "chrome-beta",
+    "playwright": "1.64.0",
+    "browser_version": "installed",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "extended"
+  },
+  {
+    "id": "ubuntu-latest-msedge-beta",
+    "os": "ubuntu-latest",
+    "engine": "chromium",
+    "channel": "msedge-beta",
+    "playwright": "1.64.0",
+    "browser_version": "installed",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "extended"
+  },
+  {
+    "id": "windows-2022-chrome",
+    "os": "windows-2022",
+    "engine": "chromium",
+    "channel": "chrome",
+    "playwright": "1.64.0",
+    "browser_version": "installed",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "extended"
+  },
+  {
+    "id": "windows-2022-msedge",
+    "os": "windows-2022",
+    "engine": "chromium",
+    "channel": "msedge",
+    "playwright": "1.64.0",
+    "browser_version": "installed",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "extended"
+  },
+  {
+    "id": "macos-15-chrome",
+    "os": "macos-15",
+    "engine": "chromium",
+    "channel": "chrome",
+    "playwright": "1.64.0",
+    "browser_version": "installed",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "extended"
+  },
+  {
+    "id": "macos-15-msedge",
+    "os": "macos-15",
+    "engine": "chromium",
+    "channel": "msedge",
+    "playwright": "1.64.0",
+    "browser_version": "installed",
+    "toolchain": "tools/browser-compatibility/playwright-1-64-0",
+    "tier": "extended"
+  },
+  {
+    "id": "ubuntu-latest-chromium-1-63-0",
+    "os": "ubuntu-latest",
+    "engine": "chromium",
+    "playwright": "1.63.0",
+    "browser_version": "153.0.8010.12",
+    "toolchain": "tools/browser-compatibility/playwright-1-63-0",
+    "tier": "extended"
+  },
+  {
+    "id": "ubuntu-latest-firefox-1-63-0",
+    "os": "ubuntu-latest",
+    "engine": "firefox",
+    "playwright": "1.63.0",
+    "browser_version": "155.0",
+    "toolchain": "tools/browser-compatibility/playwright-1-63-0",
+    "tier": "extended"
+  },
+  {
+    "id": "ubuntu-26-04-webkit-1-63-0",
+    "os": "ubuntu-26.04",
+    "engine": "webkit",
+    "playwright": "1.63.0",
+    "browser_version": "26.6",
+    "toolchain": "tools/browser-compatibility/playwright-1-63-0",
+    "tier": "extended"
+  },
+  {
+    "id": "windows-2022-chromium-1-63-0",
+    "os": "windows-2022",
+    "engine": "chromium",
+    "playwright": "1.63.0",
+    "browser_version": "153.0.8010.12",
+    "toolchain": "tools/browser-compatibility/playwright-1-63-0",
+    "tier": "extended"
+  },
+  {
+    "id": "windows-2022-firefox-1-63-0",
+    "os": "windows-2022",
+    "engine": "firefox",
+    "playwright": "1.63.0",
+    "browser_version": "155.0",
+    "toolchain": "tools/browser-compatibility/playwright-1-63-0",
+    "tier": "extended"
+  },
+  {
+    "id": "windows-2022-webkit-1-63-0",
+    "os": "windows-2022",
+    "engine": "webkit",
+    "playwright": "1.63.0",
+    "browser_version": "26.6",
+    "toolchain": "tools/browser-compatibility/playwright-1-63-0",
+    "tier": "extended"
+  },
+  {
+    "id": "macos-15-chromium-1-63-0",
+    "os": "macos-15",
+    "engine": "chromium",
+    "playwright": "1.63.0",
+    "browser_version": "153.0.8010.12",
+    "toolchain": "tools/browser-compatibility/playwright-1-63-0",
+    "tier": "extended"
+  },
+  {
+    "id": "macos-15-firefox-1-63-0",
+    "os": "macos-15",
+    "engine": "firefox",
+    "playwright": "1.63.0",
+    "browser_version": "155.0",
+    "toolchain": "tools/browser-compatibility/playwright-1-63-0",
+    "tier": "extended"
+  },
+  {
+    "id": "macos-15-intel-webkit-1-63-0",
+    "os": "macos-15-intel",
+    "engine": "webkit",
+    "playwright": "1.63.0",
+    "browser_version": "26.6",
+    "toolchain": "tools/browser-compatibility/playwright-1-63-0",
+    "tier": "extended"
+  },
+  {
+    "id": "ubuntu-latest-chromium-1-62-1",
+    "os": "ubuntu-latest",
+    "engine": "chromium",
+    "playwright": "1.62.1",
+    "browser_version": "151.0.7922.34",
+    "toolchain": "tools/browser-compatibility/playwright-1-62-1",
+    "tier": "extended"
+  },
+  {
+    "id": "ubuntu-latest-firefox-1-62-1",
+    "os": "ubuntu-latest",
+    "engine": "firefox",
+    "playwright": "1.62.1",
+    "browser_version": "153.0",
+    "toolchain": "tools/browser-compatibility/playwright-1-62-1",
+    "tier": "extended"
+  },
+  {
+    "id": "ubuntu-26-04-webkit-1-62-1",
+    "os": "ubuntu-26.04",
+    "engine": "webkit",
+    "playwright": "1.62.1",
+    "browser_version": "26.5",
+    "toolchain": "tools/browser-compatibility/playwright-1-62-1",
+    "tier": "extended"
+  },
+  {
+    "id": "windows-2022-chromium-1-62-1",
+    "os": "windows-2022",
+    "engine": "chromium",
+    "playwright": "1.62.1",
+    "browser_version": "151.0.7922.34",
+    "toolchain": "tools/browser-compatibility/playwright-1-62-1",
+    "tier": "extended"
+  },
+  {
+    "id": "windows-2022-firefox-1-62-1",
+    "os": "windows-2022",
+    "engine": "firefox",
+    "playwright": "1.62.1",
+    "browser_version": "153.0",
+    "toolchain": "tools/browser-compatibility/playwright-1-62-1",
+    "tier": "extended"
+  },
+  {
+    "id": "windows-2022-webkit-1-62-1",
+    "os": "windows-2022",
+    "engine": "webkit",
+    "playwright": "1.62.1",
+    "browser_version": "26.5",
+    "toolchain": "tools/browser-compatibility/playwright-1-62-1",
+    "tier": "extended"
+  },
+  {
+    "id": "macos-15-chromium-1-62-1",
+    "os": "macos-15",
+    "engine": "chromium",
+    "playwright": "1.62.1",
+    "browser_version": "151.0.7922.34",
+    "toolchain": "tools/browser-compatibility/playwright-1-62-1",
+    "tier": "extended"
+  },
+  {
+    "id": "macos-15-firefox-1-62-1",
+    "os": "macos-15",
+    "engine": "firefox",
+    "playwright": "1.62.1",
+    "browser_version": "153.0",
+    "toolchain": "tools/browser-compatibility/playwright-1-62-1",
+    "tier": "extended"
+  },
+  {
+    "id": "macos-15-intel-webkit-1-62-1",
+    "os": "macos-15-intel",
+    "engine": "webkit",
+    "playwright": "1.62.1",
+    "browser_version": "26.5",
+    "toolchain": "tools/browser-compatibility/playwright-1-62-1",
+    "tier": "extended"
+  }
+]

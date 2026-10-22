@@ -1,0 +1,90 @@
+<svg
+    aria-labelledby="title desc"
+    role="img"
+    viewBox="0 0 1040 610"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">
+        OTTPlay: player, controller and device responsibilities / компоненты
+    </title>
+    <desc id="desc">
+        The controller sends scoped commands and retains outcomes. The player
+        validates local policy and source identity, resolves streams, and owns
+        playback. Provider URLs stay in the player. Settings recovery uses local
+        storage. Android preferences are in the separate native app. Сервер
+        передаёт команды, плеер проверяет права и источник и сам разрешает
+        поток.
+    </desc>
+    <defs>
+        <marker
+            id="arrow"
+            markerHeight="9"
+            markerWidth="9"
+            orient="auto"
+            refX="8"
+            refY="4"
+        >
+            <path
+                d="M0 0L8 4L0 8"
+                fill="none"
+                stroke="#3b6280"
+                stroke-width="2"
+            />
+        </marker>
+    </defs>
+    <rect fill="#f5f8fc" height="610" rx="20" width="1040" />
+    <g fill="#153047" font-family="system-ui,sans-serif">
+        <text font-size="26" font-weight="700" x="40" y="49">
+            OTTPlay · ownership / ответственность компонентов
+        </text>
+        <g fill="#fff" stroke="#8faec5" stroke-width="2">
+            <rect height="180" rx="14" width="290" x="40" y="90" />
+            <rect height="290" rx="14" width="610" x="390" y="90" />
+            <rect height="140" rx="14" width="290" x="40" y="430" />
+            <rect height="140" rx="14" width="285" x="390" y="430" />
+            <rect height="140" rx="14" width="285" x="715" y="430" />
+        </g>
+        <g font-size="20" font-weight="700">
+            <text x="60" y="122">Control service + CLI</text>
+            <text x="412" y="122">Player / Плеер</text>
+            <text x="60" y="464">Native Android</text>
+            <text x="410" y="464">Local storage</text>
+            <text x="735" y="464">Provider / Провайдер</text>
+        </g>
+        <g font-size="16">
+            <text x="60" y="155">Scoped operators / права</text>
+            <text x="60" y="184">Outcome journal / исходы</text>
+            <text x="60" y="213">Preset checkpoints / шаги</text>
+            <text x="60" y="242">No replay on restart</text>
+            <text x="412" y="159">
+                Source identity + local policy / источник и локальные права
+            </text>
+            <text x="412" y="195">
+                One owned playback session / владелец воспроизведения
+            </text>
+            <text x="412" y="231">
+                Finite retry + quality ceilings + explicit backups
+            </text>
+            <text x="412" y="267">
+                Lazy Xtream library + exact XMLTV binding
+            </text>
+            <text x="412" y="303">
+                Accessible controls + 88 locale catalogs
+            </text>
+            <text fill="#31674b" x="412" y="345">
+                URLs resolved here / URL разрешается здесь
+            </text>
+            <text x="60" y="501">Language / role / Auto / Off</text>
+            <text x="60" y="531">Separate APK / отдельный APK</text>
+            <text x="410" y="501">Guarded undo journal</text>
+            <text x="410" y="531">One writer / один писатель</text>
+            <text x="735" y="501">Catalogues, EPG, streams</text>
+            <text x="735" y="531">Credentials stay local</text>
+        </g>
+    </g>
+    <g fill="none" marker-end="url(#arrow)" stroke="#3b6280" stroke-width="2">
+        <path d="M330 175H382" />
+        <path d="M530 380V422" />
+        <path d="M860 430V389" />
+    </g>
+</svg>

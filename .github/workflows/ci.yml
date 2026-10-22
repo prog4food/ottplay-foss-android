@@ -1,0 +1,385 @@
+name: CI
+
+on:
+  workflow_call: {}
+
+env:
+  NODE_VERSION: '22'
+
+permissions:
+  contents: read
+
+jobs:
+  linux-playback-compat:
+    name: Native playback compatibility (${{ matrix.platform }})
+    runs-on: ${{ matrix.platform }}
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ubuntu-24.04, ubuntu-24.04-arm]
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install the native package build dependencies
+        run: |
+          bash scripts/ci-tauri-linux-deps.sh
+          sudo apt-get install -y build-essential dpkg-dev meson ninja-build pkg-config patch binutils \
+            libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+      - name: Compile and qualify the private playback plugin
+        run: |
+          python3 scripts/build-linux-playback-compat.py --output build/linux-playback-compat
+          python3 scripts/package-linux-playback-compat.py prepare
+      - name: Preserve native build evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ci-linux-playback-compat-${{ matrix.platform }}
+          path: |
+            build/linux-playback-compat/*.json
+            build/linux-playback-compat/*.log
+            build/linux-playback-compat/*.txt
+            build/linux-playback-compat/*.tsv
+          if-no-files-found: warn
+          retention-days: 14
+  remote-integration:
+    name: Remote control and diagnostics integration
+    runs-on: ${{ fromJSON((vars.CI_RUNNER_MODE == 'self-hosted' || vars.CI_RUNNER_MODE == 'k3s') && ((github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) || (contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name) && github.ref == format('refs/heads/{0}', github.event.repository.default_branch))) && (vars.CI_RUNNER_LABELS || '[]') || '["ubuntu-latest"]') }}
+    timeout-minutes: 15
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: open-ott-play/ottplay-control-server
+          ref: 9b28c08eefca3948c78336e7e16a45e6fc492e31
+          path: .control-integration
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: open-ott-play/ottplay-control-server
+          ref: bdbce12256528bef061ed96fff0a2f26bbb4157b
+          path: .control-current
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: '1.26.9'
+          cache: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts
+      - name: Build the pinned control server
+        working-directory: .control-integration
+        run: go build -o "$RUNNER_TEMP/ottplay-control-server" ./cmd/ottplay-control-server
+      - name: Exercise real HTTPS diagnostics and legacy repairs
+        env:
+          OTT_OFFLINE_PROFILES: unsupported-controller
+          OTT_CONTROL_BINARY: ${{ runner.temp }}/ottplay-control-server
+          OTT_DIAGNOSTICS_CLI: ${{ github.workspace }}/.control-integration/cli/diagnostics.py
+          OTT_CLI: ${{ github.workspace }}/.control-integration/cli/ott.py
+        run: |
+          node scripts/smoke-diagnostics.cjs
+          # M3U metadata uses the current CLI; keep the old server and its negative capability probes.
+          OTT_CLI="$GITHUB_WORKSPACE/.control-current/cli/ott.py" node scripts/smoke-remote-cli.cjs
+          node scripts/smoke-workbench.cjs
+          # Exact M3U settings comparison uses the current contract in the roadmap step below.
+      - name: Build the engine-aware control server
+        working-directory: .control-current
+        run: go build -o "$RUNNER_TEMP/ottplay-control-server-current" ./cmd/ottplay-control-server
+      - name: Exercise local profiles with the current controller
+        env:
+          OTT_CONTROL_BINARY: ${{ runner.temp }}/ottplay-control-server-current
+          OTT_CLI: ${{ github.workspace }}/.control-current/cli/ott.py
+        run: node scripts/smoke-remote-cli.cjs --offline-profiles-only
+      - name: Keep the legacy CLI compatible with the current server
+        env:
+          OTT_CONTROL_BINARY: ${{ runner.temp }}/ottplay-control-server-current
+          OTT_CLI: ${{ github.workspace }}/.control-integration/cli/ott.py
+        run: node scripts/smoke-workbench.cjs
+      - name: Reject engine inspection on the legacy server without downgrading
+        env:
+          OTT_CONTROL_BINARY: ${{ runner.temp }}/ottplay-control-server
+          OTT_CLI: ${{ github.workspace }}/.control-current/cli/ott.py
+          OTT_DEBUG_ENGINE_V2: unsupported-controller
+        run: node scripts/smoke-workbench.cjs
+      - name: Exercise explicit engine inspection and default legacy payloads
+        env:
+          OTT_CONTROL_BINARY: ${{ runner.temp }}/ottplay-control-server-current
+          OTT_CLI: ${{ github.workspace }}/.control-current/cli/ott.py
+          OTT_DEBUG_ENGINE_V2: '1'
+        run: node scripts/smoke-workbench.cjs
+      - name: Exercise roadmap with the current controller
+        run: node .control-current/scripts/smoke_foss_roadmap.cjs .
+  typecheck:
+    name: Typecheck
+    runs-on: ${{ fromJSON((vars.CI_RUNNER_MODE == 'self-hosted' || vars.CI_RUNNER_MODE == 'k3s') && ((github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) || (contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name) && github.ref == format('refs/heads/{0}', github.event.repository.default_branch))) && (vars.CI_RUNNER_LABELS || '[]') || '["ubuntu-latest"]') }}
+
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci --ignore-scripts
+
+      - name: TypeScript check
+        run: npm run typecheck
+
+    timeout-minutes: 30
+  lint:
+    name: Lint
+    runs-on: ${{ fromJSON((vars.CI_RUNNER_MODE == 'self-hosted' || vars.CI_RUNNER_MODE == 'k3s') && ((github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) || (contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name) && github.ref == format('refs/heads/{0}', github.event.repository.default_branch))) && (vars.CI_RUNNER_LABELS || '[]') || '["ubuntu-latest"]') }}
+
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci --ignore-scripts
+
+      - name: Biome lint
+        run: npm run lint
+
+    timeout-minutes: 30
+  build:
+    name: Build
+    outputs:
+      browser-artifact-id: ${{ steps.browser-artifact.outputs.artifact-id }}
+    runs-on: ubuntu-26.04
+    needs: typecheck
+
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      # This frontend job also runs Linux WebKit MSE playback checks.
+      - name: Verify Linux WebKit host
+        run: node scripts/check-linux-webkit-host.cjs
+
+      - run: npm ci --ignore-scripts
+
+      - name: Verify committed media runtime
+        run: npm run check:media
+
+      - name: Build container frontend from declared inputs
+        timeout-minutes: 10
+        run: docker build --target build --progress=plain .
+
+      - name: Build bundle
+        run: npm run build
+
+      - name: Check classic bundle size budgets
+        run: npm run check:size
+
+      - name: Measure emitted classic module composition
+        run: npm run measure:composition
+
+      - name: Upload classic build report
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: classic-build-report-${{ github.sha }}
+          path: |
+            build/reports/classic-bundle.json
+            build/reports/classic-composition.json
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Classic bundle smoke (ES5)
+        run: npm run check:bundle
+
+      - name: Check emitted ES5 grammar
+        run: npm run check:es5
+
+      - name: Install browsers for device and native UI checks
+        run: npx playwright install --with-deps chromium webkit
+
+      - name: Test local browser media and offline app shell
+        run: |
+          node tests/test_browser_direct_media.cjs
+          node tests/test_browser_local_media.cjs --built-ui
+
+      - name: Test hosted EPG worker and persistent cache
+        run: npm run test:hosted:browser
+
+      - name: Test device boot and remote navigation in Chromium
+        run: npm run test:devices:browser
+
+      # Linux WebKit exercises MSE here; native HLS needs the macOS media stack.
+      # The complete engine matrix is required by Native Shells' apple job.
+      - name: Test MSE aspect persistence in Linux WebKit
+        run: npx playwright test tests/browser/plex-provider.spec.cjs --grep 'Plex aspect persists.*(hls\.js|video\.js)$' --browser=webkit
+
+      - name: Test native channel formatting with enforced CSP
+        run: npm run test:native:ui
+
+      - name: Upload device browser failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: device-browser-failures-${{ github.sha }}
+          path: |
+            build/device-browser-report/
+            build/device-browser-results/
+            build/native-ui-report/
+            build/native-ui-results/
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Package base OTT for device testing
+        run: npm run package:modea
+
+      - name: Upload base OTT test bundle
+        id: browser-artifact
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ottplay-foss-modea-${{ github.sha }}
+          path: |
+            build/packages/ottplay-foss-modea.tar.gz
+            build/packages/ottplay-foss-modea.sha256
+          retention-days: 14
+
+
+    timeout-minutes: 30
+  frontend-tests:
+    name: Frontend Tests
+    runs-on: ${{ fromJSON((vars.CI_RUNNER_MODE == 'self-hosted' || vars.CI_RUNNER_MODE == 'k3s') && ((github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) || (contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name) && github.ref == format('refs/heads/{0}', github.event.repository.default_branch))) && (vars.CI_RUNNER_LABELS || '[]') || '["ubuntu-latest"]') }}
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run check:test-inventory
+      - run: npm test
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - run: |
+          python3 -m pip install --require-hashes --only-binary=:all: -r requirements-test.txt
+      - name: Python suite and runtime branch coverage gate
+        run: npm run test:python
+      - name: Preserve Python suite evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: python-suite-evidence
+          path: reports/python/
+          retention-days: 14
+
+    timeout-minutes: 30
+  rust-tests:
+    name: Rust Core and Server Tests
+    runs-on: ${{ fromJSON((vars.CI_RUNNER_MODE == 'self-hosted' || vars.CI_RUNNER_MODE == 'k3s') && ((github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) || (contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name) && github.ref == format('refs/heads/{0}', github.event.repository.default_branch))) && (vars.CI_RUNNER_LABELS || '[]') || '["ubuntu-latest"]') }}
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # stable
+        with:
+          toolchain: stable
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+      - name: Test isolated container workspace and lockfile inputs
+        run: python3 tests/test_container_workspace.py
+      - name: Test core and server including shared XMLTV differential contracts
+        run: cargo test --locked -p ottplay-core -p ottplay-server
+      - name: Verify private Linux playback selection guards
+        run: cargo test --locked --manifest-path tests/linux-media-compat/Cargo.toml
+      - name: Test Linux playback packaging contracts
+        run: |
+          python3 packaging/linux-playback-compat/test_builder.py
+          python3 tests/test_linux_playback_packaging.py
+      - name: Replay fixed fuzz regression corpus (no fuzz campaign)
+        run: |
+          cargo fmt --manifest-path fuzz/Cargo.toml -- --check
+          cargo clippy --locked --manifest-path fuzz/Cargo.toml --lib -- -D warnings
+          cargo test --locked --manifest-path fuzz/Cargo.toml --lib
+      - name: Enforce release server EPG performance budgets
+        run: |
+          cargo build --locked --release -p ottplay-server
+          python3 scripts/check-epg-performance.py --server target/release/ottplay-server --output reports/epg/performance.json
+      - name: Preserve EPG performance evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: epg-performance
+          path: reports/epg/performance.json
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Verify published GLib source and security backport
+        run: node scripts/check-glib-backport.cjs
+      - name: Verify native drag pasteboard dependency guards
+        run: node scripts/check-macos-drag-backport.cjs
+      - name: Install GLib for optimized iterator regression
+        run: sudo apt-get update && sudo apt-get install -y libglib2.0-dev pkg-config
+      - name: Exercise patched GLib iterator through FFI in release mode
+        run: cargo test --locked --release --manifest-path tests/glib-variant-regression/Cargo.toml
+    timeout-minutes: 30
+
+  browser-compatibility:
+    needs: build
+    uses: victron-venus/venus-os-ci-toolkit/.github/workflows/typescript-ci.yml@6b2d99519d513d2b871d2a845ddd6134dea4af2c
+    permissions:
+      contents: read
+      actions: read
+    with:
+      node-version: '22'
+      run-node-ci: false
+      browser-matrix-file: .github/browser-compatibility.json
+      browser-test-command: node scripts/browser-acceptance.cjs
+      browser-artifact-id: ${{ needs.build.outputs.browser-artifact-id }}
+      browser-artifact-path: browser-candidate
+      browser-prepare-command: |
+        # Synthetic HLS media requires the locked mux.js dev dependency.
+        npm ci --include=dev --ignore-scripts
+        PYTHON=python3
+        if ! "$PYTHON" -c 'import sys; assert sys.version_info >= (3, 8)' 2>/dev/null; then PYTHON=python; fi
+        "$PYTHON" scripts/prepare_browser_candidate.py browser-candidate browser-candidate-web

@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-swop-http"
+description = "Allow the bounded, explicit native SWOP relay transport."
+commands.allow = ["swop_http"]

@@ -1,0 +1,326 @@
+[
+  {
+    "name": "missing-popup_message",
+    "body": "{\"command\":\"popup_message\"}"
+  },
+  {
+    "name": "missing-channel_by_number",
+    "body": "{\"command\":\"channel_by_number\"}"
+  },
+  {
+    "name": "missing-channel_by_name",
+    "body": "{\"command\":\"channel_by_name\"}"
+  },
+  {
+    "name": "missing-random_channel",
+    "body": "{\"command\":\"random_channel\"}"
+  },
+  {
+    "name": "missing-change_provider",
+    "body": "{\"command\":\"change_provider\"}"
+  },
+  {
+    "name": "missing-change_provider_settings",
+    "body": "{\"command\":\"change_provider_settings\"}"
+  },
+  {
+    "name": "missing-change_playlist",
+    "body": "{\"command\":\"change_playlist\"}"
+  },
+  {
+    "name": "missing-set_volume",
+    "body": "{\"command\":\"set_volume\"}"
+  },
+  {
+    "name": "missing-exit_player",
+    "body": "{\"command\":\"exit_player\"}"
+  },
+  {
+    "name": "missing-unknown",
+    "body": "{\"command\":\"unknown\"}"
+  },
+  {
+    "name": "shape-10",
+    "body": ""
+  },
+  {
+    "name": "shape-11",
+    "body": "null"
+  },
+  {
+    "name": "shape-12",
+    "body": "[]"
+  },
+  {
+    "name": "shape-13",
+    "body": "{}"
+  },
+  {
+    "name": "shape-14",
+    "body": "{\"command\":null}"
+  },
+  {
+    "name": "shape-15",
+    "body": "{\"command\":123}"
+  },
+  {
+    "name": "shape-16",
+    "body": "{\"command\":\" \"}"
+  },
+  {
+    "name": "shape-17",
+    "body": "{\"command\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"}"
+  },
+  {
+    "name": "popup_duration-18",
+    "body": "{\"command\":\"popup_message\",\"message\":\"ok\",\"popup_duration\":null}"
+  },
+  {
+    "name": "popup_duration-19",
+    "body": "{\"command\":\"popup_message\",\"message\":\"ok\",\"popup_duration\":0}"
+  },
+  {
+    "name": "popup_duration-20",
+    "body": "{\"command\":\"popup_message\",\"message\":\"ok\",\"popup_duration\":0.0001}"
+  },
+  {
+    "name": "popup_duration-21",
+    "body": "{\"command\":\"popup_message\",\"message\":\"ok\",\"popup_duration\":0.001}"
+  },
+  {
+    "name": "popup_duration-22",
+    "body": "{\"command\":\"popup_message\",\"message\":\"ok\",\"popup_duration\":3600}"
+  },
+  {
+    "name": "popup_duration-23",
+    "body": "{\"command\":\"popup_message\",\"message\":\"ok\",\"popup_duration\":3600.1}"
+  },
+  {
+    "name": "popup_duration-24",
+    "body": "{\"command\":\"popup_message\",\"message\":\"ok\",\"popup_duration\":\"1\"}"
+  },
+  {
+    "name": "channel_number-25",
+    "body": "{\"command\":\"channel_by_number\",\"channel_number\":null}"
+  },
+  {
+    "name": "channel_number-26",
+    "body": "{\"command\":\"channel_by_number\",\"channel_number\":0}"
+  },
+  {
+    "name": "channel_number-27",
+    "body": "{\"command\":\"channel_by_number\",\"channel_number\":1}"
+  },
+  {
+    "name": "channel_number-28",
+    "body": "{\"command\":\"channel_by_number\",\"channel_number\":1.5}"
+  },
+  {
+    "name": "channel_number-29",
+    "body": "{\"command\":\"channel_by_number\",\"channel_number\":9007199254740991}"
+  },
+  {
+    "name": "channel_number-30",
+    "body": "{\"command\":\"channel_by_number\",\"channel_number\":9007199254740992}"
+  },
+  {
+    "name": "channel_number-31",
+    "body": "{\"command\":\"channel_by_number\",\"channel_number\":\"1\"}"
+  },
+  {
+    "name": "provider-32",
+    "body": "{\"command\":\"change_provider\",\"provider\":-1}"
+  },
+  {
+    "name": "provider-33",
+    "body": "{\"command\":\"change_provider\",\"provider\":0}"
+  },
+  {
+    "name": "provider-34",
+    "body": "{\"command\":\"change_provider\",\"provider\":1.5}"
+  },
+  {
+    "name": "provider-35",
+    "body": "{\"command\":\"change_provider\",\"provider\":9007199254740992}"
+  },
+  {
+    "name": "message-36",
+    "body": "{\"command\":\"popup_message\",\"message\":\"\"}"
+  },
+  {
+    "name": "message-37",
+    "body": "{\"command\":\"popup_message\",\"message\":\" \"}"
+  },
+  {
+    "name": "message-38",
+    "body": "{\"command\":\"popup_message\",\"message\":\"éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé\"}"
+  },
+  {
+    "name": "message-39",
+    "body": "{\"command\":\"popup_message\",\"message\":\"ééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé\"}"
+  },
+  {
+    "name": "message-40",
+    "body": "{\"command\":\"popup_message\",\"message\":1}"
+  },
+  {
+    "name": "channel_name-41",
+    "body": "{\"command\":\"channel_by_name\",\"channel_name\":\"\"}"
+  },
+  {
+    "name": "channel_name-42",
+    "body": "{\"command\":\"channel_by_name\",\"channel_name\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"}"
+  },
+  {
+    "name": "channel_name-43",
+    "body": "{\"command\":\"channel_by_name\",\"channel_name\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"}"
+  },
+  {
+    "name": "random_range-44",
+    "body": "{\"command\":\"random_channel\",\"random_range\":null}"
+  },
+  {
+    "name": "random_range-45",
+    "body": "{\"command\":\"random_channel\",\"random_range\":[]}"
+  },
+  {
+    "name": "random_range-46",
+    "body": "{\"command\":\"random_channel\",\"random_range\":[1]}"
+  },
+  {
+    "name": "random_range-47",
+    "body": "{\"command\":\"random_channel\",\"random_range\":[1,2]}"
+  },
+  {
+    "name": "random_range-48",
+    "body": "{\"command\":\"random_channel\",\"random_range\":[2,1]}"
+  },
+  {
+    "name": "random_range-49",
+    "body": "{\"command\":\"random_channel\",\"random_range\":[1,9007199254740992]}"
+  },
+  {
+    "name": "provider_settings-50",
+    "body": "{\"command\":\"change_provider_settings\",\"provider_settings\":\"\"}"
+  },
+  {
+    "name": "provider_settings-51",
+    "body": "{\"command\":\"change_provider_settings\",\"provider_settings\":\"{}\"}"
+  },
+  {
+    "name": "provider_settings-52",
+    "body": "{\"command\":\"change_provider_settings\",\"provider_settings\":\"null\"}"
+  },
+  {
+    "name": "provider_settings-53",
+    "body": "{\"command\":\"change_provider_settings\",\"provider_settings\":\"[]\"}"
+  },
+  {
+    "name": "provider_settings-54",
+    "body": "{\"command\":\"change_provider_settings\",\"provider_settings\":\"{\\\"x\\\":1,\\\"x\\\":2}\"}"
+  },
+  {
+    "name": "provider_settings-55",
+    "body": "{\"command\":\"change_provider_settings\",\"provider_settings\":\"invalid\"}"
+  },
+  {
+    "name": "playlist-56",
+    "body": "{\"command\":\"change_playlist\",\"playlist\":\"\"}"
+  },
+  {
+    "name": "playlist-57",
+    "body": "{\"command\":\"change_playlist\",\"playlist\":\"https://x/a\"}"
+  },
+  {
+    "name": "playlist-58",
+    "body": "{\"command\":\"change_playlist\",\"playlist\":\"http://u:p@x/a\"}"
+  },
+  {
+    "name": "playlist-59",
+    "body": "{\"command\":\"change_playlist\",\"playlist\":\"file:///x\"}"
+  },
+  {
+    "name": "playlist-60",
+    "body": "{\"command\":\"change_playlist\",\"playlist\":\"http://\"}"
+  },
+  {
+    "name": "playlist-61",
+    "body": "{\"command\":\"change_playlist\",\"playlist\":\"https://x/%zz\"}"
+  },
+  {
+    "name": "volume-62",
+    "body": "{\"command\":\"set_volume\",\"volume\":-1}"
+  },
+  {
+    "name": "volume-63",
+    "body": "{\"command\":\"set_volume\",\"volume\":0}"
+  },
+  {
+    "name": "volume-64",
+    "body": "{\"command\":\"set_volume\",\"volume\":100}"
+  },
+  {
+    "name": "volume-65",
+    "body": "{\"command\":\"set_volume\",\"volume\":101}"
+  },
+  {
+    "name": "volume-66",
+    "body": "{\"command\":\"set_volume\",\"volume\":null}"
+  },
+  {
+    "name": "volume_step-67",
+    "body": "{\"command\":\"set_volume\",\"volume_step\":-1e+308}"
+  },
+  {
+    "name": "volume_step-68",
+    "body": "{\"command\":\"set_volume\",\"volume_step\":1e+308}"
+  },
+  {
+    "name": "volume_step-69",
+    "body": "{\"command\":\"set_volume\",\"volume_step\":null}"
+  },
+  {
+    "name": "both-volume",
+    "body": "{\"command\":\"set_volume\",\"volume\":1,\"volume_step\":2}"
+  },
+  {
+    "name": "unknown-first",
+    "body": "{\"command\":\"unknown\",\"extra\":true,\"volume\":null}"
+  },
+  {
+    "name": "extra-before-invalid",
+    "body": "{\"command\":\"popup_message\",\"message\":null,\"extra\":true}"
+  },
+  {
+    "name": "irrelevant-invalid",
+    "body": "{\"command\":\"exit_player\",\"volume\":null}"
+  },
+  {
+    "name": "extra-valid",
+    "body": "{\"command\":\"exit_player\",\"extra\":1}"
+  },
+  {
+    "name": "json-75",
+    "body": "{\"command\":\"exit_player\",\"command\":\"exit_player\"}"
+  },
+  {
+    "name": "json-76",
+    "body": "{\"command\":\"exit_player\"} {}"
+  },
+  {
+    "name": "json-77",
+    "body": "{\"command\":\"exit_player\",}"
+  },
+  {
+    "name": "json-78",
+    "body": "{\"command\":"
+  },
+  {
+    "name": "json-79",
+    "body": "[]"
+  },
+  {
+    "name": "json-80",
+    "body": "null"
+  }
+]

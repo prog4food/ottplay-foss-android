@@ -1,0 +1,224 @@
+{
+  "version": 1,
+  "profiles": {
+    "controlServer": {
+      "json": "host strict object rejects duplicate/trailing",
+      "textLength": "UTF-8 bytes; nonblank host TrimSpace",
+      "unknownCommands": "reject",
+      "unknownFields": "reject",
+      "commandMaxBytes": 64,
+      "errors": {
+        "command": "command is required",
+        "unsupported": "unsupported command",
+        "unexpected": "unexpected command field",
+        "value": "invalid command value"
+      }
+    },
+    "legacyPlayer": {
+      "json": "already decoded host value",
+      "textLength": "unlimited; empty strings allowed",
+      "unknownCommands": "dispatch as unsupported",
+      "unknownFields": "ignore",
+      "fields": "all known fields optional, checked even for unrelated commands",
+      "undefined": "absent",
+      "numbers": "finite; no safe integer ceiling"
+    },
+    "swopServer": {
+      "textLength": "UTF-16 code units",
+      "unknownFields": "ignore",
+      "jsonNull": "host property access error retained"
+    },
+    "legacyCommandClient": {
+      "commandId": "broader compatibility alphabet than server hexadecimal output",
+      "envelopeMax": 256
+    }
+  },
+  "fields": {
+    "popup_duration": {
+      "type": "number",
+      "server": {
+        "min": 0.001,
+        "max": 3600
+      },
+      "player": {
+        "exclusiveMin": 0,
+        "max": 3600
+      }
+    },
+    "channel_number": {
+      "type": "integer",
+      "server": {
+        "min": 1,
+        "max": 9007199254740991
+      },
+      "player": {
+        "min": 1
+      }
+    },
+    "provider": {
+      "type": "integer",
+      "server": {
+        "min": 0,
+        "max": 9007199254740991
+      },
+      "player": {
+        "min": 0
+      }
+    },
+    "volume": {
+      "type": "number",
+      "server": {
+        "min": 0,
+        "max": 100
+      },
+      "player": {}
+    },
+    "volume_step": {
+      "type": "number",
+      "server": {},
+      "player": {}
+    },
+    "random_range": {
+      "type": "range",
+      "server": {
+        "min": 1,
+        "max": 9007199254740991
+      },
+      "player": {
+        "min": 1
+      }
+    },
+    "channel_name": {
+      "type": "text",
+      "server": {
+        "maxBytes": 1024
+      },
+      "player": {}
+    },
+    "message": {
+      "type": "text",
+      "server": {
+        "maxBytes": 8192
+      },
+      "player": {}
+    },
+    "playlist": {
+      "type": "text",
+      "server": {
+        "maxBytes": 8192,
+        "primitive": "httpUrl"
+      },
+      "player": {}
+    },
+    "provider_settings": {
+      "type": "text",
+      "server": {
+        "maxBytes": 8192,
+        "primitive": "json"
+      },
+      "player": {}
+    }
+  },
+  "commands": {
+    "popup_message": {
+      "required": [
+        "message"
+      ],
+      "optional": [
+        "popup_duration"
+      ]
+    },
+    "channel_by_number": {
+      "required": [
+        "channel_number"
+      ]
+    },
+    "channel_by_name": {
+      "required": [
+        "channel_name"
+      ]
+    },
+    "random_channel": {
+      "optional": [
+        "random_range"
+      ]
+    },
+    "change_provider": {
+      "required": [
+        "provider"
+      ]
+    },
+    "change_provider_settings": {
+      "required": [
+        "provider_settings"
+      ]
+    },
+    "change_playlist": {
+      "required": [
+        "playlist"
+      ]
+    },
+    "set_volume": {
+      "optional": [
+        "volume",
+        "volume_step"
+      ],
+      "exactlyOne": [
+        "volume",
+        "volume_step"
+      ]
+    },
+    "exit_player": {}
+  },
+  "constants": {
+    "commandPath": "/api/webhook/commands",
+    "ackPath": "/api/webhook/commands/ack",
+    "legacyPollPath": "/webhook/poll",
+    "legacyNotifyPath": "/webhook/notify",
+    "deviceIdPattern": "^[A-Za-z0-9._:-]{1,128}$",
+    "tokenPattern": "^[A-Za-z0-9_-]{32,256}$",
+    "serverCommandIdPattern": "^[0-9a-f]{32}$",
+    "clientCommandIdPattern": "^[A-Za-z0-9_-]{1,128}$",
+    "ackBatchMax": 50,
+    "commandEnvelopeMax": 256,
+    "swopClientIdPattern": "^[A-Za-z0-9._:-]{8,128}$",
+    "swopClientHeader": "X-Swop-Client-Id",
+    "swopFallbackClientHeader": "X-Ottplay-Client-Id",
+    "swopSessionPath": "/session",
+    "swopSubmitPath": "/submit",
+    "swopValuePath": "/val",
+    "swopDefaultTtl": 600,
+    "swopCodeAlphabet": "ABCDEFGHJKLMNPQRSTUVWXYZ23456789",
+    "swopCodeLength": 6,
+    "swopCaptionLimit": 200,
+    "swopDraftLimit": 4000,
+    "swopValueLimit": 8000,
+    "swopNoteLimit": 200
+  },
+  "interfaces": {
+    "Command": {
+      "channel_name?": "string",
+      "channel_number?": "number",
+      "command": "string",
+      "message?": "string",
+      "playlist?": "string",
+      "popup_duration?": "number",
+      "provider?": "number",
+      "provider_settings?": "string",
+      "random_range?": "[number, number]",
+      "volume?": "number",
+      "volume_step?": "number"
+    },
+    "SwopSessionResponse": {
+      "code?": "string",
+      "error?": "string",
+      "expiresIn?": "number",
+      "url?": "string"
+    },
+    "SwopValueResponse": {
+      "error?": "string",
+      "status?": "string",
+      "value?": "string"
+    }
+  }
+}

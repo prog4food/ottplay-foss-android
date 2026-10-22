@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-pip-player-event"
+description = "Reports readiness and playback from the embedded PiP window."
+commands.allow = ["pip_player_event"]

@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-background-standby"
+description = "Allows the main player to suspend its native media work and inspect pending work."
+commands.allow = ["background_standby_status", "set_background_standby"]

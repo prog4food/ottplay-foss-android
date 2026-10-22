@@ -1,0 +1,87 @@
+# Build outputs
+build/
+dist/
+dist-mobile/
+target/
+
+# Tauri frontend dist
+src-tauri/frontend/
+
+# Dependencies
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+.ruff_cache/
+.venv/
+
+# Runtime data (recreated by server.py / local_proxy.py)
+.cache/
+feedback.log
+logs/
+
+# Local test playlist (contains real stream URLs with tokens)
+test.m3u
+
+# OS / editor
+.DS_Store
+*.backup
+.aid*
+/*.js
+CL*.md
+GR*.md
+CA*.md
+!docs/capacitor-mobile.md
+TO*.md
+*.local.py
+.coverage
+
+uv.lock
+
+# Secrets / local env
+.env
+.env.*
+*.pem
+*.jks
+*.keystore
+*.p12
+google-services.json
+
+# Operator-local overrides (swop base URL, device id) — never commit
+/local/
+/release-output/
+
+# Local reference repositories, audit evidence, recovery backups and debug logs
+/.local-artifacts/
+/.herenow/
+/.local-ops/
+# Frozen release overlays and final build staging
+.release-plan.json
+.release-inputs.json
+release-assets/
+
+# Unified Python suite evidence
+/reports/python/
+
+# Generated from the pinned shared-core distribution by Vite.
+/js/ottplay-core.js
+/js/ottplay-core.manifest.json
+/js/ottplay-core.LICENSE.txt
+
+/js/licenses/rquickjs-LICENSE.txt
+/js/licenses/QuickJS-NG-LICENSE.txt
+
+# Isolated Capacitor 6 / Android 5.1 native outputs.
+**/build-api22/
+
+# Local fuzz build and diagnostics; source corpus is public and synthetic.
+/fuzz/target/
+/fuzz/artifacts/
+/fuzz/coverage/
+!fuzz/Cargo.lock
+
+# Isolated browser evidence and exact candidate staging
+.compatibility/
+browser-candidate/
+browser-candidate-web/

@@ -1,0 +1,20 @@
+{
+  "head": "0c789f469a0c968016e4f0bda2d1140f43244ac0",
+  "version": "1.1.55",
+  "scope": "isolated same-snapshot complete main bundle with only native Auto ownership changes substituted; no optional provider changes",
+  "node": "v26.8.2",
+  "before": {
+    "raw": 874964,
+    "gzip": 270355,
+    "sha256": "2dbafed1f452b8106c7858f5fb3ff2c4056dbf79dcf9070d3aaff1e348136633"
+  },
+  "after": {
+    "raw": 875065,
+    "gzip": 270394,
+    "sha256": "c3c9a21ab388c8a8650dc9a4de2e17056e6180b38d36092379c3d9388798a2e2"
+  },
+  "delta": {
+    "raw": 101,
+    "gzip": 39
+  }
+}

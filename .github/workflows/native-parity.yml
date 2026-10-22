@@ -1,0 +1,232 @@
+name: Native Shells
+
+on:
+  workflow_call: {}
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  shared-guide:
+    name: Shared guide / ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Verify target-specific updater dependencies
+        run: python3 scripts/check-updater-features.py
+      - name: Exercise shared guide through the actual native engine
+        run: cargo test --locked -p ottplay-core -p ottplay-server
+
+  windows-installers:
+    name: Windows installer lifecycle
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # stable
+        with:
+          toolchain: stable
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        with:
+          shared-key: windows-installer-lifecycle
+      - run: npm ci --ignore-scripts
+      - name: Check installer harness and native dependency constraints
+        run: |
+          python tests/test_windows_installers.py
+          python scripts/check-updater-features.py
+      - name: Bundle MSI and NSIS without signing or publishing
+        working-directory: src-tauri
+        run: npx --no-install tauri build --ci --bundles "nsis,msi" -- --locked
+      - name: Install, verify and uninstall both native packages
+        run: python scripts/check-windows-installers.py
+      - name: Preserve installer lifecycle evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: windows-installer-lifecycle-${{ github.sha }}
+          path: build/windows-installer-report/
+          if-no-files-found: warn
+          retention-days: 14
+
+  android:
+    name: Android native plugins
+    runs-on: ${{ fromJSON((vars.CI_RUNNER_MODE == 'self-hosted' || vars.CI_RUNNER_MODE == 'k3s') && ((github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) || (contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name) && github.ref == format('refs/heads/{0}', github.event.repository.default_branch))) && (vars.CI_RUNNER_LABELS || '[]') || '["ubuntu-latest"]') }}
+    timeout-minutes: 30
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4.0.4
+        with:
+          # The action installs command-line tools; its legacy "tools" default is unavailable.
+          packages: platform-tools
+      - name: Install Android SDK for bridge tests and APK compilation
+        run: |
+          bash scripts/ci-android-install-sdk.sh
+      - run: npm ci --ignore-scripts
+      - name: Verify Android TV WebView test host
+        run: node tests/test_android_tv_webview.cjs
+      - name: Verify Android bridge contracts
+        run: |
+          python3 tests/test_command_queue_smoke.py
+          node tests/test_android_activity.cjs
+          node tests/test_remote_app_update.cjs
+          python3 tests/test_android_update_tls.py
+          node tests/android_provider_policy.cjs
+          node tests/test_play_system_icons.cjs
+          npm run test:native:runtime
+          node tests/test_android_privacy_viewer.cjs
+          python3 tests/test_android_emoji_policy.py
+      - name: Build and audit the Full Capacitor APK
+        run: npm run android:full:release
+      - name: Build and audit the API 22 Capacitor APK
+        run: npm run android:api22:release
+      - name: Verify API 22 runtime calls and manifest classes
+        run: cd android && ./gradlew --no-daemon -PottplayApi22=true -PottplayApiCheck=true :app:lintFullRelease
+      - name: Exercise native queue JSON and socket cleanup
+        run: |
+          curl --fail --location --retry 3 https://github.com/JetBrains/kotlin/releases/download/v2.4.20/kotlin-compiler-2.4.20.zip -o "$RUNNER_TEMP/kotlin.zip"
+          unzip -q "$RUNNER_TEMP/kotlin.zip" -d "$RUNNER_TEMP/ott-queue-kotlin"
+          curl --fail --location --retry 3 https://repo.maven.apache.org/maven2/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar -o "$RUNNER_TEMP/android-json.jar"
+          export PATH="$RUNNER_TEMP/ott-queue-kotlin/kotlinc/bin:$PATH"
+          export ANDROID_JSON_JAR="$RUNNER_TEMP/android-json.jar"
+          curl --fail --location --retry 3 https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp-jvm/5.4.0/okhttp-jvm-5.4.0.jar -o "$RUNNER_TEMP/okhttp.jar"
+          curl --fail --location --retry 3 https://repo.maven.apache.org/maven2/com/squareup/okio/okio-jvm/3.17.0/okio-jvm-3.17.0.jar -o "$RUNNER_TEMP/okio.jar"
+          printf '%s  %s\n' b15e605ca0a4b12c62ea7f657dad413c236c947e875854767349cdbe20df473c "$RUNNER_TEMP/okhttp.jar" 3b13dcc3e1573047c2d507fc4f7fcb0bb0cbcd9d395da21d20e09406e2cd6a73 "$RUNNER_TEMP/okio.jar" | sha256sum --check
+          export ANDROID_HTTP_CLASSPATH="$RUNNER_TEMP/okhttp.jar:$RUNNER_TEMP/okio.jar"
+          python3 tests/test_android_queue.py
+          python3 tests/test_android_screenshot.py
+          python3 tests/test_android_app_update_recovery.py
+          python3 tests/test_android_epg_editions.py
+          python3 tests/test_android_network_policy.py
+          npm run test:native-dash
+          python3 tests/test_native_media_lifecycle.py --platform android
+          python3 tests/test_mobile_metadata_standby.py --platform android
+          python3 tests/test_native_epg_cache.py --platform android
+          python3 tests/test_native_xmltv_records.py --platform android
+          python3 tests/test_runtime_diagnostics_native.py --platform android
+
+  apple:
+    name: iOS and Tauri native code
+    runs-on: macos-latest
+    timeout-minutes: 40
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # stable
+        with:
+          toolchain: stable
+      - uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+      - run: npm ci --ignore-scripts
+      - name: Verify optional authenticated HTTP smoke contract
+        run: python3 tests/test_command_queue_smoke.py
+      - run: npm run build:ios
+      # Native HLS and Shaka's Safari path use the macOS media stack.
+      - name: Install WebKit for native HLS playback checks
+        run: npx playwright install webkit
+      - name: Test every aspect engine in macOS WebKit
+        run: npx playwright test tests/browser/plex-provider.spec.cjs --grep 'Plex aspect persists' --browser=webkit
+      - name: Preserve macOS WebKit playback failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: native-hls-browser-failures-${{ github.sha }}
+          path: |
+            build/device-browser-report/
+            build/device-browser-results/
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Test demo playback lifecycle and XMLTV warmup
+        run: |
+          python3 tests/test_ios_demo_media.py
+          python3 tests/test_native_media_lifecycle.py --platform ios
+          python3 tests/test_mobile_metadata_standby.py --platform ios
+          python3 tests/test_native_epg_cache.py --platform ios
+          python3 tests/test_native_xmltv_records.py --platform ios
+          python3 tests/test_runtime_diagnostics_native.py --platform ios
+          python3 tests/test_ios_proxy.py
+          python3 tests/test_ios_access_media.py
+          python3 tests/test_ios_access_auth.py
+          python3 tests/test_ios_public_http.py
+          python3 tests/test_native_swop_swift.py
+          python3 tests/test_native_screenshot_transport_swift.py
+          python3 tests/test_xmltv_warmup_smoke.py
+      - name: Test iOS command queue consent and authentication
+        run: python3 tests/test_ios_command_queue.py
+      - name: Compile iOS plugins without signing
+        run: >-
+          xcodebuild -project ios/App/App.xcodeproj -scheme App
+          -sdk iphonesimulator -destination 'generic/platform=iOS Simulator'
+          -derivedDataPath "$RUNNER_TEMP/ottplay-ios"
+          CODE_SIGNING_ALLOWED=NO build
+      - name: Verify iOS application contains the audited runtime
+        run: >-
+          node scripts/native-runtime.cjs audit
+          "$RUNNER_TEMP/ottplay-ios/Build/Products/Debug-iphonesimulator/App.app/public"
+          --platform capacitor --source ios/App/App/public
+      - name: Verify legacy Blocks FFI backport with the native runtime
+        run: node scripts/check-block-backport.cjs --runtime
+      - name: Test compiled Tauri HTTP bridge
+        run: cargo test --locked -p ottplay-tauri
+      - name: Exercise screenshot permissions through real native IPC
+        run: |
+          screenshot_smoke_dir="$RUNNER_TEMP/ottplay-screenshot-ipc"
+          if cargo run --locked -p ottplay-tauri --example screenshot_smoke -- "$screenshot_smoke_dir/missing" --without-screenshot-permission; then
+            echo 'Missing screenshot permissions unexpectedly allowed native IPC'
+            exit 1
+          fi
+          python3 - "$screenshot_smoke_dir/missing/result.json" <<'PY'
+          import json, pathlib, sys
+          report = pathlib.Path(sys.argv[1])
+          result = json.loads(report.read_text())
+          assert result['status'] == 'fail', result
+          assert 'screenshot_capabilities IPC rejected on main:' in result['error'], result
+          assert 'not allowed' in result['error'], result
+          assert not list(report.parent.glob('*.png')), 'Denied IPC produced screenshot pixels'
+          PY
+          cargo run --locked -p ottplay-tauri --example screenshot_smoke -- "$screenshot_smoke_dir/allowed"
+      - name: Exercise macOS drag callbacks with missing and malformed pasteboards
+        run: python3 tests/macos-drag-regression/run.py

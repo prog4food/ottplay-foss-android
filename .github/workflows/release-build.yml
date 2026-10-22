@@ -1,0 +1,585 @@
+name: Build release assets
+'on':
+  workflow_call:
+    secrets:
+      CAPACITOR_KEYSTORE_BASE64:
+        required: true
+      CAPACITOR_KEY_ALIAS:
+        required: true
+      CAPACITOR_KEY_PASSWORD:
+        required: true
+      APPLE_APP_SPECIFIC_PASSWORD:
+        required: false
+      APPLE_CERTIFICATE:
+        required: false
+      APPLE_CERTIFICATE_PASSWORD:
+        required: false
+      APPLE_ID:
+        required: false
+      APPLE_SIGNING_IDENTITY:
+        required: false
+      APPLE_TEAM_ID:
+        required: false
+      KEYCHAIN_PASSWORD:
+        required: false
+      TAURI_SIGNING_PRIVATE_KEY:
+        required: false
+      TAURI_SIGNING_PRIVATE_KEY_PASSWORD:
+        required: false
+    inputs:
+      version:
+        description: Committed base version, without a v prefix or channel suffix
+        required: true
+        type: string
+      channel:
+        description: nightly, beta or rc; stable promotes existing RC bytes
+        required: true
+        type: string
+      release_plan_artifact:
+        description: Frozen version plan artifact allocated by the release workflow
+        required: true
+        type: string
+permissions:
+  contents: read
+env:
+  RELEASE_VERSION: ${{ inputs.version }}
+  RELEASE_CHANNEL: ${{ inputs.channel }}
+defaults:
+  run:
+    shell: bash
+jobs:
+  build:
+    name: Build player bundle
+    outputs:
+      browser-artifact-id: ${{ steps.browser-artifact.outputs.artifact-id }}
+    runs-on: ${{ fromJSON((vars.CI_RUNNER_MODE == 'self-hosted' || vars.CI_RUNNER_MODE == 'k3s') && (contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name) && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)) && (vars.CI_RUNNER_RELEASE_LABELS || '[]') || '["ubuntu-latest"]') }}
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up release version tooling
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Download frozen release version plan
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: ${{ inputs.release_plan_artifact }}
+          path: .
+      - name: Apply frozen release version inputs
+        shell: bash
+        run: python3 scripts/version_plan.py sync --root . --plan .release-plan.json
+      - name: Verify committed release version
+        run: python3 scripts/check-release-version.py "$RELEASE_VERSION" "$RELEASE_CHANNEL"
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: TypeScript check
+        run: npm run typecheck --ignore-scripts
+      - name: Build bundle
+        run: npm run build --ignore-scripts
+      - name: Package validated server web root
+        run: 'npm run check:bundle
+
+          npm run check:es5
+
+          npm run package:modea
+
+          cp build/packages/ottplay-foss-modea.tar.gz build/packages/ottplay-foss-modea.sha256 .
+
+          # Keep the established download name, using only the audited staged web root.
+
+          cp ottplay-foss-modea.tar.gz ottplay-foss-dist.tar.gz
+
+          sha256sum ottplay-foss-dist.tar.gz > checksums.txt
+
+          '
+      - name: Verify and stage versioned release assets
+        shell: bash
+        env:
+          RELEASE_ASSET_TARGET: web
+          RELEASE_ASSET_PATTERN_0: ottplay-foss-dist.tar.gz
+          RELEASE_ASSET_PATTERN_1: checksums.txt
+          RELEASE_ASSET_PATTERN_2: ottplay-foss-modea.tar.gz
+          RELEASE_ASSET_PATTERN_3: ottplay-foss-modea.sha256
+        run: python3 scripts/stage_release_assets.py --target "$RELEASE_ASSET_TARGET" --pattern "$RELEASE_ASSET_PATTERN_0" --pattern "$RELEASE_ASSET_PATTERN_1" --pattern "$RELEASE_ASSET_PATTERN_2" --pattern "$RELEASE_ASSET_PATTERN_3"
+      - name: Store release assets
+        id: browser-artifact
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release-assets-web
+          path: release-assets/web/*
+          if-no-files-found: error
+          retention-days: 14
+    timeout-minutes: 90
+  tauri:
+    name: Build Tauri (${{ matrix.platform }} ${{ matrix.target || 'host' }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: macos-latest
+            target: aarch64-apple-darwin
+          - platform: macos-latest
+            target: x86_64-apple-darwin
+          - platform: ubuntu-24.04
+            target: ''
+          - platform: ubuntu-24.04-arm
+            target: aarch64-unknown-linux-gnu
+          - platform: windows-latest
+            target: ''
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up release version tooling
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Download frozen release version plan
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: ${{ inputs.release_plan_artifact }}
+          path: .
+      - name: Apply frozen release version inputs
+        shell: bash
+        run: python3 scripts/version_plan.py sync --root . --plan .release-plan.json
+      - name: Verify committed release version
+        run: python3 scripts/check-release-version.py "$RELEASE_VERSION" "$RELEASE_CHANNEL"
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # stable
+        with:
+          toolchain: stable
+      - name: Install Rust target
+        if: matrix.target != ''
+        run: rustup target add ${{ matrix.target }}
+      - name: Rust cache
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
+        with:
+          workspaces: .
+          shared-key: tauri-${{ matrix.platform }}-${{ matrix.target || 'host' }}
+      - name: Install Linux deps
+        if: matrix.platform == 'ubuntu-24.04' || matrix.platform == 'ubuntu-24.04-arm'
+        run: bash scripts/ci-tauri-linux-deps.sh
+      - name: Build private Noble playback compatibility plugin
+        if: matrix.platform == 'ubuntu-24.04' || matrix.platform == 'ubuntu-24.04-arm'
+        timeout-minutes: 25
+        run: |
+          sudo apt-get install -y build-essential dpkg-dev meson ninja-build pkg-config patch binutils \
+            libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+          python3 scripts/build-linux-playback-compat.py --output build/linux-playback-compat
+          python3 scripts/package-linux-playback-compat.py prepare
+      - name: Install JS dependencies
+        run: npm ci --ignore-scripts
+      - name: Build frontend
+        run: npm run build --ignore-scripts
+      - name: Detect optional signing / notarize secrets
+        id: signs
+        shell: bash
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: "if [ -n \"${TAURI_SIGNING_PRIVATE_KEY:-}\" ]; then\n  echo \"tauri_signing=true\" >> \"$GITHUB_OUTPUT\"\n  echo \"Updater signing key present — will create updater artifacts\"\nelse\n  echo \"tauri_signing=false\" >> \"$GITHUB_OUTPUT\"\n  echo \"No TAURI_SIGNING_PRIVATE_KEY — unsigned updater artifacts skipped\"\nfi\nif [ \"${{ matrix.platform }}\" = \"macos-latest\" ] \\\n  && [ -n \"${APPLE_CERTIFICATE:-}\" ] \\\n  && [ -n \"${APPLE_ID:-}\" ] \\\n  && [ -n \"${APPLE_APP_SPECIFIC_PASSWORD:-}\" ] \\\n  && [ -n \"${APPLE_TEAM_ID:-}\" ]; then\n  echo \"apple_notarize=true\" >> \"$GITHUB_OUTPUT\"\n  echo \"Apple signing+notarize secrets present\"\nelse\n  echo \"apple_notarize=false\" >> \"$GITHUB_OUTPUT\"\n  echo \"Apple notarize secrets absent or non-macOS — unsigned macOS path\"\nfi\n"
+      - name: Import Apple certificate (optional)
+        if: steps.signs.outputs.apple_notarize == 'true'
+        shell: bash
+        env:
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+        run: '# Throwaway keychain; never echo cert/password material.
+
+          CERT_PATH="$RUNNER_TEMP/apple_cert.p12"
+
+          KEYCHAIN="$RUNNER_TEMP/ottplay-signing.keychain-db"
+
+          echo -n "$APPLE_CERTIFICATE" | base64 --decode > "$CERT_PATH"
+
+          KC_PASS="${KEYCHAIN_PASSWORD:-$(openssl rand -base64 32)}"
+
+          security create-keychain -p "$KC_PASS" "$KEYCHAIN"
+
+          security set-keychain-settings -lut 21600 "$KEYCHAIN"
+
+          security unlock-keychain -p "$KC_PASS" "$KEYCHAIN"
+
+          security import "$CERT_PATH" -P "${APPLE_CERTIFICATE_PASSWORD:-}" -A -t cert -f pkcs12 -k "$KEYCHAIN"
+
+          security list-keychain -d user -s "$KEYCHAIN"
+
+          security set-key-partition-list -S apple-tool:,apple: -k "$KC_PASS" "$KEYCHAIN"
+
+          rm -f "$CERT_PATH"
+
+          echo "KEYCHAIN_PATH=$KEYCHAIN" >> "$GITHUB_ENV"
+
+          '
+      - name: Build desktop package
+        shell: bash
+        run: "EXTRA_CONFIG=()\nif [ \"${RUNNER_OS:-}\" = \"Linux\" ]; then\n  : \"${OTTPLAY_GST_COMPAT_CONFIG:?Missing private playback package config}\"\n  EXTRA_CONFIG+=(--config \"$OTTPLAY_GST_COMPAT_CONFIG\")\nfi\nif [ \"${TAURI_SIGNING:-}\" = \"true\" ]; then\n  EXTRA_CONFIG+=(--config '{\"bundle\":{\"createUpdaterArtifacts\":true}}')\nfi\n\n# Apple notarize: only pass APPLE_* env when all secrets present.\n# Otherwise sign the macOS bundle ad-hoc before Tauri packages its archives.\nif [ \"${{ steps.signs.outputs.apple_notarize }}\" = \"true\" ]; then\n  export APPLE_CERTIFICATE=\"$SIGN_APPLE_CERTIFICATE\"\n  export APPLE_CERTIFICATE_PASSWORD=\"$SIGN_APPLE_CERTIFICATE_PASSWORD\"\n  export APPLE_SIGNING_IDENTITY=\"$SIGN_APPLE_SIGNING_IDENTITY\"\n  export APPLE_ID=\"$SIGN_APPLE_ID\"\n  export APPLE_PASSWORD=\"$SIGN_APPLE_APP_SPECIFIC_PASSWORD\"\n  export APPLE_TEAM_ID=\"$SIGN_APPLE_TEAM_ID\"\nelse\n  export CSC_IDENTITY_AUTO_DISCOVERY=false\n  if [ \"${RUNNER_OS:-}\" = \"macOS\" ] \\\n    && [ -z \"${APPLE_SIGNING_IDENTITY:-}\" ] \\\n    && [ -z \"${APPLE_CERTIFICATE:-}\" ]; then\n    EXTRA_CONFIG+=(--config '{\"bundle\":{\"macOS\":{\"signingIdentity\":\"-\"}}}')\n  fi\nfi\n\nif [ -n \"${TAURI_TARGET:-}\" ]; then\n  npx tauri build --ci --target \"$TAURI_TARGET\" \"${EXTRA_CONFIG[@]}\"\nelse\n  npx tauri build --ci \"${EXTRA_CONFIG[@]}\"\nfi\n"
+        working-directory: src-tauri
+        env:
+          CI: true
+          TAURI_TARGET: ${{ matrix.target }}
+          TAURI_SIGNING: ${{ steps.signs.outputs.tauri_signing }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+          SIGN_APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          SIGN_APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          SIGN_APPLE_SIGNING_IDENTITY: ${{ secrets.APPLE_SIGNING_IDENTITY }}
+          SIGN_APPLE_ID: ${{ secrets.APPLE_ID }}
+          SIGN_APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          SIGN_APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      - name: Cleanup Apple keychain (optional)
+        if: always() && steps.signs.outputs.apple_notarize == 'true'
+        shell: bash
+        run: "if [ -n \"${KEYCHAIN_PATH:-}\" ]; then\n  security delete-keychain \"$KEYCHAIN_PATH\" 2>/dev/null || true\nfi\n"
+      - name: Collect desktop bundles
+        shell: bash
+        run: bash scripts/ci-tauri-collect-artifacts.sh
+        env:
+          TAURI_TARGET: ${{ matrix.target }}
+      - name: Verify private playback files in final Linux packages
+        if: matrix.platform == 'ubuntu-24.04' || matrix.platform == 'ubuntu-24.04-arm'
+        timeout-minutes: 10
+        run: python3 scripts/package-linux-playback-compat.py verify
+      - name: Preserve private playback build and package evidence
+        if: always() && (matrix.platform == 'ubuntu-24.04' || matrix.platform == 'ubuntu-24.04-arm')
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: linux-playback-compat-${{ matrix.platform }}
+          path: |
+            build/linux-playback-compat/*.json
+            build/linux-playback-compat/*.log
+            build/linux-playback-compat/*.txt
+            build/linux-playback-compat/*.tsv
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Verify and stage versioned release assets
+        shell: bash
+        env:
+          RELEASE_ASSET_TARGET: desktop-${{ matrix.platform }}-${{ matrix.target || 'host' }}
+          RELEASE_ASSET_PATTERN_0: tauri-artifacts/*
+        run: python3 scripts/stage_release_assets.py --target "$RELEASE_ASSET_TARGET" --pattern "$RELEASE_ASSET_PATTERN_0"
+      - name: Bind private playback evidence to the immutable release receipt
+        if: matrix.platform == 'ubuntu-24.04' || matrix.platform == 'ubuntu-24.04-arm'
+        env:
+          RELEASE_ASSET_TARGET: desktop-${{ matrix.platform }}-${{ matrix.target || 'host' }}
+        run: python3 scripts/package-linux-playback-compat.py attach-receipt --receipt "release-assets/$RELEASE_ASSET_TARGET/release-inputs-$RELEASE_ASSET_TARGET.json"
+      - name: Store release assets
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release-assets-desktop-${{ matrix.platform }}-${{ matrix.target || 'host' }}
+          path: release-assets/desktop-${{ matrix.platform }}-${{ matrix.target || 'host' }}/*
+          if-no-files-found: error
+          retention-days: 14
+    timeout-minutes: 90
+  android:
+    name: Build Capacitor Android
+    runs-on: ${{ fromJSON((vars.CI_RUNNER_MODE == 'self-hosted' || vars.CI_RUNNER_MODE == 'k3s') && (contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name) && github.ref == format('refs/heads/{0}', github.event.repository.default_branch)) && (vars.CI_RUNNER_RELEASE_LABELS || '[]') || '["ubuntu-latest"]') }}
+    timeout-minutes: 60
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up release version tooling
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Download frozen release version plan
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: ${{ inputs.release_plan_artifact }}
+          path: .
+      - name: Apply frozen release version inputs
+        shell: bash
+        run: python3 scripts/version_plan.py sync --root . --plan .release-plan.json
+      - name: Verify committed release version
+        run: python3 scripts/check-release-version.py "$RELEASE_VERSION" "$RELEASE_CHANNEL"
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@be39fa834029ff78f1a44aa3bb0819b8fc2bd8fd # v4.0.4
+        with:
+          packages: platform-tools
+      - name: Install Android SDK components
+        run: bash scripts/ci-android-install-sdk.sh
+      - name: Install JS dependencies
+        run: npm ci --ignore-scripts
+      - name: Build and audit Full Capacitor APK
+        run: npm run android:full:release
+      - name: Build and audit API 22 Capacitor APK
+        run: npm run android:api22:release
+      - name: Sign the verified APK for in-place updates
+        env:
+          CAPACITOR_KEYSTORE_BASE64: ${{ secrets.CAPACITOR_KEYSTORE_BASE64 }}
+          CAPACITOR_KEY_ALIAS: ${{ secrets.CAPACITOR_KEY_ALIAS }}
+          CAPACITOR_KEY_PASSWORD: ${{ secrets.CAPACITOR_KEY_PASSWORD }}
+        run: |
+          python3 scripts/sign-android-apk.py android/app/build/outputs/apk/full/release/app-full-release-unsigned.apk ottplay-foss-android-full.apk
+          python3 scripts/sign-android-apk.py android/app/build-api22/outputs/apk/full/release/app-full-release-unsigned.apk ottplay-foss-android-api22.apk
+      - name: Stage APK under the frozen release version
+        run: python3 scripts/stage_release_assets.py --target mobile-android --pattern ottplay-foss-android-full.apk --pattern ottplay-foss-android-api22.apk
+      - name: Store release assets
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release-assets-mobile-android
+          path: release-assets/mobile-android/*
+          if-no-files-found: error
+          retention-days: 14
+  mobile:
+    name: Build iOS
+    runs-on: macos-latest
+    timeout-minutes: 60
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - name: Checkout code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up release version tooling
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Download frozen release version plan
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: ${{ inputs.release_plan_artifact }}
+          path: .
+      - name: Apply frozen release version inputs
+        shell: bash
+        run: python3 scripts/version_plan.py sync --root . --plan .release-plan.json
+      - name: Verify committed release version
+        run: python3 scripts/check-release-version.py "$RELEASE_VERSION" "$RELEASE_CHANNEL"
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install JS dependencies
+        run: npm ci --ignore-scripts
+      - name: "iOS – build web + sync"
+        run: npm run build:ios
+        env:
+          CI: true
+      - name: "iOS – discover scheme"
+        id: discover
+        run: "SCHEME=$(xcodebuild -list -project ios/App/App.xcodeproj | awk '/Schemes:/{getline; gsub(/^[ \\t]+/,\"\"); print; exit}')\nif [ -z \"$SCHEME\" ]; then\n  echo \"No scheme discovered via xcodebuild -list; falling back to App\"\n  SCHEME=App\nfi\necho \"scheme=$SCHEME\" >> \"$GITHUB_OUTPUT\"\necho \"Using scheme: $SCHEME\"\n"
+      - name: "iOS – archive (unsigned)"
+        run: "SCHEME=\"${{ steps.discover.outputs.scheme }}\"\nSCHEME=\"${SCHEME:-App}\"\n# Archive for a device without depending on an attached device or\n# parsing human-readable Xcode destination listings.\nDEST=\"generic/platform=iOS\"\necho \"Using destination: $DEST\"\nxcodebuild clean archive \\\n  -project \"ios/App/App.xcodeproj\" \\\n  -scheme \"$SCHEME\" \\\n  -sdk iphoneos \\\n  -configuration Release \\\n  -archivePath \"${{ github.workspace }}/ottplay-foss-ios.xcarchive\" \\\n  CODE_SIGNING_ALLOWED=NO \\\n  CODE_SIGN_IDENTITY=\"\" \\\n  DEVELOPMENT_TEAM=\"\" \\\n  -destination \"$DEST\" \\\n  ONLY_ACTIVE_ARCH=NO \\\n  ARCHS=arm64\n"
+      - name: "iOS – audit final application and package IPA"
+        run: "XCA=\"${{ github.workspace }}/ottplay-foss-ios.xcarchive\"\nAPP_DIR=\"$XCA/Products/Applications\"\nAPPS=(\"$APP_DIR/\"*.app)\nif [ \"${#APPS[@]}\" -ne 1 ] || [ ! -d \"${APPS[0]}\" ]; then\n  echo \"Expected exactly one .app in archive at $APP_DIR\"\n  exit 1\nfi\nnode scripts/native-runtime.cjs audit \"${APPS[0]}/public\" \\\n  --platform capacitor --source ios/App/App/public\nmkdir -p Payload\ncp -R \"${APPS[0]}\" Payload/\nzip -qr \"${{ github.workspace }}/ottplay-foss-ios-unsigned.ipa\" Payload\nrm -rf Payload\necho \"Created ottplay-foss-ios-unsigned.ipa\"\n"
+      - name: Verify and stage versioned release assets
+        shell: bash
+        env:
+          RELEASE_ASSET_TARGET: mobile-ios
+          RELEASE_ASSET_PATTERN_0: ottplay-foss-ios-unsigned.ipa
+        run: python3 scripts/stage_release_assets.py --target "$RELEASE_ASSET_TARGET" --pattern "$RELEASE_ASSET_PATTERN_0"
+      - name: Store release assets
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release-assets-mobile-ios
+          path: release-assets/mobile-ios/*
+          if-no-files-found: error
+          retention-days: 14
+  container-platform:
+    name: Build native container (${{ matrix.arch }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: amd64
+            runner: ubuntu-24.04
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 45
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up release version tooling
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Download frozen release version plan
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: ${{ inputs.release_plan_artifact }}
+          path: .
+      - name: Apply frozen release version inputs
+        shell: bash
+        run: python3 scripts/version_plan.py sync --root . --plan .release-plan.json
+      - name: Verify committed release version
+        run: python3 scripts/check-release-version.py "$RELEASE_VERSION" "$RELEASE_CHANNEL"
+      - uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
+      - name: Check container version metadata
+        id: image-version
+        run: python3 scripts/release_container_labels.py --github-output "$GITHUB_OUTPUT"
+      - name: Build OCI image archive
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
+        with:
+          context: .
+          platforms: linux/${{ matrix.arch }}
+          push: false
+          outputs: type=oci,dest=ottplay-container-${{ matrix.arch }}.oci.tar,oci-mediatypes=true,compression=gzip
+          tags: ottplay-foss:${{ inputs.version }}
+          sbom: true
+          provenance: mode=max
+          cache-from: type=gha,scope=ottplay-container-${{ matrix.arch }}
+          cache-to: type=gha,mode=max,scope=ottplay-container-${{ matrix.arch }}
+          labels: 'org.opencontainers.image.version=${{ steps.image-version.outputs.version }}
+
+            org.opencontainers.image.revision=${{ steps.image-version.outputs.revision }}
+
+            '
+      - name: Verify exact native image EPG performance
+        run: |
+          sudo apt-get update && sudo apt-get install -y skopeo
+          python3 scripts/check-container-epg.py \
+            --archive ottplay-container-${{ matrix.arch }}.oci.tar \
+            --platform linux/${{ matrix.arch }} \
+            --version '${{ steps.image-version.outputs.version }}' \
+            --revision '${{ steps.image-version.outputs.revision }}' \
+            --output build/reports/container-epg-${{ matrix.arch }}.json
+      - name: Preserve native EPG performance evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: container-epg-${{ matrix.arch }}
+          path: |
+            build/reports/container-epg-${{ matrix.arch }}.json
+            epg-performance.json
+            epg-performance.log
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Store native OCI input
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: container-platform-${{ matrix.arch }}
+          path: ottplay-container-${{ matrix.arch }}.oci.tar
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
+  container:
+    name: Build container archive
+    needs: container-platform
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up release version tooling
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Download frozen release version plan
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: ${{ inputs.release_plan_artifact }}
+          path: .
+      - name: Apply frozen release version inputs
+        run: python3 scripts/version_plan.py sync --root . --plan .release-plan.json
+      - name: Verify committed release version
+        run: python3 scripts/check-release-version.py "$RELEASE_VERSION" "$RELEASE_CHANNEL"
+      - name: Check container version metadata
+        id: image-version
+        run: python3 scripts/release_container_labels.py --github-output "$GITHUB_OUTPUT"
+      - name: Download native AMD64 image
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: container-platform-amd64
+          path: .container-platforms/amd64
+      - name: Download native ARM64 image
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: container-platform-arm64
+          path: .container-platforms/arm64
+      - name: Assemble and validate the exact multi-platform OCI archive
+        env:
+          IMAGE_VERSION: ${{ steps.image-version.outputs.version }}
+          IMAGE_REVISION: ${{ steps.image-version.outputs.revision }}
+        run: |
+          python3 scripts/assemble-container-oci.py \
+            --input linux/amd64=.container-platforms/amd64/ottplay-container-amd64.oci.tar \
+            --input linux/arm64=.container-platforms/arm64/ottplay-container-arm64.oci.tar \
+            --version "$IMAGE_VERSION" --revision "$IMAGE_REVISION" \
+            --output ottplay-foss-container.oci.tar \
+            --report build/reports/container-assembly.json
+      - name: Store OCI assembly evidence
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: container-assembly-report
+          path: build/reports/container-assembly.json
+          if-no-files-found: error
+          retention-days: 14
+      - name: Verify and stage versioned release assets
+        shell: bash
+        env:
+          RELEASE_ASSET_TARGET: container
+          RELEASE_ASSET_PATTERN_0: ottplay-foss-container.oci.tar
+        run: python3 scripts/stage_release_assets.py --target "$RELEASE_ASSET_TARGET" --pattern "$RELEASE_ASSET_PATTERN_0"
+      - name: Store release assets
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release-assets-container
+          path: release-assets/container/*
+          if-no-files-found: error
+          retention-days: 14
+
+  browser-release:
+    needs: build
+    uses: victron-venus/venus-os-ci-toolkit/.github/workflows/typescript-ci.yml@6b2d99519d513d2b871d2a845ddd6134dea4af2c
+    permissions:
+      contents: read
+      actions: read
+    with:
+      node-version: '22'
+      run-node-ci: false
+      browser-matrix-file: .github/browser-compatibility.json
+      browser-test-command: node scripts/browser-acceptance.cjs
+      browser-artifact-id: ${{ needs.build.outputs.browser-artifact-id }}
+      browser-artifact-path: browser-candidate
+      browser-release-channel: ${{ inputs.channel }}
+      browser-extended: ${{ inputs.channel == 'rc' || inputs.channel == 'stable' }}
+      browser-evidence-prefix: browser-release
+      browser-prepare-command: |
+        # Synthetic HLS media requires the locked mux.js dev dependency.
+        npm ci --include=dev --ignore-scripts
+        PYTHON=python3
+        if ! "$PYTHON" -c 'import sys; assert sys.version_info >= (3, 8)' 2>/dev/null; then PYTHON=python; fi
+        "$PYTHON" scripts/prepare_browser_candidate.py browser-candidate browser-candidate-web --release

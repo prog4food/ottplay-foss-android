@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "action": "plex_queue",
+  "runtime_pattern": "^[a-z0-9-]{1,64}$",
+  "id_pattern": "^[1-9][0-9]{0,19}$",
+  "max_items": 500,
+  "max_title_utf8_bytes": 512,
+  "max_queue_result_bytes": 16384,
+  "max_preview_result_bytes": 1048576,
+  "operations": ["play", "preview", "status", "next", "previous", "stop"],
+  "states": ["idle", "preparing", "playing", "paused", "ended", "error"],
+  "errors": [
+    "Kiosk mode does not allow a Plex queue.",
+    "One or more Plex items are unavailable or not playable.",
+    "Player context changed before Plex playback.",
+    "Plex configuration is missing or invalid.",
+    "Plex playback could not start.",
+    "Plex playback is unavailable on this player.",
+    "Plex provider module could not be loaded.",
+    "Plex queue is already at its first item.",
+    "Plex queue is already at its last item.",
+    "Plex queue is empty.",
+    "Plex queue request is already in progress.",
+    "Plex queue request timed out.",
+    "Plex queue request was cancelled.",
+    "Plex server is unreachable or access was denied.",
+    "Unlock parental access before starting the Plex queue."
+  ],
+  "capability": {
+    "version": 1,
+    "operations": ["play", "preview", "status", "next", "previous", "stop"],
+    "max_items": 500
+  },
+  "play_request": {
+    "action": "plex_queue",
+    "params": {
+      "op": "play",
+      "runtime": "page-123",
+      "ids": ["78777", "78776", "78775"]
+    }
+  },
+  "preview_request": {
+    "action": "plex_queue",
+    "params": {
+      "op": "preview",
+      "runtime": "page-123",
+      "ids": ["78777", "78776", "78775"]
+    }
+  },
+  "queue_result": {
+    "version": 1,
+    "runtime": "page-123",
+    "active": true,
+    "state": "preparing",
+    "ids": ["78777", "78776", "78775"],
+    "index": 0,
+    "repeat": "none",
+    "order": "listed"
+  },
+  "preview_result": {
+    "version": 1,
+    "runtime": "page-123",
+    "state": "ready",
+    "ids": ["78777", "78776", "78775"],
+    "titles": ["First film", "Second film", "Third film"],
+    "order": "listed"
+  },
+  "stop_result": {
+    "version": 1,
+    "runtime": "page-123",
+    "active": false,
+    "state": "idle",
+    "ids": [],
+    "index": null,
+    "repeat": "none",
+    "order": "listed"
+  },
+  "ended_result": {
+    "version": 1,
+    "runtime": "page-123",
+    "active": true,
+    "state": "ended",
+    "ids": ["78777", "78776", "78775"],
+    "index": 2,
+    "repeat": "none",
+    "order": "listed"
+  }
+}

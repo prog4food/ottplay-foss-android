@@ -1,0 +1,511 @@
+<svg
+    aria-labelledby="title desc"
+    height="1120"
+    role="img"
+    viewBox="0 0 1400 1120"
+    width="1400"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">
+        Review outcomes and measured bytes / Исправления и измеренный объём
+    </title>
+    <desc id="desc">
+        Five before-and-after behavior comparisons plus zero-based raw and gzip
+        byte charts. Increased size is measured feature cost, not a speed
+        improvement.
+    </desc>
+    <rect fill="#0b1220" height="1120" rx="24" width="1400" />
+    <style>
+    text {
+        font-family:
+            Arial,
+            DejaVu Sans,
+            sans-serif;
+    }
+    .mono {
+        font-family:
+            Menlo,
+            DejaVu Sans Mono,
+            monospace;
+    }
+    </style>
+    <rect
+        fill="#1d3d43"
+        height="28"
+        rx="8"
+        stroke="none"
+        width="194"
+        x="48"
+        y="35"
+    />
+    <text fill="#51dec4" font-size="14" font-weight="700" x="62" y="55">
+        OTTPLAY / EVIDENCE
+    </text>
+    <text fill="#edf5ff" font-size="37" font-weight="700" x="48" y="105">
+        What review changed — and what it cost
+    </text>
+    <text fill="#b8c9df" font-size="22" font-weight="400" x="50" y="136">
+        Что исправила проверка и сколько байтов это добавило
+    </text>
+    <rect
+        fill="#142238"
+        height="157"
+        rx="16"
+        stroke="none"
+        width="782"
+        x="48"
+        y="169"
+    />
+    <text fill="#51dec4" font-size="18" font-weight="700" x="69" y="198">
+        01
+    </text>
+    <text fill="#edf5ff" font-size="22" font-weight="700" x="111" y="198">
+        HLS parse recovery
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="111" y="221">
+        Разбор HLS и бюджет повторов
+    </text>
+    <text fill="#ffacb5" font-size="12" font-weight="700" x="69" y="246">
+        BEFORE / ДО
+    </text>
+    <text fill="#51dec4" font-size="12" font-weight="700" x="427" y="246">
+        AFTER / ПОСЛЕ
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="69" y="268">
+        Parse errors used the
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="69" y="288">
+        generic network path.
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="427" y="268">
+        One same-URL parse retry
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="427" y="288">
+        inside the shared budget.
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="69" y="306">
+        Ошибки разбора шли
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="69" y="321">
+        по общему сетевому пути.
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="427" y="306">
+        Один повтор разбора в общем
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="427" y="321">
+        бюджете; новый URL не сбрасывает.
+    </text>
+    <rect
+        fill="#142238"
+        height="157"
+        rx="16"
+        stroke="none"
+        width="782"
+        x="48"
+        y="338"
+    />
+    <text fill="#51dec4" font-size="18" font-weight="700" x="69" y="367">
+        02
+    </text>
+    <text fill="#edf5ff" font-size="22" font-weight="700" x="111" y="367">
+        Native Auto ownership
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="111" y="390">
+        Владение переходом Auto
+    </text>
+    <text fill="#ffacb5" font-size="12" font-weight="700" x="69" y="415">
+        BEFORE / ДО
+    </text>
+    <text fill="#51dec4" font-size="12" font-weight="700" x="427" y="415">
+        AFTER / ПОСЛЕ
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="69" y="437">
+        Native error could retire
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="69" y="457">
+        an Auto-owned fallback.
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="427" y="437">
+        The existing owner retains
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="427" y="457">
+        the decoder transition.
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="69" y="475">
+        Native-ошибка могла завершить
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="69" y="490">
+        уже запущенный переход Auto.
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="427" y="475">
+        Смена декодера остаётся
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="427" y="490">
+        у текущего владельца.
+    </text>
+    <rect
+        fill="#142238"
+        height="157"
+        rx="16"
+        stroke="none"
+        width="782"
+        x="48"
+        y="507"
+    />
+    <text fill="#51dec4" font-size="18" font-weight="700" x="69" y="536">
+        03
+    </text>
+    <text fill="#edf5ff" font-size="22" font-weight="700" x="111" y="536">
+        Modal Enter
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="111" y="559">
+        Enter во время ожидания
+    </text>
+    <text fill="#ffacb5" font-size="12" font-weight="700" x="69" y="584">
+        BEFORE / ДО
+    </text>
+    <text fill="#51dec4" font-size="12" font-weight="700" x="427" y="584">
+        AFTER / ПОСЛЕ
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="69" y="606">
+        First-button focus could
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="69" y="626">
+        turn Enter into Cancel.
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="427" y="606">
+        Dialog root receives focus;
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="427" y="626">
+        Tab selects a button.
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="69" y="644">
+        Фокус на первой кнопке
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="69" y="659">
+        превращал Enter в отмену.
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="427" y="644">
+        Сначала фокус на диалоге;
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="427" y="659">
+        Tab явно выбирает кнопку.
+    </text>
+    <rect
+        fill="#142238"
+        height="157"
+        rx="16"
+        stroke="none"
+        width="782"
+        x="48"
+        y="676"
+    />
+    <text fill="#51dec4" font-size="18" font-weight="700" x="69" y="705">
+        04
+    </text>
+    <text fill="#edf5ff" font-size="22" font-weight="700" x="111" y="705">
+        PC pointer selection
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="111" y="728">
+        Выбор мышью на ПК
+    </text>
+    <text fill="#ffacb5" font-size="12" font-weight="700" x="69" y="753">
+        BEFORE / ДО
+    </text>
+    <text fill="#51dec4" font-size="12" font-weight="700" x="427" y="753">
+        AFTER / ПОСЛЕ
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="69" y="775">
+        Focus selected the row
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="69" y="795">
+        before the first click.
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="427" y="775">
+        First click selects; second
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="427" y="795">
+        activates. LG stays one-click.
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="69" y="813">
+        Фокус выделял строку
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="69" y="828">
+        до первого нажатия.
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="427" y="813">
+        ПК: выбор → активация.
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="427" y="828">
+        LG: одно нажатие.
+    </text>
+    <rect
+        fill="#142238"
+        height="157"
+        rx="16"
+        stroke="none"
+        width="782"
+        x="48"
+        y="845"
+    />
+    <text fill="#51dec4" font-size="18" font-weight="700" x="69" y="874">
+        05
+    </text>
+    <text fill="#edf5ff" font-size="22" font-weight="700" x="111" y="874">
+        Android semantic tracks
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="111" y="897">
+        Предпочтения дорожек Android
+    </text>
+    <text fill="#ffacb5" font-size="12" font-weight="700" x="69" y="922">
+        BEFORE / ДО
+    </text>
+    <text fill="#51dec4" font-size="12" font-weight="700" x="427" y="922">
+        AFTER / ПОСЛЕ
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="69" y="944">
+        Late writes erased choices;
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="69" y="964">
+        equal groups leaked indices.
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="427" y="944">
+        Current-item overrides;
+    </text>
+    <text fill="#edf5ff" font-size="15" font-weight="400" x="427" y="964">
+        durable language/role intent.
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="69" y="982">
+        Поздние записи стирали выбор;
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="69" y="997">
+        равные группы переносили индекс.
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="427" y="982">
+        Временный выбор — в своём item;
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="427" y="997">
+        язык и назначение сохраняются.
+    </text>
+    <rect
+        fill="#142238"
+        height="316"
+        rx="16"
+        stroke="none"
+        width="499"
+        x="853"
+        y="169"
+    />
+    <text fill="#edf5ff" font-size="21" font-weight="700" x="875" y="200">
+        RAW JAVASCRIPT / БЕЗ GZIP
+    </text>
+    <text fill="#b8c9df" font-size="14" font-weight="400" x="875" y="226">
+        Zero-based scale / Шкала от нуля
+    </text>
+    <text fill="#b8c9df" font-size="14" font-weight="400" x="875" y="262">
+        Base / База
+    </text>
+    <text fill="#edf5ff" font-size="17" font-weight="700" x="1177" y="262">
+        964,459
+    </text>
+    <rect
+        fill="#22344e"
+        height="14"
+        rx="4"
+        stroke="none"
+        width="448"
+        x="875"
+        y="272"
+    />
+    <rect
+        fill="#78b6ff"
+        height="14"
+        rx="4"
+        stroke="none"
+        width="393"
+        x="875"
+        y="272"
+    />
+    <text fill="#b8c9df" font-size="14" font-weight="400" x="875" y="329">
+        Features / Функции
+    </text>
+    <text fill="#edf5ff" font-size="17" font-weight="700" x="1177" y="329">
+        995,587
+    </text>
+    <rect
+        fill="#22344e"
+        height="14"
+        rx="4"
+        stroke="none"
+        width="448"
+        x="875"
+        y="339"
+    />
+    <rect
+        fill="#b294ff"
+        height="14"
+        rx="4"
+        stroke="none"
+        width="405"
+        x="875"
+        y="339"
+    />
+    <text fill="#b8c9df" font-size="14" font-weight="400" x="875" y="396">
+        Hardened / Проверено
+    </text>
+    <text fill="#edf5ff" font-size="17" font-weight="700" x="1177" y="396">
+        995,858
+    </text>
+    <rect
+        fill="#22344e"
+        height="14"
+        rx="4"
+        stroke="none"
+        width="448"
+        x="875"
+        y="406"
+    />
+    <rect
+        fill="#51dec4"
+        height="14"
+        rx="4"
+        stroke="none"
+        width="406"
+        x="875"
+        y="406"
+    />
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="875.0" y="470">
+        0
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="1069.0" y="470">
+        550k
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="1293.0" y="470">
+        1.1M B
+    </text>
+    <rect
+        fill="#142238"
+        height="316"
+        rx="16"
+        stroke="none"
+        width="499"
+        x="853"
+        y="505"
+    />
+    <text fill="#edf5ff" font-size="21" font-weight="700" x="875" y="536">
+        GZIP / СЖАТЫЙ ОБЪЁМ
+    </text>
+    <text fill="#b8c9df" font-size="14" font-weight="400" x="875" y="562">
+        Zero-based scale / Шкала от нуля
+    </text>
+    <text fill="#b8c9df" font-size="14" font-weight="400" x="875" y="598">
+        Base / База
+    </text>
+    <text fill="#edf5ff" font-size="17" font-weight="700" x="1177" y="598">
+        305,344
+    </text>
+    <rect
+        fill="#22344e"
+        height="14"
+        rx="4"
+        stroke="none"
+        width="448"
+        x="875"
+        y="608"
+    />
+    <rect
+        fill="#78b6ff"
+        height="14"
+        rx="4"
+        stroke="none"
+        width="391"
+        x="875"
+        y="608"
+    />
+    <text fill="#b8c9df" font-size="14" font-weight="400" x="875" y="665">
+        Features / Функции
+    </text>
+    <text fill="#edf5ff" font-size="17" font-weight="700" x="1177" y="665">
+        315,103
+    </text>
+    <rect
+        fill="#22344e"
+        height="14"
+        rx="4"
+        stroke="none"
+        width="448"
+        x="875"
+        y="675"
+    />
+    <rect
+        fill="#b294ff"
+        height="14"
+        rx="4"
+        stroke="none"
+        width="403"
+        x="875"
+        y="675"
+    />
+    <text fill="#b8c9df" font-size="14" font-weight="400" x="875" y="732">
+        Hardened / Проверено
+    </text>
+    <text fill="#edf5ff" font-size="17" font-weight="700" x="1177" y="732">
+        315,207
+    </text>
+    <rect
+        fill="#22344e"
+        height="14"
+        rx="4"
+        stroke="none"
+        width="448"
+        x="875"
+        y="742"
+    />
+    <rect
+        fill="#51dec4"
+        height="14"
+        rx="4"
+        stroke="none"
+        width="403"
+        x="875"
+        y="742"
+    />
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="875.0" y="806">
+        0
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="1069.0" y="806">
+        175k
+    </text>
+    <text fill="#b8c9df" font-size="12" font-weight="400" x="1293.0" y="806">
+        350k B
+    </text>
+    <rect
+        fill="#21362f"
+        height="161"
+        rx="16"
+        stroke="#51dec4"
+        width="499"
+        x="853"
+        y="841"
+    />
+    <text fill="#51dec4" font-size="25" font-weight="700" x="875" y="879">
+        +31,399 raw / +9,863 gzip
+    </text>
+    <text fill="#edf5ff" font-size="18" font-weight="400" x="875" y="912">
+        Base → hardened: +3.26% / +3.23%
+    </text>
+    <text fill="#edf5ff" font-size="18" font-weight="700" x="875" y="944">
+        Feature cost, not a speed result.
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="875" y="973">
+        Цена функций, не измерение скорости.
+    </text>
+    <text fill="#b8c9df" font-size="19" font-weight="400" x="49" y="1057">
+        Scope: main entry + all optional providers; engines, dictionaries and
+        assets excluded.
+    </text>
+    <text fill="#b8c9df" font-size="17" font-weight="400" x="49" y="1088">
+        Объём: entry + все модули провайдеров. Движки, словари и ресурсы
+        учитываются отдельно.
+    </text>
+</svg>

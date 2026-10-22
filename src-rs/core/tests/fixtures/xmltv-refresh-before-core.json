@@ -1,0 +1,839 @@
+{
+  "provenance": {
+    "repository": "open-ott-play/ottplay-foss",
+    "commit": "8222649194c2e251478c4353361e2d05cceb6b7d",
+    "capture": "Public shipping fetch_xmltv and background_refresh; no algorithm copies, replacement adapters, mock source loading or external network. Local temporary files and isolated SQLite only.",
+    "timestampNormalization": "Exact wall-clock seconds are nondeterministic; expected records assert positive fetched_at bounded by seconds immediately before and after each call/first tick. Background seed uses fetched_at=17 and waits for replacement, with a five-second timeout.",
+    "backgroundScope": "Only the immediate first tick is observed. The task is aborted and joined before a second tick; the real two-hour interval is not advanced or replaced.",
+    "sources": {
+      "src-rs/core/src/lib.rs": "cbe09c5ae670e7c5b46914c4863339c670d484954da99ab338f7278b706eae44",
+      "src-rs/core/src/xmltv.rs": "1e6a7b376108a4c4048feb84248e5c54084e37f798adb43bbc863ae63c1d5197",
+      "src-rs/core/src/shared_guide.rs": "b9c10d2bcb640c5d66e3d51390baf1f1d805775bba9e979b6a8445611f781011",
+      "src-rs/core/src/db.rs": "1dd6a02f48829023db684887c8d8a943072bb8e425349d264642fba8f6b90694",
+      "src-rs/server/src/main.rs": "2134ec368981a29910909c9688bd209fcebad3e6c7622fddddd9203c5ca78e44",
+      "src-rs/core/Cargo.toml": "b72f65d4ddba8aec91a6fdb56be5297b0f1ac1ea99fbdb590e169357a887d2ec",
+      "Cargo.lock": "9fdc339970ce640fd69f8612cb10fea267300917d6adc4a49f88a06d0e4cd90f",
+      "vendor/ottplay-core.js": "a9982330754e2d9d3aadba06573f3927374fd42c26ac850fccfee47fc9f909a3",
+      "vendor/ottplay-core.manifest.json": "b260d286ca651ef52c96fb33686dc974d81208af20fa9aa88ab96bf70e676d1a"
+    },
+    "compiler": "rustc 1.96.1 (31fca3adb 2026-06-26)",
+    "compiledArtifactSha256": "4c80422fc07b784a24b7a0a4ec0aaea5785a56992cb0e14effad22e94d7b3d04",
+    "harnessSha256": "be325344f856a176188b79db56ec96e6a8b6f6c070ff1a75b0c7cebd4995420d",
+    "scriptSha256": "db478162571140151128d92e68956cb48b1dbcdbad9b7d4359d29c58b4ccd566"
+  },
+  "feeds": {
+    "a": "<tv><channel id=\"shared\"><display-name>Feed A</display-name><icon src=\"a.png\"/></channel><programme channel=\"shared\" start=\"20260914130000 +0000\" stop=\"20260914140000 +0000\"><title>A late</title><desc>A late description</desc></programme><programme channel=\"shared\" start=\"20260914100000 +0000\" stop=\"20260914140000 +0000\"><title>A early</title><desc>A early description</desc></programme></tv>",
+    "b": "<tv><channel id=\"shared\"><display-name>Feed B</display-name><icon src=\"b.png\"/></channel><channel id=\"only-b\"><display-name>B only</display-name></channel><programme channel=\"shared\" start=\"20260914120000 +0000\" stop=\"20260914140000 +0000\"><title>B middle</title><desc>B middle description</desc></programme><programme channel=\"only-b\" start=\"20260914110000 +0000\" stop=\"20260914140000 +0000\"><title>B extra</title><desc>B extra description</desc></programme></tv>",
+    "channel-only": "<tv><channel id=\"shared\"><display-name>Feed A</display-name><icon src=\"a.png\"/></channel></tv>",
+    "programme-only": "<tv><programme channel=\"orphan\" start=\"20260914110000 +0000\" stop=\"20260914140000 +0000\"><title>Orphan</title><desc>Orphan description</desc></programme></tv>",
+    "empty": "<tv/>",
+    "blank": "",
+    "malformed": "<tv><channel id=\"shared\"><display-name>Feed B</display-name><icon src=\"b.png\"/></channel><programme channel=\"shared\" start=\"20260914110000 +0000\" stop=\"20260914140000 +0000\"><title>Must be discarded</title><desc>Must be discarded description</desc></programme><channel",
+    "seed": "<tv><channel id=\"old\"><display-name>Old cache</display-name></channel><programme channel=\"old\" start=\"20260914110000 +0000\" stop=\"20260914140000 +0000\"><title>Old programme</title><desc>Old programme description</desc></programme></tv>"
+  },
+  "cases": [
+    {
+      "name": "no sources still returns a fresh empty cache",
+      "sources": [],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {},
+          "programmes": {}
+        }
+      }
+    },
+    {
+      "name": "one valid feed preserves parser programme order",
+      "sources": ["a"],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {
+            "shared": {
+              "icon": "a.png",
+              "id": "shared",
+              "name": "Feed A",
+              "names": ["Feed A"]
+            }
+          },
+          "programmes": {
+            "shared": [
+              {
+                "desc": "A late description",
+                "icon": "",
+                "start": 1789390800,
+                "stop": 1789394400,
+                "title": "A late"
+              },
+              {
+                "desc": "A early description",
+                "icon": "",
+                "start": 1789380000,
+                "stop": 1789394400,
+                "title": "A early"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "first feed owns channel metadata while programmes append",
+      "sources": ["a", "b"],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {
+            "only-b": {
+              "icon": "",
+              "id": "only-b",
+              "name": "B only",
+              "names": ["B only"]
+            },
+            "shared": {
+              "icon": "a.png",
+              "id": "shared",
+              "name": "Feed A",
+              "names": ["Feed A"]
+            }
+          },
+          "programmes": {
+            "only-b": [
+              {
+                "desc": "B extra description",
+                "icon": "",
+                "start": 1789383600,
+                "stop": 1789394400,
+                "title": "B extra"
+              }
+            ],
+            "shared": [
+              {
+                "desc": "A late description",
+                "icon": "",
+                "start": 1789390800,
+                "stop": 1789394400,
+                "title": "A late"
+              },
+              {
+                "desc": "A early description",
+                "icon": "",
+                "start": 1789380000,
+                "stop": 1789394400,
+                "title": "A early"
+              },
+              {
+                "desc": "B middle description",
+                "icon": "",
+                "start": 1789387200,
+                "stop": 1789394400,
+                "title": "B middle"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "reversed feeds reverse ownership and appended programme groups",
+      "sources": ["b", "a"],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {
+            "only-b": {
+              "icon": "",
+              "id": "only-b",
+              "name": "B only",
+              "names": ["B only"]
+            },
+            "shared": {
+              "icon": "b.png",
+              "id": "shared",
+              "name": "Feed B",
+              "names": ["Feed B"]
+            }
+          },
+          "programmes": {
+            "only-b": [
+              {
+                "desc": "B extra description",
+                "icon": "",
+                "start": 1789383600,
+                "stop": 1789394400,
+                "title": "B extra"
+              }
+            ],
+            "shared": [
+              {
+                "desc": "B middle description",
+                "icon": "",
+                "start": 1789387200,
+                "stop": 1789394400,
+                "title": "B middle"
+              },
+              {
+                "desc": "A late description",
+                "icon": "",
+                "start": 1789390800,
+                "stop": 1789394400,
+                "title": "A late"
+              },
+              {
+                "desc": "A early description",
+                "icon": "",
+                "start": 1789380000,
+                "stop": 1789394400,
+                "title": "A early"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "duplicate source duplicates programmes",
+      "sources": ["a", "a"],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {
+            "shared": {
+              "icon": "a.png",
+              "id": "shared",
+              "name": "Feed A",
+              "names": ["Feed A"]
+            }
+          },
+          "programmes": {
+            "shared": [
+              {
+                "desc": "A late description",
+                "icon": "",
+                "start": 1789390800,
+                "stop": 1789394400,
+                "title": "A late"
+              },
+              {
+                "desc": "A early description",
+                "icon": "",
+                "start": 1789380000,
+                "stop": 1789394400,
+                "title": "A early"
+              },
+              {
+                "desc": "A late description",
+                "icon": "",
+                "start": 1789390800,
+                "stop": 1789394400,
+                "title": "A late"
+              },
+              {
+                "desc": "A early description",
+                "icon": "",
+                "start": 1789380000,
+                "stop": 1789394400,
+                "title": "A early"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "successful empty feed before a populated feed",
+      "sources": ["empty", "a"],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {
+            "shared": {
+              "icon": "a.png",
+              "id": "shared",
+              "name": "Feed A",
+              "names": ["Feed A"]
+            }
+          },
+          "programmes": {
+            "shared": [
+              {
+                "desc": "A late description",
+                "icon": "",
+                "start": 1789390800,
+                "stop": 1789394400,
+                "title": "A late"
+              },
+              {
+                "desc": "A early description",
+                "icon": "",
+                "start": 1789380000,
+                "stop": 1789394400,
+                "title": "A early"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "successful empty feed after a populated feed",
+      "sources": ["a", "empty"],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {
+            "shared": {
+              "icon": "a.png",
+              "id": "shared",
+              "name": "Feed A",
+              "names": ["Feed A"]
+            }
+          },
+          "programmes": {
+            "shared": [
+              {
+                "desc": "A late description",
+                "icon": "",
+                "start": 1789390800,
+                "stop": 1789394400,
+                "title": "A late"
+              },
+              {
+                "desc": "A early description",
+                "icon": "",
+                "start": 1789380000,
+                "stop": 1789394400,
+                "title": "A early"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "channel without programmes remains",
+      "sources": ["channel-only"],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {
+            "shared": {
+              "icon": "a.png",
+              "id": "shared",
+              "name": "Feed A",
+              "names": ["Feed A"]
+            }
+          },
+          "programmes": {}
+        }
+      }
+    },
+    {
+      "name": "programme without declared channel remains",
+      "sources": ["programme-only"],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {},
+          "programmes": {
+            "orphan": [
+              {
+                "desc": "Orphan description",
+                "icon": "",
+                "start": 1789383600,
+                "stop": 1789394400,
+                "title": "Orphan"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "all successful empty and blank inputs",
+      "sources": ["empty", "blank"],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {},
+          "programmes": {}
+        }
+      }
+    },
+    {
+      "name": "missing file before a valid feed",
+      "sources": ["missing", "a"],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {
+            "shared": {
+              "icon": "a.png",
+              "id": "shared",
+              "name": "Feed A",
+              "names": ["Feed A"]
+            }
+          },
+          "programmes": {
+            "shared": [
+              {
+                "desc": "A late description",
+                "icon": "",
+                "start": 1789390800,
+                "stop": 1789394400,
+                "title": "A late"
+              },
+              {
+                "desc": "A early description",
+                "icon": "",
+                "start": 1789380000,
+                "stop": 1789394400,
+                "title": "A early"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "missing file after a valid feed",
+      "sources": ["a", "missing"],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {
+            "shared": {
+              "icon": "a.png",
+              "id": "shared",
+              "name": "Feed A",
+              "names": ["Feed A"]
+            }
+          },
+          "programmes": {
+            "shared": [
+              {
+                "desc": "A late description",
+                "icon": "",
+                "start": 1789390800,
+                "stop": 1789394400,
+                "title": "A late"
+              },
+              {
+                "desc": "A early description",
+                "icon": "",
+                "start": 1789380000,
+                "stop": 1789394400,
+                "title": "A early"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "malformed feed is discarded before a valid feed",
+      "sources": ["malformed", "a"],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {
+            "shared": {
+              "icon": "a.png",
+              "id": "shared",
+              "name": "Feed A",
+              "names": ["Feed A"]
+            }
+          },
+          "programmes": {
+            "shared": [
+              {
+                "desc": "A late description",
+                "icon": "",
+                "start": 1789390800,
+                "stop": 1789394400,
+                "title": "A late"
+              },
+              {
+                "desc": "A early description",
+                "icon": "",
+                "start": 1789380000,
+                "stop": 1789394400,
+                "title": "A early"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "all failed sources still return fresh empty cache",
+      "sources": ["missing", "malformed"],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {},
+          "programmes": {}
+        }
+      }
+    },
+    {
+      "name": "first channel-only feed still owns metadata",
+      "sources": ["channel-only", "b"],
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {
+            "only-b": {
+              "icon": "",
+              "id": "only-b",
+              "name": "B only",
+              "names": ["B only"]
+            },
+            "shared": {
+              "icon": "a.png",
+              "id": "shared",
+              "name": "Feed A",
+              "names": ["Feed A"]
+            }
+          },
+          "programmes": {
+            "only-b": [
+              {
+                "desc": "B extra description",
+                "icon": "",
+                "start": 1789383600,
+                "stop": 1789394400,
+                "title": "B extra"
+              }
+            ],
+            "shared": [
+              {
+                "desc": "B middle description",
+                "icon": "",
+                "start": 1789387200,
+                "stop": 1789394400,
+                "title": "B middle"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "background first tick replaces existing memory",
+      "sources": ["a"],
+      "background": true,
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "firstTickUpdatedMemory": true,
+        "memoryBefore": {
+          "channels": {
+            "old": {
+              "icon": "",
+              "id": "old",
+              "name": "Old cache",
+              "names": ["Old cache"]
+            }
+          },
+          "programmes": {
+            "old": [
+              {
+                "desc": "Old programme description",
+                "icon": "",
+                "start": 1789383600,
+                "stop": 1789394400,
+                "title": "Old programme"
+              }
+            ]
+          }
+        },
+        "result": {
+          "channels": {
+            "shared": {
+              "icon": "a.png",
+              "id": "shared",
+              "name": "Feed A",
+              "names": ["Feed A"]
+            }
+          },
+          "programmes": {
+            "shared": [
+              {
+                "desc": "A late description",
+                "icon": "",
+                "start": 1789390800,
+                "stop": 1789394400,
+                "title": "A late"
+              },
+              {
+                "desc": "A early description",
+                "icon": "",
+                "start": 1789380000,
+                "stop": 1789394400,
+                "title": "A early"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "background successful empty clears existing memory",
+      "sources": ["empty"],
+      "background": true,
+      "expected": {
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "firstTickUpdatedMemory": true,
+        "memoryBefore": {
+          "channels": {
+            "old": {
+              "icon": "",
+              "id": "old",
+              "name": "Old cache",
+              "names": ["Old cache"]
+            }
+          },
+          "programmes": {
+            "old": [
+              {
+                "desc": "Old programme description",
+                "icon": "",
+                "start": 1789383600,
+                "stop": 1789394400,
+                "title": "Old programme"
+              }
+            ]
+          }
+        },
+        "result": {
+          "channels": {},
+          "programmes": {}
+        }
+      }
+    },
+    {
+      "name": "background all failed clears memory and persisted cache",
+      "sources": ["missing", "malformed"],
+      "background": true,
+      "databaseMode": "enabled",
+      "seedSources": ["seed"],
+      "expected": {
+        "databaseAfter": {
+          "channels": [],
+          "programmes": []
+        },
+        "databaseBefore": {
+          "channels": [
+            {
+              "icon": "",
+              "id": "old",
+              "name": "Old cache"
+            }
+          ],
+          "programmes": [
+            {
+              "channel": "old",
+              "description": "Old programme description",
+              "icon": "",
+              "start": 1789383600,
+              "stop": 1789394400,
+              "title": "Old programme"
+            }
+          ]
+        },
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "firstTickUpdatedMemory": true,
+        "memoryBefore": {
+          "channels": {
+            "old": {
+              "icon": "",
+              "id": "old",
+              "name": "Old cache",
+              "names": ["Old cache"]
+            }
+          },
+          "programmes": {
+            "old": [
+              {
+                "desc": "Old programme description",
+                "icon": "",
+                "start": 1789383600,
+                "stop": 1789394400,
+                "title": "Old programme"
+              }
+            ]
+          }
+        },
+        "result": {
+          "channels": {},
+          "programmes": {}
+        },
+        "seedFetch": {
+          "channels": {
+            "old": {
+              "icon": "",
+              "id": "old",
+              "name": "Old cache",
+              "names": ["Old cache"]
+            }
+          },
+          "programmes": {
+            "old": [
+              {
+                "desc": "Old programme description",
+                "icon": "",
+                "start": 1789383600,
+                "stop": 1789394400,
+                "title": "Old programme"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "database connection failure propagates after successful fetch",
+      "sources": ["a"],
+      "databaseMode": "connection-error",
+      "expected": {
+        "error": {
+          "chain": [
+            "error returned from database: (code: 14) unable to open database file",
+            "(code: 14) unable to open database file"
+          ],
+          "message": "error returned from database: (code: 14) unable to open database file"
+        }
+      }
+    },
+    {
+      "name": "persist failure returns fresh memory and preserves old transaction",
+      "sources": ["a", "a"],
+      "databaseMode": "persist-error",
+      "seedSources": ["seed"],
+      "expected": {
+        "databaseAfter": {
+          "channels": [
+            {
+              "icon": "",
+              "id": "old",
+              "name": "Old cache"
+            }
+          ],
+          "programmes": [
+            {
+              "channel": "old",
+              "description": "Old programme description",
+              "icon": "",
+              "start": 1789383600,
+              "stop": 1789394400,
+              "title": "Old programme"
+            }
+          ]
+        },
+        "databaseBefore": {
+          "channels": [
+            {
+              "icon": "",
+              "id": "old",
+              "name": "Old cache"
+            }
+          ],
+          "programmes": [
+            {
+              "channel": "old",
+              "description": "Old programme description",
+              "icon": "",
+              "start": 1789383600,
+              "stop": 1789394400,
+              "title": "Old programme"
+            }
+          ]
+        },
+        "fetchedAtPositive": true,
+        "fetchedAtWithinCallWindow": true,
+        "result": {
+          "channels": {
+            "shared": {
+              "icon": "a.png",
+              "id": "shared",
+              "name": "Feed A",
+              "names": ["Feed A"]
+            }
+          },
+          "programmes": {
+            "shared": [
+              {
+                "desc": "A late description",
+                "icon": "",
+                "start": 1789390800,
+                "stop": 1789394400,
+                "title": "A late"
+              },
+              {
+                "desc": "A early description",
+                "icon": "",
+                "start": 1789380000,
+                "stop": 1789394400,
+                "title": "A early"
+              },
+              {
+                "desc": "A late description",
+                "icon": "",
+                "start": 1789390800,
+                "stop": 1789394400,
+                "title": "A late"
+              },
+              {
+                "desc": "A early description",
+                "icon": "",
+                "start": 1789380000,
+                "stop": 1789394400,
+                "title": "A early"
+              }
+            ]
+          }
+        },
+        "seedFetch": {
+          "channels": {
+            "old": {
+              "icon": "",
+              "id": "old",
+              "name": "Old cache",
+              "names": ["Old cache"]
+            }
+          },
+          "programmes": {
+            "old": [
+              {
+                "desc": "Old programme description",
+                "icon": "",
+                "start": 1789383600,
+                "stop": 1789394400,
+                "title": "Old programme"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-discover-control-servers"
+description = "Discovers HTTPS control servers through the operating system DNS configuration."
+commands.allow = ["discover_control_servers"]

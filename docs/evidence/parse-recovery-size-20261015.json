@@ -1,0 +1,20 @@
+{
+  "head": "b3d0d5f7edc670b1887a59f27555898641a9b60d",
+  "version": "1.1.55",
+  "scope": "isolated same-snapshot complete main bundle with only core parse-recovery change substituted; no optional provider changes",
+  "node": "v26.8.2",
+  "before": {
+    "raw": 874927,
+    "gzip": 270323,
+    "sha256": "aaa0d5f3889bd0fa829e6998eb8cf4fa4c648f68a79ade0e0c245a048f793908"
+  },
+  "after": {
+    "raw": 874964,
+    "gzip": 270359,
+    "sha256": "aa540d47cb7bc28c0a476bd7c3a0fc414aa6004d7c74a3e3a3a11139525131b3"
+  },
+  "delta": {
+    "raw": 37,
+    "gzip": 36
+  }
+}

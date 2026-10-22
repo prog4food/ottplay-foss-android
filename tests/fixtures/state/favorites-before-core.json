@@ -1,0 +1,1644 @@
+[
+  {
+    "name": "rename active",
+    "profile": "classic",
+    "operation": "renameFavoritesList",
+    "args": [
+      "Favorites",
+      "Family"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Family",
+        "lists": {
+          "Second": [
+            3
+          ],
+          "Family": [
+            1,
+            2
+          ]
+        },
+        "order": [
+          "Family",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": true,
+      "origins": [
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ],
+        [
+          "Family",
+          [
+            "Favorites"
+          ]
+        ]
+      ],
+      "syncs": 2,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "rename inactive",
+    "profile": "classic",
+    "operation": "renameFavoritesList",
+    "args": [
+      "Second",
+      "Family"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Family": [
+            3
+          ]
+        },
+        "order": [
+          "Favorites",
+          "Family"
+        ],
+        "v": 1
+      },
+      "result": true,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Family",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 2,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "rename same",
+    "profile": "classic",
+    "operation": "renameFavoritesList",
+    "args": [
+      "Favorites",
+      "Favorites"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ]
+        },
+        "order": [
+          "Favorites",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": false,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "rename missing",
+    "profile": "classic",
+    "operation": "renameFavoritesList",
+    "args": [
+      "Missing",
+      "Family"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ]
+        },
+        "order": [
+          "Favorites",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": false,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "rename conflict",
+    "profile": "classic",
+    "operation": "renameFavoritesList",
+    "args": [
+      "Favorites",
+      "Second"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ]
+        },
+        "order": [
+          "Favorites",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": false,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "rename whitespace",
+    "profile": "classic",
+    "operation": "renameFavoritesList",
+    "args": [
+      "Favorites",
+      "  Family  "
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Family",
+        "lists": {
+          "Second": [
+            3
+          ],
+          "Family": [
+            1,
+            2
+          ]
+        },
+        "order": [
+          "Family",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": true,
+      "origins": [
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ],
+        [
+          "Family",
+          [
+            "Favorites"
+          ]
+        ]
+      ],
+      "syncs": 2,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "rename empty",
+    "profile": "classic",
+    "operation": "renameFavoritesList",
+    "args": [
+      "Favorites",
+      ""
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ]
+        },
+        "order": [
+          "Favorites",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": false,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "rename reserved",
+    "profile": "classic",
+    "operation": "renameFavoritesList",
+    "args": [
+      "Favorites",
+      "constructor"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ]
+        },
+        "order": [
+          "Favorites",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": false,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "rename excessive",
+    "profile": "classic",
+    "operation": "renameFavoritesList",
+    "args": [
+      "Favorites",
+      "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "lists": {
+          "Second": [
+            3
+          ],
+          "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx": [
+            1,
+            2
+          ]
+        },
+        "order": [
+          "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": true,
+      "origins": [
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ],
+        [
+          "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+          [
+            "Favorites"
+          ]
+        ]
+      ],
+      "syncs": 2,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "rename Unicode",
+    "profile": "classic",
+    "operation": "renameFavoritesList",
+    "args": [
+      "Favorites",
+      "\u0085Family\u0085"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "\u0085Family\u0085",
+        "lists": {
+          "Second": [
+            3
+          ],
+          "\u0085Family\u0085": [
+            1,
+            2
+          ]
+        },
+        "order": [
+          "\u0085Family\u0085",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": true,
+      "origins": [
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ],
+        [
+          "\u0085Family\u0085",
+          [
+            "Favorites"
+          ]
+        ]
+      ],
+      "syncs": 2,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "delete Favorites",
+    "profile": "classic",
+    "operation": "deleteFavoritesList",
+    "args": [
+      "Favorites"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Second",
+        "lists": {
+          "Second": [
+            3
+          ]
+        },
+        "order": [
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": true,
+      "origins": [
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 2,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "delete Second",
+    "profile": "classic",
+    "operation": "deleteFavoritesList",
+    "args": [
+      "Second"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ]
+        },
+        "order": [
+          "Favorites"
+        ],
+        "v": 1
+      },
+      "result": true,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ]
+      ],
+      "syncs": 2,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "delete Missing",
+    "profile": "classic",
+    "operation": "deleteFavoritesList",
+    "args": [
+      "Missing"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ]
+        },
+        "order": [
+          "Favorites",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": false,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "delete constructor",
+    "profile": "classic",
+    "operation": "deleteFavoritesList",
+    "args": [
+      "constructor"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ]
+        },
+        "order": [
+          "Favorites",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": true,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 2,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "add  Third ",
+    "profile": "classic",
+    "operation": "addFavoritesList",
+    "args": [
+      " Third "
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ],
+          "Third": []
+        },
+        "order": [
+          "Favorites",
+          "Second",
+          "Third"
+        ],
+        "v": 1
+      },
+      "result": true,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ],
+        [
+          "Third",
+          []
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "add Second",
+    "profile": "classic",
+    "operation": "addFavoritesList",
+    "args": [
+      "Second"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ]
+        },
+        "order": [
+          "Favorites",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": false,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "add ",
+    "profile": "classic",
+    "operation": "addFavoritesList",
+    "args": [
+      ""
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ]
+        },
+        "order": [
+          "Favorites",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": false,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "add constructor",
+    "profile": "classic",
+    "operation": "addFavoritesList",
+    "args": [
+      "constructor"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ]
+        },
+        "order": [
+          "Favorites",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": false,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "add prototype",
+    "profile": "classic",
+    "operation": "addFavoritesList",
+    "args": [
+      "prototype"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ],
+          "prototype": []
+        },
+        "order": [
+          "Favorites",
+          "Second",
+          "prototype"
+        ],
+        "v": 1
+      },
+      "result": true,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ],
+        [
+          "prototype",
+          []
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "activate Second",
+    "profile": "classic",
+    "operation": "setActiveFavoritesList",
+    "args": [
+      "Second"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Second",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ]
+        },
+        "order": [
+          "Favorites",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": true,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 2,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "activate Missing",
+    "profile": "classic",
+    "operation": "setActiveFavoritesList",
+    "args": [
+      "Missing"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ]
+        },
+        "order": [
+          "Favorites",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": false,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "activate constructor",
+    "profile": "classic",
+    "operation": "setActiveFavoritesList",
+    "args": [
+      "constructor"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1,
+          2
+        ],
+        "Second": [
+          3
+        ]
+      },
+      "order": [
+        "Favorites",
+        "Second"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "constructor",
+        "lists": {
+          "Favorites": [
+            1,
+            2
+          ],
+          "Second": [
+            3
+          ]
+        },
+        "order": [
+          "Favorites",
+          "Second"
+        ],
+        "v": 1
+      },
+      "result": true,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ],
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ]
+      ],
+      "syncs": 2,
+      "alias": true,
+      "aliasType": "function"
+    }
+  },
+  {
+    "name": "delete final list",
+    "profile": "classic",
+    "operation": "deleteFavoritesList",
+    "args": [
+      "Favorites"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1
+        ]
+      },
+      "order": [
+        "Favorites"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            1
+          ]
+        },
+        "order": [
+          "Favorites"
+        ],
+        "v": 1
+      },
+      "result": false,
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "delete active order missing",
+    "profile": "classic",
+    "operation": "deleteFavoritesList",
+    "args": [
+      "Favorites"
+    ],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "Favorites": [
+          1
+        ],
+        "Second": [
+          2
+        ]
+      },
+      "order": [
+        "Ghost"
+      ],
+      "active": "Favorites"
+    },
+    "expected": {
+      "state": {
+        "active": "Ghost",
+        "lists": {
+          "Second": [
+            2
+          ],
+          "Ghost": []
+        },
+        "order": [
+          "Ghost"
+        ],
+        "v": 1
+      },
+      "result": true,
+      "origins": [
+        [
+          "Second",
+          [
+            "Second"
+          ]
+        ],
+        [
+          "Ghost",
+          []
+        ]
+      ],
+      "syncs": 2,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "order retains declared then out-of-band",
+    "profile": "classic",
+    "operation": "listFavoritesLists",
+    "args": [],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "A": [
+          1
+        ],
+        "B": [
+          2
+        ],
+        "prototype": [
+          3
+        ]
+      },
+      "order": [
+        "Missing",
+        "B",
+        "B"
+      ],
+      "active": "A"
+    },
+    "expected": {
+      "state": {
+        "active": "A",
+        "lists": {
+          "A": [
+            1
+          ],
+          "B": [
+            2
+          ],
+          "prototype": [
+            3
+          ]
+        },
+        "order": [
+          "Missing",
+          "B",
+          "B"
+        ],
+        "v": 1
+      },
+      "result": [
+        "B",
+        "A",
+        "prototype"
+      ],
+      "origins": [
+        [
+          "A",
+          [
+            "A"
+          ]
+        ],
+        [
+          "B",
+          [
+            "B"
+          ]
+        ],
+        [
+          "prototype",
+          [
+            "prototype"
+          ]
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "order retains raw number values",
+    "profile": "classic",
+    "operation": "listFavoritesLists",
+    "args": [],
+    "initial": {
+      "v": 1,
+      "lists": {
+        "7": [
+          1
+        ],
+        "A": [
+          2
+        ]
+      },
+      "order": [
+        7,
+        "7"
+      ],
+      "active": "A"
+    },
+    "expected": {
+      "state": {
+        "active": "A",
+        "lists": {
+          "7": [
+            1
+          ],
+          "A": [
+            2
+          ]
+        },
+        "order": [
+          7,
+          "7"
+        ],
+        "v": 1
+      },
+      "result": [
+        7,
+        "A"
+      ],
+      "origins": [
+        [
+          "7",
+          [
+            "7"
+          ]
+        ],
+        [
+          "A",
+          [
+            "A"
+          ]
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  },
+  {
+    "name": "old singleton storage",
+    "profile": "classic",
+    "operation": "listFavoritesLists",
+    "args": [],
+    "initial": null,
+    "prior": [
+      9,
+      8
+    ],
+    "expected": {
+      "state": {
+        "active": "Favorites",
+        "lists": {
+          "Favorites": [
+            9,
+            8
+          ]
+        },
+        "order": [
+          "Favorites"
+        ],
+        "v": 1
+      },
+      "result": [
+        "Favorites"
+      ],
+      "origins": [
+        [
+          "Favorites",
+          [
+            "Favorites"
+          ]
+        ]
+      ],
+      "syncs": 1,
+      "alias": true,
+      "aliasType": "object"
+    }
+  }
+]

@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-match-channels"
+description = "Enables the match_channels command (M3U channel-to-XMLTV matching)."
+commands.allow = ["match_channels"]

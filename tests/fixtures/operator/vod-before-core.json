@@ -1,0 +1,1308 @@
+{
+  "provenance": {
+    "commit": "b3c8cc072e92f14c8e352a223157788f24ca4dce",
+    "capture": "Actual getMediaArrayXML, xml2json1 and shared M3U body parser; real DOMParser, fixture HTTP and UI effects only."
+  },
+  "cases": [
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "{\"playlist_name\":\"Films\",\"channel\":{\"title\":\"One\",\"stream_url\":\"https://stream.test/a\"}}"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Films",
+        "mediaRecords": [
+          {
+            "title": "One",
+            "stream_url": "https://stream.test/a"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "{\"items\":{\"title\":\"Wrapped\",\"channels\":[{\"title\":\"A\"},{\"title\":\"B\"}],\"next_page_url\":\"https://vod.test/next\"}}"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Wrapped",
+        "mediaRecords": [
+          {
+            "title": "A"
+          },
+          {
+            "title": "B"
+          },
+          {
+            "description": "...",
+            "logo_30x30": "",
+            "playlist_url": "https://vod.test/next",
+            "title": "..."
+          }
+        ]
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "{\"playlist_name\":\"\",\"title\":\"Fallback\",\"channel\":null,\"channels\":[{\"title\":\"A\"}]}"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Fallback",
+        "mediaRecords": [
+          {
+            "title": "A"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "{\"items\":{}}"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "{\"channel\":[]}"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "{\"channel\":0,\"next_page_url\":\"next\"}"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "description": "...",
+            "logo_30x30": "",
+            "playlist_url": "next",
+            "title": "..."
+          }
+        ]
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "null"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "title": "Previous"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "broken JSON"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "alert",
+            "Error JSON !!!"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "title": "Previous"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "<?xml version=\"1.0\"?><items><playlist_name>XML title</playlist_name><channel><title>One</title><stream_url>https://vod.test/a</stream_url></channel></items>"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "XML title",
+        "mediaRecords": [
+          {
+            "title": "One",
+            "stream_url": "https://vod.test/a"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "prefix <?xml version=\"1.0\"?><items><title><![CDATA[XML & CData]]></title><channel><title>A</title></channel><channel><title>B</title></channel><next_page_url>next</next_page_url></items>"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "XML & CData",
+        "mediaRecords": [
+          {
+            "title": "A"
+          },
+          {
+            "title": "B"
+          },
+          {
+            "description": "...",
+            "logo_30x30": "",
+            "playlist_url": "next",
+            "title": "..."
+          }
+        ]
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "<?xml version=\"1.0\"?><items>"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "alert",
+            "Error XML !!!"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "title": "Previous"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "#EXTM3U\n#EXTINF:-1 tvg-logo=\"https://img.test/a\",One\nhttps://stream.test/a\n"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "description": "<table><h2><center>One</center></h2><img id=\"detal\" height=\"285\" src=\"https://img.test/a\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+            "logo_30x30": "https://img.test/a",
+            "stream_url": "https://stream.test/a",
+            "title": "One"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "{}",
+        "url": "https://vod.test/catalog?q=1"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?q=1&box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog?q=1"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "{}",
+        "mac": ""
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": []
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "{}",
+        "url": ""
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          ""
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "title": "Previous"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "{}",
+        "stale": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 0,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "title": "Previous"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "antifriz",
+      "input": {
+        "data": "{}",
+        "failed": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-foss&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "title": "Previous"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "{\"playlist_name\":\"Films\",\"channel\":{\"title\":\"One\",\"stream_url\":\"https://stream.test/a\"}}"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Films",
+        "mediaRecords": [
+          {
+            "title": "One",
+            "stream_url": "https://stream.test/a"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "{\"items\":{\"title\":\"Wrapped\",\"channels\":[{\"title\":\"A\"},{\"title\":\"B\"}],\"next_page_url\":\"https://vod.test/next\"}}"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Wrapped",
+        "mediaRecords": [
+          {
+            "title": "A"
+          },
+          {
+            "title": "B"
+          },
+          {
+            "description": "...",
+            "logo_30x30": "",
+            "playlist_url": "https://vod.test/next",
+            "title": "..."
+          }
+        ]
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "{\"playlist_name\":\"\",\"title\":\"Fallback\",\"channel\":null,\"channels\":[{\"title\":\"A\"}]}"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Fallback",
+        "mediaRecords": [
+          {
+            "title": "A"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "{\"items\":{}}"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "{\"channel\":[]}"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "{\"channel\":0,\"next_page_url\":\"next\"}"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "description": "...",
+            "logo_30x30": "",
+            "playlist_url": "next",
+            "title": "..."
+          }
+        ]
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "null"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "title": "Previous"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "broken JSON"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "alert",
+            "Error JSON !!!"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "title": "Previous"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "<?xml version=\"1.0\"?><items><playlist_name>XML title</playlist_name><channel><title>One</title><stream_url>https://vod.test/a</stream_url></channel></items>"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "XML title",
+        "mediaRecords": [
+          {
+            "title": "One",
+            "stream_url": "https://vod.test/a"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "prefix <?xml version=\"1.0\"?><items><title><![CDATA[XML & CData]]></title><channel><title>A</title></channel><channel><title>B</title></channel><next_page_url>next</next_page_url></items>"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "XML & CData",
+        "mediaRecords": [
+          {
+            "title": "A"
+          },
+          {
+            "title": "B"
+          },
+          {
+            "description": "...",
+            "logo_30x30": "",
+            "playlist_url": "next",
+            "title": "..."
+          }
+        ]
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "<?xml version=\"1.0\"?><items>"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "alert",
+            "Error XML !!!"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "title": "Previous"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "#EXTM3U\n#EXTINF:-1 tvg-logo=\"https://img.test/a\",One\nhttps://stream.test/a\n"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "description": "<table><h2><center>One</center></h2><img id=\"detal\" height=\"285\" src=\"https://img.test/a\" style=\"float: left; margin-right: 5px; margin-bottom: 5px; border-width: 0px; border-style: solid;\" width=\"210\"></table>",
+            "logo_30x30": "https://img.test/a",
+            "stream_url": "https://stream.test/a",
+            "title": "One"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "{}",
+        "url": "https://vod.test/catalog?q=1"
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?q=1&box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog?q=1"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "{}",
+        "mac": ""
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": []
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "{}",
+        "url": ""
+      },
+      "expected": {
+        "calls": [],
+        "events": [],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          ""
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "title": "Previous"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "{}",
+        "stale": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 0,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "title": "Previous"
+          }
+        ]
+      }
+    },
+    {
+      "profile": "kb-team",
+      "input": {
+        "data": "{}",
+        "failed": true
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://vod.test/catalog?box_client=ott-play&box_mac=00:11:22:33:44:55",
+            "timeout": 60000,
+            "dataType": "text"
+          }
+        ],
+        "events": [
+          [
+            "html"
+          ],
+          [
+            "show"
+          ],
+          [
+            "hide"
+          ]
+        ],
+        "failure": null,
+        "callbacks": 1,
+        "mediaUrls": [
+          "parent",
+          "https://vod.test/catalog"
+        ],
+        "mediaName": "Previous catalog",
+        "mediaRecords": [
+          {
+            "title": "Previous"
+          }
+        ]
+      }
+    }
+  ]
+}

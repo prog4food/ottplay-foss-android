@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-capture-screenshot"
+description = "Allows capturing the main player webview; the frontend requires a local screenshot grant."
+commands.allow = ["capture_screenshot"]

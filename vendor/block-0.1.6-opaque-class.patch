@@ -1,0 +1,16 @@
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -54,7 +54,12 @@
+ use std::os::raw::{c_int, c_ulong, c_void};
+ use std::ptr;
+ 
+-enum Class { }
++// Backported from madsmtm/objc2 b6438c733a7a9bfe75e60b62126d1933137f42e4.
++// Only the address is used by the Blocks ABI; this opaque type must be inhabited.
++#[repr(C)]
++struct Class {
++    _priv: [u8; 0],
++}
+ 
+ #[cfg_attr(any(target_os = "macos", target_os = "ios"),
+            link(name = "System", kind = "dylib"))]

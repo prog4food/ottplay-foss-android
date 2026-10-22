@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-allow-sleep"
+description = "Enables the allow_sleep command."
+commands.allow = ["allow_sleep"]

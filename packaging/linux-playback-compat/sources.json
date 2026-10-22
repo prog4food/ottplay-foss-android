@@ -1,0 +1,114 @@
+{
+  "architectures": {
+    "aarch64": {
+      "debian": "arm64",
+      "elf_machine": "AArch64",
+      "original_plugin_sha256": "a5319c096d66691bc2da0a47bce8130473981e7b0ec15d321641f01ed8c93f42",
+      "triplet": "aarch64-linux-gnu"
+    },
+    "x86_64": {
+      "debian": "amd64",
+      "elf_machine": "Advanced Micro Devices X86-64",
+      "original_package_provenance": {
+        "archive_signing_fingerprint": "F6ECB3762474EDA9D21B7022871920D1991BC93C",
+        "package_index_sha256": "1fc5257d4134136bc584d6664627cf7b3bdda9043bd5e05f5ec4c7d29f88170a",
+        "sha256": "2371d7571762fb78f6ec693d2a33c601521a216144a3be2e24b4e9bec9548ed1",
+        "url": "https://archive.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base1.0/gstreamer1.0-plugins-base_1.24.2-1ubuntu0.5_amd64.deb"
+      },
+      "original_plugin_sha256": "c116ceccf67edc9d96dc6dfc63eb3bd6c380e2bd215be0c6aaba42d4bda5cb2f",
+      "triplet": "x86_64-linux-gnu"
+    }
+  },
+  "distribution_patches": [
+    {
+      "name": "CVE-2024-4453.patch",
+      "sha256": "4560a61447326e76c7101559f06c8cec9dab6797e4f19e1dc524671b3049642f"
+    },
+    {
+      "name": "202412-sec-01.patch",
+      "sha256": "3b29c8e50d0e0a08793472eccb5f280f43a72641f0c4102c2ec9a683cd9a28c1"
+    },
+    {
+      "name": "202412-sec-02.patch",
+      "sha256": "eeed1b8fade1ad91684ed08c883d36431e9871d387f7024b9b4e88e50815e963"
+    },
+    {
+      "name": "202412-sec-03.patch",
+      "sha256": "ea5a2973505ca2d9cdd2f59582f0b29538c3b8ba4b4e5c15a652477c5c04d8b6"
+    },
+    {
+      "name": "202412-sec-04.patch",
+      "sha256": "2f881e0002441f3c162bf60e08f67cbf91e46cc8d5be2819f2e1027c0a111e6f"
+    },
+    {
+      "name": "202412-sec-05.patch",
+      "sha256": "9601014f02e1676f3a76291ae2203a22155cad2a3f964505aaf58ab7a4052462"
+    },
+    {
+      "name": "202412-sec-06.patch",
+      "sha256": "9196e29b1676b8b8ebec1ecc2c51ad72a3d4ace91ae22582063f23ad7dd163e3"
+    },
+    {
+      "name": "202412-sec-07.patch",
+      "sha256": "f30e67ef2f6f353b41cb4fb0fdc6c8ac8fb9fadc549feada16dc4b5f909cf652"
+    },
+    {
+      "name": "202412-sec-08.patch",
+      "sha256": "624073a65f095432e8d3042a93660c4bae3d3239b58577947b1d4804af7f376a"
+    },
+    {
+      "name": "202412-sec-09.patch",
+      "sha256": "998bf3df9926e5312edd268b65383a99dd9d33c634ecdcfca93ed7c676d37784"
+    },
+    {
+      "name": "CVE-2025-47806.patch",
+      "sha256": "b4fd0a0a3a70fd92a55fa5d74e28562dd6eef94cf68ee1bc6ac52e15179b8212"
+    },
+    {
+      "name": "CVE-2025-47807.patch",
+      "sha256": "423c97764cc2ff200abcb8452f6f1920071da5be970c5eadb9ce37bc37a864ee"
+    },
+    {
+      "name": "CVE-2025-47808.patch",
+      "sha256": "137149daa585fe57518d52d98b5c1b7f502467dcf4c74d33f49d846f505d95aa"
+    },
+    {
+      "name": "CVE-2026-2921.patch",
+      "sha256": "95a3682827570af99d475ada553d8e74a0117678ede4f8870ab7013a8108bc0c"
+    },
+    {
+      "name": "CVE-2026-18297.patch",
+      "sha256": "0662f13fcb162eb85c1a55eb32be73ea2e192dc0af001b48b5b4c048cea7f928"
+    }
+  ],
+  "patches": {
+    "backport.patch": "fb9c2917e3cbe87a1a18a92dd25f24a5b17bc35c7bbe230451d5353da315283b",
+    "upstream.patch": "5347a7436f5eccb9e39ac75db885fbbda1415ee7751efafb19a23729b4fbdb32"
+  },
+  "regression_source_sha256": "ab973cfcebe83992c7d5000f5f28bfb252dea4ca404ef85db41687530232b5de",
+  "schema": 1,
+  "source_after_sha256": "e4956977ba22bc972c5c737c8f3a9ec152c9553eccbb9c34a06bf389e7c1e1ee",
+  "source_before_sha256": "67cf2120a997d9cdfeb05535e820cd59c7f613d47d61888b8b24b38564c56f67",
+  "source_files": [
+    {
+      "name": "gst-plugins-base1.0_1.24.2.orig.tar.xz",
+      "sha256": "282f1cc8065c9b62eb6a0a20fb9e8328f8e5296df2458b7236daa729c41ae769",
+      "size": 2421032,
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.24.2.orig.tar.xz"
+    },
+    {
+      "name": "gst-plugins-base1.0_1.24.2-1ubuntu0.5.debian.tar.xz",
+      "sha256": "b7aad40ae5062e85f1afca0630b0e419ef2f203d3edd7994f50132811f575253",
+      "size": 57908,
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.24.2-1ubuntu0.5.debian.tar.xz"
+    },
+    {
+      "name": "gst-plugins-base1.0_1.24.2-1ubuntu0.5.dsc",
+      "sha256": "73a25ece6c488d230e976ced527a7d04d8252b073f1aa17375f4986bbbb64cac",
+      "size": 4150,
+      "url": "https://ports.ubuntu.com/ubuntu-ports/pool/main/g/gst-plugins-base1.0/gst-plugins-base1.0_1.24.2-1ubuntu0.5.dsc"
+    }
+  ],
+  "source_package_version": "1.24.2-1ubuntu0.5",
+  "upstream_commit": "03febb5048d0612157fad0ddadeaaeed924aadf0"
+}

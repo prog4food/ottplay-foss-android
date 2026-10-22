@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-open-plex-sign-in"
+description = "Opens the official Plex authentication page in the system browser."
+commands.allow = ["open_plex_sign_in"]

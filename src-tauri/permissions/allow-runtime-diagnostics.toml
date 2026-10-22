@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-runtime-diagnostics"
+description = "Read bounded native runtime metrics, without logs or player controls."
+commands.allow = ["runtime_diagnostics"]

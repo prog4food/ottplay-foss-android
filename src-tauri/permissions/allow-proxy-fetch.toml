@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-proxy-fetch"
+description = "Enables the proxy_fetch command (CORS-free remote text fetch for Mode B)."
+commands.allow = ["proxy_fetch"]

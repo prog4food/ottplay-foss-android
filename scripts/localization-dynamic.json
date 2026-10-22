@@ -1,0 +1,285 @@
+{
+  "description": "Audited dynamic translation boundaries. New unresolved expressions must be reviewed; do not blanket-add arbitrary strings. Source scanner covers src, shipped stb adapters and prov codecs; external provider/channel/EPG titles, network error details, hardware symbols, and already translated markup are not fixed catalog keys.",
+  "entries": [
+    {
+      "file": "src/plugins/local-media.ts",
+      "expression": "item.name",
+      "reason": "Local media rows mix application labels with user-owned source and file names; those names remain runtime metadata, not translation keys."
+    },
+    {
+      "file": "src/channels/classic-search.ts",
+      "expression": "title",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/channels/index.ts",
+      "expression": "_(\"Resume from archive?\") + \"<br><br>\" + _(\"Bookmark age (days): %1\", formatLocaleNumber(Math.max(0, Math.floor(ageMs / 86400000))))",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/channels/index.ts",
+      "expression": "(w._ ? w._(\"Delete list\") : \"Delete list\") + \": \" + favoritesListLabel(listName) + \"?\"",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/channels/index.ts",
+      "expression": "w._ ? w._(\"Switch\") : \"Switch\"",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/channels/index.ts",
+      "expression": "w._(w.strPlayPause || strPlayPause)",
+      "reason": "Device-specific button glyph or badge, not a natural-language label."
+    },
+    {
+      "file": "src/channels/index.ts",
+      "expression": "w.strPlayPause || strPlayPause",
+      "reason": "Device-specific button glyph or badge, not a natural-language label."
+    },
+    {
+      "file": "src/channels/index.ts",
+      "expression": "w._(w.strTools)",
+      "reason": "Device-specific button glyph or badge, not a natural-language label."
+    },
+    {
+      "file": "src/channels/index.ts",
+      "expression": "w.strTools",
+      "reason": "Device-specific button glyph or badge, not a natural-language label."
+    },
+    {
+      "file": "src/channels/index.ts",
+      "expression": "w._(\"Move category up\")",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/channels/index.ts",
+      "expression": "w._(\"Move category down\")",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/channels/index.ts",
+      "expression": "w._(\"Create category\")",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/channels/index.ts",
+      "expression": "w._(\"Rename category\")",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/channels/index.ts",
+      "expression": "w._(\"Copy category\")",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/channels/index.ts",
+      "expression": "w._(\"Delete category\")",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/channels/index.ts",
+      "expression": "t ? \"<br>Delete\" : \"<br>\" + w._(\"Sort channels\") + \":<br>\" + w._(w.sSortAbc ? '\"As Is\"' : \"By alphabet\")",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/guide/classic-reminders.ts",
+      "expression": "host._(\"Timer: switch to channel?\") + \"\\n\\n\" + (channel ? channel.channel_name : \"\") + \"\\n\" + record.title + \"\\n\" + host.formatEpgTime(record.start) + \" - \" + host.formatEpgTime(record.end)",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/guide/classic-reminders.ts",
+      "expression": "host._(remove ? \"Remove timer?\" : \"Set timer?\")",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/index.ts",
+      "expression": "title",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/index.ts",
+      "expression": "_(\"Continue watching?\") + \"<br><br>\" + formatSeekOffset(resumePos)",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/index.ts",
+      "expression": "caption",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/index.ts",
+      "expression": "text",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/index.ts",
+      "expression": "tz[0]",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/index.ts",
+      "expression": "w.popupArray[i]",
+      "reason": "Built-in titles/details and toggle variants are extracted from screenMenuDefinitions; external provider labels remain runtime metadata."
+    },
+    {
+      "file": "src/index.ts",
+      "expression": "w.listArray[w.selIndex].desc || w.listArray[w.selIndex].name || \"\"",
+      "reason": "Settings/information schema name and description fields are extracted at their declarations; external or already-rendered rows stay runtime data."
+    },
+    {
+      "file": "src/index.ts",
+      "expression": "message",
+      "reason": "Status messages come from command-server update/error/message declarations and the settingsCommands fallback assignments."
+    },
+    {
+      "file": "src/index.ts",
+      "expression": "status.message",
+      "reason": "Discovery statuses come from control-discovery notify/finish/message declarations extracted by localization-catalog.cjs; controller addresses are passed as placeholder arguments."
+    },
+    {
+      "file": "src/plugins/vportal.ts",
+      "expression": "text",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/provider/drivers.ts",
+      "expression": "message",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/provider/drivers.ts",
+      "expression": "value",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/provider/drivers.ts",
+      "expression": "profile.title + \" settings\"",
+      "reason": "Finite built-in provider names and generated settings/configuration labels are extracted from driver-profiles.ts."
+    },
+    {
+      "file": "src/provider/drivers.ts",
+      "expression": "generic ? profile.title : \"Xtream Codes Provider\"",
+      "reason": "Finite built-in provider names and generated settings/configuration labels are extracted from driver-profiles.ts."
+    },
+    {
+      "file": "src/provider/drivers.ts",
+      "expression": "error === \"configure\" ? \"Configure \" + profile.title + \" in Settings -> Provider Settings\" : error === \"playlist\" ? \"Failed to load!\" : error === \"network\" ? \"Failed to connect to Xtream API server\" : \"Failed to load channels from Xtream API\"",
+      "reason": "Finite built-in provider names and generated settings/configuration labels are extracted from driver-profiles.ts."
+    },
+    {
+      "file": "src/provider/edem-driver.ts",
+      "expression": "title",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/provider/index.ts",
+      "expression": "_(\"Sort channels\") + \": \" + _(sSortAbc ? '\"As Is\"' : \"By alphabet\")",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/provider/index.ts",
+      "expression": "opt.name || \"\"",
+      "reason": "Settings/information schema name and description fields are extracted at their declarations; external or already-rendered rows stay runtime data."
+    },
+    {
+      "file": "src/provider/index.ts",
+      "expression": "viewOptions[selIndex].desc || viewOptions[selIndex].name || \"\"",
+      "reason": "Settings/information schema name and description fields are extracted at their declarations; external or already-rendered rows stay runtime data."
+    },
+    {
+      "file": "src/provider/index.ts",
+      "expression": "msg",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/provider/m3u-settings.ts",
+      "expression": "title",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/settings/cloud.ts",
+      "expression": "value",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/ui/index.ts",
+      "expression": "message",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/ui/index.ts",
+      "expression": "description",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/ui/index.ts",
+      "expression": "item.name || \"\"",
+      "reason": "Settings/information schema name and description fields are extracted at their declarations; external or already-rendered rows stay runtime data."
+    },
+    {
+      "file": "src/ui/index.ts",
+      "expression": "item.desc || item.name || \"\"",
+      "reason": "Settings/information schema name and description fields are extracted at their declarations; external or already-rendered rows stay runtime data."
+    },
+    {
+      "file": "src/ui/index.ts",
+      "expression": "_(\"Do you want to exit player?\")",
+      "reason": "Already-translated constituent labels plus runtime data or markup; nested literal calls are scanned independently."
+    },
+    {
+      "file": "src/ui/menu-registry.ts",
+      "expression": "text",
+      "reason": "Built-in titles/details and toggle variants are extracted from screenMenuDefinitions; external provider labels remain runtime metadata."
+    },
+    {
+      "file": "src/ui/menu-registry.ts",
+      "expression": "name",
+      "reason": "Built-in titles/details and toggle variants are extracted from screenMenuDefinitions; external provider labels remain runtime metadata."
+    },
+    {
+      "file": "src/ui/menu-registry.ts",
+      "expression": "record.detail",
+      "reason": "Built-in titles/details and toggle variants are extracted from screenMenuDefinitions; external provider labels remain runtime metadata."
+    },
+    {
+      "file": "providers/1ott/provider.js",
+      "expression": "listArray[selIndex].desc || listArray[selIndex].name || \"\"",
+      "reason": "Settings/information schema name and description fields are extracted at their declarations; external or already-rendered rows stay runtime data."
+    },
+    {
+      "file": "providers/edem/provider.js",
+      "expression": "title",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "providers/m3u/provider.js",
+      "expression": "e",
+      "reason": "Forwarded translation parameter: callers and explicit wrapper/schema rules in localization-catalog.cjs provide the finite key set; provider titles and external error details are runtime data."
+    },
+    {
+      "file": "src/plugins/plex.ts",
+      "expression": "value",
+      "reason": "Plex translation wrapper forwards finite literal labels; translate() callers are scanned for catalog keys."
+    },
+    {
+      "file": "src/index.ts",
+      "expression": "key",
+      "reason": "Local label/notice helpers forward their literal key argument; label calls and transfer-ui notice calls are explicitly scanned by localization-catalog.cjs."
+    },
+    {
+      "file": "src/settings/transfer-ui.ts",
+      "expression": "key",
+      "reason": "Local label/notice helpers forward their literal key argument; label calls and transfer-ui notice calls are explicitly scanned by localization-catalog.cjs."
+    },
+    {
+      "file": "src/index.ts",
+      "expression": "view.message",
+      "reason": "Screenshot status messages are the finite message declarations/assignments and failGrant arguments in remote-screenshot.ts, all extracted by localization-catalog.cjs; image bytes and protocol errors never enter this UI translation boundary."
+    },
+    {
+      "file": "src/settings/cloud.ts",
+      "expression": "message",
+      "reason": "Cloud fail forwards only app-owned first-argument keys from finite call sites scanned by localization-catalog.cjs; escaped server details are separate and are not translation keys."
+    }
+  ]
+}

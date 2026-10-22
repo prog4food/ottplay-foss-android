@@ -1,0 +1,287 @@
+<svg
+    aria-labelledby="title description"
+    height="1056"
+    role="img"
+    viewBox="0 0 1280 1056"
+    width="1280"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">
+        Plex playback lifecycle: loading, explicit navigation, and shutdown
+    </title>
+    <desc id="description">
+        Three left-to-right flows explain ownership of Plex playback. Startup
+        keeps a cancellable loading wait through folder collection and file
+        resolution; cancellation or a replacement screen rejects late replies.
+        During full-screen playback, Up selects the next file, Down the previous
+        file, and Left and Right seek. A pending explicit selection survives the
+        old video's end-of-stream event. On page exit, capture-phase pagehide
+        cleanup sends one best-effort keepalive stop before player and queue
+        teardown.
+    </desc>
+    <defs>
+        <linearGradient id="background" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#10243a" />
+            <stop offset="1" stop-color="#07111e" />
+        </linearGradient>
+        <marker
+            id="arrow"
+            markerHeight="9"
+            markerUnits="userSpaceOnUse"
+            markerWidth="9"
+            orient="auto"
+            refX="7"
+            refY="4.5"
+        >
+            <path
+                d="M1 1 L7 4.5 L1 8"
+                fill="none"
+                stroke="#86a9c8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+            />
+        </marker>
+        <style>
+        text {
+            font-family:
+                Inter, ui-sans-serif, system-ui, -apple-system,
+                BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+        .eyebrow {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            fill: #55e2c3;
+        }
+        .headline {
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: -0.7px;
+            fill: #f3f8ff;
+        }
+        .subtitle {
+            font-size: 21px;
+            fill: #a9c0d5;
+        }
+        .control {
+            font-size: 22px;
+            font-weight: 600;
+            fill: #e5f4ff;
+        }
+        .lane {
+            font-size: 21px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            fill: #eaf2fb;
+        }
+        .card-title {
+            font-size: 23px;
+            font-weight: 650;
+            fill: #f3f8ff;
+        }
+        .body {
+            font-size: 20px;
+            fill: #c0d2e3;
+        }
+        .note {
+            font-size: 20px;
+            fill: #c0d2e3;
+        }
+        .connector {
+            fill: none;
+            stroke: #86a9c8;
+            stroke-width: 2;
+            stroke-linecap: round;
+            marker-end: url(#arrow);
+        }
+        .card {
+            fill: #132b42;
+            stroke: #355673;
+            stroke-width: 1.5;
+        }
+        .success {
+            fill: #103a3b;
+            stroke: #3aab98;
+            stroke-width: 1.5;
+        }
+        .event {
+            fill: #342e21;
+            stroke: #b29553;
+            stroke-width: 1.5;
+        }
+        </style>
+    </defs>
+
+    <rect fill="#07111e" height="1056" width="1280" />
+    <rect
+        fill="url(#background)"
+        height="1008"
+        rx="28"
+        stroke="#274159"
+        width="1232"
+        x="24"
+        y="24"
+    />
+
+    <text class="eyebrow" x="60" y="67">PLEX · PLAYBACK LIFECYCLE</text>
+    <text class="headline" x="60" y="117">
+        Keep the user's intent. Retire stale work.
+    </text>
+    <text class="subtitle" x="60" y="153">
+        Shared playback behavior across native and web players
+    </text>
+
+    <rect
+        fill="#18374b"
+        height="49"
+        rx="12"
+        stroke="#35657b"
+        width="350"
+        x="60"
+        y="178"
+    />
+    <text class="control" x="81" y="210">↑ Next file · ↓ Previous file</text>
+    <rect
+        fill="#18374b"
+        height="49"
+        rx="12"
+        stroke="#35657b"
+        width="234"
+        x="426"
+        y="178"
+    />
+    <text class="control" x="449" y="210">← / → Seek video</text>
+    <text class="subtitle" x="689" y="210">Full-screen Plex controls</text>
+
+    <g aria-label="Startup flow">
+        <circle cx="68" cy="276" fill="#55e2c3" r="7" />
+        <text class="lane" x="88" y="284">01 STARTUP</text>
+
+        <rect class="card" height="132" rx="16" width="330" x="60" y="307" />
+        <text class="card-title" x="84" y="345">Show loading</text>
+        <text class="body" x="84" y="381">Keep the wait visible.</text>
+        <text class="body" x="84" y="409">Cancel stays available.</text>
+
+        <path class="connector" d="M409 373 H455" />
+
+        <rect class="card" height="132" rx="16" width="330" x="475" y="307" />
+        <text class="card-title" x="499" y="345">Collect + resolve</text>
+        <text class="body" x="499" y="381">Load the folder and file.</text>
+        <text class="body" x="499" y="409">Reject stale responses.</text>
+
+        <path class="connector" d="M824 373 H870" />
+
+        <rect
+            class="success"
+            height="132"
+            rx="16"
+            width="330"
+            x="890"
+            y="307"
+        />
+        <text class="card-title" x="914" y="345">Dispatch playback</text>
+        <text class="body" x="914" y="381">Close the owned wait.</text>
+        <text class="body" x="914" y="409">Let the decoder take over.</text>
+
+        <path
+            d="M61 462 V478"
+            stroke="#e8b95d"
+            stroke-linecap="round"
+            stroke-width="3"
+        />
+        <text class="note" x="77" y="477">
+            Cancel or replacement revokes the launch; its late replies cannot
+            start playback.
+        </text>
+    </g>
+
+    <path d="M60 504 H1220" stroke="#294157" />
+
+    <g
+        aria-label="Explicit navigation takes priority over the old video ending"
+    >
+        <circle cx="68" cy="543" fill="#e8b95d" r="7" />
+        <text class="lane" x="88" y="551">02 EXPLICIT NAVIGATION</text>
+
+        <rect class="card" height="132" rx="16" width="330" x="60" y="574" />
+        <text class="card-title" x="84" y="612">Record ↑ / ↓ intent</text>
+        <text class="body" x="84" y="648">Update the pending target.</text>
+        <text class="body" x="84" y="676">Keep its place in the queue.</text>
+
+        <path class="connector" d="M409 640 H455" />
+
+        <rect class="event" height="132" rx="16" width="330" x="475" y="574" />
+        <text class="card-title" x="499" y="612">Old video ends</text>
+        <text class="body" x="499" y="648">EOS retires the decoder.</text>
+        <text class="body" x="499" y="676">It cannot replace the target.</text>
+
+        <path class="connector" d="M824 640 H870" />
+
+        <rect
+            class="success"
+            height="132"
+            rx="16"
+            width="330"
+            x="890"
+            y="574"
+        />
+        <text class="card-title" x="914" y="612">Keep the chosen file</text>
+        <text class="body" x="914" y="648">Renew request ownership.</text>
+        <text class="body" x="914" y="676">Ignore replies from old work.</text>
+
+        <path
+            d="M61 729 V745"
+            stroke="#e8b95d"
+            stroke-linecap="round"
+            stroke-width="3"
+        />
+        <text class="note" x="77" y="744">
+            The latest explicit selection wins over natural end of stream (EOS).
+        </text>
+    </g>
+
+    <path d="M60 771 H1220" stroke="#294157" />
+
+    <g aria-label="Page exit cleanup before player and queue teardown">
+        <circle cx="68" cy="810" fill="#74baff" r="7" />
+        <text class="lane" x="88" y="818">03 PAGE EXIT</text>
+
+        <rect class="card" height="132" rx="16" width="330" x="60" y="841" />
+        <text class="card-title" x="84" y="879">Capture pagehide</text>
+        <text class="body" x="84" y="915">Begin cleanup before teardown.</text>
+        <text class="body" x="84" y="943">Release the active session.</text>
+
+        <path class="connector" d="M409 907 H455" />
+
+        <rect class="card" height="132" rx="16" width="330" x="475" y="841" />
+        <text class="card-title" x="499" y="879">One keepalive stop</text>
+        <text class="body" x="499" y="915">Best-effort cleanup request.</text>
+        <text class="body" x="499" y="943">Do not block page exit.</text>
+
+        <path class="connector" d="M824 907 H870" />
+
+        <rect
+            class="success"
+            height="132"
+            rx="16"
+            width="330"
+            x="890"
+            y="841"
+        />
+        <text class="card-title" x="914" y="879">Tear down locally</text>
+        <text class="body" x="914" y="915">Stop the player and queue.</text>
+        <text class="body" x="914" y="943">Avoid duplicate stop requests.</text>
+
+        <path
+            d="M61 996 V1012"
+            stroke="#74baff"
+            stroke-linecap="round"
+            stroke-width="3"
+        />
+        <text class="note" x="77" y="1011">
+            Capture → stop request → teardown. Issue cleanup before local state
+            disappears.
+        </text>
+    </g>
+</svg>

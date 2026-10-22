@@ -1,0 +1,16 @@
+[package]
+name = "ottplay-macos-drag-regression"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[workspace]
+
+[dependencies]
+objc2 = { version = "=0.6.4", features = ["exception", "disable-encoding-assertions"] }
+wry = { path = "../../vendor/wry-0.55.1", version = "=0.55.1", default-features = false }
+tao = { path = "../../vendor/tao-0.35.3", version = "=0.35.3", default-features = false, features = ["rwh_06"] }
+
+# Standalone workspaces do not inherit the application's security backport.
+[patch.crates-io]
+glib = { path = "../../vendor/glib-0.18.5" }

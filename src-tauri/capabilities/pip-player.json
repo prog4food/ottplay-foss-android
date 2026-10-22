@@ -1,0 +1,6 @@
+{
+  "identifier": "pip-player",
+  "description": "Playback lifecycle reports from the embedded PiP window only",
+  "windows": ["pip"],
+  "permissions": ["allow-pip-player-event"]
+}

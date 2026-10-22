@@ -1,0 +1,286 @@
+<svg
+    aria-labelledby="title desc"
+    height="800"
+    role="img"
+    viewBox="0 0 1400 800"
+    width="1400"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">Implementation process / Процесс реализации</title>
+    <desc id="desc">
+        Five stages: analysis, implementation, regressions, production build,
+        and pending CI/release. Local checks are separate from physical
+        acceptance.
+    </desc>
+    <rect fill="#0b1220" height="800" rx="24" width="1400" />
+    <style>
+    text {
+        font-family:
+            Arial,
+            DejaVu Sans,
+            sans-serif;
+    }
+    .mono {
+        font-family:
+            Menlo,
+            DejaVu Sans Mono,
+            monospace;
+    }
+    </style>
+    <rect
+        fill="#1d3d43"
+        height="28"
+        rx="8"
+        stroke="none"
+        width="190"
+        x="48"
+        y="38"
+    />
+    <text fill="#51dec4" font-size="14" font-weight="700" x="62" y="58">
+        OTTPLAY / DELIVERY
+    </text>
+    <text fill="#edf5ff" font-size="37" font-weight="700" x="48" y="112">
+        From requested features to checked behavior
+    </text>
+    <text fill="#b8c9df" font-size="23" font-weight="400" x="50" y="143">
+        От запрошенных функций к проверенному поведению
+    </text>
+    <rect
+        fill="#142238"
+        height="218"
+        rx="16"
+        stroke="#78b6ff"
+        width="248"
+        x="48"
+        y="183"
+    />
+    <circle cx="76" cy="214" fill="#78b6ff" r="15" />
+    <text fill="#0b1220" font-size="13" font-weight="700" x="67" y="219">
+        01
+    </text>
+    <text fill="#78b6ff" font-size="19" font-weight="700" x="100" y="220">
+        ANALYZE
+    </text>
+    <text fill="#edf5ff" font-size="18" font-weight="700" x="66" y="256">
+        Анализ
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="66" y="295">
+        13 feature slices
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="66" y="319">
+        3 separate artifacts
+    </text>
+    <text fill="#78b6ff" font-size="13" font-weight="400" x="66" y="351">
+        13 функций
+    </text>
+    <text fill="#78b6ff" font-size="13" font-weight="400" x="66" y="374">
+        3 независимые сборки
+    </text>
+    <path
+        d="M 297 289 h 12 m -6 -5 l 6 5 -6 5"
+        fill="none"
+        stroke="#b8c9df"
+        stroke-width="2"
+    />
+    <rect
+        fill="#142238"
+        height="218"
+        rx="16"
+        stroke="#78b6ff"
+        width="248"
+        x="312"
+        y="183"
+    />
+    <circle cx="340" cy="214" fill="#78b6ff" r="15" />
+    <text fill="#0b1220" font-size="13" font-weight="700" x="331" y="219">
+        02
+    </text>
+    <text fill="#78b6ff" font-size="19" font-weight="700" x="364" y="220">
+        IMPLEMENT
+    </text>
+    <text fill="#edf5ff" font-size="18" font-weight="700" x="330" y="256">
+        Реализация
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="330" y="295">
+        Component ownership
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="330" y="319">
+        88 language catalogs
+    </text>
+    <text fill="#78b6ff" font-size="13" font-weight="400" x="330" y="351">
+        Ответственность по модулям
+    </text>
+    <text fill="#78b6ff" font-size="13" font-weight="400" x="330" y="374">
+        88 языковых каталогов
+    </text>
+    <path
+        d="M 561 289 h 12 m -6 -5 l 6 5 -6 5"
+        fill="none"
+        stroke="#b8c9df"
+        stroke-width="2"
+    />
+    <rect
+        fill="#142238"
+        height="218"
+        rx="16"
+        stroke="#51dec4"
+        width="248"
+        x="576"
+        y="183"
+    />
+    <circle cx="604" cy="214" fill="#51dec4" r="15" />
+    <text fill="#0b1220" font-size="13" font-weight="700" x="595" y="219">
+        03
+    </text>
+    <text fill="#51dec4" font-size="19" font-weight="700" x="628" y="220">
+        REPRODUCE
+    </text>
+    <text fill="#edf5ff" font-size="18" font-weight="700" x="594" y="256">
+        Регрессионные тесты
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="594" y="295">
+        Cross-review → failing case
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="594" y="319">
+        Fix → focused check
+    </text>
+    <text fill="#51dec4" font-size="13" font-weight="400" x="594" y="351">
+        Перекрёстная проверка
+    </text>
+    <text fill="#51dec4" font-size="13" font-weight="400" x="594" y="374">
+        Воспроизведение → исправление
+    </text>
+    <path
+        d="M 825 289 h 12 m -6 -5 l 6 5 -6 5"
+        fill="none"
+        stroke="#b8c9df"
+        stroke-width="2"
+    />
+    <rect
+        fill="#142238"
+        height="218"
+        rx="16"
+        stroke="#51dec4"
+        width="248"
+        x="840"
+        y="183"
+    />
+    <circle cx="868" cy="214" fill="#51dec4" r="15" />
+    <text fill="#0b1220" font-size="13" font-weight="700" x="859" y="219">
+        04
+    </text>
+    <text fill="#51dec4" font-size="19" font-weight="700" x="892" y="220">
+        BUILD
+    </text>
+    <text fill="#edf5ff" font-size="18" font-weight="700" x="858" y="256">
+        Чистая сборка
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="858" y="295">
+        Production ES5 output
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="858" y="319">
+        Complete payload measured
+    </text>
+    <text fill="#51dec4" font-size="13" font-weight="400" x="858" y="351">
+        Проверка итогового ES5
+    </text>
+    <text fill="#51dec4" font-size="13" font-weight="400" x="858" y="374">
+        Измерение полного объёма
+    </text>
+    <path
+        d="M 1089 289 h 12 m -6 -5 l 6 5 -6 5"
+        fill="none"
+        stroke="#b8c9df"
+        stroke-width="2"
+    />
+    <rect
+        fill="#142238"
+        height="218"
+        rx="16"
+        stroke="#ffd37b"
+        width="248"
+        x="1104"
+        y="183"
+    />
+    <circle cx="1132" cy="214" fill="#ffd37b" r="15" />
+    <text fill="#0b1220" font-size="13" font-weight="700" x="1123" y="219">
+        05
+    </text>
+    <text fill="#ffd37b" font-size="19" font-weight="700" x="1156" y="220">
+        RELEASE GATE
+    </text>
+    <text fill="#edf5ff" font-size="18" font-weight="700" x="1122" y="256">
+        Этап выпуска
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="1122" y="295">
+        CI + review + device checks
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="1122" y="319">
+        PENDING at this snapshot
+    </text>
+    <text fill="#ffd37b" font-size="13" font-weight="400" x="1122" y="351">
+        CI, ревью, реальные устройства
+    </text>
+    <text fill="#ffd37b" font-size="13" font-weight="400" x="1122" y="374">
+        На снимке НЕ ЗАВЕРШЕНО
+    </text>
+    <rect
+        fill="#142238"
+        height="221"
+        rx="16"
+        stroke="none"
+        width="1304"
+        x="48"
+        y="433"
+    />
+    <text fill="#51dec4" font-size="21" font-weight="700" x="72" y="470">
+        RECORDED EVIDENCE / ЗАФИКСИРОВАННЫЕ ПРОВЕРКИ
+    </text>
+    <text fill="#edf5ff" font-size="33" font-weight="700" x="74" y="529">
+        194 + 1 skip
+    </text>
+    <text fill="#b8c9df" font-size="17" font-weight="400" x="74" y="569">
+        browser passed / skipped
+    </text>
+    <text fill="#b8c9df" font-size="14" font-weight="400" x="74" y="597">
+        пройдено / пропущено
+    </text>
+    <text fill="#edf5ff" font-size="33" font-weight="700" x="396" y="529">
+        101 + 62
+    </text>
+    <text fill="#b8c9df" font-size="17" font-weight="400" x="396" y="569">
+        Android + core unit tests
+    </text>
+    <text fill="#b8c9df" font-size="14" font-weight="400" x="396" y="597">
+        тест приложения + теста ядра
+    </text>
+    <text fill="#edf5ff" font-size="33" font-weight="700" x="718" y="529">
+        ES5 + limits
+    </text>
+    <text fill="#b8c9df" font-size="17" font-weight="400" x="718" y="569">
+        clean production build
+    </text>
+    <text fill="#b8c9df" font-size="14" font-weight="400" x="718" y="597">
+        чистая production-сборка
+    </text>
+    <text fill="#edf5ff" font-size="33" font-weight="700" x="1040" y="529">
+        995,858 B
+    </text>
+    <text fill="#b8c9df" font-size="17" font-weight="400" x="1040" y="569">
+        complete raw JavaScript
+    </text>
+    <text fill="#b8c9df" font-size="14" font-weight="400" x="1040" y="597">
+        полный объём JS до gzip
+    </text>
+    <text fill="#ffd37b" font-size="24" font-weight="700" x="50" y="698">
+        Local success ≠ physical-device acceptance ≠ published release.
+    </text>
+    <text fill="#b8c9df" font-size="19" font-weight="400" x="50" y="733">
+        Локальные проверки, приёмка на устройстве и выпуск — разные
+        подтверждения.
+    </text>
+    <text fill="#b8c9df" font-size="15" font-weight="400" x="50" y="772">
+        Evidence snapshot: player 652726f8 • native Android be0d800 • see
+        implementation-report.md
+    </text>
+</svg>

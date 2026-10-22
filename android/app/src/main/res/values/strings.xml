@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">OTT-play FOSS</string>
+    <string name="title_activity_main">OTT-play FOSS</string>
+    <string name="package_name">play.ott.foss</string>
+    <string name="custom_url_scheme">play.ott.foss</string>
+    <string name="home_setup_title">OTTPlay startup</string>
+    <string name="home_setup_explanation">Use OTTPlay as this device’s Home app to open the player at startup. The Home button will also open OTTPlay. Keep the original launcher installed. This screen does not change playlists or playback settings.</string>
+    <string name="home_setup_enable">Enable and choose OTTPlay</string>
+    <string name="home_setup_disable">Disable OTTPlay Home entry</string>
+    <string name="home_setup_settings">Choose Home app in settings</string>
+    <string name="home_setup_close">Close</string>
+    <string name="home_setup_disabled">OTTPlay Home entry is disabled.</string>
+    <string name="home_setup_selected">OTTPlay is selected as the Home app. Verify startup after restarting this device.</string>
+    <string name="home_setup_available">OTTPlay Home entry is enabled. It is not confirmed as the selected Home app.</string>
+    <string name="home_setup_unavailable">This firmware could not complete the operation. Check the system Home app settings.</string>
+    <string name="home_setup_enable_confirmation">Enable OTTPlay as a Home app option? Android will ask you to select the Home app. If you cancel that selection, the OTTPlay option remains enabled, but your selected Home app is not changed by this screen.</string>
+    <string name="home_setup_choose_other">First select another Home app in system settings. Then return here and press Disable again. If no other Home app is confirmed, the OTTPlay entry stays enabled.</string>
+    <string name="home_setup_disable_confirmation">Another Home app is selected. Remove OTTPlay from the Home app options? The normal OTTPlay app and its saved profiles will remain available.</string>
+</resources>

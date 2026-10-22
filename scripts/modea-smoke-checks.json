@@ -1,0 +1,82 @@
+[
+  {
+    "name": "index",
+    "method": "GET",
+    "path": "/",
+    "expect_code": "200",
+    "min_bytes": 1,
+    "required": true
+  },
+  {
+    "name": "health",
+    "method": "GET",
+    "path": "/health",
+    "expect_code": "200",
+    "body_contains": "OK",
+    "required": false,
+    "soft_codes": ["404"]
+  },
+  {
+    "name": "dist_bundle",
+    "method": "GET",
+    "path": "/dist/player.js",
+    "expect_code": "200",
+    "min_bytes": 100,
+    "required": false,
+    "strict_env": "STRICT_DIST"
+  },
+  {
+    "name": "stb_css",
+    "method": "GET",
+    "path": "/styles/player.css",
+    "expect_code": "200",
+    "min_bytes": 10,
+    "required": true
+  },
+  {
+    "name": "jquery",
+    "method": "GET",
+    "path": "/js/jquery-1.11.1.min.js",
+    "expect_code": "200",
+    "min_bytes": 100,
+    "required": true
+  },
+  {
+    "name": "logo",
+    "method": "GET",
+    "path": "/logo/smoke.svg?ch=Smoke",
+    "expect_code": "200",
+    "body_contains_ci": "<svg",
+    "required": true
+  },
+  {
+    "name": "version",
+    "method": "GET",
+    "path": "/version/{VERSION_REL}",
+    "expect_code": "200",
+    "body_contains": "\"hash\"",
+    "required": true
+  },
+  {
+    "name": "epg",
+    "method": "GET",
+    "path": "/epg/{EPG_HASH}.json",
+    "expect_code": "200",
+    "body_contains": "epg_data",
+    "required": false,
+    "needs_env": "EPG_HASH",
+    "empty_ok_regex": "\"epg_data\"\\s*:\\s*\\[\\]"
+  },
+  {
+    "name": "m3u_proxy_present",
+    "method": "POST",
+    "path": "/m3u/cp.php",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": "{}",
+    "expect_code": "400",
+    "accept_4xx": true,
+    "required": true
+  }
+]

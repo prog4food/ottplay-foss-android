@@ -1,0 +1,49 @@
+Embedded metadata from the actual bundled text-font files.
+Recorded 2026-09-12. These fields are transcribed, not newly assigned licenses.
+See THIRD-PARTY-NOTICES.md for provenance limits.
+
+fonts/Caveat-Regular.ttf
+SHA256: f4365d9874c1b64026aca48786cf835a5decf2c740c06de04dbb05ce8c93ff37
+Copyright: Copyright 2014 The Caveat Project Authors (https://github.com/googlefonts/caveat)
+Family: Caveat
+Version: Version 2.000
+License URL: http://scripts.sil.org/OFL
+
+fonts/Gabriela-Regular.ttf
+SHA256: 68752f7591250fbf88963a2e08fdcf3b2b0f263f368ef0dedf37cf92a5e6f6a9
+Copyright: Copyright 2013 The Gabriela Project Authors (https://github.com/etunni/Gabriela), with Reserved Font Name "Gabriela".
+Family: Gabriela
+Version: Version 2.001;gftools[0.9.26]
+License URL: https://scripts.sil.org/OFL
+
+fonts/LiberationSans-Regular.ttf
+SHA256: 56a45233d29f11b4dfb86d248e921939d115778f87325e7ae8cc108383d6664d
+Copyright: Copyright 2015 Google Inc. All Rights Reserved.
+Family: Roboto
+Version: Version 2.001047; 2015
+Designer: Google
+License description: Licensed under the Apache License, Version 2.0
+License URL: http://www.apache.org/licenses/LICENSE-2.0
+
+fonts/PTSansNarrow-Regular.ttf
+SHA256: 9142474df124a37dbac593ae17ae50ee3beec0ea25bdb4e31404ac2637d3e3ed
+Copyright: Copyright © 2009 ParaType Ltd. All rights reserved.
+Family: PT Sans Narrow
+Version: Version 2.003W OFL
+License URL: http://scripts.sil.org/OFL_web
+
+fonts/Roboto-Regular.ttf
+SHA256: 56a45233d29f11b4dfb86d248e921939d115778f87325e7ae8cc108383d6664d
+Copyright: Copyright 2015 Google Inc. All Rights Reserved.
+Family: Roboto
+Version: Version 2.001047; 2015
+Designer: Google
+License description: Licensed under the Apache License, Version 2.0
+License URL: http://www.apache.org/licenses/LICENSE-2.0
+
+fonts/RobotoCondensed-Regular.ttf
+SHA256: ef9d48725ff2bd72cd569ca50555fb781f99cf8f3a88a3bb3c8a4c85fd574458
+Copyright: Copyright 2011 Google Inc. All Rights Reserved.
+Family: Roboto Condensed
+Version: Version 3.008; 2023
+License URL: http://www.apache.org/licenses/LICENSE-2.0

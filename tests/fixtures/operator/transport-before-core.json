@@ -1,0 +1,2310 @@
+{
+  "provenance": {
+    "commit": "b3c8cc072e92f14c8e352a223157788f24ca4dce",
+    "capture": "Actual nested loadPlaylist declarations from seven shipping operators; fixture HTTP and intercept effects only."
+  },
+  "profiles": [
+    "1ott",
+    "only4",
+    "shara-tv",
+    "tvteam",
+    "antifriz",
+    "edem",
+    "kb-team"
+  ],
+  "cases": [
+    {
+      "input": {
+        "url": ""
+      },
+      "expected": {
+        "1ott": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "url": "",
+        "intercept": true
+      },
+      "expected": {
+        "1ott": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "url": "",
+        "directFailed": true
+      },
+      "expected": {
+        "1ott": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "url": "",
+        "intercept": true,
+        "directFailed": true
+      },
+      "expected": {
+        "1ott": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "url": "",
+        "directFailed": true,
+        "proxyFailed": true
+      },
+      "expected": {
+        "1ott": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [],
+          "events": [
+            [
+              "complete"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "url": "https://feed.test/path"
+      },
+      "expected": {
+        "1ott": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "url": "https://feed.test/path",
+        "intercept": true
+      },
+      "expected": {
+        "1ott": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?url=https%3A%2F%2Ffeed.test%2Fpath",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path"
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?url=https%3A%2F%2Ffeed.test%2Fpath",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path"
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?url=https%3A%2F%2Ffeed.test%2Fpath",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path"
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?url=https%3A%2F%2Ffeed.test%2Fpath",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path"
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?url=https%3A%2F%2Ffeed.test%2Fpath",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path"
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?url=https%3A%2F%2Ffeed.test%2Fpath",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path"
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?url=https%3A%2F%2Ffeed.test%2Fpath",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path"
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "url": "https://feed.test/path",
+        "directFailed": true
+      },
+      "expected": {
+        "1ott": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "url": "https://feed.test/path",
+        "intercept": true,
+        "directFailed": true
+      },
+      "expected": {
+        "1ott": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?url=https%3A%2F%2Ffeed.test%2Fpath",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path"
+            ],
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?url=https%3A%2F%2Ffeed.test%2Fpath",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path"
+            ],
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?url=https%3A%2F%2Ffeed.test%2Fpath",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path"
+            ],
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?url=https%3A%2F%2Ffeed.test%2Fpath",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path"
+            ],
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?url=https%3A%2F%2Ffeed.test%2Fpath",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path"
+            ],
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?url=https%3A%2F%2Ffeed.test%2Fpath",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path"
+            ],
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?url=https%3A%2F%2Ffeed.test%2Fpath",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path"
+            ],
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "url": "https://feed.test/path",
+        "directFailed": true,
+        "proxyFailed": true
+      },
+      "expected": {
+        "1ott": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "alert",
+              "Failed to load channel list!"
+            ],
+            [
+              "complete"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "alert",
+              "Failed to load channel list!"
+            ],
+            [
+              "complete"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "alert",
+              "Failed to load channel list!"
+            ],
+            [
+              "complete"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "alert",
+              "Failed to load channel list!"
+            ],
+            [
+              "complete"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "alert",
+              "Failed to load channel list!"
+            ],
+            [
+              "complete"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "alert",
+              "Failed to load channel list!"
+            ],
+            [
+              "complete"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [
+            {
+              "url": "https://feed.test/path",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "alert",
+              "Failed to load channel list!"
+            ],
+            [
+              "complete"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "url": "https://feed.test/path?q=one&two=2"
+      },
+      "expected": {
+        "1ott": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "url": "https://feed.test/path?q=one&two=2",
+        "intercept": true
+      },
+      "expected": {
+        "1ott": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2&url=https%3A%2F%2Ffeed.test%2Fpath%3Fq%3Done%26two%3D2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path?q=one&two=2"
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2&url=https%3A%2F%2Ffeed.test%2Fpath%3Fq%3Done%26two%3D2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path?q=one&two=2"
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2&url=https%3A%2F%2Ffeed.test%2Fpath%3Fq%3Done%26two%3D2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path?q=one&two=2"
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2&url=https%3A%2F%2Ffeed.test%2Fpath%3Fq%3Done%26two%3D2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path?q=one&two=2"
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2&url=https%3A%2F%2Ffeed.test%2Fpath%3Fq%3Done%26two%3D2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path?q=one&two=2"
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2&url=https%3A%2F%2Ffeed.test%2Fpath%3Fq%3Done%26two%3D2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path?q=one&two=2"
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2&url=https%3A%2F%2Ffeed.test%2Fpath%3Fq%3Done%26two%3D2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path?q=one&two=2"
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "url": "https://feed.test/path?q=one&two=2",
+        "directFailed": true
+      },
+      "expected": {
+        "1ott": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "url": "https://feed.test/path?q=one&two=2",
+        "intercept": true,
+        "directFailed": true
+      },
+      "expected": {
+        "1ott": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2&url=https%3A%2F%2Ffeed.test%2Fpath%3Fq%3Done%26two%3D2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path?q=one&two=2"
+            ],
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2&url=https%3A%2F%2Ffeed.test%2Fpath%3Fq%3Done%26two%3D2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path?q=one&two=2"
+            ],
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2&url=https%3A%2F%2Ffeed.test%2Fpath%3Fq%3Done%26two%3D2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path?q=one&two=2"
+            ],
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2&url=https%3A%2F%2Ffeed.test%2Fpath%3Fq%3Done%26two%3D2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path?q=one&two=2"
+            ],
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2&url=https%3A%2F%2Ffeed.test%2Fpath%3Fq%3Done%26two%3D2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path?q=one&two=2"
+            ],
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2&url=https%3A%2F%2Ffeed.test%2Fpath%3Fq%3Done%26two%3D2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path?q=one&two=2"
+            ],
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2&url=https%3A%2F%2Ffeed.test%2Fpath%3Fq%3Done%26two%3D2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "intercept",
+              "https://feed.test/path?q=one&two=2"
+            ],
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "success",
+              "fixture payload"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "input": {
+        "url": "https://feed.test/path?q=one&two=2",
+        "directFailed": true,
+        "proxyFailed": true
+      },
+      "expected": {
+        "1ott": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "alert",
+              "Failed to load channel list!"
+            ],
+            [
+              "complete"
+            ]
+          ]
+        },
+        "only4": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "alert",
+              "Failed to load channel list!"
+            ],
+            [
+              "complete"
+            ]
+          ]
+        },
+        "shara-tv": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "alert",
+              "Failed to load channel list!"
+            ],
+            [
+              "complete"
+            ]
+          ]
+        },
+        "tvteam": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "alert",
+              "Failed to load channel list!"
+            ],
+            [
+              "complete"
+            ]
+          ]
+        },
+        "antifriz": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "alert",
+              "Failed to load channel list!"
+            ],
+            [
+              "complete"
+            ]
+          ]
+        },
+        "edem": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "alert",
+              "Failed to load channel list!"
+            ],
+            [
+              "complete"
+            ]
+          ]
+        },
+        "kb-team": {
+          "calls": [
+            {
+              "url": "https://feed.test/path?q=one&two=2",
+              "data": null,
+              "dataType": "text",
+              "method": "GET",
+              "timeout": 30000
+            },
+            {
+              "url": "https://relay.test/m3u/cp.php",
+              "data": {
+                "url": "@https://feed.test/path?q=one&two=2"
+              },
+              "dataType": "text",
+              "method": "post",
+              "timeout": 30000
+            }
+          ],
+          "events": [
+            [
+              "append",
+              "p..."
+            ],
+            [
+              "alert",
+              "Failed to load channel list!"
+            ],
+            [
+              "complete"
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}

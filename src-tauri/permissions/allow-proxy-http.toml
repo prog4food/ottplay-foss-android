@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-proxy-http"
+description = "Enables the embedded frontend's HTTP text transport with response status and headers."
+commands.allow = ["proxy_http"]

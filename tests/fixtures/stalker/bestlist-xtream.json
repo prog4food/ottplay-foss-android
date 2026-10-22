@@ -1,0 +1,584 @@
+{
+  "baseline": "7d47b0ca391e4b1d1fe282cb4bf11a2bfe17e80a",
+  "cases": [
+    {
+      "input": {
+        "account": null
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://xc.test/player_api.php?username=a%2Fb&password=x%3F%26"
+          },
+          {
+            "m3u": "https://xc.test/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts"
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "account": {}
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://xc.test/player_api.php?username=a%2Fb&password=x%3F%26"
+          },
+          {
+            "m3u": "https://xc.test/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts"
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "account": {
+          "live_streams": []
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://xc.test/player_api.php?username=a%2Fb&password=x%3F%26"
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "account": {
+          "user_info": {
+            "auth": 0
+          },
+          "live_streams": [
+            {
+              "stream_id": 1,
+              "name": "One"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://xc.test/player_api.php?username=a%2Fb&password=x%3F%26"
+          }
+        ],
+        "ids": [
+          2126467680
+        ],
+        "channels": {
+          "2126467680": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "One",
+            "epg": "1",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "One",
+            "url": "https://xc.test/live/a%2Fb/x%3F%26/1.m3u8"
+          }
+        },
+        "groups": {
+          "Other": [
+            2126467680
+          ]
+        },
+        "groupOrder": [
+          "Other"
+        ],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "account": {
+          "categories": [
+            {
+              "category_id": "1",
+              "category_name": "News"
+            },
+            {
+              "category_id": "2",
+              "category_name": ""
+            }
+          ],
+          "live_streams": [
+            {
+              "stream_id": 1,
+              "name": "First",
+              "category_id": 1,
+              "stream_icon": "https://i.test/one",
+              "tv_archive": 1,
+              "tv_archive_duration": 7
+            },
+            {
+              "stream_id": "2",
+              "name": "First",
+              "category_id": 2
+            },
+            {
+              "stream_id": 3,
+              "name": "Third"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://xc.test/player_api.php?username=a%2Fb&password=x%3F%26"
+          }
+        ],
+        "ids": [
+          977436050,
+          999669879
+        ],
+        "channels": {
+          "977436050": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "First",
+            "epg": "1",
+            "logo": "https://i.test/one",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "First",
+            "url": "https://xc.test/live/a%2Fb/x%3F%26/1.m3u8"
+          },
+          "999669879": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 4,
+              "name": "Other"
+            },
+            "channel_name": "Third",
+            "epg": "3",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Third",
+            "url": "https://xc.test/live/a%2Fb/x%3F%26/3.m3u8"
+          }
+        },
+        "groups": {
+          "News": [
+            977436050
+          ],
+          "Unknown": [
+            977436050
+          ],
+          "Other": [
+            999669879
+          ]
+        },
+        "groupOrder": [
+          "News",
+          "Unknown",
+          "Other"
+        ],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "account": {
+          "categories": [
+            {
+              "category_id": "1",
+              "category_name": "News"
+            },
+            {
+              "category_id": "2",
+              "category_name": ""
+            }
+          ],
+          "live_streams": [
+            {
+              "stream_id": 1,
+              "name": "",
+              "category_id": 1,
+              "stream_icon": "https://i.test/one",
+              "tv_archive": 1,
+              "tv_archive_duration": 7
+            },
+            {
+              "stream_id": "2",
+              "name": "",
+              "category_id": 2
+            },
+            {
+              "stream_id": 3,
+              "name": "Third"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://xc.test/player_api.php?username=a%2Fb&password=x%3F%26"
+          }
+        ],
+        "ids": [
+          0,
+          999669879
+        ],
+        "channels": {
+          "0": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 1,
+              "name": "News"
+            },
+            "channel_name": "",
+            "epg": "1",
+            "logo": "https://i.test/one",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://xc.test/live/a%2Fb/x%3F%26/1.m3u8"
+          },
+          "999669879": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "Third",
+            "epg": "3",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Third",
+            "url": "https://xc.test/live/a%2Fb/x%3F%26/3.m3u8"
+          }
+        },
+        "groups": {
+          "Other": [
+            999669879
+          ]
+        },
+        "groupOrder": [
+          "Other"
+        ],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "account": {
+          "categories": [
+            {
+              "category_id": "1",
+              "category_name": "News"
+            },
+            {
+              "category_id": "2",
+              "category_name": ""
+            }
+          ],
+          "live_streams": [
+            {
+              "stream_id": 1,
+              "name": "Новости 🎬",
+              "category_id": 1,
+              "stream_icon": "https://i.test/one",
+              "tv_archive": 1,
+              "tv_archive_duration": 7
+            },
+            {
+              "stream_id": "2",
+              "name": "Новости 🎬",
+              "category_id": 2
+            },
+            {
+              "stream_id": 3,
+              "name": "Third"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://xc.test/player_api.php?username=a%2Fb&password=x%3F%26"
+          }
+        ],
+        "ids": [
+          2828100513,
+          999669879
+        ],
+        "channels": {
+          "999669879": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 4,
+              "name": "Other"
+            },
+            "channel_name": "Third",
+            "epg": "3",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Third",
+            "url": "https://xc.test/live/a%2Fb/x%3F%26/3.m3u8"
+          },
+          "2828100513": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "Новости 🎬",
+            "epg": "1",
+            "logo": "https://i.test/one",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Новости 🎬",
+            "url": "https://xc.test/live/a%2Fb/x%3F%26/1.m3u8"
+          }
+        },
+        "groups": {
+          "News": [
+            2828100513
+          ],
+          "Unknown": [
+            2828100513
+          ],
+          "Other": [
+            999669879
+          ]
+        },
+        "groupOrder": [
+          "News",
+          "Unknown",
+          "Other"
+        ],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "account": {
+          "categories": [
+            {
+              "category_id": "1",
+              "category_name": "News"
+            },
+            {
+              "category_id": "2",
+              "category_name": ""
+            }
+          ],
+          "live_streams": [
+            {
+              "stream_id": 1,
+              "name": "Same",
+              "category_id": 1,
+              "stream_icon": "https://i.test/one",
+              "tv_archive": 1,
+              "tv_archive_duration": 7
+            },
+            {
+              "stream_id": "2",
+              "name": "Same",
+              "category_id": 2
+            },
+            {
+              "stream_id": 3,
+              "name": "Third"
+            }
+          ]
+        }
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://xc.test/player_api.php?username=a%2Fb&password=x%3F%26"
+          }
+        ],
+        "ids": [
+          569610730,
+          999669879
+        ],
+        "channels": {
+          "569610730": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "Same",
+            "epg": "1",
+            "logo": "https://i.test/one",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Same",
+            "url": "https://xc.test/live/a%2Fb/x%3F%26/1.m3u8"
+          },
+          "999669879": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 4,
+              "name": "Other"
+            },
+            "channel_name": "Third",
+            "epg": "3",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Third",
+            "url": "https://xc.test/live/a%2Fb/x%3F%26/3.m3u8"
+          }
+        },
+        "groups": {
+          "News": [
+            569610730
+          ],
+          "Unknown": [
+            569610730
+          ],
+          "Other": [
+            999669879
+          ]
+        },
+        "groupOrder": [
+          "News",
+          "Unknown",
+          "Other"
+        ],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "server": "https://xc.test///",
+        "failed": true,
+        "account": null
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://xc.test////player_api.php?username=a%2Fb&password=x%3F%26"
+          },
+          {
+            "m3u": "https://xc.test/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts"
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "server": "https://xc.test///",
+        "failed": false,
+        "account": null
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://xc.test////player_api.php?username=a%2Fb&password=x%3F%26"
+          },
+          {
+            "m3u": "https://xc.test////get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts"
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "server": "https://xc.test/player_api.php/folder",
+        "failed": true,
+        "account": null
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://xc.test/player_api.php/folder/player_api.php?username=a%2Fb&password=x%3F%26"
+          },
+          {
+            "m3u": "https://xc.test/player_api.php/folder/get.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts"
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1
+      }
+    },
+    {
+      "input": {
+        "server": "https://xc.test/player_api.php/folder",
+        "failed": false,
+        "account": null
+      },
+      "expected": {
+        "calls": [
+          {
+            "url": "https://xc.test/player_api.php/folder/player_api.php?username=a%2Fb&password=x%3F%26"
+          },
+          {
+            "m3u": "https://xc.test/get.php/folder/player_api.php?username=a%2Fb&password=x%3F%26&type=m3u_plus&output=ts"
+          }
+        ],
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1
+      }
+    }
+  ]
+}

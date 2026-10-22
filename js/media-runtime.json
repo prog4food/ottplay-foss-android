@@ -1,0 +1,51 @@
+{
+  "schema": 2,
+  "builderSha256": "71631d5951f81fa60d4b90531800b8b1357201764882659dbed3067f60bffbd3",
+  "lockInputsSha256": "d1c0881893f96783d6cd53c69706eb18e0fee6092a0201b0e6451d05bea8910a",
+  "packages": {
+    "core-js": {
+      "integrity": "sha512-BRWgOLKkFeCgRudR6zrs8p9XJZcE14grzKMMssoYrk6krtuEZ7MTKPIY5RzOnqsEKIR9kst7wNzphttraT+Yqw==",
+      "version": "3.50.0"
+    },
+    "hls.js": {
+      "integrity": "sha512-MsPlx6yVW4Qv4C7mEVou4/gk/5cN2dVxOTnrNjPSmyH2f0Ln+/UkG10Ax1PE6OvrmTVPKgQYozTtBaPOuCzq7A==",
+      "version": "1.7.3"
+    },
+    "video.js": {
+      "integrity": "sha512-T2s3WFAht7Zjr2OSJamND9x9Dn2O+Z5WuHGdh8jI5SYh5mkMdVTQ7vSRmA5PYpjXJ2ycch6jpMjkJEIEU2xxqw==",
+      "version": "7.21.7"
+    },
+    "@videojs/http-streaming": {
+      "integrity": "sha512-91CJv5PnFBzNBvyEjt+9cPzTK/xoVixARj2g7ZAvItA+5bx8VKdk5RxCz/PP2kdzz9W+NiDUMPkdmTsosmy69Q==",
+      "version": "2.16.3"
+    },
+    "typescript": {
+      "integrity": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==",
+      "version": "5.9.3"
+    },
+    "rollup": {
+      "integrity": "sha512-aCiJONoZp0lNGJ6sYqspLkh6UXaWEey/7Ko2TZyXQ4kgzAhDUxAgbt/oulXKmD+zFHXw1k+RF6ZZWOrjp7DZnQ==",
+      "version": "4.64.7"
+    },
+    "terser": {
+      "integrity": "sha512-bWnjSNscmuI+GJze6ZupnHP8G/cTcsJF+bXCeQknk2SHQsgbNJnLrqiH9jZ2W4STPVXH2mDKKRX3iwPhc9Cn/Q==",
+      "version": "5.51.2"
+    },
+    "@rollup/plugin-commonjs": {
+      "integrity": "sha512-ZaOxZceP7SOUW7Lqw5IRVweSQYWaeIPnXIGLiB690EBA3FGJTO40EEr2L5yZplJWsgTCogILRSpcAe7+U0Otdg==",
+      "version": "29.0.3"
+    },
+    "@rollup/plugin-node-resolve": {
+      "integrity": "sha512-lUYM3UBGuM93CnMPG1YocWu7X802BrNF3jW2zny5gQyLQgRFJhV1Sq0Zi74+dh/6NBx1DxFC4b4GXg9wUCG5Qg==",
+      "version": "16.0.3"
+    }
+  },
+  "webPolyfillsSha256": "5e14970ea932f18c571a94e03758a08a6d3f559d04cf6033fd3970af895b9aab",
+  "assets": {
+    "hls.min.js": "a12e7ee1cd64a69dcdb314157e45dafcba705bfb0b1440b7935cb265d374423e",
+    "hls.worker.js": "e2ff149df93a7000844536ff12182bdae28ee0b8a9db3010dc4e3664b5280289",
+    "runtime-polyfills.js": "1b0df8befd3a90151eb4a289e1785f29fa4d5f43c838b181b0ffd8eba2af06c7",
+    "video.min.js": "820388ecff9bbd8108047f3a7f3913835613773940b8dd42527d580cc8629ac0"
+  },
+  "runtimeVersion": "cd7d7699f214b57e"
+}

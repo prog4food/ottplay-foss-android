@@ -1,0 +1,132 @@
+<svg
+    aria-labelledby="title desc"
+    height="620"
+    role="img"
+    viewBox="0 0 1280 620"
+    width="1280"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">Selected media sources, one channel playlist</title>
+    <desc id="desc">
+        Plex folders and VPortal sections are selected in the profile. The first
+        usable batch starts playback while the remaining selected sources load
+        in the background. The standard channel list provides search, shuffle
+        and repeat. Cancel or change of source invalidates pending results.
+    </desc>
+    <defs>
+        <marker
+            id="arrow"
+            markerHeight="7"
+            markerWidth="7"
+            orient="auto-start-reverse"
+            refX="9"
+            refY="5"
+            viewBox="0 0 10 10"
+        >
+            <path d="M0 0L10 5L0 10" fill="#62ddd2" />
+        </marker>
+    </defs>
+    <rect fill="#101c31" height="620" rx="24" width="1280" />
+    <g fill="#f0f5ff" font-family="system-ui, sans-serif">
+        <text font-size="32" font-weight="700" x="48" y="64">
+            Selected sources → one channel playlist
+        </text>
+        <text fill="#b7c9e2" font-size="19" x="48" y="103">
+            Shared by LG · Browser · here.now · OTT Server · Tauri · Capacitor
+        </text>
+        <g stroke="#4c6a90" stroke-width="2">
+            <rect
+                fill="#1d304c"
+                height="228"
+                rx="18"
+                width="270"
+                x="48"
+                y="157"
+            />
+            <rect
+                fill="#153c45"
+                height="228"
+                rx="18"
+                width="320"
+                x="394"
+                y="157"
+            />
+            <rect
+                fill="#302c52"
+                height="228"
+                rx="18"
+                width="442"
+                x="790"
+                y="157"
+            />
+        </g>
+        <text font-size="23" font-weight="700" x="72" y="197">
+            1. Profile selection
+        </text>
+        <text fill="#62ddd2" font-size="21" x="72" y="244">✓ Plex folders</text>
+        <text fill="#62ddd2" font-size="21" x="72" y="282">
+            ✓ VPortal sections
+        </text>
+        <text fill="#b7c9e2" font-size="18" x="72" y="337">
+            Only selected roots
+        </text>
+        <text fill="#b7c9e2" font-size="18" x="72" y="363">
+            and their descendants
+        </text>
+        <text font-size="23" font-weight="700" x="418" y="197">
+            2. Progressive loading
+        </text>
+        <text font-size="20" x="418" y="244">First usable batch → play</text>
+        <text font-size="20" x="418" y="282">Saved file → wait for it</text>
+        <text fill="#b7c9e2" font-size="18" x="418" y="337">
+            Append remaining videos
+        </text>
+        <text fill="#b7c9e2" font-size="18" x="418" y="363">
+            without restarting playback
+        </text>
+        <text font-size="23" font-weight="700" x="814" y="197">
+            3. Standard channel list
+        </text>
+        <text font-size="20" x="814" y="244">
+            Search · Favorites · Shuffle / Reset
+        </text>
+        <text font-size="20" x="814" y="282">
+            Actions → Repeat: All / One / Off
+        </text>
+        <text fill="#b7c9e2" font-size="18" x="814" y="337">
+            ↑ / ↓ change video in current order
+        </text>
+        <text fill="#b7c9e2" font-size="18" x="814" y="363">
+            ← / → seek within the video
+        </text>
+        <g
+            fill="none"
+            marker-end="url(#arrow)"
+            stroke="#62ddd2"
+            stroke-width="3"
+        >
+            <path d="M328 271H383" />
+            <path d="M724 271H779" />
+        </g>
+        <rect
+            fill="#263247"
+            height="130"
+            rx="18"
+            stroke="#e7ba68"
+            stroke-width="2"
+            width="1184"
+            x="48"
+            y="432"
+        />
+        <text fill="#f1c777" font-size="23" font-weight="700" x="72" y="472">
+            Owned loading and recovery
+        </text>
+        <text font-size="20" x="72" y="510">
+            Select a file → loading feedback immediately · Back → cancel
+        </text>
+        <text fill="#b7c9e2" font-size="18" x="72" y="540">
+            A new profile or source retires old requests. Late responses cannot
+            launch another video.
+        </text>
+    </g>
+</svg>

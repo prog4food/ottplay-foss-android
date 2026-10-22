@@ -1,0 +1,1197 @@
+{
+  "baseline": "7d47b0ca391e4b1d1fe282cb4bf11a2bfe17e80a",
+  "parsers": [
+    {
+      "file": "providers/all4you/provider.js",
+      "name": "_all4you_parseM3U"
+    },
+    {
+      "file": "providers/bestlist/provider.js",
+      "name": "_bestlist_parseM3U"
+    },
+    {
+      "file": "providers/bestlist/stalker/provider.js",
+      "name": "_bestlist_stalker_parseM3U"
+    },
+    {
+      "file": "providers/cbilling/provider.js",
+      "name": "_cbilling_parseM3U"
+    },
+    {
+      "file": "providers/d/maxtv/provider.js",
+      "name": "_d_maxtv_parseM3U"
+    },
+    {
+      "file": "providers/diamondtv/provider.js",
+      "name": "_diamondtv_parseM3U"
+    },
+    {
+      "file": "providers/dosug/provider.js",
+      "name": "_dosug_parseM3U"
+    },
+    {
+      "file": "providers/dragon/provider.js",
+      "name": "_dragon_parseM3U"
+    },
+    {
+      "file": "providers/drvao/provider.js",
+      "name": "_drvao_parseM3U"
+    },
+    {
+      "file": "providers/fabryka/provider.js",
+      "name": "_fabryka_parseM3U"
+    },
+    {
+      "file": "providers/fox/provider.js",
+      "name": "_fox_parseM3U"
+    },
+    {
+      "file": "providers/fxml/provider.js",
+      "name": "_fxml_parseM3U"
+    },
+    {
+      "file": "providers/great/provider.js",
+      "name": "_great_parseM3U"
+    },
+    {
+      "file": "providers/ipstream/provider.js",
+      "name": "_ipstream_parseM3U"
+    },
+    {
+      "file": "providers/iptv-ott.ru/provider.js",
+      "name": "_iptv_ott_ru_parseM3U"
+    },
+    {
+      "file": "providers/korona/provider.js",
+      "name": "_korona_parseM3U"
+    },
+    {
+      "file": "providers/moidom/provider.js",
+      "name": "_moidom_parseM3U"
+    },
+    {
+      "file": "providers/newlook/provider.js",
+      "name": "_newlook_parseM3U"
+    },
+    {
+      "file": "providers/ottg/provider.js",
+      "name": "_ottg_parseM3U"
+    },
+    {
+      "file": "providers/ottprime/provider.js",
+      "name": "_ottprime_parseM3U"
+    },
+    {
+      "file": "providers/polmedia/provider.js",
+      "name": "_polmedia_parseM3U"
+    },
+    {
+      "file": "providers/prost/provider.js",
+      "name": "_prost_parseM3U"
+    },
+    {
+      "file": "providers/raduga/provider.js",
+      "name": "_raduga_parseM3U"
+    },
+    {
+      "file": "providers/rd/provider.js",
+      "name": "_rd_parseM3U"
+    },
+    {
+      "file": "providers/russkoetv/provider.js",
+      "name": "_russkoetv_parseM3U"
+    },
+    {
+      "file": "providers/shara.club/provider.js",
+      "name": "_shara_club_parseM3U"
+    },
+    {
+      "file": "providers/sharavoz/provider.js",
+      "name": "_sharavoz_parseM3U"
+    },
+    {
+      "file": "providers/shocktv/provider.js",
+      "name": "_shocktv_parseM3U"
+    },
+    {
+      "file": "providers/tabox/provider.js",
+      "name": "_tabox_parseM3U"
+    },
+    {
+      "file": "providers/top/provider.js",
+      "name": "_top_parseM3U"
+    },
+    {
+      "file": "providers/topiptv/provider.js",
+      "name": "_topiptv_parseM3U"
+    },
+    {
+      "file": "providers/tvclub/provider.js",
+      "name": "_tvclub_parseM3U"
+    },
+    {
+      "file": "providers/ultifl1x/provider.js",
+      "name": "_ultifl1x_parseM3U"
+    },
+    {
+      "file": "providers/vidok/provider.js",
+      "name": "_vidok_parseM3U"
+    }
+  ],
+  "cases": [
+    {
+      "input": "",
+      "generic": {
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1
+      },
+      "main": {
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1,
+        "epgConfig": {
+          "foss": {},
+          "raw": []
+        },
+        "epgBody": "",
+        "logoBody": ""
+      }
+    },
+    {
+      "input": "#EXTM3U\n",
+      "generic": {
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1
+      },
+      "main": {
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1,
+        "epgConfig": {
+          "foss": {},
+          "raw": []
+        },
+        "epgBody": "",
+        "logoBody": ""
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1,One\nhttps://v.test/one\n#EXTINF:-1,Two\nhttps://v.test/two",
+      "generic": {
+        "ids": [
+          1805387117,
+          1569590018
+        ],
+        "channels": {
+          "1569590018": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "Two",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Two",
+            "url": "https://v.test/two"
+          },
+          "1805387117": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "One",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "One",
+            "url": "https://v.test/one"
+          }
+        },
+        "groups": {
+          "Other": [
+            1805387117,
+            1569590018
+          ]
+        },
+        "groupOrder": [
+          "Other"
+        ],
+        "callbacks": 1
+      },
+      "main": {
+        "ids": [
+          4114955067,
+          3047573423
+        ],
+        "channels": {
+          "3047573423": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 1,
+              "name": ""
+            },
+            "channel_name": "Two",
+            "epg": "",
+            "logo": "",
+            "rec": 48,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/two"
+          },
+          "4114955067": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 1,
+              "name": ""
+            },
+            "channel_name": "One",
+            "epg": "",
+            "logo": "",
+            "rec": 48,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/one"
+          }
+        },
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1,
+        "epgConfig": {
+          "foss": {},
+          "raw": []
+        },
+        "epgBody": "4114955067-0-0-2126467680~One\n3047573423-0-0-2513953524~Two\n",
+        "logoBody": "4114955067-0-0-2126467680~One\n3047573423-0-0-2513953524~Two\n"
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1 group-title=\"News\" tvg-logo=\"https://l.test/a\",One\nhttps://v.test/a\n#EXTINF:-1,Two\nhttps://v.test/b",
+      "generic": {
+        "ids": [
+          4291983546,
+          4166380972
+        ],
+        "channels": {
+          "4166380972": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "Two",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Two",
+            "url": "https://v.test/b"
+          },
+          "4291983546": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "One",
+            "epg": "",
+            "logo": "https://l.test/a",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "One",
+            "url": "https://v.test/a"
+          }
+        },
+        "groups": {
+          "News": [
+            4291983546,
+            4166380972
+          ]
+        },
+        "groupOrder": [
+          "News"
+        ],
+        "callbacks": 1
+      },
+      "main": {
+        "ids": [
+          3147444714,
+          4055849353
+        ],
+        "channels": {
+          "3147444714": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "One",
+            "epg": "",
+            "logo": "https://l.test/a",
+            "rec": 48,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/a"
+          },
+          "4055849353": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "Two",
+            "epg": "",
+            "logo": "",
+            "rec": 48,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/b"
+          }
+        },
+        "groups": {
+          "News": [
+            3147444714,
+            4055849353
+          ]
+        },
+        "groupOrder": [
+          "News"
+        ],
+        "callbacks": 1,
+        "epgConfig": {
+          "foss": {},
+          "raw": []
+        },
+        "epgBody": "3147444714-0-0-2126467680~One\n4055849353-0-0-2513953524~Two\n",
+        "logoBody": "4055849353-0-0-2513953524~Two\n"
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1 group-title=\"News\" tvg-id=\"news\",First\nhttps://v.test/a\n#EXTINF:-1 group-title=\"Other\",Copy\nhttps://v.test/a\n#EXTINF:-1,Last\nhttps://v.test/c",
+      "generic": {
+        "ids": [
+          4291983546,
+          2158323751
+        ],
+        "channels": {
+          "2158323751": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 3,
+              "name": "Other"
+            },
+            "channel_name": "Last",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Last",
+            "url": "https://v.test/c"
+          },
+          "4291983546": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "First",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "First",
+            "url": "https://v.test/a"
+          }
+        },
+        "groups": {
+          "News": [
+            4291983546
+          ],
+          "Other": [
+            4291983546,
+            2158323751
+          ]
+        },
+        "groupOrder": [
+          "News",
+          "Other"
+        ],
+        "callbacks": 1
+      },
+      "main": {
+        "ids": [
+          3147444714,
+          4009705306
+        ],
+        "channels": {
+          "3147444714": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "First",
+            "epg": "news",
+            "logo": "",
+            "rec": 48,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/a"
+          },
+          "4009705306": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 3,
+              "name": "Other"
+            },
+            "channel_name": "Last",
+            "epg": "",
+            "logo": "",
+            "rec": 48,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/c"
+          }
+        },
+        "groups": {
+          "News": [
+            3147444714
+          ],
+          "Other": [
+            3147444714,
+            4009705306
+          ]
+        },
+        "groupOrder": [
+          "News",
+          "Other"
+        ],
+        "callbacks": 1,
+        "epgConfig": {
+          "foss": {},
+          "raw": []
+        },
+        "epgBody": "3147444714-1304618303-0-977436050~First\n4009705306-0-0-1505469424~Last\n",
+        "logoBody": "3147444714-1304618303-0-977436050~First\n4009705306-0-0-1505469424~Last\n"
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1 group-title=\"News, world\" tvg-name=\"International, news\",Name, comma\nhttps://v.test/a",
+      "generic": {
+        "ids": [
+          4291983546
+        ],
+        "channels": {
+          "4291983546": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "News, world"
+            },
+            "channel_name": "world\" tvg-name=\"International, news\",Name, comma",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "world\" tvg-name=\"International, news\",Name, comma",
+            "url": "https://v.test/a"
+          }
+        },
+        "groups": {
+          "News, world": [
+            4291983546
+          ]
+        },
+        "groupOrder": [
+          "News, world"
+        ],
+        "callbacks": 1
+      },
+      "main": {
+        "ids": [
+          3147444714
+        ],
+        "channels": {
+          "3147444714": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "News, world"
+            },
+            "channel_name": "world\" tvg-name=\"International, news\",Name, comma",
+            "epg": "",
+            "logo": "",
+            "rec": 48,
+            "time": 0,
+            "time_to": 0,
+            "tn": "International, news",
+            "url": "https://v.test/a"
+          }
+        },
+        "groups": {
+          "News, world": [
+            3147444714
+          ]
+        },
+        "groupOrder": [
+          "News, world"
+        ],
+        "callbacks": 1,
+        "epgConfig": {
+          "foss": {},
+          "raw": []
+        },
+        "epgBody": "3147444714-0-3351291044-12761053~world%22%20tvg-name%3D%22International%2C%20news%22%2CName%2C%20comma\n",
+        "logoBody": "3147444714-0-3351291044-12761053~world%22%20tvg-name%3D%22International%2C%20news%22%2CName%2C%20comma\n"
+      }
+    },
+    {
+      "input": "#EXTM3U\r\n#EXTINF:-1 TVG-LOGO=\"https://l.test/a\" GROUP-TITLE=\"Caps\",É🎬\r\n#comment\r\n\r\nhttps://v.test/A\r\n",
+      "generic": {
+        "ids": [
+          4291983546
+        ],
+        "channels": {
+          "4291983546": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Caps"
+            },
+            "channel_name": "É🎬",
+            "epg": "",
+            "logo": "https://l.test/a",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "É🎬",
+            "url": "https://v.test/A"
+          }
+        },
+        "groups": {
+          "Caps": [
+            4291983546
+          ]
+        },
+        "groupOrder": [
+          "Caps"
+        ],
+        "callbacks": 1
+      },
+      "main": {
+        "ids": [],
+        "channels": {},
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1,
+        "epgConfig": {
+          "foss": {},
+          "raw": []
+        },
+        "epgBody": "",
+        "logoBody": ""
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1,\n#EXTGRP:Radio\nhttps://v.test/a\n#EXTINF:-1 tvg-name=\"TVG\" tvg-id=\"id\",\nhttps://v.test/b",
+      "generic": {
+        "ids": [
+          4291983546,
+          4166380972
+        ],
+        "channels": {
+          "4166380972": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/b"
+          },
+          "4291983546": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/a"
+          }
+        },
+        "groups": {
+          "Other": [
+            4291983546,
+            4166380972
+          ]
+        },
+        "groupOrder": [
+          "Other"
+        ],
+        "callbacks": 1
+      },
+      "main": {
+        "ids": [
+          3147444714,
+          4055849353
+        ],
+        "channels": {
+          "3147444714": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Radio"
+            },
+            "channel_name": "??? No channel name",
+            "epg": "",
+            "logo": "",
+            "rec": 48,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/a"
+          },
+          "4055849353": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Radio"
+            },
+            "channel_name": "TVG",
+            "epg": "id",
+            "logo": "",
+            "rec": 48,
+            "time": 0,
+            "time_to": 0,
+            "tn": "TVG",
+            "url": "https://v.test/b"
+          }
+        },
+        "groups": {
+          "Radio": [
+            3147444714,
+            4055849353
+          ]
+        },
+        "groupOrder": [
+          "Radio"
+        ],
+        "callbacks": 1,
+        "epgConfig": {
+          "foss": {},
+          "raw": []
+        },
+        "epgBody": "4055849353-3922346207-1962346411-0~TVG\n",
+        "logoBody": "4055849353-3922346207-1962346411-0~TVG\n"
+      }
+    },
+    {
+      "input": "#EXTM3U catchup-days=\"3\" catchup=\"append\" catchup-source=\"?utc=${start}\" url-tvg=\"https://epg.test/a.xml\"\n#EXTINF:-1 catchup-days=\"0\" tvg-shift=\"5.5\" tvg-id=\"news\" tvg-source=\"#1\",News\nhttps://v.test/a\n#EXTINF:-1 tvg-rec=\"1.5\" tvg-name=\"Movie\",\nhttps://v.test/b",
+      "generic": {
+        "ids": [
+          4291983546,
+          4166380972
+        ],
+        "channels": {
+          "4166380972": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/b"
+          },
+          "4291983546": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "News",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "News",
+            "url": "https://v.test/a"
+          }
+        },
+        "groups": {
+          "Other": [
+            4291983546,
+            4166380972
+          ]
+        },
+        "groupOrder": [
+          "Other"
+        ],
+        "callbacks": 1
+      },
+      "main": {
+        "ids": [
+          3147444714,
+          4055849353
+        ],
+        "channels": {
+          "3147444714": {
+            "ca": "append",
+            "caso": "?utc=${start}",
+            "category": {
+              "class": 1,
+              "name": ""
+            },
+            "channel_name": "News",
+            "epg": "news",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/a",
+            "ts": -19800
+          },
+          "4055849353": {
+            "ca": "append",
+            "caso": "?utc=${start}",
+            "category": {
+              "class": 1,
+              "name": ""
+            },
+            "channel_name": "Movie",
+            "epg": "",
+            "logo": "",
+            "rec": 24,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Movie",
+            "url": "https://v.test/b"
+          }
+        },
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1,
+        "epgConfig": {
+          "foss": {},
+          "raw": [
+            "epg.test/a.xml"
+          ]
+        },
+        "epgBody": "3147444714-1304618303-0-1304618303~1786915902~News\n4055849353-0-2698443984-0~Movie\n",
+        "logoBody": "3147444714-1304618303-0-1304618303~1786915902~News\n4055849353-0-2698443984-0~Movie\n"
+      }
+    },
+    {
+      "input": "#EXTM3U foss-tvg=\"!epg-server::https://epg.test,guide::https://epg.test/g.xml\"\n#EXTINF:-1 tvg-id=\"id\" url-tvg=\"#guide\",Name\nhttps://v.test/a",
+      "generic": {
+        "ids": [
+          4291983546
+        ],
+        "channels": {
+          "4291983546": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "Name",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Name",
+            "url": "https://v.test/a"
+          }
+        },
+        "groups": {
+          "Other": [
+            4291983546
+          ]
+        },
+        "groupOrder": [
+          "Other"
+        ],
+        "callbacks": 1
+      },
+      "main": {
+        "ids": [
+          3147444714
+        ],
+        "channels": {
+          "3147444714": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 1,
+              "name": ""
+            },
+            "channel_name": "Name",
+            "epg": "id",
+            "logo": "",
+            "rec": 48,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/a"
+          }
+        },
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1,
+        "epgConfig": {
+          "foss": {
+            "!epg-server": "https://epg.test",
+            "guide": "https://epg.test/g.xml"
+          },
+          "raw": [],
+          "epg_server": "https://epg.test"
+        },
+        "epgBody": "3147444714-3922346207-0-3423322911~680193937~Name\n",
+        "logoBody": "3147444714-3922346207-0-3423322911~680193937~Name\n"
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1,Missing\n#EXTINF:-1,Present\nhttps://v.test/b",
+      "generic": {
+        "ids": [
+          4166380972
+        ],
+        "channels": {
+          "4166380972": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "Present",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Present",
+            "url": "https://v.test/b"
+          }
+        },
+        "groups": {
+          "Other": [
+            4166380972
+          ]
+        },
+        "groupOrder": [
+          "Other"
+        ],
+        "callbacks": 1
+      },
+      "main": {
+        "ids": [
+          4055849353
+        ],
+        "channels": {
+          "4055849353": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 1,
+              "name": ""
+            },
+            "channel_name": "Present",
+            "epg": "",
+            "logo": "",
+            "rec": 48,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/b"
+          }
+        },
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1,
+        "epgConfig": {
+          "foss": {},
+          "raw": []
+        },
+        "epgBody": "4055849353-0-0-304373456~Present\n",
+        "logoBody": "4055849353-0-0-304373456~Present\n"
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1 group-title=News tvg-logo=relative.png,Name\nrtsp://v.test/a\n",
+      "generic": {
+        "ids": [
+          3754836368
+        ],
+        "channels": {
+          "3754836368": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "Name",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Name",
+            "url": "rtsp://v.test/a"
+          }
+        },
+        "groups": {
+          "Other": [
+            3754836368
+          ]
+        },
+        "groupOrder": [
+          "Other"
+        ],
+        "callbacks": 1
+      },
+      "main": {
+        "ids": [
+          124484906
+        ],
+        "channels": {
+          "124484906": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "News"
+            },
+            "channel_name": "Name",
+            "epg": "",
+            "logo": "",
+            "rec": 48,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "rtsp://v.test/a"
+          }
+        },
+        "groups": {
+          "News": [
+            124484906
+          ]
+        },
+        "groupOrder": [
+          "News"
+        ],
+        "callbacks": 1,
+        "epgConfig": {
+          "foss": {},
+          "raw": []
+        },
+        "epgBody": "124484906-0-0-3423322911~Name\n",
+        "logoBody": "124484906-0-0-3423322911~Name\n"
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1 group-title=\"\" tvg-name=\"Fallback\" tvg-id=\"one\" tvg-logo=\"/relative\", \nhttps://v.test/one\n",
+      "generic": {
+        "ids": [
+          1805387117
+        ],
+        "channels": {
+          "1805387117": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "",
+            "epg": "",
+            "logo": "/relative",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/one"
+          }
+        },
+        "groups": {
+          "Other": [
+            1805387117
+          ]
+        },
+        "groupOrder": [
+          "Other"
+        ],
+        "callbacks": 1
+      },
+      "main": {
+        "ids": [
+          4114955067
+        ],
+        "channels": {
+          "4114955067": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 1,
+              "name": ""
+            },
+            "channel_name": "Fallback",
+            "epg": "one",
+            "logo": "",
+            "rec": 48,
+            "time": 0,
+            "time_to": 0,
+            "tn": "Fallback",
+            "url": "https://v.test/one"
+          }
+        },
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1,
+        "epgConfig": {
+          "foss": {},
+          "raw": []
+        },
+        "epgBody": "4114955067-2126467680-1516872645-0~Fallback\n",
+        "logoBody": "4114955067-2126467680-1516872645-0~Fallback\n"
+      }
+    },
+    {
+      "input": "#EXTM3U\n#EXTINF:-1,One\nhttps://v.test/a\nignored trailing\n#extinf:-1,Lowercase\nhttps://v.test/b",
+      "generic": {
+        "ids": [
+          4291983546
+        ],
+        "channels": {
+          "4291983546": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 2,
+              "name": "Other"
+            },
+            "channel_name": "One",
+            "epg": "",
+            "logo": "",
+            "rec": 0,
+            "time": 0,
+            "time_to": 0,
+            "tn": "One",
+            "url": "https://v.test/a"
+          }
+        },
+        "groups": {
+          "Other": [
+            4291983546
+          ]
+        },
+        "groupOrder": [
+          "Other"
+        ],
+        "callbacks": 1
+      },
+      "main": {
+        "ids": [
+          3147444714
+        ],
+        "channels": {
+          "3147444714": {
+            "ca": "",
+            "caso": "",
+            "category": {
+              "class": 1,
+              "name": ""
+            },
+            "channel_name": "One",
+            "epg": "",
+            "logo": "",
+            "rec": 48,
+            "time": 0,
+            "time_to": 0,
+            "tn": "",
+            "url": "https://v.test/a"
+          }
+        },
+        "groups": {},
+        "groupOrder": [],
+        "callbacks": 1,
+        "epgConfig": {
+          "foss": {},
+          "raw": []
+        },
+        "epgBody": "3147444714-0-0-2126467680~One\n",
+        "logoBody": "3147444714-0-0-2126467680~One\n"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "graphify": {
+      "type": "http",
+      "url": "https://api.graphify.com/mcp"
+    },
+    "energy-rag": {
+      "type": "http",
+      "url": "http://synology:8800/mcp"
+    },
+    "openwrt_ssh_mcp": {
+      "type": "http",
+      "url": "http://synology:8802/mcp"
+    }
+  }
+}

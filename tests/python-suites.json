@@ -1,0 +1,47 @@
+{
+  "portable": [
+    ["tests/test_localization_unicode_generator.py"],
+    ["tests/test_android_security_config.py"],
+    ["tests/test_android_emoji_policy.py"],
+    ["tests/test_mobile_orientation.py"],
+    ["tests/test_local_player_install.py"],
+    ["tests/test_windows_installers.py"],
+    ["tests/test_linux_playback_packaging.py"],
+    ["tests/test_nas_configuration.py"],
+    ["tests/test_local_proxy.py"],
+    ["tests/test_proxy_security.py"],
+    ["tests/test_command_queue_smoke.py"],
+    ["tests/test_xmltv_warmup_smoke.py"],
+    ["tests/test_native_epg_cache.py", "--check-sources-only"],
+    ["tests/test_container_workspace.py"]
+  ],
+  "android": [
+    ["tests/test_android_app_update_recovery.py"],
+    ["tests/test_android_update_tls.py"],
+    ["tests/test_android_queue.py"],
+    ["tests/test_android_screenshot.py"],
+    ["tests/test_android_network_policy.py"],
+    ["tests/test_native_dash_state.py"],
+    ["tests/test_android_epg_editions.py"],
+    ["tests/test_native_epg_cache.py", "--platform", "android"],
+    ["tests/test_native_xmltv_records.py", "--platform", "android"],
+    ["tests/test_native_media_lifecycle.py", "--platform", "android"],
+    ["tests/test_mobile_metadata_standby.py", "--platform", "android"],
+    ["tests/test_runtime_diagnostics_native.py", "--platform", "android"]
+  ],
+  "ios": [
+    ["tests/test_ios_command_queue.py"],
+    ["tests/test_ios_demo_media.py"],
+    ["tests/test_ios_proxy.py"],
+    ["tests/test_ios_access_media.py"],
+    ["tests/test_ios_access_auth.py"],
+    ["tests/test_ios_public_http.py"],
+    ["tests/test_native_swop_swift.py"],
+    ["tests/test_native_screenshot_transport_swift.py"],
+    ["tests/test_native_epg_cache.py", "--platform", "ios"],
+    ["tests/test_native_xmltv_records.py", "--platform", "ios"],
+    ["tests/test_native_media_lifecycle.py", "--platform", "ios"],
+    ["tests/test_mobile_metadata_standby.py", "--platform", "ios"],
+    ["tests/test_runtime_diagnostics_native.py", "--platform", "ios"]
+  ]
+}

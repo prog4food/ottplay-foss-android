@@ -1,0 +1,1797 @@
+{
+  "baseline": "b3c8cc072e92f14c8e352a223157788f24ca4dce",
+  "observed": [
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 0,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        0,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 0,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        0,
+        4,
+        1.5
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 0,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        0,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 0,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        1,
+        4,
+        1.5
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 0,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        0,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 0,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        0,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 0,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        0,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 0,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        0,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": false,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        -1,
+        0,
+        1,
+        2,
+        3,
+        4,
+        1.5
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": false,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": false,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": false,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": false,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        0,
+        2,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": false
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "state": {
+        "webOs": true,
+        "desktop": true,
+        "testWebView": true,
+        "nativeHls": true,
+        "hls": true,
+        "hasVideo": true
+      },
+      "defaultMode": 3,
+      "modes": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "urls": [
+        1,
+        2,
+        0,
+        1,
+        2,
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "sourceRevision": "652726f8df7eda77e5e189d80af9b69f65c4d888",
+  "scope": "Complete production ES5 entries and optional provider totals; excludes vendor runtimes, locales, styles and media. Clean source build before documentation-only updates.",
+  "toolchain": {
+    "node": "26.8.2",
+    "zlib": "1.2.12"
+  },
+  "artifacts": [
+    {
+      "bytes": 875197,
+      "gzipBytes": 270425,
+      "path": "dist/player.js",
+      "sha256": "55d2ed8560aeac90df4eab41b2984c0e8ff97cbe04cbfef7db4d86759ca45062"
+    },
+    {
+      "bytes": 875155,
+      "gzipBytes": 270477,
+      "path": "src-tauri/frontend/dist/player.js",
+      "sha256": "cf3f477916899cd5a012c9bd453ecb639d770de78b43697d4567198e3eee4db4"
+    },
+    {
+      "bytes": 875155,
+      "gzipBytes": 270477,
+      "path": "dist-mobile/dist/player.js",
+      "sha256": "cf3f477916899cd5a012c9bd453ecb639d770de78b43697d4567198e3eee4db4"
+    }
+  ],
+  "totals": [
+    {
+      "entry": "dist/player.js",
+      "bytes": 995858,
+      "gzipBytes": 315207
+    },
+    {
+      "entry": "src-tauri/frontend/dist/player.js",
+      "bytes": 995816,
+      "gzipBytes": 315259
+    },
+    {
+      "entry": "dist-mobile/dist/player.js",
+      "bytes": 995816,
+      "gzipBytes": 315259
+    }
+  ],
+  "budget": {
+    "bytes": 875300,
+    "gzipBytes": 271600
+  },
+  "totalBudget": {
+    "bytes": 996100,
+    "gzipBytes": 316400
+  }
+}

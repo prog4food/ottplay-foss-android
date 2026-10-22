@@ -1,0 +1,150 @@
+name: Container validation
+
+on:
+  workflow_dispatch:
+  workflow_call: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: container-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  changes:
+    name: Select container validation
+    runs-on: ${{ fromJSON((vars.CI_RUNNER_MODE == 'self-hosted' || vars.CI_RUNNER_MODE == 'k3s') && ((github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) || (contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name) && github.ref == format('refs/heads/{0}', github.event.repository.default_branch))) && (vars.CI_RUNNER_LABELS || '[]') || '["ubuntu-latest"]') }}
+    timeout-minutes: 5
+    outputs:
+      run: ${{ steps.scope.outputs.run }}
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Select changed container inputs
+        id: scope
+        run: python3 scripts/container_validation_scope.py >> "$GITHUB_OUTPUT"
+  native:
+    name: Native container (${{ matrix.arch }})
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: amd64
+            runner: ubuntu-24.04
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+    steps:
+      - name: Harden runner
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
+      - name: Install offline OCI import tool
+        run: sudo apt-get update && sudo apt-get install -y skopeo
+      - name: Measure cold and restored-cache builds and exercise the image
+        run: python3 scripts/benchmark-container-build.py --platform linux/${{ matrix.arch }} --output "$RUNNER_TEMP/container-validation"
+      - name: Save measurements and verified platform archive
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: container-validation-${{ matrix.arch }}
+          path: |
+            ${{ runner.temp }}/container-validation/*.json
+            ${{ runner.temp }}/container-validation/*.jsonl
+            ${{ runner.temp }}/container-validation/*.log
+            ${{ runner.temp }}/container-validation/native.oci.tar
+          if-no-files-found: error
+          retention-days: 7
+
+    needs:
+      - changes
+    if: needs.changes.outputs.run == 'true'
+  assemble:
+    name: Validate combined container archive
+    needs:
+      - changes
+      - native
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: container-validation-amd64
+          path: container-parts/amd64
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: container-validation-arm64
+          path: container-parts/arm64
+      - name: Verify immutable images, attestations and cross-platform web parity
+        run: |
+          VERSION=$(python3 -c 'import json; print(json.load(open("package.json"))["version"] + "-beta.2")')
+          python3 scripts/assemble-container-oci.py \
+            --input linux/amd64=container-parts/amd64/native.oci.tar \
+            --input linux/arm64=container-parts/arm64/native.oci.tar \
+            --version "$VERSION" --revision "$(git rev-parse HEAD)" \
+            --output "$RUNNER_TEMP/validated-container.oci.tar" \
+            --report "$RUNNER_TEMP/container-assembly.json"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: container-validation-assembly
+          path: ${{ runner.temp }}/container-assembly.json
+          if-no-files-found: error
+          retention-days: 14
+    if: needs.changes.outputs.run == 'true'
+  complete:
+    name: Container validation gate
+    needs:
+      - changes
+      - native
+      - assemble
+    if: ${{ always() }}
+    runs-on: ${{ fromJSON((vars.CI_RUNNER_MODE == 'self-hosted' || vars.CI_RUNNER_MODE == 'k3s') && ((github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) || (contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name) && github.ref == format('refs/heads/{0}', github.event.repository.default_branch))) && (vars.CI_RUNNER_LABELS || '[]') || '["ubuntu-latest"]') }}
+    timeout-minutes: 5
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
+      - env:
+          RESULTS: ${{ toJSON(needs) }}
+          SHOULD_RUN: ${{ needs.changes.outputs.run }}
+        run: |
+          python3 - <<'PYTHON'
+          import json, os
+          results = json.loads(os.environ['RESULTS'])
+          required = os.environ['SHOULD_RUN']
+          if required not in {'true', 'false'} or results['changes']['result'] != 'success':
+              raise SystemExit('Could not determine container validation scope')
+          expected = 'success' if required == 'true' else 'skipped'
+          if any(results[name]['result'] != expected for name in ('native', 'assemble')):
+              raise SystemExit('Container validation did not complete successfully')
+          print('Container validation passed' if required == 'true' else 'No container inputs changed')
+          PYTHON

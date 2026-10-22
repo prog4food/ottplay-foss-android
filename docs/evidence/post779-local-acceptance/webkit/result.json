@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "target": "macos-15-webkit-1-64-0",
+  "engine": "webkit",
+  "channel": "",
+  "playwrightVersion": "1.64.0",
+  "browserVersion": "27.2",
+  "platform": "darwin",
+  "sourceSha": "c52f4d079d6d372af21aa8e2b7eca7edf6766247",
+  "runId": "local-local-c52f4d07-20261016T054121Z",
+  "runAttempt": "1",
+  "releaseChannel": "",
+  "candidateArtifactId": "",
+  "qualificationScope": "local development acceptance, not GitHub-hosted matrix qualification",
+  "githubHosted": false,
+  "actualOs": {
+    "product": "macOS",
+    "version": "26.7.1",
+    "build": "25G241"
+  },
+  "declaredProfileOs": "macos-15",
+  "profileOsMatchesActual": false,
+  "candidate": {
+    "archive": "ottplay-foss-modea.tar.gz",
+    "sha256": "997a6fb26270ad922b1da0344a43455bc60fd543950024eee7ad43ac1c6ef875",
+    "size": 6449156,
+    "sourceSha": "c52f4d079d6d372af21aa8e2b7eca7edf6766247",
+    "version": "1.1.55",
+    "filesVerified": 365,
+    "releaseReceipt": false
+  },
+  "capabilities": {
+    "aacMse": true,
+    "h264Mse": true,
+    "managedMediaSource": true,
+    "mediaSource": true,
+    "nativeHls": "maybe",
+    "webkitMediaSource": false
+  },
+  "coverage": {
+    "media": "passed",
+    "name": "ui-and-hls",
+    "reason": null,
+    "scenarios": [
+      "Plex shows a localized animated loader through slow startup and reload: _eng",
+      "Plex shows a localized animated loader through slow startup and reload: _rus",
+      "Plex aspect persists through media changes and reload: hls.js",
+      "Plex aspect persists through media changes and reload: video.js",
+      "Plex aspect persists through media changes and strict kiosk natural episode end and reload: hls.js"
+    ]
+  },
+  "scenarios": [
+    "Plex shows a localized animated loader through slow startup and reload: _eng",
+    "Plex shows a localized animated loader through slow startup and reload: _rus",
+    "Plex aspect persists through media changes and reload: hls.js",
+    "Plex aspect persists through media changes and reload: video.js",
+    "Plex aspect persists through media changes and strict kiosk natural episode end and reload: hls.js"
+  ],
+  "testsFailed": 0,
+  "testsPassed": 5
+}

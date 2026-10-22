@@ -1,0 +1,10 @@
+{
+  "name": "ottplay-android-api22-runtime",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@capacitor/android": "6.2.2",
+    "@capacitor/app": "6.0.3",
+    "@capacitor/core": "6.2.2"
+  }
+}

@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-screenshot-capabilities"
+description = "Allows read-only screenshot capability discovery for the main player view."
+commands.allow = ["screenshot_capabilities"]

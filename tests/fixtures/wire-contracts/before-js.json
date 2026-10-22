@@ -1,0 +1,955 @@
+{
+  "player": [
+    {
+      "name": "missing-popup_message",
+      "result": "accepted"
+    },
+    {
+      "name": "missing-channel_by_number",
+      "result": "accepted"
+    },
+    {
+      "name": "missing-channel_by_name",
+      "result": "accepted"
+    },
+    {
+      "name": "missing-random_channel",
+      "result": "accepted"
+    },
+    {
+      "name": "missing-change_provider",
+      "result": "accepted"
+    },
+    {
+      "name": "missing-change_provider_settings",
+      "result": "accepted"
+    },
+    {
+      "name": "missing-change_playlist",
+      "result": "accepted"
+    },
+    {
+      "name": "missing-set_volume",
+      "result": "accepted"
+    },
+    {
+      "name": "missing-exit_player",
+      "result": "accepted"
+    },
+    {
+      "name": "missing-unknown",
+      "result": "unsupported"
+    },
+    {
+      "name": "shape-10",
+      "error": "SyntaxError"
+    },
+    {
+      "name": "shape-11",
+      "result": "rejected"
+    },
+    {
+      "name": "shape-12",
+      "result": "rejected"
+    },
+    {
+      "name": "shape-13",
+      "result": "rejected"
+    },
+    {
+      "name": "shape-14",
+      "result": "rejected"
+    },
+    {
+      "name": "shape-15",
+      "result": "rejected"
+    },
+    {
+      "name": "shape-16",
+      "result": "unsupported"
+    },
+    {
+      "name": "shape-17",
+      "result": "unsupported"
+    },
+    {
+      "name": "popup_duration-18",
+      "result": "rejected"
+    },
+    {
+      "name": "popup_duration-19",
+      "result": "rejected"
+    },
+    {
+      "name": "popup_duration-20",
+      "result": "accepted"
+    },
+    {
+      "name": "popup_duration-21",
+      "result": "accepted"
+    },
+    {
+      "name": "popup_duration-22",
+      "result": "accepted"
+    },
+    {
+      "name": "popup_duration-23",
+      "result": "rejected"
+    },
+    {
+      "name": "popup_duration-24",
+      "result": "rejected"
+    },
+    {
+      "name": "channel_number-25",
+      "result": "rejected"
+    },
+    {
+      "name": "channel_number-26",
+      "result": "rejected"
+    },
+    {
+      "name": "channel_number-27",
+      "result": "accepted"
+    },
+    {
+      "name": "channel_number-28",
+      "result": "rejected"
+    },
+    {
+      "name": "channel_number-29",
+      "result": "accepted"
+    },
+    {
+      "name": "channel_number-30",
+      "result": "accepted"
+    },
+    {
+      "name": "channel_number-31",
+      "result": "rejected"
+    },
+    {
+      "name": "provider-32",
+      "result": "rejected"
+    },
+    {
+      "name": "provider-33",
+      "result": "accepted"
+    },
+    {
+      "name": "provider-34",
+      "result": "rejected"
+    },
+    {
+      "name": "provider-35",
+      "result": "accepted"
+    },
+    {
+      "name": "message-36",
+      "result": "accepted"
+    },
+    {
+      "name": "message-37",
+      "result": "accepted"
+    },
+    {
+      "name": "message-38",
+      "result": "accepted"
+    },
+    {
+      "name": "message-39",
+      "result": "accepted"
+    },
+    {
+      "name": "message-40",
+      "result": "rejected"
+    },
+    {
+      "name": "channel_name-41",
+      "result": "accepted"
+    },
+    {
+      "name": "channel_name-42",
+      "result": "accepted"
+    },
+    {
+      "name": "channel_name-43",
+      "result": "accepted"
+    },
+    {
+      "name": "random_range-44",
+      "result": "rejected"
+    },
+    {
+      "name": "random_range-45",
+      "result": "rejected"
+    },
+    {
+      "name": "random_range-46",
+      "result": "rejected"
+    },
+    {
+      "name": "random_range-47",
+      "result": "accepted"
+    },
+    {
+      "name": "random_range-48",
+      "result": "rejected"
+    },
+    {
+      "name": "random_range-49",
+      "result": "accepted"
+    },
+    {
+      "name": "provider_settings-50",
+      "result": "accepted"
+    },
+    {
+      "name": "provider_settings-51",
+      "result": "unsupported"
+    },
+    {
+      "name": "provider_settings-52",
+      "result": "unsupported"
+    },
+    {
+      "name": "provider_settings-53",
+      "result": "unsupported"
+    },
+    {
+      "name": "provider_settings-54",
+      "result": "unsupported"
+    },
+    {
+      "name": "provider_settings-55",
+      "result": "unsupported"
+    },
+    {
+      "name": "playlist-56",
+      "result": "accepted"
+    },
+    {
+      "name": "playlist-57",
+      "result": "unsupported"
+    },
+    {
+      "name": "playlist-58",
+      "result": "unsupported"
+    },
+    {
+      "name": "playlist-59",
+      "result": "unsupported"
+    },
+    {
+      "name": "playlist-60",
+      "result": "unsupported"
+    },
+    {
+      "name": "playlist-61",
+      "result": "unsupported"
+    },
+    {
+      "name": "volume-62",
+      "result": "accepted"
+    },
+    {
+      "name": "volume-63",
+      "result": "accepted"
+    },
+    {
+      "name": "volume-64",
+      "result": "accepted"
+    },
+    {
+      "name": "volume-65",
+      "result": "accepted"
+    },
+    {
+      "name": "volume-66",
+      "result": "rejected"
+    },
+    {
+      "name": "volume_step-67",
+      "result": "accepted"
+    },
+    {
+      "name": "volume_step-68",
+      "result": "accepted"
+    },
+    {
+      "name": "volume_step-69",
+      "result": "rejected"
+    },
+    {
+      "name": "both-volume",
+      "result": "accepted"
+    },
+    {
+      "name": "unknown-first",
+      "result": "rejected"
+    },
+    {
+      "name": "extra-before-invalid",
+      "result": "rejected"
+    },
+    {
+      "name": "irrelevant-invalid",
+      "result": "rejected"
+    },
+    {
+      "name": "extra-valid",
+      "result": "accepted"
+    },
+    {
+      "name": "json-75",
+      "result": "accepted"
+    },
+    {
+      "name": "json-76",
+      "error": "SyntaxError"
+    },
+    {
+      "name": "json-77",
+      "error": "SyntaxError"
+    },
+    {
+      "name": "json-78",
+      "error": "SyntaxError"
+    },
+    {
+      "name": "json-79",
+      "result": "rejected"
+    },
+    {
+      "name": "json-80",
+      "result": "rejected"
+    }
+  ],
+  "swop": [
+    {
+      "name": "health",
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "ok": true
+          }
+        }
+      ],
+      "writes": []
+    },
+    {
+      "name": "missing-client",
+      "responses": [
+        {
+          "status": 401,
+          "body": {
+            "error": "missing client id"
+          }
+        }
+      ],
+      "writes": []
+    },
+    {
+      "name": "short-client",
+      "responses": [
+        {
+          "status": 401,
+          "body": {
+            "error": "missing client id"
+          }
+        }
+      ],
+      "writes": []
+    },
+    {
+      "name": "unlisted",
+      "responses": [
+        {
+          "status": 403,
+          "body": {
+            "error": "client not allowed"
+          }
+        }
+      ],
+      "writes": []
+    },
+    {
+      "name": "session-default",
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "code": "AAAAAA",
+            "url": "https://swop.example/?c=AAAAAA",
+            "expiresIn": 600
+          }
+        }
+      ],
+      "writes": [
+        {
+          "key": "sess:AAAAAA",
+          "value": {
+            "status": "waiting",
+            "caption": "",
+            "draft": "",
+            "createdAt": 1700000000000,
+            "clientId": "device-123"
+          },
+          "options": {
+            "expirationTtl": 600
+          }
+        }
+      ]
+    },
+    {
+      "name": "session-malformed",
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "code": "AAAAAA",
+            "url": "https://swop.example/?c=AAAAAA",
+            "expiresIn": 600
+          }
+        }
+      ],
+      "writes": [
+        {
+          "key": "sess:AAAAAA",
+          "value": {
+            "status": "waiting",
+            "caption": "",
+            "draft": "",
+            "createdAt": 1700000000000,
+            "clientId": "device-123"
+          },
+          "options": {
+            "expirationTtl": 600
+          }
+        }
+      ]
+    },
+    {
+      "name": "session-null",
+      "responses": [
+        {
+          "status": 500,
+          "body": {
+            "error": "internal error"
+          }
+        }
+      ],
+      "writes": []
+    },
+    {
+      "name": "session-types",
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "code": "AAAAAA",
+            "url": "https://swop.example/?c=AAAAAA",
+            "expiresIn": 600
+          }
+        }
+      ],
+      "writes": [
+        {
+          "key": "sess:AAAAAA",
+          "value": {
+            "status": "waiting",
+            "caption": "",
+            "draft": "",
+            "createdAt": 1700000000000,
+            "clientId": "device-123"
+          },
+          "options": {
+            "expirationTtl": 600
+          }
+        }
+      ]
+    },
+    {
+      "name": "session-limits",
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "code": "AAAAAA",
+            "url": "https://swop.example/?c=AAAAAA",
+            "expiresIn": 600
+          }
+        }
+      ],
+      "writes": [
+        {
+          "key": "sess:AAAAAA",
+          "value": {
+            "status": "waiting",
+            "caption": "éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé",
+            "draft": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+            "createdAt": 1700000000000,
+            "clientId": "device-123"
+          },
+          "options": {
+            "expirationTtl": 600
+          }
+        }
+      ]
+    },
+    {
+      "name": "ttl-0",
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "code": "AAAAAA",
+            "url": "https://swop.example/?c=AAAAAA",
+            "expiresIn": 600
+          }
+        }
+      ],
+      "writes": [
+        {
+          "key": "sess:AAAAAA",
+          "value": {
+            "status": "waiting",
+            "caption": "",
+            "draft": "",
+            "createdAt": 1700000000000,
+            "clientId": "device-123"
+          },
+          "options": {
+            "expirationTtl": 600
+          }
+        }
+      ]
+    },
+    {
+      "name": "ttl--1",
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "code": "AAAAAA",
+            "url": "https://swop.example/?c=AAAAAA",
+            "expiresIn": 600
+          }
+        }
+      ],
+      "writes": [
+        {
+          "key": "sess:AAAAAA",
+          "value": {
+            "status": "waiting",
+            "caption": "",
+            "draft": "",
+            "createdAt": 1700000000000,
+            "clientId": "device-123"
+          },
+          "options": {
+            "expirationTtl": 600
+          }
+        }
+      ]
+    },
+    {
+      "name": "ttl-abc",
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "code": "AAAAAA",
+            "url": "https://swop.example/?c=AAAAAA",
+            "expiresIn": 600
+          }
+        }
+      ],
+      "writes": [
+        {
+          "key": "sess:AAAAAA",
+          "value": {
+            "status": "waiting",
+            "caption": "",
+            "draft": "",
+            "createdAt": 1700000000000,
+            "clientId": "device-123"
+          },
+          "options": {
+            "expirationTtl": 600
+          }
+        }
+      ]
+    },
+    {
+      "name": "ttl-0.1",
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "code": "AAAAAA",
+            "url": "https://swop.example/?c=AAAAAA",
+            "expiresIn": 0
+          }
+        }
+      ],
+      "writes": [
+        {
+          "key": "sess:AAAAAA",
+          "value": {
+            "status": "waiting",
+            "caption": "",
+            "draft": "",
+            "createdAt": 1700000000000,
+            "clientId": "device-123"
+          },
+          "options": {
+            "expirationTtl": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "ttl-60.9",
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "code": "AAAAAA",
+            "url": "https://swop.example/?c=AAAAAA",
+            "expiresIn": 60
+          }
+        }
+      ],
+      "writes": [
+        {
+          "key": "sess:AAAAAA",
+          "value": {
+            "status": "waiting",
+            "caption": "",
+            "draft": "",
+            "createdAt": 1700000000000,
+            "clientId": "device-123"
+          },
+          "options": {
+            "expirationTtl": 60
+          }
+        }
+      ]
+    },
+    {
+      "name": "submit-0",
+      "responses": [
+        {
+          "status": 400,
+          "body": {
+            "error": "Invalid JSON"
+          }
+        }
+      ],
+      "writes": []
+    },
+    {
+      "name": "submit-1",
+      "responses": [
+        {
+          "status": 500,
+          "body": {
+            "error": "internal error"
+          }
+        }
+      ],
+      "writes": []
+    },
+    {
+      "name": "submit-2",
+      "responses": [
+        {
+          "status": 400,
+          "body": {
+            "error": "code and value are required"
+          }
+        }
+      ],
+      "writes": []
+    },
+    {
+      "name": "submit-3",
+      "responses": [
+        {
+          "status": 400,
+          "body": {
+            "error": "code and value are required"
+          }
+        }
+      ],
+      "writes": []
+    },
+    {
+      "name": "submit-4",
+      "responses": [
+        {
+          "status": 410,
+          "body": {
+            "error": "session gone",
+            "status": "gone"
+          }
+        }
+      ],
+      "writes": []
+    },
+    {
+      "name": "submit-5",
+      "responses": [
+        {
+          "status": 400,
+          "body": {
+            "error": "value too long"
+          }
+        }
+      ],
+      "writes": []
+    },
+    {
+      "name": "admin-0",
+      "responses": [
+        {
+          "status": 400,
+          "body": {
+            "error": "invalid clientId"
+          }
+        }
+      ],
+      "writes": []
+    },
+    {
+      "name": "admin-1",
+      "responses": [
+        {
+          "status": 201,
+          "body": {
+            "ok": true,
+            "clientId": "12345678",
+            "allowedAt": 1700000000000,
+            "note": "x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x "
+          }
+        }
+      ],
+      "writes": [
+        {
+          "key": "allow:12345678",
+          "value": {
+            "allowedAt": 1700000000000,
+            "note": "x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x "
+          },
+          "options": null
+        }
+      ]
+    },
+    {
+      "name": "admin-2",
+      "responses": [
+        {
+          "status": 201,
+          "body": {
+            "ok": true,
+            "clientId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "allowedAt": 1700000000000,
+            "note": "x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x "
+          }
+        }
+      ],
+      "writes": [
+        {
+          "key": "allow:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+          "value": {
+            "allowedAt": 1700000000000,
+            "note": "x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x "
+          },
+          "options": null
+        }
+      ]
+    },
+    {
+      "name": "admin-3",
+      "responses": [
+        {
+          "status": 400,
+          "body": {
+            "error": "invalid clientId"
+          }
+        }
+      ],
+      "writes": []
+    },
+    {
+      "name": "admin-4",
+      "responses": [
+        {
+          "status": 400,
+          "body": {
+            "error": "invalid clientId"
+          }
+        }
+      ],
+      "writes": []
+    },
+    {
+      "name": "roundtrip",
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "code": "AAAAAA",
+            "url": "https://swop.example/?c=AAAAAA",
+            "expiresIn": 600
+          }
+        },
+        {
+          "status": 200,
+          "body": {
+            "status": "waiting"
+          }
+        },
+        {
+          "status": 200,
+          "body": {
+            "ok": true,
+            "status": "ready"
+          }
+        },
+        {
+          "status": 409,
+          "body": {
+            "error": "already submitted",
+            "status": "ready"
+          }
+        },
+        {
+          "status": 200,
+          "body": {
+            "status": "ready",
+            "value": " v "
+          }
+        },
+        {
+          "status": 200,
+          "body": {
+            "status": "gone"
+          }
+        }
+      ],
+      "writes": [
+        {
+          "key": "sess:AAAAAA",
+          "value": {
+            "status": "waiting",
+            "caption": "",
+            "draft": "",
+            "createdAt": 1700000000000,
+            "clientId": "device-123"
+          },
+          "options": {
+            "expirationTtl": 600
+          }
+        },
+        {
+          "key": "sess:AAAAAA",
+          "value": {
+            "status": "ready",
+            "caption": "",
+            "draft": "",
+            "createdAt": 1700000000000,
+            "clientId": "device-123",
+            "value": " v "
+          },
+          "options": {
+            "expirationTtl": 600
+          }
+        },
+        {
+          "delete": "sess:AAAAAA"
+        }
+      ]
+    },
+    {
+      "name": "client-mismatch",
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "code": "AAAAAA",
+            "url": "https://swop.example/?c=AAAAAA",
+            "expiresIn": 600
+          }
+        },
+        {
+          "status": 200,
+          "body": {
+            "status": "waiting"
+          }
+        },
+        {
+          "status": 200,
+          "body": {
+            "ok": true,
+            "status": "ready"
+          }
+        },
+        {
+          "status": 409,
+          "body": {
+            "error": "already submitted",
+            "status": "ready"
+          }
+        },
+        {
+          "status": 403,
+          "body": {
+            "error": "client mismatch"
+          }
+        },
+        {
+          "status": 200,
+          "body": {
+            "status": "ready",
+            "value": " v "
+          }
+        }
+      ],
+      "writes": [
+        {
+          "key": "sess:AAAAAA",
+          "value": {
+            "status": "waiting",
+            "caption": "",
+            "draft": "",
+            "createdAt": 1700000000000,
+            "clientId": "device-123"
+          },
+          "options": {
+            "expirationTtl": 600
+          }
+        },
+        {
+          "key": "sess:AAAAAA",
+          "value": {
+            "status": "ready",
+            "caption": "",
+            "draft": "",
+            "createdAt": 1700000000000,
+            "clientId": "device-123",
+            "value": " v "
+          },
+          "options": {
+            "expirationTtl": 600
+          }
+        },
+        {
+          "delete": "sess:AAAAAA"
+        }
+      ]
+    }
+  ]
+}

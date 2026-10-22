@@ -1,0 +1,106 @@
+# For most projects, this workflow file will not need changing; you simply need
+# to commit it to your repository.
+#
+# You may wish to alter this file to override the set of languages analyzed,
+# or to provide custom queries or build logic.
+#
+# ******** NOTE ********
+# We have attempted to detect the languages in your repository. Please check
+# the `language` matrix defined below to confirm you have the correct set of
+# supported CodeQL languages.
+#
+name: "CodeQL"
+
+on:
+  workflow_call: {}
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ${{ fromJSON((vars.CI_RUNNER_MODE == 'self-hosted' || vars.CI_RUNNER_MODE == 'k3s') && ((github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository) || (contains(fromJSON('["push","schedule","workflow_dispatch"]'), github.event_name) && github.ref == format('refs/heads/{0}', github.event.repository.default_branch))) && (vars.CI_RUNNER_LABELS || '[]') || '["ubuntu-latest"]') }}
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ["typescript", "python", "actions", "rust"]
+        # CodeQL supports [ $supported-codeql-languages ]
+        # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
+
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Prepare Rust source analysis
+        if: matrix.language == 'rust'
+        uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # stable
+        with:
+          toolchain: stable
+
+      # Initializes the CodeQL tools for scanning.
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: none
+          config-file: .github/codeql/codeql-config.yml
+          # If you wish to specify custom queries, you can do so here or in a config file.
+          # By default, queries listed here will override any specified in a config file.
+          # Prefix the list here with "+" to use these queries and those in the config file.
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0
+        with:
+          category: "/language:${{matrix.language}}"
+    timeout-minutes: 30
+
+  analyze-swift:
+    name: Analyze (swift)
+    runs-on: macos-latest
+    timeout-minutes: 40
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
+        with:
+          egress-policy: audit
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Prepare iOS source and dependencies
+        run: npm run build:ios
+      - name: Initialize Swift CodeQL analysis
+        uses: github/codeql-action/init@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0
+        with:
+          languages: swift
+          build-mode: manual
+      - name: Compile iOS plugins without signing
+        run: >-
+          xcodebuild -project ios/App/App.xcodeproj -scheme App
+          -sdk iphonesimulator -destination 'generic/platform=iOS Simulator'
+          -derivedDataPath "$RUNNER_TEMP/ottplay-codeql-ios"
+          CODE_SIGNING_ALLOWED=NO build
+      - name: Analyze compiled Swift code
+        uses: github/codeql-action/analyze@6f2ac81f5cd81fe351a197ba0b00d91d03cd2aee # v4.39.0
+        with:
+          category: /language:swift

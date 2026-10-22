@@ -1,0 +1,4 @@
+[[permission]]
+identifier = "allow-queue-enqueue"
+description = "Enables the queue_enqueue command (push command to queue via Tauri invoke)."
+commands.allow = ["queue_enqueue"]

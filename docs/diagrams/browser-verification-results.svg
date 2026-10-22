@@ -1,0 +1,226 @@
+<svg
+    aria-labelledby="title desc"
+    height="1000"
+    role="img"
+    viewBox="0 0 1200 1000"
+    width="1200"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <title id="title">
+        Verified local browser results / Проверенные локальные результаты
+    </title>
+    <desc id="desc">
+        Source c52f4d07: the full Chromium device-browser suite passed 196 tests
+        with one expected native-HLS skip. Separately, the exact Mode A archive
+        passed five scenarios each on Chromium, Firefox and WebKit, 15 total.
+        Horizontal bars share a scale from zero to five passed scenarios, with
+        no skips or retries. These overlapping suites must not be added. Local
+        macOS 26.7.1, not GitHub-hosted qualification. Два отдельных набора
+        проверок не складываются. Горизонтальные столбцы: общая шкала от нуля до
+        пяти пройденных сценариев. Результаты локальные, не результат прогона в
+        CI.
+    </desc>
+    <defs>
+        <marker
+            id="arrow"
+            markerHeight="9"
+            markerWidth="9"
+            orient="auto"
+            refX="7"
+            refY="4"
+        >
+            <path
+                d="M0 0 L8 4 L0 8"
+                fill="none"
+                stroke="#91bfff"
+                stroke-width="1.5"
+            />
+        </marker>
+    </defs>
+    <style>
+    text {
+        font-family: Arial, sans-serif;
+        fill: #edf3fc;
+    }
+    .title {
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .subtitle {
+        font-size: 19px;
+        fill: #bfcee4;
+    }
+    .heading {
+        font-size: 23px;
+        font-weight: 700;
+    }
+    .body {
+        font-size: 20px;
+    }
+    .small {
+        font-size: 17px;
+        fill: #bfcee4;
+    }
+    .eyebrow {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+    .number {
+        font-size: 62px;
+        font-weight: 700;
+    }
+    .formula {
+        font-size: 38px;
+        font-weight: 700;
+    }
+    </style>
+    <rect fill="#111a2b" height="1000" rx="24" width="1200" x="0" y="0" />
+    <text class="eyebrow" style="fill:#68d4b4" x="40" y="34">
+        OBSERVED RESULTS / ПОДТВЕРЖДЁННЫЕ РЕЗУЛЬТАТЫ
+    </text>
+    <text class="title" x="40" y="78">
+        Verified local results / Локальные результаты
+    </text>
+    <text class="subtitle" x="40" y="111">
+        Source / Исходники: c52f4d07 · actual host / фактическая ОС: macOS
+        26.7.1
+    </text>
+    <rect
+        fill="#1c2940"
+        height="551"
+        rx="16"
+        stroke="#91bfff"
+        width="540"
+        x="40"
+        y="148"
+    />
+    <rect
+        fill="#1c2940"
+        height="551"
+        rx="16"
+        stroke="#68d4b4"
+        width="540"
+        x="620"
+        y="148"
+    />
+    <text class="heading" style="fill:#91bfff" x="65" y="188">
+        Full device-browser suite
+    </text>
+    <text class="body" style="fill:#bfcee4" x="65" y="218">
+        Полный браузерный набор
+    </text>
+    <text class="number" style="fill:#68d4b4" x="65" y="299">196</text>
+    <text class="heading" x="202" y="294">passed / успешно</text>
+    <rect fill="#3b3024" height="53" rx="9" width="490" x="65" y="328" />
+    <text class="body" style="fill:#f2c779" x="87" y="362">
+        1 expected skip / ожидаемый пропуск
+    </text>
+    <text class="body" x="65" y="422">
+        Chromium · native HLS requires WebKit
+    </text>
+    <text class="body" style="fill:#bfcee4" x="65" y="453">
+        Нативный HLS требует WebKit
+    </text>
+    <text class="heading" style="fill:#91bfff" x="65" y="527">
+        Broad player coverage
+    </text>
+    <text class="small" x="65" y="559">Широкий набор проверок плеера</text>
+    <text class="heading" style="fill:#68d4b4" x="645" y="188">
+        Exact Mode A archive
+    </text>
+    <text class="body" style="fill:#bfcee4" x="645" y="218">
+        Точный архив Mode A
+    </text>
+    <text class="body" x="645" y="266">Chromium</text>
+    <text class="small" x="770" y="266">156.0.8078.4</text>
+    <text
+        class="heading"
+        style="fill:#91bfff"
+        text-anchor="end"
+        x="1135"
+        y="266"
+    >
+        5 / 5
+    </text>
+    <rect fill="#91bfff" height="23" rx="3" width="490" x="645" y="279" />
+    <text class="body" x="645" y="341">Firefox</text>
+    <text class="small" x="770" y="341">157.0</text>
+    <text
+        class="heading"
+        style="fill:#68d4b4"
+        text-anchor="end"
+        x="1135"
+        y="341"
+    >
+        5 / 5
+    </text>
+    <rect fill="#68d4b4" height="23" rx="3" width="490" x="645" y="354" />
+    <text class="body" x="645" y="416">WebKit</text>
+    <text class="small" x="770" y="416">27.2</text>
+    <text
+        class="heading"
+        style="fill:#f2c779"
+        text-anchor="end"
+        x="1135"
+        y="416"
+    >
+        5 / 5
+    </text>
+    <rect fill="#f2c779" height="23" rx="3" width="490" x="645" y="429" />
+    <path
+        d="M645 478 H1135 M645 472 V484 M743 472 V484 M841 472 V484 M939 472 V484 M1037 472 V484 M1135 472 V484"
+        fill="none"
+        stroke="#bfcee4"
+    />
+    <text class="small" text-anchor="middle" x="645" y="504">0</text>
+    <text class="small" text-anchor="middle" x="743" y="504">1</text>
+    <text class="small" text-anchor="middle" x="841" y="504">2</text>
+    <text class="small" text-anchor="middle" x="939" y="504">3</text>
+    <text class="small" text-anchor="middle" x="1037" y="504">4</text>
+    <text class="small" text-anchor="middle" x="1135" y="504">5</text>
+    <text class="small" text-anchor="middle" x="890" y="534">
+        Passed scenarios / Пройденные сценарии
+    </text>
+    <text class="formula" style="fill:#68d4b4" x="645" y="591">
+        15 passed / успешно
+    </text>
+    <text class="body" x="645" y="634">
+        0 skips · 0 retries · Playwright 1.64.0
+    </text>
+    <text class="small" x="645" y="665">Без пропусков и повторных попыток</text>
+    <rect
+        fill="#3b3024"
+        height="91"
+        rx="16"
+        stroke="#f2c779"
+        width="1120"
+        x="40"
+        y="730"
+    />
+    <text
+        class="heading"
+        style="fill:#f2c779"
+        text-anchor="middle"
+        x="600"
+        y="768"
+    >
+        Separate suites: do not add 196 and 15
+    </text>
+    <text class="body" text-anchor="middle" x="600" y="801">
+        Разные наборы: 196 и 15 не складываются
+    </text>
+    <text class="eyebrow" style="fill:#68d4b4" x="40" y="864">
+        LOCAL ONLY / ТОЛЬКО ЛОКАЛЬНО
+    </text>
+    <text class="heading" x="40" y="898">
+        Not GitHub-hosted coverage and not release qualification
+    </text>
+    <text class="body" style="fill:#bfcee4" x="40" y="931">
+        Не результат прогона в CI и не квалификация релиза
+    </text>
+    <text class="small" x="40" y="972">
+        Sources / Источники: implementation-report.md ·
+        evidence/post779-local-acceptance/summary.json
+    </text>
+</svg>

@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "scope": "Local macOS acceptance only; not GitHub-hosted or 35-target matrix qualification",
+  "sourceSha": "c52f4d079d6d372af21aa8e2b7eca7edf6766247",
+  "candidate": {
+    "archive": "ottplay-foss-modea.tar.gz",
+    "sha256": "997a6fb26270ad922b1da0344a43455bc60fd543950024eee7ad43ac1c6ef875",
+    "size": 6449156,
+    "sourceSha": "c52f4d079d6d372af21aa8e2b7eca7edf6766247",
+    "version": "1.1.55",
+    "filesVerified": 365,
+    "releaseReceipt": false
+  },
+  "actualOs": {
+    "product": "macOS",
+    "version": "26.7.1",
+    "build": "25G241"
+  },
+  "declaredProfileOs": "macos-15",
+  "profileOsMatchesActual": false,
+  "githubHosted": false,
+  "port": 4189,
+  "results": [
+    {
+      "engine": "chromium",
+      "browserVersion": "156.0.8078.4",
+      "playwrightVersion": "1.64.0",
+      "profileTarget": "macos-15-chromium-1-64-0",
+      "actualOs": {
+        "product": "macOS",
+        "version": "26.7.1",
+        "build": "25G241"
+      },
+      "testsPassed": 5,
+      "testsFailed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "media": "passed",
+      "evidence": "chromium/result.json"
+    },
+    {
+      "engine": "firefox",
+      "browserVersion": "157.0",
+      "playwrightVersion": "1.64.0",
+      "profileTarget": "macos-15-firefox-1-64-0",
+      "actualOs": {
+        "product": "macOS",
+        "version": "26.7.1",
+        "build": "25G241"
+      },
+      "testsPassed": 5,
+      "testsFailed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "media": "passed",
+      "evidence": "firefox/result.json"
+    },
+    {
+      "engine": "webkit",
+      "browserVersion": "27.2",
+      "playwrightVersion": "1.64.0",
+      "profileTarget": "macos-15-webkit-1-64-0",
+      "actualOs": {
+        "product": "macOS",
+        "version": "26.7.1",
+        "build": "25G241"
+      },
+      "testsPassed": 5,
+      "testsFailed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "media": "passed",
+      "evidence": "webkit/result.json"
+    }
+  ],
+  "totals": {
+    "testsPassed": 15,
+    "testsFailed": 0,
+    "skipped": 0,
+    "flaky": 0
+  },
+  "reproducibleRecipe": "reproduce.sh"
+}

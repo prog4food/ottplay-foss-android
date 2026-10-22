@@ -1,0 +1,5 @@
+# Exclude provider scripts from cleartext-storage-of-credentials checks.
+# These are third-party provider configs that store session preferences, not credentials.
+# The actual auth tokens flow through stbSetItem/stbGetItem (secure storage path).
+paths-ignore:
+  - providers/
